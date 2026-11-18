@@ -286,7 +286,7 @@ export default function Home() {
             <p className="max-w-md text-base leading-7 text-slate-500">A connected engineering network bringing physical systems, intelligence, data and digital technology together.</p>
           </div>
 
-          <div className="relative mx-auto mt-14 max-w-5xl">
+          <div className="domain-network relative mx-auto mt-14 max-w-5xl">
             <div className="relative z-10 mx-auto flex w-fit flex-col items-center rounded-2xl border border-blue-200 bg-white px-8 py-5 text-center shadow-lg shadow-blue-900/5">
               <span className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-700"><Cpu size={26} /></span>
               <span className="text-xs font-black tracking-[.18em] text-blue-700">CENTRAL HUB</span>
@@ -296,8 +296,9 @@ export default function Home() {
 
             <div className="pointer-events-none relative -mt-1 h-24 w-full" aria-hidden="true">
               <svg viewBox="0 0 1000 120" preserveAspectRatio="none" className="h-full w-full overflow-visible">
-                <path d="M500 0 V28 H166 V112 M500 28 V112 M500 28 H834 V112" fill="none" stroke="#93b4f7" strokeWidth="2" strokeLinecap="round" />
-                <path d="M166 28 V112 M500 28 V112 M834 28 V112" fill="none" stroke="#2563eb" strokeOpacity=".2" strokeWidth="1.5" strokeDasharray="4 7" />
+                <path className="domain-branch domain-branch-left" d="M500 0 V28 H166 V112" fill="none" stroke="#93b4f7" strokeWidth="2" strokeLinecap="round" />
+                <path className="domain-branch domain-branch-middle" d="M500 0 V112" fill="none" stroke="#93b4f7" strokeWidth="2" strokeLinecap="round" />
+                <path className="domain-branch domain-branch-right" d="M500 0 V28 H834 V112" fill="none" stroke="#93b4f7" strokeWidth="2" strokeLinecap="round" />
                 <circle cx="500" cy="28" r="5" fill="#2563eb" />
                 <circle cx="166" cy="112" r="4" fill="#2563eb" />
                 <circle cx="500" cy="112" r="4" fill="#2563eb" />
@@ -305,11 +306,11 @@ export default function Home() {
               </svg>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="domain-card-grid grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {domains.map((domain) => {
                 const Icon = domain.icon;
                 return (
-                  <article key={domain.number} className="group relative min-h-[150px] rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/10">
+                  <article key={domain.number} className="domain-card group relative min-h-[150px] rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/10">
                     <div className="flex items-start gap-4">
                       <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white"><Icon size={22} /></span>
                       <div className="min-w-0">
