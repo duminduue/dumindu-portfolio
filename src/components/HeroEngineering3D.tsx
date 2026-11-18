@@ -70,7 +70,7 @@ function HumanoidRobot() {
 
   useFrame(({ clock }) => {
     const t = clock.elapsedTime;
-    if (robot.current) robot.current.position.y = -0.92 + Math.sin(t * 0.9) * 0.025;
+    if (robot.current) robot.current.position.y = 0.55 + Math.sin(t * 0.9) * 0.025;
     if (head.current) head.current.rotation.y = Math.sin(t * 0.55) * 0.16;
     if (leftArm.current) leftArm.current.rotation.z = -0.12 + Math.sin(t * 0.8) * 0.08;
     if (rightArm.current) rightArm.current.rotation.z = 0.12 + Math.sin(t * 0.8 + 1) * 0.08;
@@ -82,7 +82,7 @@ function HumanoidRobot() {
   const cyan = "#22d3ee";
 
   return (
-    <group ref={robot} position={[5.45, 0.35, 0]} scale={1.12}>
+    <group ref={robot} position={[4.2, 0.55, 0]} scale={1.05}>
       {/* torso and chest armour */}
       <mesh position={[0, 0.02, 0]} castShadow>
         <capsuleGeometry args={[0.28, 0.62, 8, 16]} />
