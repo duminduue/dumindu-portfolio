@@ -126,9 +126,6 @@ export default function Home() {
               <span className="inline-flex items-center gap-2"><MapPin size={15} /> Sri Lanka</span>
               <span className="inline-flex items-center gap-2"><GraduationCap size={16} /> BEng (Hons), 2:1</span>
             </div>
-            <div className="mt-5 w-full max-w-[560px]">
-              <HeroEngineering3D />
-            </div>
           </div>
           <div className="relative mx-auto w-full max-w-[390px] isolate">
             <div aria-hidden="true" className="pointer-events-none absolute -inset-5 rounded-[2.5rem] border border-blue-300/20 rotate-6" />
@@ -159,6 +156,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="hero-arm-overlay" aria-hidden="true"><HeroEngineering3D /></div>
         <div className="section-shell border-t border-white/10 py-5 text-center text-xs font-semibold tracking-[.18em] text-slate-400">DESIGNING · DEVELOPING · INTEGRATING · LEARNING</div>
       </section>
 
