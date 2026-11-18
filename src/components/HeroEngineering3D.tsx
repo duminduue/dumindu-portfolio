@@ -82,7 +82,7 @@ function HumanoidRobot() {
   const cyan = "#22d3ee";
 
   return (
-    <group ref={robot} position={[1.45, -0.92, 0]} scale={0.9}>
+    <group ref={robot} position={[3.8, -0.28, 0]} scale={1.35}>
       {/* torso and chest armour */}
       <mesh position={[0, 0.05, 0]} castShadow>
         <capsuleGeometry args={[0.31, 0.55, 8, 16]} />
