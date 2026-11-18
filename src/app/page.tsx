@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   ArrowDown,
   ArrowRight,
@@ -114,7 +115,7 @@ export default function Home() {
             </h1>
             <h2 className="mt-7 text-xl font-semibold leading-snug text-slate-200 md:text-2xl">Graduate Mechatronics &amp; Robotics Engineer</h2>
             <p className="mt-6 max-w-[650px] text-base leading-8 text-slate-300 md:text-lg">
-              Exploring the intersection of engineering, intelligent systems and digital technology. Interested in designing and developing practical solutions through robotics, embedded systems, automation and software.
+              I am a Mechatronics and Robotics Engineering graduate passionate about designing and developing practical engineering solutions through robotics, intelligent systems, industrial automation and software technology.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-4 text-sm font-bold text-white shadow-lg shadow-blue-950/30 transition hover:-translate-y-0.5 hover:bg-blue-500">Explore my work <ArrowUpRight size={17} /></a>
@@ -132,8 +133,15 @@ export default function Home() {
                 <span className="text-xs font-bold tracking-[.2em] text-blue-200">ENGINEERING × TECHNOLOGY</span>
                 <span className="h-2 w-2 rounded-full bg-emerald-400" />
               </div>
-              <div className="my-12 flex h-44 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br from-blue-500/20 to-cyan-300/5">
-                <span className="text-8xl font-black tracking-[-.09em] text-blue-200">DE<span className="text-cyan-300">.</span></span>
+              <div className="relative my-8 h-[360px] overflow-hidden rounded-2xl border border-white/10 bg-slate-800 sm:h-[400px]">
+                <Image
+                  src="/images/profile.jpeg"
+                  alt="Dumindu Udakara Ekanayaka at his graduation ceremony"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 90vw, 390px"
+                  className="object-cover object-[center_24%]"
+                />
               </div>
               <p className="text-xl font-bold">Dumindu Udakara Ekanayaka</p>
               <p className="mt-2 text-sm leading-6 text-slate-300">Mechatronics &amp; Robotics Engineering graduate</p>
