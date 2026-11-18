@@ -510,7 +510,7 @@ a {
   position: relative;
   width: min(100%, 560px);
   height: 205px;
-  margin: 1.15rem auto 0;
+  margin: 0 auto;
   overflow: visible;
   background: transparent;
 }
@@ -520,7 +520,7 @@ a {
   height: 100%;
 }
 @media (max-width: 767px) {
-  .about-conveyor { height: 190px; margin-top: 1rem; }
+  .about-conveyor { height: 180px; margin-top: 0; }
 }
 
 .about-vision {
