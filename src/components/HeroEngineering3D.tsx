@@ -1,170 +1,136 @@
 "use client";
 
+import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, OrbitControls, Sparkles } from "@react-three/drei";
-import { useRef } from "react";
+import { Float, OrbitControls, Sparkles, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
-function Joint({ position, radius = 0.16 }: { position: [number, number, number]; radius?: number }) {
-  return (
-    <mesh position={position} castShadow>
-      <sphereGeometry args={[radius, 32, 32]} />
-      <meshStandardMaterial color="#9bdcff" metalness={0.85} roughness={0.2} emissive="#147acb" emissiveIntensity={0.35} />
-    </mesh>
-  );
-}
+const ARM_MODEL = "https://files.innerscene.com/library/desktop-4-axis-robot-arm-with-gripper-7ce43bd6/2757c5e48e39b00cc8f3/desktop-4-axis-robot-arm-with-gripper.glb";
+const ROVER_MODEL = "https://files.innerscene.com/library/4wd-robot-rover-kit-two-decks-73d71fb2/10ff92ee0068eccf6472/4wd-robot-rover-kit-two-decks.glb";
 
-function ArmSegment({ start, end, radius = 0.105 }: { start: [number, number, number]; end: [number, number, number]; radius?: number }) {
-  const a = new THREE.Vector3(...start);
-  const b = new THREE.Vector3(...end);
-  const direction = new THREE.Vector3().subVectors(b, a);
-  const midpoint = new THREE.Vector3().addVectors(a, b).multiplyScalar(0.5);
-  return (
-    <mesh position={midpoint.toArray()} quaternion={new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), direction.clone().normalize())} castShadow>
-      <cylinderGeometry args={[radius, radius * 1.12, direction.length(), 24]} />
-      <meshStandardMaterial color="#8ebde8" metalness={0.82} roughness={0.22} />
-    </mesh>
-  );
-}
-
-function RoboticArm() {
-  const wrist = useRef<THREE.Group>(null);
-  useFrame(({ clock }) => {
-    if (wrist.current) wrist.current.rotation.z = Math.sin(clock.elapsedTime * 0.8) * 0.16;
+function Model({ url, position, scale, rotation = [0, 0, 0] }: {
+  url: string;
+  position: [number, number, number];
+  scale: number;
+  rotation?: [number, number, number];
+}) {
+  const { scene } = useGLTF(url);
+  const clone = scene.clone(true);
+  clone.traverse((object) => {
+    if (object instanceof THREE.Mesh) {
+      object.castShadow = true;
+      object.receiveShadow = true;
+    }
   });
-  const p0: [number, number, number] = [-1.35, 0.32, 0.15];
-  const p1: [number, number, number] = [-1.45, 1.05, 0.15];
-  const p2: [number, number, number] = [-0.88, 1.72, 0.15];
-  return (
-    <group>
-      <mesh position={[-1.35, 0.2, 0.15]} castShadow>
-        <cylinderGeometry args={[0.38, 0.48, 0.25, 48]} />
-        <meshStandardMaterial color="#173b66" metalness={0.8} roughness={0.25} />
-      </mesh>
-      <ArmSegment start={p0} end={p1} radius={0.14} />
-      <ArmSegment start={p1} end={p2} radius={0.12} />
-      <Joint position={p0} radius={0.22} />
-      <Joint position={p1} radius={0.2} />
-      <group ref={wrist} position={p2}>
-        <Joint position={[0, 0, 0]} radius={0.16} />
-        <ArmSegment start={[0, 0, 0]} end={[0.35, 0.28, 0]} radius={0.075} />
-        <mesh position={[0.42, 0.3, 0]} rotation={[0, 0, -0.3]}>
-          <boxGeometry args={[0.28, 0.08, 0.12]} />
-          <meshStandardMaterial color="#c5eaff" metalness={0.75} roughness={0.2} />
-        </mesh>
-        <mesh position={[0.54, 0.18, 0.05]} rotation={[0, 0, 0.4]}>
-          <boxGeometry args={[0.07, 0.22, 0.08]} />
-          <meshStandardMaterial color="#69c9ff" metalness={0.7} roughness={0.2} />
-        </mesh>
-      </group>
-    </group>
-  );
+  return <primitive object={clone} position={position} scale={scale} rotation={rotation} />;
 }
 
-function Rover() {
-  const wheels = [-0.28, 0.28];
+function Processor() {
+  const core = useRef<THREE.Group>(null);
+  useFrame(({ clock }) => {
+    if (core.current) {
+      core.current.rotation.y = clock.elapsedTime * 0.22;
+      core.current.position.y = 0.72 + Math.sin(clock.elapsedTime * 1.3) * 0.035;
+    }
+  });
   return (
-    <group position={[0.15, 0.3, 0.62]}>
+    <group ref={core} position={[1.05, 0.72, -0.42]}>
       <mesh castShadow>
-        <boxGeometry args={[0.9, 0.34, 0.62]} />
-        <meshStandardMaterial color="#b5d8f2" metalness={0.72} roughness={0.25} />
+        <boxGeometry args={[0.66, 0.18, 0.66]} />
+        <meshStandardMaterial color="#172d4b" metalness={0.92} roughness={0.18} emissive="#075985" emissiveIntensity={0.5} />
       </mesh>
-      <mesh position={[0, 0.24, 0]} castShadow>
-        <boxGeometry args={[0.38, 0.2, 0.34]} />
-        <meshStandardMaterial color="#123b68" metalness={0.8} roughness={0.2} emissive="#0879be" emissiveIntensity={0.25} />
+      <mesh position={[0, 0.105, 0]}>
+        <boxGeometry args={[0.52, 0.035, 0.52]} />
+        <meshStandardMaterial color="#0c749f" metalness={0.8} roughness={0.18} emissive="#22d3ee" emissiveIntensity={1.1} />
       </mesh>
-      <mesh position={[0, 0.39, 0]}>
-        <cylinderGeometry args={[0.07, 0.07, 0.16, 24]} />
-        <meshStandardMaterial color="#22d3ee" emissive="#22d3ee" emissiveIntensity={1.4} />
+      <mesh position={[0, 0.13, 0]}>
+        <boxGeometry args={[0.28, 0.025, 0.28]} />
+        <meshBasicMaterial color="#b8f4ff" />
       </mesh>
-      {wheels.flatMap((x) => [-0.34, 0.34].map((z) => (
-        <mesh key={`${x}-${z}`} position={[x, -0.18, z]} rotation={[Math.PI / 2, 0, 0]}>
-          <cylinderGeometry args={[0.16, 0.16, 0.12, 32]} />
-          <meshStandardMaterial color="#07172b" metalness={0.4} roughness={0.6} />
+      {Array.from({ length: 8 }).map((_, i) => (
+        <mesh key={i} position={[Math.cos(i * Math.PI / 4) * 0.34, 0.01, Math.sin(i * Math.PI / 4) * 0.34]}>
+          <boxGeometry args={[0.12, 0.1, 0.045]} />
+          <meshStandardMaterial color="#8bdcff" metalness={0.85} roughness={0.2} />
         </mesh>
-      )))}
+      ))}
     </group>
   );
 }
 
-function FloatingPanel({ position, label, sub }: { position: [number, number, number]; label: string; sub: string }) {
+function HoloPanel({ position, title, subtitle }: { position: [number, number, number]; title: string; subtitle: string }) {
   return (
-    <Float speed={1.4} rotationIntensity={0.08} floatIntensity={0.14}>
+    <Float speed={1.15} rotationIntensity={0.035} floatIntensity={0.11}>
       <group position={position}>
         <mesh>
-          <boxGeometry args={[1.05, 0.62, 0.055]} />
-          <meshStandardMaterial color="#12345b" metalness={0.55} roughness={0.24} transparent opacity={0.88} emissive="#075985" emissiveIntensity={0.3} />
+          <boxGeometry args={[1.05, 0.58, 0.035]} />
+          <meshPhysicalMaterial color="#0b3760" metalness={0.4} roughness={0.18} transmission={0.12} transparent opacity={0.88} emissive="#075985" emissiveIntensity={0.45} />
         </mesh>
-        <mesh position={[0, 0, 0.04]}>
-          <boxGeometry args={[0.88, 0.025, 0.012]} />
-          <meshBasicMaterial color="#22d3ee" />
+        <mesh position={[0, 0.13, 0.025]}>
+          <boxGeometry args={[0.74, 0.025, 0.012]} />
+          <meshBasicMaterial color="#67e8f9" />
         </mesh>
-        <mesh position={[0, -0.13, 0.09]}>
-          <boxGeometry args={[0.58, 0.018, 0.012]} />
-          <meshBasicMaterial color="#67cfff" />
+        <mesh position={[0, -0.01, 0.025]}>
+          <boxGeometry args={[0.56, 0.014, 0.012]} />
+          <meshBasicMaterial color="#38bdf8" />
         </mesh>
-        <mesh position={[-0.34, 0.1, 0.09]}>
-          <boxGeometry args={[0.12, 0.12, 0.012]} />
-          <meshBasicMaterial color="#22d3ee" />
+        <mesh position={[-0.38, -0.16, 0.025]}>
+          <boxGeometry args={[0.16, 0.1, 0.012]} />
+          <meshBasicMaterial color="#0ea5e9" />
         </mesh>
       </group>
     </Float>
   );
 }
 
-function EngineeringScene() {
-  const group = useRef<THREE.Group>(null);
+function Platform() {
+  return (
+    <group>
+      <mesh position={[0, -0.12, 0]} receiveShadow>
+        <cylinderGeometry args={[2.55, 2.62, 0.24, 96]} />
+        <meshStandardMaterial color="#101e32" metalness={0.9} roughness={0.22} />
+      </mesh>
+      <mesh position={[0, 0.015, 0]} receiveShadow>
+        <cylinderGeometry args={[2.51, 2.51, 0.035, 96]} />
+        <meshStandardMaterial color="#123b68" metalness={0.78} roughness={0.24} />
+      </mesh>
+      <mesh position={[0, 0.038, 0]}>
+        <torusGeometry args={[2.49, 0.018, 12, 160]} />
+        <meshBasicMaterial color="#22d3ee" />
+      </mesh>
+      <mesh position={[0, 0.04, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <ringGeometry args={[1.2, 1.215, 96]} />
+        <meshBasicMaterial color="#38bdf8" transparent opacity={0.4} />
+      </mesh>
+    </group>
+  );
+}
+
+function SceneContents() {
+  const rig = useRef<THREE.Group>(null);
   useFrame(({ clock }) => {
-    if (group.current) group.current.rotation.y = Math.sin(clock.elapsedTime * 0.18) * 0.08;
+    if (rig.current) rig.current.rotation.y = Math.sin(clock.elapsedTime * 0.14) * 0.055;
   });
   return (
     <>
       <color attach="background" args={["#0b1b31"]} />
-      <fog attach="fog" args={["#0b1b31", 9, 18]} />
-      <ambientLight intensity={1.1} />
-      <directionalLight position={[3, 6, 5]} intensity={2.2} castShadow />
-      <pointLight position={[-2, 3, 2]} color="#22d3ee" intensity={28} distance={8} />
-      <pointLight position={[3, 2, -2]} color="#2563eb" intensity={22} distance={8} />
-      <group ref={group} position={[-0.4, -0.6, 0]}>
-        <mesh position={[0, -0.08, 0]} receiveShadow>
-          <cylinderGeometry args={[2.5, 2.58, 0.22, 96]} />
-          <meshStandardMaterial color="#102d50" metalness={0.82} roughness={0.25} />
-        </mesh>
-        <mesh position={[0, 0.045, 0]}>
-          <cylinderGeometry args={[2.48, 2.48, 0.035, 96]} />
-          <meshStandardMaterial color="#174a78" metalness={0.7} roughness={0.25} emissive="#075985" emissiveIntensity={0.35} />
-        </mesh>
-        <mesh position={[0, 0.07, 0]}>
-          <torusGeometry args={[2.47, 0.018, 12, 120]} />
-          <meshBasicMaterial color="#22d3ee" />
-        </mesh>
-        <mesh position={[0, 0.08, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-          <ringGeometry args={[1.2, 1.22, 80]} />
-          <meshBasicMaterial color="#38bdf8" transparent opacity={0.5} />
-        </mesh>
-        <RoboticArm />
-        <Rover />
-        <group position={[1.05, 0.25, -0.55]}>
-          <mesh castShadow>
-            <boxGeometry args={[0.48, 0.16, 0.42]} />
-            <meshStandardMaterial color="#0d4774" metalness={0.8} roughness={0.2} emissive="#0284c7" emissiveIntensity={0.45} />
-          </mesh>
-          <mesh position={[0, 0.1, 0]}>
-            <boxGeometry args={[0.32, 0.025, 0.28]} />
-            <meshBasicMaterial color="#22d3ee" />
-          </mesh>
-          <mesh position={[0, 0.23, 0]}>
-            <boxGeometry args={[0.24, 0.018, 0.025]} />
-            <meshBasicMaterial color="#67e8f9" />
-          </mesh>
-          <mesh position={[0, 0.27, 0]}>
-            <boxGeometry args={[0.14, 0.012, 0.02]} />
-            <meshBasicMaterial color="#22d3ee" />
-          </mesh>
-        </group>
-        <FloatingPanel position={[-0.15, 1.55, -0.8]} label="ROBOTICS CONTROL" sub="LIVE SYSTEM STATUS" />
-        <FloatingPanel position={[1.75, 1.35, -0.65]} label="SOFTWARE SYSTEMS" sub="CODE · BUILD · DEPLOY" />
-        <Sparkles count={42} scale={[5.2, 2.2, 4.8]} size={2.2} speed={0.35} color="#67dfff" />
+      <fog attach="fog" args={["#0b1b31", 9, 17]} />
+      <ambientLight intensity={1.05} />
+      <hemisphereLight args={["#c5eaff", "#071426", 1.15]} />
+      <directionalLight position={[3, 7, 5]} intensity={2.4} castShadow shadow-mapSize-width={1024} shadow-mapSize-height={1024} />
+      <pointLight position={[-2, 2.5, 2]} color="#22d3ee" intensity={24} distance={8} />
+      <pointLight position={[3, 2, -2]} color="#2563eb" intensity={20} distance={8} />
+      <group ref={rig} position={[-0.1, -0.48, 0]}>
+        <Platform />
+        <Float speed={0.75} rotationIntensity={0.018} floatIntensity={0.025}>
+          <Model url={ARM_MODEL} position={[-1.25, 0.07, 0.05]} scale={3.05} rotation={[0, 0.15, 0]} />
+        </Float>
+        <Float speed={0.85} rotationIntensity={0.025} floatIntensity={0.035}>
+          <Model url={ROVER_MODEL} position={[0.1, 0.12, 0.7]} scale={3.5} rotation={[0, -0.35, 0]} />
+        </Float>
+        <Processor />
+        <HoloPanel position={[-0.35, 1.85, -0.9]} title="ROBOTICS CONTROL" subtitle="MOTION SYSTEMS" />
+        <HoloPanel position={[1.48, 1.55, -0.85]} title="AI PROCESSING" subtitle="INTELLIGENT SYSTEMS" />
+        <Sparkles count={55} scale={[5.4, 2.8, 5]} size={2} speed={0.28} color="#8be7ff" />
       </group>
       <OrbitControls enablePan={false} enableZoom={false} enableRotate={false} />
     </>
@@ -173,9 +139,11 @@ function EngineeringScene() {
 
 export default function HeroEngineering3D() {
   return (
-    <div className="hero-webgl-wrap" aria-label="Interactive 3D engineering visual">
-      <Canvas shadows dpr={[1, 1.6]} camera={{ position: [4.8, 3.4, 6.2], fov: 38 }} gl={{ antialias: true, alpha: false }}>
-        <EngineeringScene />
+    <div className="hero-webgl-wrap" aria-label="3D engineering showcase with robotic arm, rover and AI processor">
+      <Canvas shadows dpr={[1, 1.6]} camera={{ position: [5.2, 3.7, 7.2], fov: 36 }} gl={{ antialias: true, alpha: false }}>
+        <Suspense fallback={null}>
+          <SceneContents />
+        </Suspense>
       </Canvas>
       <div className="hero-webgl-labels" aria-hidden="true">
         <span>ROBOTICS</span><span>ARTIFICIAL INTELLIGENCE</span><span>INDUSTRIAL AUTOMATION</span><span>SOFTWARE ENGINEERING</span>
@@ -183,3 +151,6 @@ export default function HeroEngineering3D() {
     </div>
   );
 }
+
+useGLTF.preload(ARM_MODEL);
+useGLTF.preload(ROVER_MODEL);
