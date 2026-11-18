@@ -28,7 +28,7 @@ function IndustrialRobotArm() {
     const center = new THREE.Vector3();
     bounds.getSize(size);
     bounds.getCenter(center);
-    const targetHeight = 4.8;
+    const targetHeight = 3.9;
     const factor = targetHeight / Math.max(size.x, size.y, size.z);
     clone.scale.setScalar(factor);
     clone.position.set(-center.x * factor, -bounds.min.y * factor, -center.z * factor);
@@ -68,7 +68,7 @@ function SceneContents() {
 export default function HeroEngineering3D() {
   return (
     <div className="hero-webgl-wrap" aria-label="Animated 3D industrial robotic arm showcase">
-      <Canvas shadows dpr={[1, 1.6]} camera={{ position: [3.6, 2.5, 5.2], fov: 31 }} gl={{ antialias: true, alpha: true }}>
+      <Canvas shadows dpr={[1, 1.6]} camera={{ position: [4.2, 3.2, 6.4], fov: 39 }} gl={{ antialias: true, alpha: true }}>
         <Suspense fallback={null}>
           <SceneContents />
         </Suspense>
