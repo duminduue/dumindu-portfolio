@@ -50,7 +50,7 @@ function RealIndustrialArm() {
   useFrame((_, delta) => mixer.update(Math.min(delta, 0.04)));
 
   return (
-    <group position={[-1.65, -0.05, 0]} scale={1.38}>
+    <group position={[-1.65, -0.32, 0]} scale={1.12}>
       <primitive object={model} />
     </group>
   );
@@ -61,7 +61,7 @@ export default function HeroEngineering3D() {
     <div className="hero-webgl-wrap" aria-label="Animated silver and electric-blue six-axis industrial robotic arm">
       <Canvas
         dpr={[1, 1.6]}
-        camera={{ position: [3.8, 2.7, 5.8], fov: 37 }}
+        camera={{ position: [4.5, 3.3, 7.2], fov: 48 }}
         gl={{ antialias: true, alpha: true }}
       >
         <Suspense fallback={null}>
