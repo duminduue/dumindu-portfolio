@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HeroEngineering3D from "@/components/HeroEngineering3D";
+import ConveyorBox3D from "@/components/ConveyorBox3D";
 import {
   ArrowDown,
   ArrowRight,
@@ -253,6 +254,7 @@ export default function Home() {
                   </p>
                 </article>
               </div>
+              <ConveyorBox3D />
             </div>
 
             <div className="about-vision">
