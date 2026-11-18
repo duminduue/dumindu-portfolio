@@ -82,18 +82,18 @@ function HumanoidRobot() {
   const cyan = "#22d3ee";
 
   return (
-    <group ref={robot} position={[3.8, -0.28, 0]} scale={1.35}>
+    <group ref={robot} position={[5.45, 0.35, 0]} scale={1.12}>
       {/* torso and chest armour */}
-      <mesh position={[0, 0.05, 0]} castShadow>
-        <capsuleGeometry args={[0.31, 0.55, 8, 16]} />
+      <mesh position={[0, 0.02, 0]} castShadow>
+        <capsuleGeometry args={[0.28, 0.62, 8, 16]} />
         <meshStandardMaterial color={silver} metalness={0.82} roughness={0.24} />
       </mesh>
       <mesh position={[0, 0.12, 0.285]}>
-        <boxGeometry args={[0.34, 0.32, 0.035]} />
+        <boxGeometry args={[0.3, 0.28, 0.035]} />
         <meshStandardMaterial color={dark} metalness={0.72} roughness={0.3} />
       </mesh>
-      <mesh position={[0, 0.12, 0.31]}>
-        <boxGeometry args={[0.22, 0.045, 0.025]} />
+      <mesh position={[0, 0.1, 0.31]}>
+        <boxGeometry args={[0.19, 0.035, 0.025]} />
         <meshBasicMaterial color={cyan} />
       </mesh>
       <mesh position={[0, -0.3, 0]}>
@@ -107,31 +107,31 @@ function HumanoidRobot() {
       </mesh>
       <group ref={head} position={[0, 0.76, 0]}>
         <mesh castShadow>
-          <sphereGeometry args={[0.27, 32, 24]} />
+          <sphereGeometry args={[0.22, 32, 24]} />
           <meshStandardMaterial color={silver} metalness={0.86} roughness={0.2} />
         </mesh>
-        <mesh position={[0, -0.015, 0.22]}>
+        <mesh position={[0, -0.015, 0.185]}>
           <boxGeometry args={[0.34, 0.13, 0.09]} />
           <meshStandardMaterial color={dark} metalness={0.8} roughness={0.24} />
         </mesh>
-        <mesh position={[-0.085, -0.015, 0.27]}>
+        <mesh position={[-0.07, -0.015, 0.225]}>
           <sphereGeometry args={[0.035, 16, 12]} />
           <meshBasicMaterial color={cyan} />
         </mesh>
-        <mesh position={[0.085, -0.015, 0.27]}>
+        <mesh position={[0.07, -0.015, 0.225]}>
           <sphereGeometry args={[0.035, 16, 12]} />
           <meshBasicMaterial color={cyan} />
         </mesh>
       </group>
       {/* shoulder joints and articulated arms */}
       {([-1, 1] as const).map((side) => (
-        <group key={side} ref={side === -1 ? leftArm : rightArm} position={[side * 0.39, 0.32, 0]}>
+        <group key={side} ref={side === -1 ? leftArm : rightArm} position={[side * 0.35, 0.28, 0]}>
           <mesh castShadow>
-            <sphereGeometry args={[0.14, 24, 18]} />
+            <sphereGeometry args={[0.12, 24, 18]} />
             <meshStandardMaterial color={blue} metalness={0.82} roughness={0.22} />
           </mesh>
           <mesh position={[0, -0.25, 0]} castShadow>
-            <capsuleGeometry args={[0.105, 0.34, 6, 12]} />
+            <capsuleGeometry args={[0.09, 0.34, 6, 12]} />
             <meshStandardMaterial color={silver} metalness={0.82} roughness={0.24} />
           </mesh>
           <mesh position={[0, -0.49, 0]}>
@@ -139,7 +139,7 @@ function HumanoidRobot() {
             <meshStandardMaterial color={dark} metalness={0.85} roughness={0.22} />
           </mesh>
           <mesh position={[0, -0.68, 0]} castShadow>
-            <capsuleGeometry args={[0.075, 0.28, 6, 12]} />
+            <capsuleGeometry args={[0.065, 0.27, 6, 12]} />
             <meshStandardMaterial color={silver} metalness={0.82} roughness={0.24} />
           </mesh>
           <mesh position={[0, -0.85, 0.02]}>
@@ -150,21 +150,21 @@ function HumanoidRobot() {
       ))}
       {/* hips and two mechanical legs */}
       <mesh position={[0, -0.48, 0]}>
-        <boxGeometry args={[0.42, 0.2, 0.3]} />
+        <boxGeometry args={[0.38, 0.18, 0.28]} />
         <meshStandardMaterial color={dark} metalness={0.8} roughness={0.26} />
       </mesh>
       {([-1, 1] as const).map((side) => (
-        <group key={side} position={[side * 0.15, -0.78, 0]}>
+        <group key={side} position={[side * 0.13, -0.72, 0]}>
           <mesh position={[0, -0.24, 0]} castShadow>
-            <capsuleGeometry args={[0.115, 0.36, 6, 12]} />
+            <capsuleGeometry args={[0.095, 0.38, 6, 12]} />
             <meshStandardMaterial color={silver} metalness={0.84} roughness={0.23} />
           </mesh>
           <mesh position={[0, -0.5, 0]}>
-            <sphereGeometry args={[0.12, 20, 16]} />
+            <sphereGeometry args={[0.095, 20, 16]} />
             <meshStandardMaterial color={blue} metalness={0.8} roughness={0.22} />
           </mesh>
           <mesh position={[0, -0.72, 0.07]} castShadow>
-            <boxGeometry args={[0.24, 0.13, 0.38]} />
+            <boxGeometry args={[0.21, 0.11, 0.34]} />
             <meshStandardMaterial color={dark} metalness={0.82} roughness={0.24} />
           </mesh>
           <mesh position={[0, -0.72, 0.27]}>
