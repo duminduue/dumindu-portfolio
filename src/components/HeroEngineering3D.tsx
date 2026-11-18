@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useMemo, useRef } from "react";
+import { Suspense, useEffect, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
@@ -8,8 +8,7 @@ import * as THREE from "three";
 const ARM_MODEL = "https://assets.stoicsoft.com/1designtool/3d/models/industrial-robot-arm/cd1566d1a2/model.glb";
 
 function RealIndustrialArm() {
-  const { scene } = useGLTF(ARM_MODEL);
-  const armGroup = useRef<THREE.Group>(null);
+  const { scene, animations } = useGLTF(ARM_MODEL);
   const model = useMemo(() => {
     const clone = scene.clone(true);
     clone.traverse((node) => {
@@ -42,15 +41,16 @@ function RealIndustrialArm() {
     return clone;
   }, [scene]);
 
-  // Stable display pose with a restrained idle motion, keeping the arm in view.
-  useFrame(({ clock }) => {
-    if (!armGroup.current) return;
-    armGroup.current.rotation.y = Math.sin(clock.elapsedTime * 0.22) * 0.055;
-    armGroup.current.position.y = -0.62 + Math.sin(clock.elapsedTime * 0.65) * 0.018;
-  });
+  const mixer = useMemo(() => new THREE.AnimationMixer(model), [model]);
+  useEffect(() => {
+    animations.forEach((clip) => mixer.clipAction(clip).play());
+    return () => mixer.stopAllAction();
+  }, [animations, mixer]);
+
+  useFrame((_, delta) => mixer.update(Math.min(delta, 0.04)));
 
   return (
-    <group ref={armGroup} position={[-1.65, -0.62, 0]} scale={1.55}>
+    <group position={[-1.65, -0.62, 0]} scale={1.55}>
       <primitive object={model} />
     </group>
   );
