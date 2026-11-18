@@ -118,11 +118,11 @@ export default function Home() {
             <p className="mt-6 max-w-[650px] text-base leading-8 text-slate-300 md:text-lg">
               I am a Mechatronics and Robotics Engineering graduate passionate about designing and developing practical engineering solutions through robotics, intelligent systems, industrial automation and software technology.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-col items-start gap-4">
               <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-4 text-sm font-bold text-white shadow-lg shadow-blue-950/30 transition hover:-translate-y-0.5 hover:bg-blue-500">Explore my work <ArrowUpRight size={17} /></a>
               <a href="#about" className="inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-4 text-sm font-bold text-white transition hover:bg-white/10">Discover my story <ArrowDown size={16} /></a>
             </div>
-            <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-400">
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-400">
               <span className="inline-flex items-center gap-2"><MapPin size={15} /> Sri Lanka</span>
               <span className="inline-flex items-center gap-2"><GraduationCap size={16} /> BEng (Hons), 2:1</span>
             </div>
