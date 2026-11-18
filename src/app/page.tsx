@@ -164,22 +164,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="bg-[#f6f8fb] py-24 md:py-32">
+      <section id="about" className="bg-[#f6f8fb] py-16 md:py-24">
         <div className="section-shell">
-          <div className="grid gap-12 md:grid-cols-[.82fr_1.18fr] md:gap-16">
-            <div>
-              <p className="eyebrow">01 / About me</p>
-              <h2 className="mt-6 max-w-md text-4xl font-black leading-[1.12] tracking-tight text-[#142033] md:text-5xl">
-                Engineering curiosity. Practical thinking. A connected future.
-              </h2>
-              <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-xs font-bold tracking-wide text-slate-600">
-                <span className="h-2 w-2 rounded-full bg-blue-600" />
-                MECHATRONICS × ROBOTICS × TECHNOLOGY
+          <div className="grid items-stretch gap-10 md:grid-cols-[.86fr_1.14fr] md:gap-14">
+            <div className="about-photo-panel relative min-h-[480px] overflow-hidden md:min-h-[900px]">
+              <Image
+                src="/images/about-graduation.jpg"
+                alt="Dumindu holding his graduation scroll"
+                fill
+                sizes="(max-width: 768px) 100vw, 42vw"
+                className="object-cover object-[center_24%] grayscale"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#f6f8fb] via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#f6f8fb]" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#f6f8fb]/70 to-transparent md:hidden" />
+              <div className="absolute bottom-8 left-5 rounded-full border border-white/70 bg-white/75 px-4 py-2 text-[10px] font-black tracking-[.2em] text-[#142033] backdrop-blur-sm md:bottom-12 md:left-8">
+                THE JOURNEY CONTINUES
               </div>
             </div>
 
-            <div>
-              <p className="text-lg leading-8 text-slate-700">
+            <div className="py-4 md:py-8">
+              <p className="eyebrow">01 / About me</p>
+              <h2 className="mt-5 text-4xl font-black tracking-tight text-[#142033] md:text-5xl">About Me<span className="text-blue-600">.</span></h2>
+              <div className="mt-5 h-1.5 w-20 rounded-full bg-blue-700" />
+              <p className="mt-8 text-lg leading-8 text-slate-700">
                 I am a Mechatronics and Robotics Engineering graduate of
                 <strong className="text-[#142033]"> Anglia Ruskin University, United Kingdom</strong>,
                 with the programme delivered at CINEC Campus, Sri Lanka. I completed my BEng (Hons)
@@ -191,6 +198,16 @@ export default function Home() {
                 and software development. I enjoy understanding how things work, solving practical
                 problems and turning ideas into working systems.
               </p>
+
+              <div className="mt-9">
+                <p className="text-xs font-black tracking-[.2em] text-slate-400">CORE IDENTITY</p>
+                <div className="mt-4 flex flex-wrap gap-2.5">
+                  {["Mechatronics Engineer", "Robotics", "Practical Problem Solver", "Technology Enthusiast"].map((item) => (
+                    <span key={item} className="rounded-full border border-slate-300 bg-white/80 px-4 py-2.5 text-xs font-bold text-slate-700 shadow-sm">{item}</span>
+                  ))}
+                </div>
+              </div>
+
               <div className="mt-10 grid gap-4 sm:grid-cols-2">
                 <article className="rounded-2xl border border-slate-200 bg-white p-6">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
@@ -213,6 +230,7 @@ export default function Home() {
                   </p>
                 </article>
               </div>
+
               <div className="mt-5 rounded-2xl bg-[#142033] p-7 text-white md:p-8">
                 <p className="text-xs font-black tracking-[.18em] text-blue-300">MY CAREER VISION</p>
                 <p className="mt-3 text-xl font-bold leading-8 md:text-2xl">
