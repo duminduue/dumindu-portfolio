@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HeroEngineering3D from "@/components/HeroEngineering3D";
 import ConveyorBox3D from "@/components/ConveyorBox3D";
+import DomainExplorer from "@/components/DomainExplorer";
 import {
   ArrowDown,
   ArrowRight,
@@ -21,18 +22,6 @@ import {
   ShieldCheck,
   Wrench,
 } from "lucide-react";
-
-const domains = [
-  { number: "01", title: "Mechatronics Engineering", detail: "Integrated mechanical, electrical and electronic systems", icon: Wrench },
-  { number: "02", title: "Robotics Engineering", detail: "Robot design, embedded systems and intelligent control", icon: Bot },
-  { number: "03", title: "Artificial Intelligence", detail: "AI-enabled applications and intelligent systems", icon: BrainCircuit },
-  { number: "04", title: "Machine Learning", detail: "Learning algorithms, modelling and prediction", icon: Cpu },
-  { number: "05", title: "Data Science", detail: "Data analysis, insights and evidence-based decisions", icon: Database },
-  { number: "06", title: "Industrial Automation", detail: "PLC, HMI, control and smart manufacturing", icon: Factory },
-  { number: "07", title: "Cloud Computing", detail: "Cloud platforms, infrastructure and deployment", icon: Cloud },
-  { number: "08", title: "Cybersecurity", detail: "Secure-by-design systems and digital infrastructure", icon: ShieldCheck },
-  { number: "09", title: "Software Engineering", detail: "Full-stack development and reliable software systems", icon: Code2 },
-];
 
 const projects = [
   {
@@ -278,102 +267,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="domains" className="bg-[#f7f9fc] py-24 md:py-32">
-        <div className="section-shell">
-          <p className="eyebrow">02 / Professional direction</p>
-          <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end">
-            <h2 className="max-w-xl text-4xl font-black tracking-tight text-[#142033] md:text-5xl">Nine domains.<br />One connected vision.</h2>
-            <p className="max-w-md text-base leading-7 text-slate-500">Nine connected disciplines surrounding one engineering vision across physical systems, intelligence, data and digital technology.</p>
-          </div>
-
-          <div className="domain-radial relative mx-auto mt-16 hidden w-full max-w-[1100px] lg:block">
-            <svg className="domain-radial-lines absolute inset-0 h-full w-full" viewBox="0 0 1100 820" fill="none" aria-hidden="true">
-              <g stroke="#93b4f7" strokeWidth="2" strokeOpacity=".8" strokeLinecap="round">
-                <line x1="550" y1="410" x2="550" y2="100" />
-                <line x1="550" y1="410" x2="774" y2="148" />
-                <line x1="550" y1="410" x2="884" y2="310" />
-                <line x1="550" y1="410" x2="858" y2="528" />
-                <line x1="550" y1="410" x2="656" y2="710" />
-                <line x1="550" y1="410" x2="444" y2="710" />
-                <line x1="550" y1="410" x2="242" y2="528" />
-                <line x1="550" y1="410" x2="216" y2="310" />
-                <line x1="550" y1="410" x2="326" y2="148" />
-              </g>
-              <g fill="#2563eb">
-                <circle cx="550" cy="100" r="5" /><circle cx="774" cy="148" r="5" />
-                <circle cx="884" cy="310" r="5" /><circle cx="858" cy="528" r="5" />
-                <circle cx="656" cy="710" r="5" /><circle cx="444" cy="710" r="5" />
-                <circle cx="242" cy="528" r="5" /><circle cx="216" cy="310" r="5" />
-                <circle cx="326" cy="148" r="5" />
-              </g>
-            </svg>
-
-            <div className="domain-radial-hub absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center rounded-3xl border border-blue-200 bg-white px-8 py-7 text-center shadow-xl shadow-blue-900/10">
-              <span className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-700"><Cpu size={28} /></span>
-              <span className="text-[10px] font-black tracking-[.2em] text-blue-700">CENTRAL HUB</span>
-              <span className="mt-1 whitespace-nowrap text-lg font-black text-[#142033]">Engineering &amp; Technology</span>
-              <span className="mt-1 text-xs text-slate-500">One connected vision</span>
-            </div>
-
-            {domains.map((domain, index) => {
-              const Icon = domain.icon;
-              const positions = [
-                { left: "50%", top: "12.2%" },
-                { left: "70.4%", top: "18%" },
-                { left: "80.4%", top: "37.8%" },
-                { left: "78%", top: "64.4%" },
-                { left: "59.6%", top: "86.6%" },
-                { left: "40.4%", top: "86.6%" },
-                { left: "22%", top: "64.4%" },
-                { left: "19.6%", top: "37.8%" },
-                { left: "29.6%", top: "18%" },
-              ];
-              return (
-                <article key={domain.number} style={positions[index]} className="domain-radial-card group absolute z-10 flex min-h-[112px] w-[218px] -translate-x-1/2 -translate-y-1/2 items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-md shadow-slate-900/5 transition duration-300 hover:z-20 hover:scale-[1.04] hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/10">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white"><Icon size={20} /></span>
-                  <div className="min-w-0">
-                    <p className="text-[9px] font-black tracking-[.16em] text-blue-600">{domain.number} / DOMAIN</p>
-                    <h3 className="mt-1 text-sm font-bold leading-snug text-[#142033]">{domain.title}</h3>
-                    <p className="mt-1 text-[11px] leading-4 text-slate-500">{domain.detail}</p>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-
-          <div className="domain-radial-mobile mt-12 lg:hidden">
-            <div className="mx-auto mb-7 flex w-fit flex-col items-center rounded-2xl border border-blue-200 bg-white px-7 py-5 text-center shadow-lg shadow-blue-900/5">
-              <span className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-700"><Cpu size={26} /></span>
-              <span className="text-[10px] font-black tracking-[.18em] text-blue-700">CENTRAL HUB</span>
-              <span className="mt-1 text-base font-black text-[#142033]">Engineering &amp; Technology</span>
-              <span className="mt-1 text-xs text-slate-500">One connected vision</span>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {domains.map((domain) => {
-                const Icon = domain.icon;
-                return (
-                  <article key={domain.number} className="group flex min-h-[120px] items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white"><Icon size={21} /></span>
-                    <div>
-                      <p className="text-[10px] font-black tracking-[.16em] text-blue-600">{domain.number} / DOMAIN</p>
-                      <h3 className="mt-1 text-sm font-bold text-[#142033]">{domain.title}</h3>
-                      <p className="mt-1 text-xs leading-5 text-slate-500">{domain.detail}</p>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-          <p className="mt-10 text-center text-sm font-medium text-slate-500">Connecting engineering foundations with intelligent systems and digital solutions.</p>
-        </div>
-      </section>
+      <DomainExplorer />
 
       <section id="projects" className="section-shell py-24 md:py-32">
         <p className="eyebrow">03 / Selected work</p>
         <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end"><h2 className="text-4xl font-black tracking-tight md:text-5xl">Projects &amp; practice.</h2><p className="max-w-md text-sm leading-7 text-slate-500">A selection of engineering and software projects demonstrating practical development across connected disciplines.</p></div>
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {projects.map((project) => (
-            <article key={project.number} className="group rounded-2xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl md:p-9">
+            <article id={`project-${project.number}`} key={project.number} className="group rounded-2xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl md:p-9">
               <div className="flex items-center justify-between"><span className="text-xs font-black tracking-[.15em] text-blue-700">{project.category}</span><span className="text-sm font-bold text-slate-300">{project.number}</span></div>
               <h3 className="mt-7 max-w-lg text-2xl font-black leading-snug tracking-tight">{project.title}</h3><p className="mt-4 text-sm leading-7 text-slate-500">{project.summary}</p>
               <div className="mt-7 flex flex-wrap gap-2">{project.stack.map((tech) => <span key={tech} className="rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-600">{tech}</span>)}</div>
