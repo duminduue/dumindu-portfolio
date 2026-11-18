@@ -67,7 +67,7 @@ export default function HeroEngineering3D() {
     <div className="hero-webgl-wrap" aria-label="Animated 3D industrial robotic arm">
       <Canvas
         dpr={[1, 1.6]}
-        camera={{ position: [5.8, 4.4, 9.2], fov: 58 }}
+        camera={{ position: [5.8, 2.6, 9.2], fov: 58 }}
         gl={{ antialias: true, alpha: true }}
       >
         <Suspense fallback={null}>
