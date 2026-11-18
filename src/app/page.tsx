@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HeroEngineering3D from "@/components/HeroEngineering3D";
 import {
   ArrowDown,
   ArrowRight,
@@ -124,6 +125,9 @@ export default function Home() {
             <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-400">
               <span className="inline-flex items-center gap-2"><MapPin size={15} /> Sri Lanka</span>
               <span className="inline-flex items-center gap-2"><GraduationCap size={16} /> BEng (Hons), 2:1</span>
+            </div>
+            <div className="mt-5 w-full max-w-[560px]">
+              <HeroEngineering3D />
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-[390px]">
