@@ -53,11 +53,18 @@ function ConveyorScene() {
       <RoundedBox args={[9.25, 0.22, 0.94]} radius={0.045} smoothness={4} position={[0, -0.08, 0]} castShadow receiveShadow>
         <meshStandardMaterial color="#263442" metalness={0.72} roughness={0.38} />
       </RoundedBox>
-      {/* Continuous dark belt surface */}
+      {/* Continuous moving rubber conveyor belt */}
       <mesh position={[0, 0.045, 0]}>
-        <boxGeometry args={[9.05, 0.035, 0.79]} />
-        <meshStandardMaterial color="#171d24" metalness={0.12} roughness={0.88} />
+        <boxGeometry args={[9.05, 0.055, 0.79]} />
+        <meshStandardMaterial color="#111820" metalness={0.08} roughness={0.94} />
       </mesh>
+      {/* Subtle transverse belt texture */}
+      {Array.from({ length: 46 }, (_, i) => (
+        <mesh key={i} position={[-4.48 + i * 0.199, 0.075, 0]}>
+          <boxGeometry args={[0.012, 0.006, 0.77]} />
+          <meshStandardMaterial color="#26313c" roughness={0.92} />
+        </mesh>
+      ))}
 
       {/* Roller shafts and metallic rollers */}
       <group ref={rollers}>
