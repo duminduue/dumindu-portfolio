@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HeroEngineering3D from "@/components/HeroEngineering3D";
 import {
   ArrowDown,
   ArrowRight,
@@ -125,37 +126,9 @@ export default function Home() {
               <span className="inline-flex items-center gap-2"><MapPin size={15} /> Sri Lanka</span>
               <span className="inline-flex items-center gap-2"><GraduationCap size={16} /> BEng (Hons), 2:1</span>
             </div>
-            <div className="hero-3d-stage" aria-label="Animated 3D engineering scene">
+            <div className="hero-3d-stage">
               <div className="hero-3d-caption"><span /> INTELLIGENT SYSTEMS · ENGINEERING IN MOTION</div>
-              <div className="hero-3d-showcase">
-                <div className="hero-3d-platform">
-                  <div className="hero-platform-top" />
-                  <div className="hero-platform-rim" />
-                  <div className="hero-platform-glow" />
-                  <div className="hero-robot-arm">
-                    <div className="robot-arm-base" />
-                    <div className="robot-arm-joint robot-joint-one" />
-                    <div className="robot-arm-segment robot-segment-one" />
-                    <div className="robot-arm-joint robot-joint-two" />
-                    <div className="robot-arm-segment robot-segment-two" />
-                    <div className="robot-arm-joint robot-joint-three" />
-                    <div className="robot-gripper"><i /><b /></div>
-                  </div>
-                  <div className="hero-mini-rover">
-                    <span className="rover-sensor" /><span className="rover-window" />
-                    <i /><b />
-                  </div>
-                  <div className="hero-ai-chip"><Cpu size={25} /><small>AI CORE</small></div>
-                  <div className="hero-code-laptop"><Code2 size={26} /><span>BUILD / TEST / DEPLOY</span></div>
-                  <div className="hero-platform-grid" />
-                </div>
-                <div className="hero-domain-orbit">
-                  <div className="hero-domain-tag"><Bot size={18} /><span>Robotics</span></div>
-                  <div className="hero-domain-tag"><Cpu size={18} /><span>Artificial Intelligence</span></div>
-                  <div className="hero-domain-tag"><Workflow size={18} /><span>Industrial Automation</span></div>
-                  <div className="hero-domain-tag"><Code2 size={18} /><span>Software Development</span></div>
-                </div>
-              </div>
+              <HeroEngineering3D />
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-[390px]">
