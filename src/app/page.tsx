@@ -105,7 +105,7 @@ export default function Home() {
       <section id="home" className="hero-grid relative isolate bg-[#101c30] text-white">
         <div className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[520px] w-[520px] rounded-full bg-blue-500/20 blur-[110px]" />
         <div className="pointer-events-none absolute -bottom-52 left-1/4 -z-10 h-[480px] w-[480px] rounded-full bg-cyan-400/10 blur-[110px]" />
-        <div className="section-shell grid min-h-[680px] items-start gap-14 pt-6 pb-16 md:grid-cols-[1.25fr_.75fr] md:pt-8 md:pb-20">
+        <div className="section-shell grid min-h-[560px] items-start gap-14 pt-6 pb-4 md:grid-cols-[1.25fr_.75fr] md:pt-8 md:pb-6">
           <div>
             <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-300/25 bg-blue-400/10 px-4 py-2 text-xs font-bold tracking-wider text-blue-100">
               <span className="h-2 w-2 rounded-full bg-emerald-400" /> GRADUATE ENGINEER <span className="text-blue-300">·</span> SRI LANKA
