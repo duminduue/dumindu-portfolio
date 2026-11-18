@@ -7,15 +7,15 @@ import {
 } from "lucide-react";
 
 const domains = [
-  { number: "01", title: "Mechatronics Engineering", image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=85", detail: "Integrated mechanical, electrical and electronic systems", icon: Wrench, skills: ["Mechanical design", "SolidWorks", "Electronics", "Sensors", "System integration"], projects: [0, 3] },
-  { number: "02", title: "Robotics Engineering", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=85", detail: "Robot design, embedded systems and intelligent control", icon: Bot, skills: ["ESP32", "Arduino", "PID control", "MPU6050 / IMU", "Motor control", "Embedded systems"], projects: [0, 2, 3] },
-  { number: "03", title: "Artificial Intelligence", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=85", detail: "AI-enabled applications and intelligent systems", icon: BrainCircuit, skills: ["Python", "Gemini AI integration", "AI-assisted application development"], projects: [5] },
-  { number: "04", title: "Machine Learning", image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=900&q=85", detail: "Learning algorithms, modelling and prediction", icon: Cpu, skills: ["Python", "Random Forest", "Decision Trees", "Model training", "Model evaluation"], projects: [] },
-  { number: "05", title: "Data Science", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85", detail: "Data analysis, insights and evidence-based decisions", icon: Database, skills: ["Python", "Pandas", "SQL", "Power BI", "Microsoft Excel", "Data analysis"], projects: [] },
-  { number: "06", title: "Industrial Automation", image: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=900&q=85", detail: "PLC, HMI, control and smart manufacturing", icon: Factory, skills: ["PLC fundamentals", "HMI", "Sensors", "Control systems", "Industrial maintenance"], projects: [] },
-  { number: "07", title: "Cloud Computing", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=85", detail: "Cloud platforms, infrastructure and deployment", icon: Cloud, skills: ["Cloud computing fundamentals", "Application deployment", "Infrastructure concepts"], projects: [] },
-  { number: "08", title: "Cybersecurity", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=85", detail: "Secure-by-design systems and digital infrastructure", icon: ShieldCheck, skills: ["Secure software practices", "Application security fundamentals", "Network security concepts"], projects: [] },
-  { number: "09", title: "Software Engineering", image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=85", detail: "Full-stack development and reliable software systems", icon: Code2, skills: ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Express.js", "MongoDB", "SQL", "Python"], projects: [4, 5] },
+  { number: "01", title: "Mechatronics Engineering", imageIndex: 0, detail: "Integrated mechanical, electrical and electronic systems", icon: Wrench, skills: ["Mechanical design", "SolidWorks", "Electronics", "Sensors", "System integration"], projects: [0, 3] },
+  { number: "02", title: "Robotics Engineering", imageIndex: 1, detail: "Robot design, embedded systems and intelligent control", icon: Bot, skills: ["ESP32", "Arduino", "PID control", "MPU6050 / IMU", "Motor control", "Embedded systems"], projects: [0, 2, 3] },
+  { number: "03", title: "Artificial Intelligence", imageIndex: 2, detail: "AI-enabled applications and intelligent systems", icon: BrainCircuit, skills: ["Python", "Gemini AI integration", "AI-assisted application development"], projects: [5] },
+  { number: "04", title: "Machine Learning", imageIndex: 3, detail: "Learning algorithms, modelling and prediction", icon: Cpu, skills: ["Python", "Random Forest", "Decision Trees", "Model training", "Model evaluation"], projects: [] },
+  { number: "05", title: "Data Science", imageIndex: 4, detail: "Data analysis, insights and evidence-based decisions", icon: Database, skills: ["Python", "Pandas", "SQL", "Power BI", "Microsoft Excel", "Data analysis"], projects: [] },
+  { number: "06", title: "Industrial Automation", imageIndex: 5, detail: "PLC, HMI, control and smart manufacturing", icon: Factory, skills: ["PLC fundamentals", "HMI", "Sensors", "Control systems", "Industrial maintenance"], projects: [] },
+  { number: "07", title: "Cloud Computing", imageIndex: 6, detail: "Cloud platforms, infrastructure and deployment", icon: Cloud, skills: ["Cloud computing fundamentals", "Application deployment", "Infrastructure concepts"], projects: [] },
+  { number: "08", title: "Cybersecurity", imageIndex: 7, detail: "Secure-by-design systems and digital infrastructure", icon: ShieldCheck, skills: ["Secure software practices", "Application security fundamentals", "Network security concepts"], projects: [] },
+  { number: "09", title: "Software Engineering", imageIndex: 8, detail: "Full-stack development and reliable software systems", icon: Code2, skills: ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Express.js", "MongoDB", "SQL", "Python"], projects: [4, 5] },
 ];
 
 const projects = [
@@ -52,14 +52,21 @@ export default function DomainExplorer() {
                 className="domain-float-card group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               >
                 <span className="block w-full px-4 pt-4 text-base font-extrabold tracking-tight text-[#142033] sm:text-[17px]">{domain.title}</span>
-                <span className="relative mt-3 block aspect-[16/8] w-full overflow-hidden bg-slate-100">
-                  <img
-                    src={domain.image}
-                    alt={`${domain.title} visual`}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.045]"
+                <span
+                  role="img"
+                  aria-label={`${domain.title} AI-generated visual`}
+                  className="relative mt-3 block aspect-[16/8] w-full overflow-hidden rounded-xl bg-slate-950"
+                >
+                  <span
+                    className="absolute inset-0 block transition duration-500 group-hover:scale-[1.045]"
+                    style={{
+                      backgroundImage: "url('/images/domains-ai-sprite.webp')",
+                      backgroundSize: "300% 300%",
+                      backgroundPosition: `${(domain.imageIndex % 3) * 50}% ${Math.floor(domain.imageIndex / 3) * 50}%`,
+                      backgroundRepeat: "no-repeat",
+                    }}
                   />
-                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b1729]/25 via-transparent to-transparent" />
+                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b1729]/20 via-transparent to-transparent" />
                 </span>
                 <span className="flex w-full items-center justify-between px-4 py-3">
                   <span className="text-xs font-bold uppercase tracking-[.16em] text-blue-700">More</span>
