@@ -318,18 +318,18 @@ export default function Home() {
             {domains.map((domain, index) => {
               const Icon = domain.icon;
               const positions = [
-                { left: "50%", top: "4%" },
-                { left: "70.4%", top: "9%" },
+                { left: "50%", top: "12.2%" },
+                { left: "70.4%", top: "18%" },
                 { left: "80.4%", top: "37.8%" },
                 { left: "78%", top: "64.4%" },
                 { left: "59.6%", top: "86.6%" },
                 { left: "40.4%", top: "86.6%" },
                 { left: "22%", top: "64.4%" },
                 { left: "19.6%", top: "37.8%" },
-                { left: "29.6%", top: "9%" },
+                { left: "29.6%", top: "18%" },
               ];
               return (
-                <article key={domain.number} style={positions[index]} className="domain-radial-card group absolute z-10 flex min-h-[112px] w-[218px] -translate-x-1/2 -translate-y-1/2 items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-md shadow-slate-900/5 transition duration-300 hover:z-20 hover:-translate-y-[calc(50%+5px)] hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/10">
+                <article key={domain.number} style={positions[index]} className="domain-radial-card group absolute z-10 flex min-h-[112px] w-[218px] -translate-x-1/2 -translate-y-1/2 items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-md shadow-slate-900/5 transition duration-300 hover:z-20 hover:scale-[1.04] hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/10">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white"><Icon size={20} /></span>
                   <div className="min-w-0">
                     <p className="text-[9px] font-black tracking-[.16em] text-blue-600">{domain.number} / DOMAIN</p>
