@@ -7,15 +7,15 @@ import {
 } from "lucide-react";
 
 const domains = [
-  { number: "01", title: "Mechatronics Engineering", detail: "Integrated mechanical, electrical and electronic systems", icon: Wrench, skills: ["Mechanical design", "SolidWorks", "Electronics", "Sensors", "System integration"], projects: [0, 3] },
-  { number: "02", title: "Robotics Engineering", detail: "Robot design, embedded systems and intelligent control", icon: Bot, skills: ["ESP32", "Arduino", "PID control", "MPU6050 / IMU", "Motor control", "Embedded systems"], projects: [0, 2, 3] },
-  { number: "03", title: "Artificial Intelligence", detail: "AI-enabled applications and intelligent systems", icon: BrainCircuit, skills: ["Python", "Gemini AI integration", "AI-assisted application development"], projects: [5] },
-  { number: "04", title: "Machine Learning", detail: "Learning algorithms, modelling and prediction", icon: Cpu, skills: ["Python", "Random Forest", "Decision Trees", "Model training", "Model evaluation"], projects: [] },
-  { number: "05", title: "Data Science", detail: "Data analysis, insights and evidence-based decisions", icon: Database, skills: ["Python", "Pandas", "SQL", "Power BI", "Microsoft Excel", "Data analysis"], projects: [] },
-  { number: "06", title: "Industrial Automation", detail: "PLC, HMI, control and smart manufacturing", icon: Factory, skills: ["PLC fundamentals", "HMI", "Sensors", "Control systems", "Industrial maintenance"], projects: [] },
-  { number: "07", title: "Cloud Computing", detail: "Cloud platforms, infrastructure and deployment", icon: Cloud, skills: ["Cloud computing fundamentals", "Application deployment", "Infrastructure concepts"], projects: [] },
-  { number: "08", title: "Cybersecurity", detail: "Secure-by-design systems and digital infrastructure", icon: ShieldCheck, skills: ["Secure software practices", "Application security fundamentals", "Network security concepts"], projects: [] },
-  { number: "09", title: "Software Engineering", detail: "Full-stack development and reliable software systems", icon: Code2, skills: ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Express.js", "MongoDB", "SQL", "Python"], projects: [4, 5] },
+  { number: "01", title: "Mechatronics Engineering", image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=85", detail: "Integrated mechanical, electrical and electronic systems", icon: Wrench, skills: ["Mechanical design", "SolidWorks", "Electronics", "Sensors", "System integration"], projects: [0, 3] },
+  { number: "02", title: "Robotics Engineering", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=85", detail: "Robot design, embedded systems and intelligent control", icon: Bot, skills: ["ESP32", "Arduino", "PID control", "MPU6050 / IMU", "Motor control", "Embedded systems"], projects: [0, 2, 3] },
+  { number: "03", title: "Artificial Intelligence", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=85", detail: "AI-enabled applications and intelligent systems", icon: BrainCircuit, skills: ["Python", "Gemini AI integration", "AI-assisted application development"], projects: [5] },
+  { number: "04", title: "Machine Learning", image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=900&q=85", detail: "Learning algorithms, modelling and prediction", icon: Cpu, skills: ["Python", "Random Forest", "Decision Trees", "Model training", "Model evaluation"], projects: [] },
+  { number: "05", title: "Data Science", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85", detail: "Data analysis, insights and evidence-based decisions", icon: Database, skills: ["Python", "Pandas", "SQL", "Power BI", "Microsoft Excel", "Data analysis"], projects: [] },
+  { number: "06", title: "Industrial Automation", image: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=900&q=85", detail: "PLC, HMI, control and smart manufacturing", icon: Factory, skills: ["PLC fundamentals", "HMI", "Sensors", "Control systems", "Industrial maintenance"], projects: [] },
+  { number: "07", title: "Cloud Computing", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=85", detail: "Cloud platforms, infrastructure and deployment", icon: Cloud, skills: ["Cloud computing fundamentals", "Application deployment", "Infrastructure concepts"], projects: [] },
+  { number: "08", title: "Cybersecurity", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=85", detail: "Secure-by-design systems and digital infrastructure", icon: ShieldCheck, skills: ["Secure software practices", "Application security fundamentals", "Network security concepts"], projects: [] },
+  { number: "09", title: "Software Engineering", image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=85", detail: "Full-stack development and reliable software systems", icon: Code2, skills: ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Express.js", "MongoDB", "SQL", "Python"], projects: [4, 5] },
 ];
 
 const projects = [
@@ -42,28 +42,31 @@ export default function DomainExplorer() {
             <p className="max-w-md text-base leading-7 text-slate-500">Explore the skills, technologies and practical work connected to each area of my professional development.</p>
           </div>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            {domains.map((domain, index) => {
-              const Icon = domain.icon;
-              return (
-                <button
-                  type="button"
-                  key={domain.number}
-                  onClick={() => setSelected(index)}
-                  className="domain-float-card group flex min-h-[170px] items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-900/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-                >
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white">
-                    <Icon size={22} />
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block text-[10px] font-black tracking-[.16em] text-blue-600">{domain.number}</span>
-                    <span className="mt-1 block text-base font-bold leading-snug text-[#142033]">{domain.title}</span>
-                    <span className="mt-2 block text-sm leading-5 text-slate-500">{domain.detail}</span>
-                    <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-blue-700">Explore skills &amp; projects <ArrowUpRight size={13} /></span>
-                  </span>
-                </button>
-              );
-            })}
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+            {domains.map((domain, index) => (
+              <button
+                type="button"
+                key={domain.number}
+                onClick={() => setSelected(index)}
+                aria-label={`More about ${domain.title}`}
+                className="domain-float-card group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              >
+                <span className="block w-full px-5 pt-5 text-lg font-extrabold tracking-tight text-[#142033]">{domain.title}</span>
+                <span className="relative mt-4 block aspect-[16/10] w-full overflow-hidden bg-slate-100">
+                  <img
+                    src={domain.image}
+                    alt={`${domain.title} visual`}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.045]"
+                  />
+                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b1729]/25 via-transparent to-transparent" />
+                </span>
+                <span className="flex w-full items-center justify-between px-5 py-4">
+                  <span className="text-xs font-bold uppercase tracking-[.16em] text-blue-700">More</span>
+                  <ArrowUpRight size={17} className="text-blue-700 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </span>
+              </button>
+            ))}
           </div>
 
           <p className="mt-10 text-center text-sm font-medium text-slate-500">Select a domain to explore its related skills, technologies and featured projects.</p>
