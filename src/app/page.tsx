@@ -169,7 +169,7 @@ export default function Home() {
           <div className="grid items-stretch gap-10 md:grid-cols-[.86fr_1.14fr] md:gap-14">
             <div className="about-photo-panel relative min-h-[480px] overflow-hidden md:min-h-[900px]">
               <Image
-                src="/images/profile.jpeg"
+                src="/images/about-graduation.jpg"
                 alt="Dumindu at his graduation ceremony"
                 fill
                 sizes="(max-width: 768px) 100vw, 42vw"
