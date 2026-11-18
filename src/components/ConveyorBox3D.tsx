@@ -37,7 +37,7 @@ function ConveyorScene() {
     const t = clock.elapsedTime;
     if (packages.current) {
       packages.current.children.forEach((item, index) => {
-        item.position.x = ((t * 0.48 + index * 1.78) % 7.4) - 3.7;
+        item.position.x = ((t * 0.48 + index * 2.15) % 9.2) - 4.6;
       });
     }
     if (rollers.current) {
@@ -50,19 +50,19 @@ function ConveyorScene() {
   return (
     <group position={[0, -0.02, 0]}>
       {/* Heavy-duty conveyor bed */}
-      <RoundedBox args={[7.45, 0.22, 0.94]} radius={0.045} smoothness={4} position={[0, -0.08, 0]} castShadow receiveShadow>
+      <RoundedBox args={[9.25, 0.22, 0.94]} radius={0.045} smoothness={4} position={[0, -0.08, 0]} castShadow receiveShadow>
         <meshStandardMaterial color="#263442" metalness={0.72} roughness={0.38} />
       </RoundedBox>
       {/* Continuous dark belt surface */}
       <mesh position={[0, 0.045, 0]}>
-        <boxGeometry args={[7.25, 0.035, 0.79]} />
+        <boxGeometry args={[9.05, 0.035, 0.79]} />
         <meshStandardMaterial color="#171d24" metalness={0.12} roughness={0.88} />
       </mesh>
 
       {/* Roller shafts and metallic rollers */}
       <group ref={rollers}>
-        {Array.from({ length: 25 }, (_, i) => (
-          <group key={i} position={[-3.55 + i * 0.296, 0.065, 0]}>
+        {Array.from({ length: 31 }, (_, i) => (
+          <group key={i} position={[-4.45 + i * 0.296, 0.065, 0]}>
             <mesh rotation={[Math.PI / 2, 0, 0]}>
               <cylinderGeometry args={[0.052, 0.052, 0.79, 24]} />
               <meshStandardMaterial color="#aeb8c1" metalness={0.94} roughness={0.22} />
@@ -80,11 +80,11 @@ function ConveyorScene() {
       {/* Stainless side channels with fixing bolts */}
       {[-0.49, 0.49].map((z) => (
         <group key={z}>
-          <RoundedBox args={[7.5, 0.17, 0.075]} radius={0.018} smoothness={3} position={[0, 0.14, z]} castShadow>
+          <RoundedBox args={[9.3, 0.17, 0.075]} radius={0.018} smoothness={3} position={[0, 0.14, z]} castShadow>
             <meshStandardMaterial color="#aeb8c1" metalness={0.88} roughness={0.27} />
           </RoundedBox>
-          {Array.from({ length: 13 }, (_, i) => (
-            <mesh key={i} position={[-3.55 + i * 0.59, 0.235, z]}>
+          {Array.from({ length: 16 }, (_, i) => (
+            <mesh key={i} position={[-4.45 + i * 0.59, 0.235, z]}>
               <cylinderGeometry args={[0.025, 0.025, 0.012, 12]} />
               <meshStandardMaterial color="#596775" metalness={0.9} roughness={0.25} />
             </mesh>
@@ -93,7 +93,7 @@ function ConveyorScene() {
       ))}
 
       {/* End rollers, bearing housings and drive motor */}
-      {[-3.72, 3.72].map((x) => (
+      {[-4.62, 4.62].map((x) => (
         <group key={x} position={[x, -0.02, 0]}>
           <mesh rotation={[0, 0, Math.PI / 2]}>
             <cylinderGeometry args={[0.11, 0.11, 0.92, 28]} />
@@ -119,7 +119,7 @@ function ConveyorScene() {
       </group>
 
       {/* Four industrial support stands with cross-bracing and feet */}
-      {[-3.05, -1.02, 1.02, 3.05].map((x) => (
+      {[-3.9, -1.3, 1.3, 3.9].map((x) => (
         <group key={x} position={[x, -0.53, 0]}>
           {[-0.36, 0.36].map((z) => (
             <RoundedBox key={z} args={[0.085, 0.94, 0.085]} radius={0.012} smoothness={2} position={[0, 0, z]}>
@@ -144,7 +144,7 @@ function ConveyorScene() {
 
       <group ref={packages}>
         {Array.from({ length: 4 }, (_, i) => (
-          <Carton key={i} position={[-3.7 + i * 1.78, 0.49, 0]} />
+          <Carton key={i} position={[-4.6 + i * 2.15, 0.49, 0]} />
         ))}
       </group>
     </group>
@@ -157,14 +157,14 @@ export default function ConveyorBox3D() {
       <Canvas
         shadows
         dpr={[1, 1.75]}
-        camera={{ position: [0, 1.05, 10.8], fov: 32 }}
+        camera={{ position: [0, 1.05, 13.2], fov: 32 }}
         gl={{ alpha: true, antialias: true }}
       >
         <ambientLight intensity={0.8} />
         <hemisphereLight args={["#f4f7fa", "#536170", 0.8]} />
         <directionalLight position={[-2, 5, 6]} intensity={2.7} castShadow shadow-mapSize-width={2048} shadow-mapSize-height={2048} />
         <directionalLight position={[4, 2, -3]} intensity={1.1} color="#d9e6f4" />
-        <ContactShadows position={[0, -1.06, 0]} opacity={0.2} scale={9} blur={2.8} far={3} />
+        <ContactShadows position={[0, -1.06, 0]} opacity={0.2} scale={11} blur={2.8} far={3} />
         <ConveyorScene />
       </Canvas>
     </div>
