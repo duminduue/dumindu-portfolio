@@ -56,7 +56,7 @@ function RealIndustrialArm() {
   });
 
   return (
-    <group ref={armGroup} position={[0.05, -0.62, 0]} scale={1.35}>
+    <group ref={armGroup} position={[0.05, -0.62, 0]} scale={2.5}>
       <primitive object={model} />
     </group>
   );
