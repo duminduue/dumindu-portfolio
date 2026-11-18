@@ -42,38 +42,38 @@ export default function DomainExplorer() {
             <p className="max-w-md text-base leading-7 text-slate-500">Explore the skills, technologies and practical work connected to each area of my professional development.</p>
           </div>
 
-          <div className="mt-12 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-            {domains.map((domain, index) => (
-              <button
-                type="button"
-                key={domain.number}
-                onClick={() => setSelected(index)}
-                aria-label={`More about ${domain.title}`}
-                className="domain-float-card group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-              >
-                <span className="block w-full px-4 pt-4 text-base font-extrabold tracking-tight text-[#142033] sm:text-[17px]">{domain.title}</span>
-                <span
-                  role="img"
-                  aria-label={`${domain.title} AI-generated visual`}
-                  className="relative mt-3 block aspect-[16/8] w-full overflow-hidden rounded-xl bg-slate-950"
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {domains.map((domain, index) => {
+              const DomainIcon = domain.icon;
+              return (
+                <button
+                  type="button"
+                  key={domain.number}
+                  onClick={() => setSelected(index)}
+                  aria-label={`More about ${domain.title}`}
+                  className="domain-float-card group flex flex-col overflow-hidden rounded-2xl border border-blue-100 bg-white text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                 >
-                  <span
-                    className="absolute inset-0 block transition duration-500 group-hover:scale-[1.045]"
-                    style={{
-                      backgroundImage: "url('/images/domains-ai-sprite.webp')",
-                      backgroundSize: "300% 300%",
-                      backgroundPosition: `${(domain.imageIndex % 3) * 50}% ${Math.floor(domain.imageIndex / 3) * 50}%`,
-                      backgroundRepeat: "no-repeat",
-                    }}
-                  />
-                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b1729]/20 via-transparent to-transparent" />
-                </span>
-                <span className="flex w-full items-center justify-between px-4 py-3">
-                  <span className="text-xs font-bold uppercase tracking-[.16em] text-blue-700">More</span>
-                  <ArrowUpRight size={17} className="text-blue-700 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </span>
-              </button>
-            ))}
+                  <span className="block w-full px-4 pt-4 text-base font-extrabold tracking-tight text-[#142033] sm:text-[17px]">
+                    {domain.title}
+                  </span>
+                  <span className="relative mt-3 flex aspect-[16/8] w-full items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-[#eaf3ff] via-[#f7fbff] to-[#dceaff]">
+                    <span className="absolute -right-8 -top-10 h-36 w-36 rounded-full border border-blue-200/70" />
+                    <span className="absolute -bottom-14 -left-8 h-40 w-40 rounded-full border border-blue-200/60" />
+                    <span className="absolute inset-x-8 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
+                    <span className="relative flex h-20 w-20 items-center justify-center rounded-3xl border border-blue-200/80 bg-white/85 text-blue-600 shadow-[0_12px_30px_rgba(37,99,235,0.12)] transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:shadow-[0_18px_36px_rgba(37,99,235,0.2)]">
+                      <DomainIcon size={42} strokeWidth={1.7} />
+                    </span>
+                    <span className="absolute bottom-3 right-4 text-[10px] font-bold tracking-[0.22em] text-blue-300">
+                      {domain.number}
+                    </span>
+                  </span>
+                  <span className="flex w-full items-center justify-between px-4 py-3">
+                    <span className="text-xs font-bold uppercase tracking-[.16em] text-blue-700">More</span>
+                    <ArrowUpRight size={17} className="text-blue-700 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </span>
+                </button>
+              );
+            })}
           </div>
 
           <p className="mt-10 text-center text-sm font-medium text-slate-500">Select a domain to explore its related skills, technologies and featured projects.</p>
