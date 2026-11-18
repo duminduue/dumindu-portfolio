@@ -164,14 +164,70 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="section-shell py-24 md:py-32">
-        <div className="grid gap-12 md:grid-cols-[.8fr_1.2fr]">
-          <div><p className="eyebrow">01 / About me</p><h2 className="mt-5 text-4xl font-black leading-tight tracking-tight md:text-5xl">Curiosity grounded in engineering.</h2></div>
-          <div className="space-y-6 text-base leading-8 text-slate-600">
-            <p>I am a Mechatronics and Robotics Engineering graduate of <strong className="text-slate-900">Anglia Ruskin University, United Kingdom</strong>, delivered at CINEC Campus, Sri Lanka, with an Upper Second Class Honours (2:1).</p>
-            <p>My academic and practical experience has introduced me to mechanical maintenance, production systems, robotics, embedded systems, automation and software development. I enjoy turning engineering concepts into working prototypes and useful digital tools.</p>
-            <p>My long-term mission is to become an internationally competitive multidisciplinary engineer capable of designing, developing, integrating, deploying and researching advanced engineering and technology systems.</p>
-            <a href="#experience" className="inline-flex items-center gap-2 font-bold text-blue-700 hover:text-blue-500">Explore my background <ArrowRight size={16} /></a>
+      <section id="about" className="bg-[#f6f8fb] py-24 md:py-32">
+        <div className="section-shell">
+          <div className="grid gap-12 md:grid-cols-[.82fr_1.18fr] md:gap-16">
+            <div>
+              <p className="eyebrow">01 / About me</p>
+              <h2 className="mt-6 max-w-md text-4xl font-black leading-[1.12] tracking-tight text-[#142033] md:text-5xl">
+                Engineering curiosity. Practical thinking. A connected future.
+              </h2>
+              <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-xs font-bold tracking-wide text-slate-600">
+                <span className="h-2 w-2 rounded-full bg-blue-600" />
+                MECHATRONICS × ROBOTICS × TECHNOLOGY
+              </div>
+            </div>
+
+            <div>
+              <p className="text-lg leading-8 text-slate-700">
+                I am a Mechatronics and Robotics Engineering graduate of
+                <strong className="text-[#142033]"> Anglia Ruskin University, United Kingdom</strong>,
+                with the programme delivered at CINEC Campus, Sri Lanka. I completed my BEng (Hons)
+                with <strong className="text-[#142033]">Upper Second Class Honours (2:1)</strong>.
+              </p>
+              <p className="mt-6 text-base leading-8 text-slate-600">
+                My journey combines an academic foundation in mechanical engineering with practical
+                exposure to industrial maintenance, production systems, robotics, embedded systems
+                and software development. I enjoy understanding how things work, solving practical
+                problems and turning ideas into working systems.
+              </p>
+              <div className="mt-10 grid gap-4 sm:grid-cols-2">
+                <article className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
+                    <GraduationCap size={22} />
+                  </div>
+                  <p className="mt-5 text-xs font-black tracking-[.16em] text-blue-700">ACADEMIC FOUNDATION</p>
+                  <h3 className="mt-2 text-lg font-black text-[#142033]">Built on engineering</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-500">
+                    Mechanical engineering foundations developed further through mechatronics and robotics.
+                  </p>
+                </article>
+                <article className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
+                    <Workflow size={22} />
+                  </div>
+                  <p className="mt-5 text-xs font-black tracking-[.16em] text-blue-700">ENGINEERING PHILOSOPHY</p>
+                  <h3 className="mt-2 text-lg font-black text-[#142033]">Make ideas work</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-500">
+                    Learn by designing, building, testing and improving practical solutions.
+                  </p>
+                </article>
+              </div>
+              <div className="mt-5 rounded-2xl bg-[#142033] p-7 text-white md:p-8">
+                <p className="text-xs font-black tracking-[.18em] text-blue-300">MY CAREER VISION</p>
+                <p className="mt-3 text-xl font-bold leading-8 md:text-2xl">
+                  To contribute to intelligent engineering systems at the intersection of robotics,
+                  artificial intelligence and industrial automation.
+                </p>
+                <p className="mt-4 text-sm leading-7 text-slate-300">
+                  I aim to keep growing as a multidisciplinary engineer through hands-on development,
+                  continuous learning and research-led problem solving.
+                </p>
+              </div>
+              <a href="#experience" className="mt-8 inline-flex items-center gap-2 font-bold text-blue-700 transition hover:gap-3 hover:text-blue-500">
+                Explore my background <ArrowRight size={16} />
+              </a>
+            </div>
           </div>
         </div>
       </section>
