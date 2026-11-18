@@ -72,8 +72,8 @@ function DisplayBase() {
 function SceneContents() {
   return (
     <>
-      <color attach="background" args={["#0b192c"]} />
-      <fog attach="fog" args={["#0b192c", 8, 15]} />
+      <color attach="background" args={["#101c30"]} />
+      <fog attach="fog" args={["#101c30", 8, 15]} />
       <ambientLight intensity={1.1} />
       <hemisphereLight args={["#d7efff", "#071426", 1.15]} />
       <directionalLight position={[4, 7, 5]} intensity={2.8} castShadow shadow-mapSize-width={2048} shadow-mapSize-height={2048} />
@@ -91,7 +91,7 @@ function SceneContents() {
 export default function HeroEngineering3D() {
   return (
     <div className="hero-webgl-wrap" aria-label="Animated 3D industrial robotic arm showcase">
-      <Canvas shadows dpr={[1, 1.6]} camera={{ position: [4.4, 3.1, 6.2], fov: 34 }} gl={{ antialias: true, alpha: false }}>
+      <Canvas shadows dpr={[1, 1.6]} camera={{ position: [4.4, 3.1, 6.2], fov: 34 }} gl={{ antialias: true, alpha: true }}>
         <Suspense fallback={null}>
           <SceneContents />
         </Suspense>
