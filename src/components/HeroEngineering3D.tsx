@@ -50,7 +50,7 @@ function RealIndustrialArm() {
   useFrame((_, delta) => mixer.update(Math.min(delta, 0.04)));
 
   return (
-    <group position={[-1.65, -0.32, 0]} scale={1.12}>
+    <group position={[-1.65, -0.32, 0]} scale={1.72}>
       <primitive object={model} />
     </group>
   );
