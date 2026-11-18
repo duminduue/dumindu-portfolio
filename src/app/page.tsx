@@ -278,21 +278,53 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="domains" className="bg-white py-24 md:py-32">
+      <section id="domains" className="bg-[#f7f9fc] py-24 md:py-32">
         <div className="section-shell">
           <p className="eyebrow">02 / Professional direction</p>
-          <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end"><h2 className="max-w-xl text-4xl font-black tracking-tight md:text-5xl">Nine domains.<br />One connected vision.</h2><p className="max-w-md text-base leading-7 text-slate-500">Three complementary pillars describe the professional direction I am building across engineering, intelligence and digital technology.</p></div>
-          <div className="mt-12 grid gap-5 lg:grid-cols-3">
-            {pillars.map((pillar, index) => (
-              <div key={pillar.title} className="rounded-2xl border border-slate-200 bg-[#f7f9fc] p-7">
-                <p className="text-xs font-black tracking-[.2em] text-blue-700">PILLAR 0{index + 1}</p><h3 className="mt-5 text-2xl font-black">{pillar.title}</h3><p className="mt-3 min-h-[72px] text-sm leading-6 text-slate-500">{pillar.description}</p>
-                <div className="mt-7 space-y-3">{pillar.items.map((item) => <div key={item} className="flex items-center gap-3 border-t border-slate-200 pt-3 text-sm font-semibold text-slate-700"><span className="h-1.5 w-1.5 rounded-full bg-blue-600" />{item}</div>)}</div>
-              </div>
-            ))}
+          <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <h2 className="max-w-xl text-4xl font-black tracking-tight text-[#142033] md:text-5xl">Nine domains.<br />One connected vision.</h2>
+            <p className="max-w-md text-base leading-7 text-slate-500">A connected engineering network bringing physical systems, intelligence, data and digital technology together.</p>
           </div>
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {domains.map((domain) => { const Icon = domain.icon; return <div key={domain.number} className="flex gap-4 rounded-xl border border-slate-200 p-5 transition hover:border-blue-300 hover:shadow-md"><div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700"><Icon size={21} /></div><div><p className="text-[10px] font-black tracking-widest text-blue-600">{domain.number}</p><h3 className="mt-1 text-sm font-bold">{domain.title}</h3><p className="mt-1 text-xs leading-5 text-slate-500">{domain.detail}</p></div></div>; })}
+
+          <div className="relative mx-auto mt-14 max-w-5xl">
+            <div className="relative z-10 mx-auto flex w-fit flex-col items-center rounded-2xl border border-blue-200 bg-white px-8 py-5 text-center shadow-lg shadow-blue-900/5">
+              <span className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-700"><Cpu size={26} /></span>
+              <span className="text-xs font-black tracking-[.18em] text-blue-700">CENTRAL HUB</span>
+              <span className="mt-1 text-lg font-black text-[#142033]">Engineering &amp; Technology</span>
+              <span className="mt-1 text-xs text-slate-500">One connected vision</span>
+            </div>
+
+            <div className="pointer-events-none relative -mt-1 h-24 w-full" aria-hidden="true">
+              <svg viewBox="0 0 1000 120" preserveAspectRatio="none" className="h-full w-full overflow-visible">
+                <path d="M500 0 V28 H166 V112 M500 28 V112 M500 28 H834 V112" fill="none" stroke="#93b4f7" strokeWidth="2" strokeLinecap="round" />
+                <path d="M166 28 V112 M500 28 V112 M834 28 V112" fill="none" stroke="#2563eb" strokeOpacity=".2" strokeWidth="1.5" strokeDasharray="4 7" />
+                <circle cx="500" cy="28" r="5" fill="#2563eb" />
+                <circle cx="166" cy="112" r="4" fill="#2563eb" />
+                <circle cx="500" cy="112" r="4" fill="#2563eb" />
+                <circle cx="834" cy="112" r="4" fill="#2563eb" />
+              </svg>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {domains.map((domain) => {
+                const Icon = domain.icon;
+                return (
+                  <article key={domain.number} className="group relative min-h-[150px] rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/10">
+                    <div className="flex items-start gap-4">
+                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white"><Icon size={22} /></span>
+                      <div className="min-w-0">
+                        <p className="text-[10px] font-black tracking-[.18em] text-blue-600">{domain.number} / DOMAIN</p>
+                        <h3 className="mt-1 text-base font-bold leading-snug text-[#142033]">{domain.title}</h3>
+                        <p className="mt-2 text-xs leading-5 text-slate-500">{domain.detail}</p>
+                      </div>
+                    </div>
+                    <span aria-hidden="true" className="absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-blue-500 opacity-0 transition group-hover:opacity-100" />
+                  </article>
+                );
+              })}
+            </div>
           </div>
+          <p className="mt-10 text-center text-sm font-medium text-slate-500">Connecting engineering foundations with intelligent systems and digital solutions.</p>
         </div>
       </section>
 
