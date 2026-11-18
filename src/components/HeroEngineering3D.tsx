@@ -62,124 +62,104 @@ function RealIndustrialArm() {
   );
 }
 
-function HumanoidRobot() {
-  const robot = useRef<THREE.Group>(null);
-  const head = useRef<THREE.Group>(null);
-  const leftArm = useRef<THREE.Group>(null);
-  const rightArm = useRef<THREE.Group>(null);
+function ConveyorProductionCell() {
+  const productA = useRef<THREE.Group>(null);
+  const productB = useRef<THREE.Group>(null);
+  const indicator = useRef<THREE.Mesh>(null);
 
   useFrame(({ clock }) => {
     const t = clock.elapsedTime;
-    if (robot.current) robot.current.position.y = 0.55 + Math.sin(t * 0.9) * 0.025;
-    if (head.current) head.current.rotation.y = Math.sin(t * 0.55) * 0.16;
-    if (leftArm.current) leftArm.current.rotation.z = -0.12 + Math.sin(t * 0.8) * 0.08;
-    if (rightArm.current) rightArm.current.rotation.z = 0.12 + Math.sin(t * 0.8 + 1) * 0.08;
+    const cycle = (t * 0.42) % 3.1;
+    if (productA.current) productA.current.position.x = -0.95 + cycle;
+    if (productB.current) productB.current.position.x = -0.95 + ((cycle + 1.55) % 3.1);
+    if (indicator.current) {
+      const material = indicator.current.material as THREE.MeshStandardMaterial;
+      material.emissiveIntensity = 0.45 + (Math.sin(t * 4) + 1) * 0.35;
+    }
   });
 
-  const silver = "#cbd5e1";
+  const steel = "#8fa3b8";
   const dark = "#17243a";
   const blue = "#126bff";
   const cyan = "#22d3ee";
 
   return (
-    <group ref={robot} position={[4.2, 0.55, 0]} scale={1.05}>
-      {/* torso and chest armour */}
-      <mesh position={[0, 0.02, 0]} castShadow>
-        <capsuleGeometry args={[0.28, 0.62, 8, 16]} />
-        <meshStandardMaterial color={silver} metalness={0.82} roughness={0.24} />
+    <group position={[1.55, -1.52, 0.15]}>
+      {/* Conveyor frame and dark moving belt */}
+      <mesh position={[0.55, 0, 0]} castShadow>
+        <boxGeometry args={[3.35, 0.22, 0.82]} />
+        <meshStandardMaterial color={dark} metalness={0.72} roughness={0.34} />
       </mesh>
-      <mesh position={[0, 0.12, 0.285]}>
-        <boxGeometry args={[0.3, 0.28, 0.035]} />
-        <meshStandardMaterial color={dark} metalness={0.72} roughness={0.3} />
+      <mesh position={[0.55, 0.13, 0]}>
+        <boxGeometry args={[3.12, 0.055, 0.68]} />
+        <meshStandardMaterial color="#26384d" metalness={0.22} roughness={0.72} />
       </mesh>
-      <mesh position={[0, 0.1, 0.31]}>
-        <boxGeometry args={[0.19, 0.035, 0.025]} />
-        <meshBasicMaterial color={cyan} />
-      </mesh>
-      <mesh position={[0, -0.3, 0]}>
-        <cylinderGeometry args={[0.22, 0.26, 0.22, 32]} />
-        <meshStandardMaterial color={blue} metalness={0.7} roughness={0.25} />
-      </mesh>
-      {/* neck and articulated head */}
-      <mesh position={[0, 0.48, 0]}>
-        <cylinderGeometry args={[0.09, 0.11, 0.18, 24]} />
-        <meshStandardMaterial color={dark} metalness={0.85} roughness={0.22} />
-      </mesh>
-      <group ref={head} position={[0, 0.76, 0]}>
-        <mesh castShadow>
-          <sphereGeometry args={[0.22, 32, 24]} />
-          <meshStandardMaterial color={silver} metalness={0.86} roughness={0.2} />
+      {Array.from({ length: 13 }, (_, index) => (
+        <mesh key={index} position={[-0.98 + index * 0.255, -0.015, 0]} rotation={[Math.PI / 2, 0, 0]}>
+          <cylinderGeometry args={[0.055, 0.055, 0.74, 20]} />
+          <meshStandardMaterial color={steel} metalness={0.88} roughness={0.22} />
         </mesh>
-        <mesh position={[0, -0.015, 0.185]}>
-          <boxGeometry args={[0.34, 0.13, 0.09]} />
-          <meshStandardMaterial color={dark} metalness={0.8} roughness={0.24} />
-        </mesh>
-        <mesh position={[-0.07, -0.015, 0.225]}>
-          <sphereGeometry args={[0.035, 16, 12]} />
-          <meshBasicMaterial color={cyan} />
-        </mesh>
-        <mesh position={[0.07, -0.015, 0.225]}>
-          <sphereGeometry args={[0.035, 16, 12]} />
-          <meshBasicMaterial color={cyan} />
-        </mesh>
-      </group>
-      {/* shoulder joints and articulated arms */}
+      ))}
       {([-1, 1] as const).map((side) => (
-        <group key={side} ref={side === -1 ? leftArm : rightArm} position={[side * 0.35, 0.28, 0]}>
+        <group key={side}>
+          <mesh position={[0.55, 0.23, side * 0.39]}>
+            <boxGeometry args={[3.3, 0.13, 0.07]} />
+            <meshStandardMaterial color={blue} metalness={0.7} roughness={0.26} />
+          </mesh>
+          {([-0.72, 0.55, 1.82] as const).map((x) => (
+            <mesh key={x} position={[x, -0.28, side * 0.29]}>
+              <boxGeometry args={[0.12, 0.48, 0.12]} />
+              <meshStandardMaterial color={steel} metalness={0.84} roughness={0.25} />
+            </mesh>
+          ))}
+        </group>
+      ))}
+      {/* Sensor gantry at the inspection point */}
+      <mesh position={[0.1, 0.72, -0.02]}>
+        <boxGeometry args={[0.09, 1.05, 0.1]} />
+        <meshStandardMaterial color={steel} metalness={0.85} roughness={0.24} />
+      </mesh>
+      <mesh position={[0.1, 1.22, 0]}>
+        <boxGeometry args={[0.18, 0.12, 0.94]} />
+        <meshStandardMaterial color={dark} metalness={0.78} roughness={0.28} />
+      </mesh>
+      <mesh ref={indicator} position={[0.1, 1.14, 0.49]}>
+        <sphereGeometry args={[0.055, 18, 14]} />
+        <meshStandardMaterial color={cyan} emissive={cyan} emissiveIntensity={0.7} />
+      </mesh>
+      {/* Moving products */}
+      {[productA, productB].map((ref, index) => (
+        <group key={index} ref={ref} position={[-0.95, 0.32, 0]}>
           <mesh castShadow>
-            <sphereGeometry args={[0.12, 24, 18]} />
-            <meshStandardMaterial color={blue} metalness={0.82} roughness={0.22} />
+            <boxGeometry args={[0.34, 0.34, 0.34]} />
+            <meshStandardMaterial color={index === 0 ? "#d9e4ef" : "#2875e8"} metalness={0.42} roughness={0.3} />
           </mesh>
-          <mesh position={[0, -0.25, 0]} castShadow>
-            <capsuleGeometry args={[0.09, 0.34, 6, 12]} />
-            <meshStandardMaterial color={silver} metalness={0.82} roughness={0.24} />
-          </mesh>
-          <mesh position={[0, -0.49, 0]}>
-            <sphereGeometry args={[0.11, 20, 16]} />
-            <meshStandardMaterial color={dark} metalness={0.85} roughness={0.22} />
-          </mesh>
-          <mesh position={[0, -0.68, 0]} castShadow>
-            <capsuleGeometry args={[0.065, 0.27, 6, 12]} />
-            <meshStandardMaterial color={silver} metalness={0.82} roughness={0.24} />
-          </mesh>
-          <mesh position={[0, -0.85, 0.02]}>
-            <boxGeometry args={[0.14, 0.1, 0.16]} />
-            <meshStandardMaterial color={blue} metalness={0.7} roughness={0.25} />
+          <mesh position={[0, 0, 0.176]}>
+            <boxGeometry args={[0.2, 0.12, 0.012]} />
+            <meshBasicMaterial color={index === 0 ? cyan : "#dbeafe"} />
           </mesh>
         </group>
       ))}
-      {/* hips and two mechanical legs */}
-      <mesh position={[0, -0.48, 0]}>
-        <boxGeometry args={[0.38, 0.18, 0.28]} />
-        <meshStandardMaterial color={dark} metalness={0.8} roughness={0.26} />
+      {/* Compact sorting / reject actuator at the discharge end */}
+      <mesh position={[2.32, 0.48, -0.08]} castShadow>
+        <boxGeometry args={[0.22, 0.42, 0.25]} />
+        <meshStandardMaterial color={dark} metalness={0.8} roughness={0.28} />
       </mesh>
-      {([-1, 1] as const).map((side) => (
-        <group key={side} position={[side * 0.13, -0.72, 0]}>
-          <mesh position={[0, -0.24, 0]} castShadow>
-            <capsuleGeometry args={[0.095, 0.38, 6, 12]} />
-            <meshStandardMaterial color={silver} metalness={0.84} roughness={0.23} />
-          </mesh>
-          <mesh position={[0, -0.5, 0]}>
-            <sphereGeometry args={[0.095, 20, 16]} />
-            <meshStandardMaterial color={blue} metalness={0.8} roughness={0.22} />
-          </mesh>
-          <mesh position={[0, -0.72, 0.07]} castShadow>
-            <boxGeometry args={[0.21, 0.11, 0.34]} />
-            <meshStandardMaterial color={dark} metalness={0.82} roughness={0.24} />
-          </mesh>
-          <mesh position={[0, -0.72, 0.27]}>
-            <boxGeometry args={[0.14, 0.035, 0.025]} />
-            <meshBasicMaterial color={cyan} />
-          </mesh>
-        </group>
-      ))}
+      <mesh position={[2.32, 0.72, -0.08]}>
+        <cylinderGeometry args={[0.09, 0.09, 0.12, 24]} />
+        <meshStandardMaterial color={blue} metalness={0.78} roughness={0.24} />
+      </mesh>
+      <mesh position={[2.32, 0.42, 0.12]}>
+        <boxGeometry args={[0.12, 0.22, 0.45]} />
+        <meshStandardMaterial color={steel} metalness={0.85} roughness={0.22} />
+      </mesh>
     </group>
   );
 }
 
 export default function HeroEngineering3D() {
   return (
-    <div className="hero-webgl-wrap" aria-label="Animated silver and electric-blue six-axis industrial robotic arm">
+    <div className="hero-webgl-wrap" aria-label="Animated 3D robotic arm and compact automated conveyor production cell">
       <Canvas
         dpr={[1, 1.6]}
         camera={{ position: [4.5, 3.5, 7.2], fov: 58 }}
@@ -191,7 +171,8 @@ export default function HeroEngineering3D() {
           <directionalLight position={[4, 7, 5]} intensity={3.1} />
           <pointLight position={[-2, 2, 2]} color="#22d3ee" intensity={22} distance={8} />
           <pointLight position={[3, 2, -2]} color="#126bff" intensity={18} distance={8} />
-          <RealIndustrialArm />\n          <HumanoidRobot />
+          <RealIndustrialArm />
+          <ConveyorProductionCell />
         </Suspense>
       </Canvas>
     </div>
