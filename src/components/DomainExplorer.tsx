@@ -34,7 +34,7 @@ export default function DomainExplorer() {
 
   return (
     <>
-      <section id="domains" className="bg-[#f7f9fc] py-24 md:py-32">
+      <section id="domains" className="bg-[#f7f9fc] pt-4 pb-24 md:pt-6 md:pb-32">
         <div className="section-shell">
           <p className="eyebrow">02 / Professional direction</p>
           <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end">
