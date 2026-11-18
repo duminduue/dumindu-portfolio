@@ -60,3 +60,18 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
+.about-photo-panel {
+  isolation: isolate;
+}
+
+.about-photo-panel img {
+  filter: grayscale(1) contrast(1.02);
+}
+
+@media (min-width: 768px) {
+  .about-photo-panel {
+    -webkit-mask-image: linear-gradient(to right, #000 0%, #000 72%, transparent 100%);
+    mask-image: linear-gradient(to right, #000 0%, #000 72%, transparent 100%);
+  }
+}
