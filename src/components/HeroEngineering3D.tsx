@@ -52,11 +52,11 @@ function RealIndustrialArm() {
     mixer.update(Math.min(delta, 0.04));
     if (!armGroup.current) return;
     armGroup.current.rotation.y = clock.elapsedTime * 0.18 + Math.sin(clock.elapsedTime * 0.35) * 0.08;
-    armGroup.current.position.y = -2.35 + Math.sin(clock.elapsedTime * 0.65) * 0.025;
+    armGroup.current.position.y = -2.75 + Math.sin(clock.elapsedTime * 0.65) * 0.025;
   });
 
   return (
-    <group ref={armGroup} position={[0.75, -2.35, 0]} scale={3.2}>
+    <group ref={armGroup} position={[0.75, -2.75, 0]} scale={3.8}>
       <primitive object={model} />
     </group>
   );
