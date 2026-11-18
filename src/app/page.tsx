@@ -21,12 +21,18 @@ import {
   Cloud,
   ShieldCheck,
   Wrench,
+  Activity,
+  Wind,
+  Car,
+  Calculator,
+  Sprout,
 } from "lucide-react";
 
 const projects = [
   {
     number: "01",
     title: "Self-Balancing Mobile Robot Using PID Control",
+    visual: Cpu,
     category: "ROBOTICS · EMBEDDED SYSTEMS",
     summary: "Designed and developed an ESP32-based self-balancing robot using MPU6050 IMU sensing and PID control, with encoder feedback and wireless web-based control.",
     stack: ["ESP32", "MPU6050", "PID", "SOLIDWORKS"],
@@ -34,6 +40,7 @@ const projects = [
   {
     number: "02",
     title: "IoT-Based Health Monitoring System",
+    visual: Activity,
     category: "IOT · EMBEDDED SYSTEMS",
     summary: "Developed a sensor-based monitoring system for heart rate, SpO₂, body temperature and ambient conditions, with wireless monitoring through Blynk IoT.",
     stack: ["ESP32", "MAX30102", "DS18B20", "Blynk"],
@@ -41,6 +48,7 @@ const projects = [
   {
     number: "03",
     title: "Autonomous Mobile Robot for Indoor Air Quality Monitoring",
+    visual: Wind,
     category: "AUTONOMOUS ROBOTICS · IOT",
     summary: "Developed an ESP32-based mobile robot combining line-following navigation, checkpoint recognition, obstacle avoidance and environmental sensing.",
     stack: ["ESP32", "MQ-2", "MQ-135", "DHT22"],
@@ -48,6 +56,7 @@ const projects = [
   {
     number: "04",
     title: "Hand Gesture-Based Robotic Car",
+    visual: Car,
     category: "ROBOTICS · WIRELESS CONTROL",
     summary: "Built a wireless gesture-controlled robotic car using dual ESP32 microcontrollers and MPU6050-based tilt sensing with variable-speed motor control.",
     stack: ["Dual ESP32", "MPU6050", "ESP-NOW"],
@@ -55,6 +64,7 @@ const projects = [
   {
     number: "05",
     title: "Industrial Engineering Calculator",
+    visual: Calculator,
     category: "SOFTWARE ENGINEERING",
     summary: "Developed an engineering calculation platform with formula calculations, unit conversion, a formula library and calculation history. The CV records 104 passing automated tests.",
     stack: ["React", "TypeScript", "Python", "FastAPI", "SQLite"],
@@ -62,6 +72,7 @@ const projects = [
   {
     number: "06",
     title: "PlantorAI – AI-Powered Plant Care Platform",
+    visual: Sprout,
     category: "AI APPLICATIONS · FULL-STACK",
     summary: "Built a full-stack plant-care platform with a searchable catalogue, Gemini AI-powered assistant and role-based customer, seller and admin experiences. The CV records 55 passing backend tests.",
     stack: ["React", "TypeScript", "Node.js", "MongoDB", "Gemini AI"],
@@ -271,17 +282,41 @@ export default function Home() {
 
       <section id="projects" className="section-shell py-24 md:py-32">
         <p className="eyebrow">03 / Selected work</p>
-        <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end"><h2 className="text-4xl font-black tracking-tight md:text-5xl">Projects &amp; practice.</h2><p className="max-w-md text-sm leading-7 text-slate-500">A selection of engineering and software projects demonstrating practical development across connected disciplines.</p></div>
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
-          {projects.map((project) => (
-            <article id={`project-${project.number}`} key={project.number} className="group rounded-2xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl md:p-9">
-              <div className="flex items-center justify-between"><span className="text-xs font-black tracking-[.15em] text-blue-700">{project.category}</span><span className="text-sm font-bold text-slate-300">{project.number}</span></div>
-              <h3 className="mt-7 max-w-lg text-2xl font-black leading-snug tracking-tight">{project.title}</h3><p className="mt-4 text-sm leading-7 text-slate-500">{project.summary}</p>
-              <div className="mt-7 flex flex-wrap gap-2">{project.stack.map((tech) => <span key={tech} className="rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-600">{tech}</span>)}</div>
-            </article>
-          ))}
+        <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <h2 className="text-4xl font-black tracking-tight md:text-5xl">Projects &amp; practice.</h2>
+          <p className="max-w-md text-sm leading-7 text-slate-500">A selection of engineering and software projects demonstrating practical development across connected disciplines.</p>
         </div>
-        <p className="mt-7 text-xs leading-6 text-slate-400">Project descriptions are based on the current CV. Detailed photographs, repositories, demonstrations and verified outcomes can be added as evidence is prepared.</p>
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {projects.map((project) => {
+            const ProjectIcon = project.visual;
+            return (
+              <article id={`project-${project.number}`} key={project.number} className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
+                <div className="relative flex aspect-[16/7] items-center justify-center overflow-hidden bg-gradient-to-br from-[#eaf3ff] via-[#f7fbff] to-[#dceaff]">
+                  <div aria-hidden="true" className="absolute -left-12 -top-24 h-64 w-64 rounded-full border border-blue-200/70" />
+                  <div aria-hidden="true" className="absolute -bottom-36 -right-12 h-72 w-72 rounded-full border border-blue-200/70" />
+                  <div aria-hidden="true" className="absolute inset-x-12 top-1/2 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
+                  <div className="relative flex h-20 w-20 items-center justify-center rounded-3xl border border-blue-200/80 bg-white/90 text-blue-600 shadow-[0_14px_34px_rgba(37,99,235,0.14)] transition duration-300 group-hover:-translate-y-1 group-hover:scale-105">
+                    <ProjectIcon size={38} strokeWidth={1.55} />
+                  </div>
+                  <span className="absolute bottom-5 right-6 text-xs font-black tracking-[.25em] text-blue-400">{project.number}</span>
+                  <span className="absolute left-6 top-5 rounded-full border border-blue-200/80 bg-white/75 px-3 py-1.5 text-[10px] font-black tracking-[.16em] text-blue-700">PROJECT SHOWCASE</span>
+                </div>
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-[10px] font-black tracking-[.15em] text-blue-700">{project.category}</span>
+                    <span className="text-xs font-bold text-slate-300">{project.number} / 06</span>
+                  </div>
+                  <h3 className="mt-4 max-w-lg text-xl font-black leading-snug tracking-tight text-[#142033] md:text-2xl">{project.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-500">{project.summary}</p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {project.stack.map((tech) => <span key={tech} className="rounded-full bg-slate-100 px-3 py-1.5 text-[11px] font-semibold text-slate-600">{tech}</span>)}
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+        <p className="mt-7 text-xs leading-6 text-slate-400">Project visuals are illustrative placeholders. Original project photographs, repository links and demonstrations can be added when the evidence is ready.</p>
       </section>
 
       <section id="experience" className="bg-white py-24 md:py-32">
