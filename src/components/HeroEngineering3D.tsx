@@ -49,7 +49,11 @@ function RealIndustrialArm() {
 
   useFrame((_, delta) => mixer.update(Math.min(delta, 0.04)));
 
-  return <primitive object={model} />;
+  return (
+    <group position={[-1.65, -0.05, 0]} scale={1.38}>
+      <primitive object={model} />
+    </group>
+  );
 }
 
 export default function HeroEngineering3D() {
