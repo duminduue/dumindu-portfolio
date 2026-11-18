@@ -42,7 +42,7 @@ export default function DomainExplorer() {
             <p className="max-w-md text-base leading-7 text-slate-500">Explore the skills, technologies and practical work connected to each area of my professional development.</p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {domains.map((domain, index) => {
               const DomainIcon = domain.icon;
               return (
@@ -51,23 +51,23 @@ export default function DomainExplorer() {
                   key={domain.number}
                   onClick={() => setSelected(index)}
                   aria-label={`More about ${domain.title}`}
-                  className="domain-float-card group flex flex-col overflow-hidden rounded-xl border border-blue-100 bg-white text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                  className="domain-float-card group flex flex-col overflow-hidden rounded-lg border border-blue-100 bg-white text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                 >
-                  <span className="block w-full px-3 pt-3 text-sm font-extrabold tracking-tight text-[#142033] sm:text-[15px]">
+                  <span className="block w-full px-2.5 pt-2.5 text-[13px] font-extrabold leading-snug tracking-tight text-[#142033] sm:text-sm">
                     {domain.title}
                   </span>
-                  <span className="relative mt-2 flex aspect-[16/7] w-full items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-[#eaf3ff] via-[#f7fbff] to-[#dceaff]">
+                  <span className="relative mt-2 flex aspect-[16/6] w-full items-center justify-center overflow-hidden rounded-md bg-gradient-to-br from-[#eaf3ff] via-[#f7fbff] to-[#dceaff]">
                     <span className="absolute -right-8 -top-10 h-36 w-36 rounded-full border border-blue-200/70" />
                     <span className="absolute -bottom-14 -left-8 h-40 w-40 rounded-full border border-blue-200/60" />
                     <span className="absolute inset-x-8 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
-                    <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-blue-200/80 bg-white/85 text-blue-600 shadow-[0_10px_24px_rgba(37,99,235,0.12)] transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:shadow-[0_16px_30px_rgba(37,99,235,0.2)]">
-                      <DomainIcon size={30} strokeWidth={1.7} />
+                    <span className="relative flex h-11 w-11 items-center justify-center rounded-xl border border-blue-200/80 bg-white/85 text-blue-600 shadow-[0_8px_18px_rgba(37,99,235,0.12)] transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:shadow-[0_14px_26px_rgba(37,99,235,0.2)]">
+                      <DomainIcon size={24} strokeWidth={1.7} />
                     </span>
                     <span className="absolute bottom-3 right-4 text-[10px] font-bold tracking-[0.22em] text-blue-300">
                       {domain.number}
                     </span>
                   </span>
-                  <span className="flex w-full items-center justify-between px-3 py-2.5">
+                  <span className="flex w-full items-center justify-between px-2.5 py-2">
                     <span className="text-xs font-bold uppercase tracking-[.16em] text-blue-700">More</span>
                     <ArrowUpRight size={17} className="text-blue-700 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                   </span>
