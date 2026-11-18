@@ -172,6 +172,7 @@ export default function Home() {
                 src="/images/about-graduation.jpg"
                 alt="Dumindu at his graduation ceremony"
                 fill
+                quality={100}
                 sizes="(max-width: 768px) 100vw, 42vw"
                 className="object-cover object-[center_24%] grayscale"
               />
