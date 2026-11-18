@@ -169,7 +169,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="about-section pt-8 pb-16 md:pt-10 md:pb-24">
+      <section id="about" className="about-section pt-8 pb-4 md:pt-10 md:pb-8">
         <div className="section-shell">
           <div className="about-layout">
             <div className="about-left-column">
