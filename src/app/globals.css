@@ -510,7 +510,8 @@ a {
   position: relative;
   width: min(100%, 560px);
   height: 205px;
-  margin: 0 auto;
+  margin: -24px auto -24px;
+  transform: translateY(-24px);
   overflow: visible;
   background: transparent;
 }
