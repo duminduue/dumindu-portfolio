@@ -51,7 +51,7 @@ function RealIndustrialArm() {
   useFrame(({ clock }, delta) => {
     mixer.update(Math.min(delta, 0.04));
     if (!armGroup.current) return;
-    armGroup.current.rotation.y = Math.sin(clock.elapsedTime * 0.22) * 0.12;
+    armGroup.current.rotation.y = clock.elapsedTime * 0.18 + Math.sin(clock.elapsedTime * 0.35) * 0.08;
     armGroup.current.position.y = -0.62 + Math.sin(clock.elapsedTime * 0.65) * 0.025;
   });
 
