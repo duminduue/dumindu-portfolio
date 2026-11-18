@@ -125,6 +125,18 @@ export default function Home() {
               <span className="inline-flex items-center gap-2"><MapPin size={15} /> Sri Lanka</span>
               <span className="inline-flex items-center gap-2"><GraduationCap size={16} /> BEng (Hons), 2:1</span>
             </div>
+            <div className="hero-3d-stage" aria-hidden="true">
+              <div className="hero-3d-caption"><span /> INTELLIGENT SYSTEMS · ENGINEERING IN MOTION</div>
+              <div className="hero-3d-scene">
+                <div className="hero-3d-ring hero-3d-ring-one"><i /></div>
+                <div className="hero-3d-ring hero-3d-ring-two"><i /></div>
+                <div className="hero-3d-ring hero-3d-ring-three"><i /></div>
+                <div className="hero-3d-core"><div className="hero-3d-core-shine" /></div>
+                <span className="hero-3d-node hero-3d-node-one" />
+                <span className="hero-3d-node hero-3d-node-two" />
+                <span className="hero-3d-node hero-3d-node-three" />
+              </div>
+            </div>
           </div>
           <div className="relative mx-auto w-full max-w-[390px]">
             <div className="absolute -inset-5 rounded-[2.5rem] border border-blue-300/20 rotate-6" />
