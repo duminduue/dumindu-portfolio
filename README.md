@@ -1,24 +1,44 @@
 # Dumindu Ekanayaka — Professional Portfolio
 
-A personal professional portfolio for a multidisciplinary engineering graduate, built with Next.js, TypeScript and Tailwind CSS.
+A responsive personal portfolio for Dumindu Udakara Ekanayaka, Graduate Mechatronics & Robotics Engineer.
 
-## Professional focus
+## Technology
 
-Mechatronics Engineering · Robotics Engineering · Artificial Intelligence · Machine Learning · Data Science · Industrial Automation · Cloud Computing · Cybersecurity · Software Engineering
+- Next.js App Router
+- React
+- TypeScript
+- Tailwind CSS v4
+- Lucide React icons
 
-## Development
+## Run locally
 
-This repository is being initialized. The Next.js application source will be added in the next development step.
+```bash
+npm install
+npm run dev
+```
 
-## Project status
+Open [http://localhost:3000](http://localhost:3000).
 
-- [x] GitHub repository created
-- [ ] Next.js application committed
-- [ ] Responsive portfolio website
-- [ ] Project case studies and evidence
-- [ ] PDF portfolio
-- [ ] Deployment
+## Production build
 
-## Important
+```bash
+npm run build
+npm start
+```
 
-Skills and project claims will be represented according to verifiable experience and evidence.
+## Portfolio sections
+
+- Introduction and professional identity
+- About and career mission
+- Nine professional domains
+- Selected engineering and software projects
+- Education and industrial experience
+- Contact and professional links
+
+## Content accuracy
+
+Project descriptions and education details are based on the supplied CV. Skills are presented as professional domains of focus, not as claims of expert-level proficiency. Project evidence, profile photography, contact details, and direct project links can be added after verification.
+
+## Repository
+
+https://github.com/duminduue/dumindu-portfolio
