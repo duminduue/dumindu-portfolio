@@ -668,3 +668,42 @@ a {
     transition: none;
   }
 }
+
+
+/* Radial professional-domain network */
+.domain-radial {
+  height: 820px;
+}
+
+.domain-radial-lines {
+  z-index: 0;
+  overflow: visible;
+}
+
+.domain-radial-hub {
+  min-width: 290px;
+}
+
+.domain-radial-card {
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .domain-radial-card {
+    transition: none;
+  }
+}
+
+@media (max-width: 1279px) and (min-width: 1024px) {
+  .domain-radial {
+    transform: scale(.88);
+    transform-origin: top center;
+    margin-bottom: -98px;
+  }
+}
+
+@media (max-width: 767px) {
+  .domain-radial-mobile .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
