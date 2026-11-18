@@ -508,9 +508,9 @@ a {
 
 .about-conveyor {
   position: relative;
-  width: min(100%, 820px);
-  height: 225px;
-  margin: -30px auto -30px;
+  width: min(calc(100% + 260px), 1080px);
+  height: 290px;
+  margin: -30px 0 -30px -130px;
   transform: translateY(-30px);
   overflow: visible;
   background: transparent;
@@ -521,7 +521,7 @@ a {
   height: 100%;
 }
 @media (max-width: 767px) {
-  .about-conveyor { height: 195px; margin-top: 0; }
+  .about-conveyor { width: 100%; height: 220px; margin: -20px 0; transform: translateY(-20px); }
 }
 
 .about-vision {
