@@ -164,7 +164,7 @@ export default function ConveyorBox3D() {
       <Canvas
         shadows
         dpr={[1, 1.75]}
-        camera={{ position: [0, 1.05, 9.6], fov: 32 }}
+        camera={{ position: [0, 1.05, 7.8], fov: 32 }}
         gl={{ alpha: true, antialias: true }}
       >
         <ambientLight intensity={0.8} />
