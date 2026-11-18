@@ -42,7 +42,7 @@ export default function DomainExplorer() {
             <p className="max-w-md text-base leading-7 text-slate-500">Explore the skills, technologies and practical work connected to each area of my professional development.</p>
           </div>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+          <div className="mt-12 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {domains.map((domain, index) => (
               <button
                 type="button"
