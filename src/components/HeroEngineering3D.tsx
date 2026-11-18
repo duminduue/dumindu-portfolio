@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Html, OrbitControls, Sparkles } from "@react-three/drei";
+import { Float, OrbitControls, Sparkles } from "@react-three/drei";
 import { useRef } from "react";
 import * as THREE from "three";
 
@@ -99,11 +99,14 @@ function FloatingPanel({ position, label, sub }: { position: [number, number, nu
           <boxGeometry args={[0.88, 0.025, 0.012]} />
           <meshBasicMaterial color="#22d3ee" />
         </mesh>
-        <Html center distanceFactor={5.5} transform position={[0, -0.02, 0.09]} style={{ pointerEvents: "none", whiteSpace: "nowrap" }}>
-          <div style={{ color: "#dff6ff", fontSize: "8px", fontWeight: 800, letterSpacing: "1px", textAlign: "center" }}>
-            {label}<div style={{ color: "#67cfff", fontSize: "6px", marginTop: "3px" }}>{sub}</div>
-          </div>
-        </Html>
+        <mesh position={[0, -0.13, 0.09]}>
+          <boxGeometry args={[0.58, 0.018, 0.012]} />
+          <meshBasicMaterial color="#67cfff" />
+        </mesh>
+        <mesh position={[-0.34, 0.1, 0.09]}>
+          <boxGeometry args={[0.12, 0.12, 0.012]} />
+          <meshBasicMaterial color="#22d3ee" />
+        </mesh>
       </group>
     </Float>
   );
@@ -150,9 +153,14 @@ function EngineeringScene() {
             <boxGeometry args={[0.32, 0.025, 0.28]} />
             <meshBasicMaterial color="#22d3ee" />
           </mesh>
-          <Html center position={[0, 0.23, 0]} distanceFactor={6} style={{ pointerEvents: "none" }}>
-            <div style={{ color: "#67e8f9", fontSize: "8px", fontWeight: 900, letterSpacing: "2px" }}>AI CORE</div>
-          </Html>
+          <mesh position={[0, 0.23, 0]}>
+            <boxGeometry args={[0.24, 0.018, 0.025]} />
+            <meshBasicMaterial color="#67e8f9" />
+          </mesh>
+          <mesh position={[0, 0.27, 0]}>
+            <boxGeometry args={[0.14, 0.012, 0.02]} />
+            <meshBasicMaterial color="#22d3ee" />
+          </mesh>
         </group>
         <FloatingPanel position={[-0.15, 1.55, -0.8]} label="ROBOTICS CONTROL" sub="LIVE SYSTEM STATUS" />
         <FloatingPanel position={[1.75, 1.35, -0.65]} label="SOFTWARE SYSTEMS" sub="CODE · BUILD · DEPLOY" />
