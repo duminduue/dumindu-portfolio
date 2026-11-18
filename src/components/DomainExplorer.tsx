@@ -42,66 +42,28 @@ export default function DomainExplorer() {
             <p className="max-w-md text-base leading-7 text-slate-500">Explore the skills, technologies and practical work connected to each area of my professional development.</p>
           </div>
 
-          <div className="domain-radial relative mx-auto mt-16 hidden w-full max-w-[1100px] lg:block">
-            <svg className="domain-radial-lines absolute inset-0 h-full w-full" viewBox="0 0 1100 820" fill="none" aria-hidden="true">
-              <g stroke="#93b4f7" strokeWidth="2" strokeOpacity=".8" strokeLinecap="round">
-                <line x1="550" y1="410" x2="550" y2="100" /><line x1="550" y1="410" x2="774" y2="148" />
-                <line x1="550" y1="410" x2="884" y2="310" /><line x1="550" y1="410" x2="858" y2="528" />
-                <line x1="550" y1="410" x2="656" y2="710" /><line x1="550" y1="410" x2="444" y2="710" />
-                <line x1="550" y1="410" x2="242" y2="528" /><line x1="550" y1="410" x2="216" y2="310" />
-                <line x1="550" y1="410" x2="326" y2="148" />
-              </g>
-              <g fill="#2563eb">
-                <circle cx="550" cy="100" r="5" /><circle cx="774" cy="148" r="5" /><circle cx="884" cy="310" r="5" />
-                <circle cx="858" cy="528" r="5" /><circle cx="656" cy="710" r="5" /><circle cx="444" cy="710" r="5" />
-                <circle cx="242" cy="528" r="5" /><circle cx="216" cy="310" r="5" /><circle cx="326" cy="148" r="5" />
-              </g>
-            </svg>
-
-            <div className="domain-radial-hub absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center rounded-3xl border border-blue-200 bg-white px-8 py-7 text-center shadow-xl shadow-blue-900/10">
-              <span className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-700"><Cpu size={28} /></span>
-              <span className="text-[10px] font-black tracking-[.2em] text-blue-700">CENTRAL HUB</span>
-              <span className="mt-1 whitespace-nowrap text-lg font-black text-[#142033]">Engineering &amp; Technology</span>
-              <span className="mt-1 text-xs text-slate-500">One connected vision</span>
-            </div>
-
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {domains.map((domain, index) => {
               const Icon = domain.icon;
-              const positions = [
-                { left: "50%", top: "12.2%" }, { left: "70.4%", top: "18%" }, { left: "80.4%", top: "37.8%" },
-                { left: "78%", top: "64.4%" }, { left: "59.6%", top: "86.6%" }, { left: "40.4%", top: "86.6%" },
-                { left: "22%", top: "64.4%" }, { left: "19.6%", top: "37.8%" }, { left: "29.6%", top: "18%" },
-              ];
               return (
-                <button type="button" key={domain.number} style={positions[index]} onClick={() => setSelected(index)} aria-label={`Explore ${domain.title}`} className="domain-radial-card group absolute z-10 flex min-h-[112px] w-[218px] -translate-x-1/2 -translate-y-1/2 items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 text-left shadow-md shadow-slate-900/5 transition duration-300 hover:z-20 hover:scale-[1.04] hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white"><Icon size={20} /></span>
+                <button
+                  type="button"
+                  key={domain.number}
+                  onClick={() => setSelected(index)}
+                  className="group flex min-h-[150px] items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-sm transition duration-200 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-900/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                >
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white">
+                    <Icon size={22} />
+                  </span>
                   <span className="min-w-0">
-                    <span className="block text-[9px] font-black tracking-[.16em] text-blue-600">{domain.number} / DOMAIN</span>
-                    <span className="mt-1 block text-sm font-bold leading-snug text-[#142033]">{domain.title}</span>
-                    <span className="mt-1 block text-[11px] leading-4 text-slate-500">{domain.detail}</span>
-                    <span className="mt-2 inline-flex items-center gap-1 text-[10px] font-bold text-blue-700">Explore domain <ArrowUpRight size={12} /></span>
+                    <span className="block text-[10px] font-black tracking-[.16em] text-blue-600">{domain.number} / DOMAIN</span>
+                    <span className="mt-1 block text-base font-bold leading-snug text-[#142033]">{domain.title}</span>
+                    <span className="mt-2 block text-sm leading-5 text-slate-500">{domain.detail}</span>
+                    <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-blue-700">Explore skills &amp; projects <ArrowUpRight size={13} /></span>
                   </span>
                 </button>
               );
             })}
-          </div>
-
-          <div className="domain-radial-mobile mt-12 lg:hidden">
-            <div className="mx-auto mb-7 flex w-fit flex-col items-center rounded-2xl border border-blue-200 bg-white px-7 py-5 text-center shadow-lg shadow-blue-900/5">
-              <span className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-700"><Cpu size={26} /></span>
-              <span className="text-[10px] font-black tracking-[.18em] text-blue-700">CENTRAL HUB</span>
-              <span className="mt-1 text-base font-black text-[#142033]">Engineering &amp; Technology</span>
-              <span className="mt-1 text-xs text-slate-500">One connected vision</span>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {domains.map((domain, index) => {
-                const Icon = domain.icon;
-                return <button type="button" key={domain.number} onClick={() => setSelected(index)} className="group flex min-h-[120px] items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-sm transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white"><Icon size={21} /></span>
-                  <span><span className="block text-[10px] font-black tracking-[.16em] text-blue-600">{domain.number} / DOMAIN</span><span className="mt-1 block text-sm font-bold text-[#142033]">{domain.title}</span><span className="mt-1 block text-xs leading-5 text-slate-500">{domain.detail}</span><span className="mt-2 inline-flex items-center gap-1 text-[10px] font-bold text-blue-700">Explore domain <ArrowUpRight size={12} /></span></span>
-                </button>;
-              })}
-            </div>
           </div>
 
           <p className="mt-10 text-center text-sm font-medium text-slate-500">Select a domain to explore its related skills, technologies and featured projects.</p>
