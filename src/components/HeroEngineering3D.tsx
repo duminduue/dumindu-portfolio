@@ -56,7 +56,7 @@ function RealIndustrialArm() {
   });
 
   return (
-    <group ref={armGroup} position={[0.75, -4, 0]} scale={5}>
+    <group ref={armGroup} position={[0.45, -3.8, 0.35]} scale={4.5}>
       <primitive object={model} />
     </group>
   );
@@ -67,7 +67,7 @@ export default function HeroEngineering3D() {
     <div className="hero-webgl-wrap" aria-label="Animated 3D industrial robotic arm">
       <Canvas
         dpr={[1, 1.6]}
-        camera={{ position: [4.5, 3.5, 7.2], fov: 58 }}
+        camera={{ position: [5.8, 4.4, 9.2], fov: 58 }}
         gl={{ antialias: true, alpha: true }}
       >
         <Suspense fallback={null}>
