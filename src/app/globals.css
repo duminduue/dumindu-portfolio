@@ -510,7 +510,7 @@ a {
   position: relative;
   width: min(calc(100% + 440px), 1260px);
   height: 340px;
-  margin: -30px 0 -30px -220px;
+  margin: -30px 0 -150px -220px;
   transform: translateY(-30px);
   overflow: visible;
   background: transparent;
