@@ -130,9 +130,11 @@ export default function Home() {
               <HeroEngineering3D />
             </div>
           </div>
-          <div className="relative mx-auto w-full max-w-[390px]">
-            <div className="absolute -inset-5 rounded-[2.5rem] border border-blue-300/20 rotate-6" />
-            <div className="glass-card relative rounded-[2rem] p-8 shadow-2xl shadow-black/30">
+          <div className="relative mx-auto w-full max-w-[390px] isolate">
+            <div aria-hidden="true" className="pointer-events-none absolute -inset-5 rounded-[2.5rem] border border-blue-300/20 rotate-6" />
+            <div aria-hidden="true" className="pointer-events-none absolute -inset-8 translate-x-3 translate-y-2 rounded-[2.7rem] border border-cyan-300/15 -rotate-[5deg]" />
+            <div aria-hidden="true" className="pointer-events-none absolute -inset-11 -translate-x-1 translate-y-5 rounded-[3rem] border border-blue-400/10 rotate-[3deg]" />
+            <div className="glass-card relative z-10 rounded-[2rem] p-8 shadow-2xl shadow-black/30">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold tracking-[.2em] text-blue-200">ENGINEERING × TECHNOLOGY</span>
                 <span className="h-2 w-2 rounded-full bg-emerald-400" />
