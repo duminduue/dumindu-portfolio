@@ -135,7 +135,7 @@ export default function Home() {
               </div>
               <div className="relative my-8 h-[360px] overflow-hidden rounded-2xl border border-white/10 bg-slate-800 sm:h-[400px]">
                 <Image
-                  src="/images/profile.jpeg"
+                  src="/images/about-graduation.jpg"
                   alt="Dumindu Udakara Ekanayaka at his graduation ceremony"
                   fill
                   priority
