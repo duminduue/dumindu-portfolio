@@ -283,43 +283,82 @@ export default function Home() {
           <p className="eyebrow">02 / Professional direction</p>
           <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <h2 className="max-w-xl text-4xl font-black tracking-tight text-[#142033] md:text-5xl">Nine domains.<br />One connected vision.</h2>
-            <p className="max-w-md text-base leading-7 text-slate-500">A connected engineering network bringing physical systems, intelligence, data and digital technology together.</p>
+            <p className="max-w-md text-base leading-7 text-slate-500">Nine connected disciplines surrounding one engineering vision across physical systems, intelligence, data and digital technology.</p>
           </div>
 
-          <div className="domain-network relative mx-auto mt-14 max-w-5xl">
-            <div className="relative z-10 mx-auto flex w-fit flex-col items-center rounded-2xl border border-blue-200 bg-white px-8 py-5 text-center shadow-lg shadow-blue-900/5">
-              <span className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-700"><Cpu size={26} /></span>
-              <span className="text-xs font-black tracking-[.18em] text-blue-700">CENTRAL HUB</span>
-              <span className="mt-1 text-lg font-black text-[#142033]">Engineering &amp; Technology</span>
+          <div className="domain-radial relative mx-auto mt-16 hidden w-full max-w-[1100px] lg:block">
+            <svg className="domain-radial-lines absolute inset-0 h-full w-full" viewBox="0 0 1100 820" fill="none" aria-hidden="true">
+              <g stroke="#93b4f7" strokeWidth="2" strokeOpacity=".8" strokeLinecap="round">
+                <line x1="550" y1="410" x2="550" y2="100" />
+                <line x1="550" y1="410" x2="774" y2="148" />
+                <line x1="550" y1="410" x2="884" y2="310" />
+                <line x1="550" y1="410" x2="858" y2="528" />
+                <line x1="550" y1="410" x2="656" y2="710" />
+                <line x1="550" y1="410" x2="444" y2="710" />
+                <line x1="550" y1="410" x2="242" y2="528" />
+                <line x1="550" y1="410" x2="216" y2="310" />
+                <line x1="550" y1="410" x2="326" y2="148" />
+              </g>
+              <g fill="#2563eb">
+                <circle cx="550" cy="100" r="5" /><circle cx="774" cy="148" r="5" />
+                <circle cx="884" cy="310" r="5" /><circle cx="858" cy="528" r="5" />
+                <circle cx="656" cy="710" r="5" /><circle cx="444" cy="710" r="5" />
+                <circle cx="242" cy="528" r="5" /><circle cx="216" cy="310" r="5" />
+                <circle cx="326" cy="148" r="5" />
+              </g>
+            </svg>
+
+            <div className="domain-radial-hub absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center rounded-3xl border border-blue-200 bg-white px-8 py-7 text-center shadow-xl shadow-blue-900/10">
+              <span className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-700"><Cpu size={28} /></span>
+              <span className="text-[10px] font-black tracking-[.2em] text-blue-700">CENTRAL HUB</span>
+              <span className="mt-1 whitespace-nowrap text-lg font-black text-[#142033]">Engineering &amp; Technology</span>
               <span className="mt-1 text-xs text-slate-500">One connected vision</span>
             </div>
 
-            <div className="pointer-events-none relative -mt-1 h-24 w-full" aria-hidden="true">
-              <svg viewBox="0 0 1000 120" preserveAspectRatio="none" className="h-full w-full overflow-visible">
-                <path className="domain-branch domain-branch-left" d="M500 0 V28 H166 V112" fill="none" stroke="#93b4f7" strokeWidth="2" strokeLinecap="round" />
-                <path className="domain-branch domain-branch-middle" d="M500 0 V112" fill="none" stroke="#93b4f7" strokeWidth="2" strokeLinecap="round" />
-                <path className="domain-branch domain-branch-right" d="M500 0 V28 H834 V112" fill="none" stroke="#93b4f7" strokeWidth="2" strokeLinecap="round" />
-                <circle cx="500" cy="28" r="5" fill="#2563eb" />
-                <circle cx="166" cy="112" r="4" fill="#2563eb" />
-                <circle cx="500" cy="112" r="4" fill="#2563eb" />
-                <circle cx="834" cy="112" r="4" fill="#2563eb" />
-              </svg>
-            </div>
+            {domains.map((domain, index) => {
+              const Icon = domain.icon;
+              const positions = [
+                { left: "50%", top: "4%" },
+                { left: "70.4%", top: "9%" },
+                { left: "80.4%", top: "37.8%" },
+                { left: "78%", top: "64.4%" },
+                { left: "59.6%", top: "86.6%" },
+                { left: "40.4%", top: "86.6%" },
+                { left: "22%", top: "64.4%" },
+                { left: "19.6%", top: "37.8%" },
+                { left: "29.6%", top: "9%" },
+              ];
+              return (
+                <article key={domain.number} style={positions[index]} className="domain-radial-card group absolute z-10 flex min-h-[112px] w-[218px] -translate-x-1/2 -translate-y-1/2 items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-md shadow-slate-900/5 transition duration-300 hover:z-20 hover:-translate-y-[calc(50%+5px)] hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/10">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white"><Icon size={20} /></span>
+                  <div className="min-w-0">
+                    <p className="text-[9px] font-black tracking-[.16em] text-blue-600">{domain.number} / DOMAIN</p>
+                    <h3 className="mt-1 text-sm font-bold leading-snug text-[#142033]">{domain.title}</h3>
+                    <p className="mt-1 text-[11px] leading-4 text-slate-500">{domain.detail}</p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
 
-            <div className="domain-card-grid grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="domain-radial-mobile mt-12 lg:hidden">
+            <div className="mx-auto mb-7 flex w-fit flex-col items-center rounded-2xl border border-blue-200 bg-white px-7 py-5 text-center shadow-lg shadow-blue-900/5">
+              <span className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-700"><Cpu size={26} /></span>
+              <span className="text-[10px] font-black tracking-[.18em] text-blue-700">CENTRAL HUB</span>
+              <span className="mt-1 text-base font-black text-[#142033]">Engineering &amp; Technology</span>
+              <span className="mt-1 text-xs text-slate-500">One connected vision</span>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
               {domains.map((domain) => {
                 const Icon = domain.icon;
                 return (
-                  <article key={domain.number} className="domain-card group relative min-h-[150px] rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/10">
-                    <div className="flex items-start gap-4">
-                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white"><Icon size={22} /></span>
-                      <div className="min-w-0">
-                        <p className="text-[10px] font-black tracking-[.18em] text-blue-600">{domain.number} / DOMAIN</p>
-                        <h3 className="mt-1 text-base font-bold leading-snug text-[#142033]">{domain.title}</h3>
-                        <p className="mt-2 text-xs leading-5 text-slate-500">{domain.detail}</p>
-                      </div>
+                  <article key={domain.number} className="group flex min-h-[120px] items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white"><Icon size={21} /></span>
+                    <div>
+                      <p className="text-[10px] font-black tracking-[.16em] text-blue-600">{domain.number} / DOMAIN</p>
+                      <h3 className="mt-1 text-sm font-bold text-[#142033]">{domain.title}</h3>
+                      <p className="mt-1 text-xs leading-5 text-slate-500">{domain.detail}</p>
                     </div>
-                    <span aria-hidden="true" className="absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-blue-500 opacity-0 transition group-hover:opacity-100" />
                   </article>
                 );
               })}
