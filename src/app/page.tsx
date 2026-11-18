@@ -164,30 +164,48 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="bg-[#f6f8fb] py-16 md:py-24">
+      <section id="about" className="about-section py-16 md:py-24">
         <div className="section-shell">
-          <div className="grid items-stretch gap-10 md:grid-cols-[.86fr_1.14fr] md:gap-14">
-            <div className="about-photo-panel relative min-h-[480px] overflow-hidden md:min-h-[900px]">
-              <Image
-                src="/images/about-graduation.jpeg"
-                alt="Dumindu at his graduation ceremony"
-                fill
-                quality={100}
-                sizes="(max-width: 768px) 100vw, 42vw"
-                className="object-cover object-[center_24%] grayscale"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#f6f8fb] via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#f6f8fb]" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#f6f8fb]/70 to-transparent md:hidden" />
-              <div className="absolute bottom-8 left-5 rounded-full border border-white/70 bg-white/75 px-4 py-2 text-[10px] font-black tracking-[.2em] text-[#142033] backdrop-blur-sm md:bottom-12 md:left-8">
-                THE JOURNEY CONTINUES
+          <div className="about-layout">
+            <div className="about-left-column">
+              <div className="about-heading">
+                <p className="eyebrow">01 / About me</p>
+                <h2 className="mt-4 text-4xl font-black tracking-tight text-[#142033] md:text-5xl">About Me<span className="text-blue-600">.</span></h2>
+                <div className="mt-4 h-1.5 w-20 rounded-full bg-blue-700" />
+              </div>
+              <div className="about-photo-panel">
+                <Image
+                  src="/images/about-graduation.jpeg"
+                  alt="Dumindu at his graduation ceremony"
+                  fill
+                  quality={100}
+                  sizes="(max-width: 768px) 100vw, 340px"
+                  className="object-cover object-[center_24%] grayscale"
+                />
+                <span className="about-photo-label">THE JOURNEY CONTINUES</span>
+              </div>
+              <div className="about-credentials">
+                <div className="about-credential-row">
+                  <span className="about-credential-icon"><GraduationCap size={19} /></span>
+                  <span>BEng (Hons) – Mechatronics &amp; Robotics Engineering</span>
+                </div>
+                <div className="about-credential-row">
+                  <span className="about-credential-icon"><Workflow size={19} /></span>
+                  <span>Anglia Ruskin University (UK)</span>
+                </div>
+                <div className="about-credential-row">
+                  <span className="about-credential-icon"><MapPin size={19} /></span>
+                  <span>CINEC Campus, Sri Lanka</span>
+                </div>
+                <div className="about-credential-row">
+                  <span className="about-credential-icon"><GraduationCap size={19} /></span>
+                  <span>Upper Second Class Honours (2:1)</span>
+                </div>
               </div>
             </div>
 
-            <div className="py-4 md:py-8">
-              <p className="eyebrow">01 / About me</p>
-              <h2 className="mt-5 text-4xl font-black tracking-tight text-[#142033] md:text-5xl">About Me<span className="text-blue-600">.</span></h2>
-              <div className="mt-5 h-1.5 w-20 rounded-full bg-blue-700" />
-              <p className="mt-8 text-lg leading-8 text-slate-700">
+            <div className="about-content-column">
+              <p className="about-intro">
                 I am a Mechatronics and Robotics Engineering graduate of
                 <strong className="text-[#142033]"> Anglia Ruskin University, United Kingdom</strong>,
                 with the programme delivered at CINEC Campus, Sri Lanka. I completed my BEng (Hons)
@@ -204,50 +222,53 @@ export default function Home() {
                 <p className="text-xs font-black tracking-[.2em] text-slate-400">CORE IDENTITY</p>
                 <div className="mt-4 flex flex-wrap gap-2.5">
                   {["Mechatronics Engineer", "Robotics", "Practical Problem Solver", "Technology Enthusiast"].map((item) => (
-                    <span key={item} className="rounded-full border border-slate-300 bg-white/80 px-4 py-2.5 text-xs font-bold text-slate-700 shadow-sm">{item}</span>
+                    <span key={item} className="rounded-full border border-slate-300 bg-white/90 px-4 py-2.5 text-xs font-bold text-slate-700 shadow-sm">{item}</span>
                   ))}
                 </div>
               </div>
 
-              <div className="mt-10 grid gap-4 sm:grid-cols-2">
-                <article className="rounded-2xl border border-slate-200 bg-white p-6">
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <article className="about-info-card">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
                     <GraduationCap size={22} />
                   </div>
-                  <p className="mt-5 text-xs font-black tracking-[.16em] text-blue-700">ACADEMIC FOUNDATION</p>
+                  <p className="mt-4 text-xs font-black tracking-[.16em] text-blue-700">ACADEMIC FOUNDATION</p>
                   <h3 className="mt-2 text-lg font-black text-[#142033]">Built on engineering</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-500">
                     Mechanical engineering foundations developed further through mechatronics and robotics.
                   </p>
                 </article>
-                <article className="rounded-2xl border border-slate-200 bg-white p-6">
+                <article className="about-info-card">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
                     <Workflow size={22} />
                   </div>
-                  <p className="mt-5 text-xs font-black tracking-[.16em] text-blue-700">ENGINEERING PHILOSOPHY</p>
+                  <p className="mt-4 text-xs font-black tracking-[.16em] text-blue-700">ENGINEERING PHILOSOPHY</p>
                   <h3 className="mt-2 text-lg font-black text-[#142033]">Make ideas work</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-500">
                     Learn by designing, building, testing and improving practical solutions.
                   </p>
                 </article>
               </div>
+            </div>
 
-              <div className="mt-5 rounded-2xl bg-[#142033] p-7 text-white md:p-8">
+            <div className="about-vision">
+              <div className="about-vision-mark"><Cpu size={38} /></div>
+              <div className="about-vision-copy">
                 <p className="text-xs font-black tracking-[.18em] text-blue-300">MY CAREER VISION</p>
                 <p className="mt-3 text-xl font-bold leading-8 md:text-2xl">
                   To contribute to intelligent engineering systems at the intersection of robotics,
                   artificial intelligence and industrial automation.
                 </p>
-                <p className="mt-4 text-sm leading-7 text-slate-300">
+                <p className="mt-3 text-sm leading-7 text-slate-300">
                   I aim to keep growing as a multidisciplinary engineer through hands-on development,
                   continuous learning and research-led problem solving.
                 </p>
               </div>
-              <a href="#experience" className="mt-8 inline-flex items-center gap-2 font-bold text-blue-700 transition hover:gap-3 hover:text-blue-500">
-                Explore my background <ArrowRight size={16} />
-              </a>
             </div>
           </div>
+          <a href="#experience" className="mt-8 inline-flex items-center gap-2 font-bold text-blue-700 transition hover:gap-3 hover:text-blue-500">
+            Explore my background <ArrowRight size={16} />
+          </a>
         </div>
       </section>
 
