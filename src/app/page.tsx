@@ -135,7 +135,7 @@ export default function Home() {
               </div>
               <div className="relative my-8 h-[360px] overflow-hidden rounded-2xl border border-white/10 bg-slate-800 sm:h-[400px]">
                 <Image
-                  src="/images/about-graduation.jpg"
+                  src="/images/profile.jpeg"
                   alt="Dumindu Udakara Ekanayaka at his graduation ceremony"
                   fill
                   priority
@@ -169,7 +169,7 @@ export default function Home() {
           <div className="grid items-stretch gap-10 md:grid-cols-[.86fr_1.14fr] md:gap-14">
             <div className="about-photo-panel relative min-h-[480px] overflow-hidden md:min-h-[900px]">
               <Image
-                src="/images/profile.jpeg"
+                src="/images/about-graduation.jpg"
                 alt="Dumindu at his graduation ceremony"
                 fill
                 quality={100}
