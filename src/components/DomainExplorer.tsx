@@ -56,7 +56,7 @@ export default function DomainExplorer() {
                     <Icon size={22} />
                   </span>
                   <span className="min-w-0">
-                    <span className="block text-[10px] font-black tracking-[.16em] text-blue-600">{domain.number} / DOMAIN</span>
+                    <span className="block text-[10px] font-black tracking-[.16em] text-blue-600">{domain.number}</span>
                     <span className="mt-1 block text-base font-bold leading-snug text-[#142033]">{domain.title}</span>
                     <span className="mt-2 block text-sm leading-5 text-slate-500">{domain.detail}</span>
                     <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-blue-700">Explore skills &amp; projects <ArrowUpRight size={13} /></span>
