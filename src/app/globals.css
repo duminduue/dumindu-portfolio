@@ -590,7 +590,7 @@ a {
 }
 
 /* Transparent, text-free 3D robotic arm positioned in the lower-left hero space */
-.hero-arm-overlay { position: absolute; z-index: 30; left: 26%; right: 4%; bottom: -95px; height: 620px; pointer-events: none; }
+.hero-arm-overlay { position: absolute; z-index: 60; left: 26%; right: 4%; bottom: -95px; height: 620px; pointer-events: none; }
 .hero-webgl-wrap { position: relative; width: 100%; height: 100%; overflow: visible; background: transparent; border: 0; border-radius: 0; }
 .hero-webgl-wrap canvas { display: block; width: 100%; height: 100%; }
 @media (max-width: 767px) { .hero-arm-overlay { left: 12%; right: -8%; bottom: -24px; height: 420px; } }
