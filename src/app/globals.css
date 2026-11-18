@@ -612,3 +612,59 @@ a {
 .hero-webgl-wrap { position: relative; z-index: 999 !important; width: 100%; height: 100%; overflow: visible; background: transparent; border: 0; border-radius: 0; }
 .hero-webgl-wrap canvas { position: relative; z-index: 999 !important; display: block; width: 100%; height: 100%; }
 @media (max-width: 767px) { .hero-arm-overlay { left: 12%; right: -8%; bottom: -24px; height: 420px; } }
+
+
+/* Professional domains: connect all three rows and highlight the active network path */
+@media (min-width: 1024px) {
+  .domain-card-grid .domain-card:nth-child(n + 4)::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -17px;
+    width: 2px;
+    height: 17px;
+    transform: translateX(-50%);
+    background: #bfdbfe;
+    transition: background-color .25s ease, box-shadow .25s ease;
+  }
+
+  .domain-network:has(.domain-card:nth-child(1):hover) .domain-branch-left,
+  .domain-network:has(.domain-card:nth-child(4):hover) .domain-branch-left,
+  .domain-network:has(.domain-card:nth-child(7):hover) .domain-branch-left,
+  .domain-network:has(.domain-card:nth-child(2):hover) .domain-branch-middle,
+  .domain-network:has(.domain-card:nth-child(5):hover) .domain-branch-middle,
+  .domain-network:has(.domain-card:nth-child(8):hover) .domain-branch-middle,
+  .domain-network:has(.domain-card:nth-child(3):hover) .domain-branch-right,
+  .domain-network:has(.domain-card:nth-child(6):hover) .domain-branch-right,
+  .domain-network:has(.domain-card:nth-child(9):hover) .domain-branch-right {
+    stroke: #2563eb;
+    stroke-width: 3;
+    filter: drop-shadow(0 0 3px rgba(37, 99, 235, .28));
+  }
+
+  .domain-network:has(.domain-card:nth-child(4):hover) .domain-card:nth-child(4)::before,
+  .domain-network:has(.domain-card:nth-child(7):hover) .domain-card:nth-child(7)::before,
+  .domain-network:has(.domain-card:nth-child(5):hover) .domain-card:nth-child(5)::before,
+  .domain-network:has(.domain-card:nth-child(8):hover) .domain-card:nth-child(8)::before,
+  .domain-network:has(.domain-card:nth-child(6):hover) .domain-card:nth-child(6)::before,
+  .domain-network:has(.domain-card:nth-child(9):hover) .domain-card:nth-child(9)::before {
+    background: #2563eb;
+    box-shadow: 0 0 8px rgba(37, 99, 235, .45);
+  }
+}
+
+.domain-branch {
+  transition: stroke .25s ease, stroke-width .25s ease, filter .25s ease;
+}
+
+.domain-card:focus-within {
+  border-color: #93c5fd;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, .12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .domain-branch,
+  .domain-card-grid .domain-card::before {
+    transition: none;
+  }
+}
