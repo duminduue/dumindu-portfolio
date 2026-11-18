@@ -588,3 +588,81 @@ a {
     font-size: .8rem;
   }
 }
+
+
+/* True WebGL 3D hero scene */
+
+.hero-3d-stage {
+  position: relative;
+  min-height: 370px;
+  margin-top: 1.2rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero-3d-caption {
+  position: absolute;
+  z-index: 3;
+  top: .15rem;
+  left: .15rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  color: rgba(191,219,254,.8);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .2em;
+}
+.hero-3d-caption span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22d3ee;
+  box-shadow: 0 0 14px #22d3ee;
+  animation: hero-status-pulse 1.8s ease-in-out infinite;
+}
+.hero-webgl-wrap {
+  position: absolute;
+  inset: 1.2rem 0 0;
+  min-height: 340px;
+}
+.hero-webgl-wrap canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  outline: none;
+}
+.hero-webgl-labels {
+  position: absolute;
+  right: .15rem;
+  bottom: .65rem;
+  left: .15rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .45rem;
+  pointer-events: none;
+}
+.hero-webgl-labels span {
+  border: 1px solid rgba(125,211,252,.35);
+  border-radius: 999px;
+  background: rgba(9,30,55,.72);
+  padding: .35rem .65rem;
+  color: #c7eaff;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  backdrop-filter: blur(8px);
+}
+@keyframes hero-status-pulse {
+  0%, 100% { opacity: .65; box-shadow: 0 0 5px #22d3ee; }
+  50% { opacity: 1; box-shadow: 0 0 16px #22d3ee; }
+}
+@media (max-width: 767px) {
+  .hero-3d-stage { min-height: 310px; }
+  .hero-webgl-wrap { min-height: 285px; }
+  .hero-webgl-labels { gap: .3rem; bottom: .25rem; }
+  .hero-webgl-labels span { font-size: 7px; padding: .3rem .5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-3d-caption span { animation: none; }
+}
