@@ -51,8 +51,8 @@ export default function DomainExplorer() {
                 aria-label={`More about ${domain.title}`}
                 className="domain-float-card group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               >
-                <span className="block w-full px-5 pt-5 text-lg font-extrabold tracking-tight text-[#142033]">{domain.title}</span>
-                <span className="relative mt-4 block aspect-[16/10] w-full overflow-hidden bg-slate-100">
+                <span className="block w-full px-4 pt-4 text-base font-extrabold tracking-tight text-[#142033] sm:text-[17px]">{domain.title}</span>
+                <span className="relative mt-3 block aspect-[16/8] w-full overflow-hidden bg-slate-100">
                   <img
                     src={domain.image}
                     alt={`${domain.title} visual`}
@@ -61,7 +61,7 @@ export default function DomainExplorer() {
                   />
                   <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b1729]/25 via-transparent to-transparent" />
                 </span>
-                <span className="flex w-full items-center justify-between px-5 py-4">
+                <span className="flex w-full items-center justify-between px-4 py-3">
                   <span className="text-xs font-bold uppercase tracking-[.16em] text-blue-700">More</span>
                   <ArrowUpRight size={17} className="text-blue-700 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </span>
