@@ -28,6 +28,7 @@ import {
   Car,
   Calculator,
   Sprout,
+  BookOpen,
 } from "lucide-react";
 
 const projects = [
