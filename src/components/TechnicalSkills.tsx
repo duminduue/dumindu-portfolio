@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Code2, Braces, Database, Cpu, Wrench, X, ArrowUpRight, Info } from "lucide-react";
+import HumanRobot3D from "@/components/HumanRobot3D";
 
 const groups = [
  { number:"01", title:"Programming & Data", description:"Languages and tools for building logic, working with data and developing solutions.", icon:Braces, skills:["Python","JavaScript","TypeScript","SQL","Pandas","Scikit-learn","Power BI","Microsoft Excel"] },
@@ -36,6 +37,7 @@ export default function TechnicalSkills() {
      <div className="p-5 md:p-6"><p className="min-h-[3rem] text-sm leading-6 text-slate-500">{group.description}</p>
      <div className="mt-5 flex flex-wrap gap-2">{group.skills.map(skill=><button key={skill} type="button" onClick={()=>setSelected(skill)} className="rounded-full border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-600 transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-800">{skill} ↗</button>)}</div>
      </div></article>})}
+    <div className="min-h-[420px]"><HumanRobot3D /></div>
    </div>
    <p className="mt-8 text-center text-xs leading-6 text-slate-400">This list represents technologies and tools used in projects or explored through learning. It does not indicate professional certification or equal proficiency in every tool.</p>
   </div>
