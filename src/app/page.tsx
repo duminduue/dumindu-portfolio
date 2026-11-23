@@ -4,6 +4,7 @@ import HeroEngineering3D from "@/components/HeroEngineering3D";
 import ConveyorBox3D from "@/components/ConveyorBox3D";
 import DomainExplorer from "@/components/DomainExplorer";
 import TechnicalSkills from "@/components/TechnicalSkills";
+import ThemeToggle from "@/components/ThemeToggle";
 import {
   ArrowDown,
   ArrowRight,
@@ -114,9 +115,12 @@ export default function Home() {
             <a className="transition hover:text-blue-600" href="#research">Research</a>
             <a className="transition hover:text-blue-600" href="#certifications">Achievements</a>
           </div>
-          <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-[#142033] px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-700">
-            Let&apos;s connect <ArrowUpRight size={16} />
-          </a>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-[#142033] px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-700">
+              Let&apos;s connect <ArrowUpRight size={16} />
+            </a>
+          </div>
         </nav>
       </header>
 
