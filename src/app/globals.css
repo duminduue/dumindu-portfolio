@@ -830,3 +830,48 @@ a {
     transform: none;
   }
 }
+
+
+/* User-selectable dark theme. Light remains the default. */
+html[data-theme="dark"] { color-scheme: dark; }
+html[data-theme="dark"] body { background: #0b1220; color: #e5edf8; }
+html[data-theme="dark"] [class~="bg-white"],
+html[data-theme="dark"] [class~="bg-white/90"],
+html[data-theme="dark"] [class~="bg-slate-50"],
+html[data-theme="dark"] [class~="bg-[#f6f8fb]"] { background-color: #111c2e !important; }
+html[data-theme="dark"] [class~="bg-white/90"] { background-color: rgba(17,28,46,.92) !important; }
+html[data-theme="dark"] [class~="text-[#142033]"],
+html[data-theme="dark"] [class~="text-slate-700"],
+html[data-theme="dark"] [class~="text-slate-600"] { color: #d7e2f1 !important; }
+html[data-theme="dark"] [class~="text-slate-500"],
+html[data-theme="dark"] [class~="text-slate-400"] { color: #9aacc4 !important; }
+html[data-theme="dark"] [class~="border-slate-200"],
+html[data-theme="dark"] [class~="border-slate-200/80"],
+html[data-theme="dark"] [class~="border-slate-100"] { border-color: #293950 !important; }
+html[data-theme="dark"] [class~="divide-slate-100"] > :not([hidden]) ~ :not([hidden]) { border-color: #293950 !important; }
+html[data-theme="dark"] .about-section { background: #0e1829; }
+html[data-theme="dark"] .about-photo-panel { border-color: #293950; background: #17243a; }
+html[data-theme="dark"] .about-credentials,
+html[data-theme="dark"] .about-info-card { border-color: #293950; background: linear-gradient(180deg,#17243a 0%,#111c2e 100%); }
+html[data-theme="dark"] .about-credential-row,
+html[data-theme="dark"] .about-intro { color: #c5d2e3; }
+html[data-theme="dark"] .about-credential-icon { background: #203b60; color: #8db8ff; }
+html[data-theme="dark"] header { border-color: #293950 !important; }
+html[data-theme="dark"] header a.text-xl { color: #f1f5f9 !important; }
+html[data-theme="dark"] header nav > div a { color: #c5d2e3; }
+html[data-theme="dark"] header nav > a:last-child { background: #2563eb; }
+html[data-theme="dark"] .domain-float-card { border-color: #31445e !important; background: linear-gradient(145deg,#1a2940 0%,#142238 58%,#101c30 100%) !important; }
+html[data-theme="dark"] .domain-float-card:hover { background: linear-gradient(145deg,#203653 0%,#172b45 55%,#14243b 100%) !important; }
+html[data-theme="dark"] .domain-float-card :is(h3,p,span) { color: #dce8f7; }
+html[data-theme="dark"] .about-vision { border-color: #344760; }
+html[data-theme="dark"] .glass-card { background: rgba(255,255,255,.07); }
+html[data-theme="dark"] ::selection { background: #1d4ed8; color: #fff; }
+html[data-theme="dark"] .bg-slate-50 { background-color: #111c2e !important; }
+html[data-theme="dark"] [class~="hover:bg-slate-100"]:hover { background-color: #263750 !important; }
+html[data-theme="dark"] [class~="bg-blue-50"] { background-color: #172f50 !important; }
+html[data-theme="dark"] [class~="text-blue-700"] { color: #8bb8ff !important; }
+html[data-theme="dark"] [class~="text-blue-800"] { color: #a8caff !important; }
+html[data-theme="dark"] [class~="border-blue-200"] { border-color: #355b8b !important; }
+html[data-theme="dark"] [class~="bg-slate-100"] { background-color: #24344b !important; }
+html[data-theme="dark"] [class~="text-slate-800"] { color: #e5edf8 !important; }
+html[data-theme="dark"] .about-photo-label { background: rgba(17,28,46,.88); color: #e5edf8; }
