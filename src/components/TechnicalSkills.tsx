@@ -27,7 +27,7 @@ export default function TechnicalSkills() {
   <div className="section-shell">
    <p className="eyebrow">03 / Technical capabilities</p>
    <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end">
-    <div><h2 className="max-w-2xl text-4xl font-black tracking-tight text-[#142033] md:text-5xl">Tools I use to<br/>turn ideas into reality.</h2><p className="mt-5 max-w-xl text-base leading-7 text-slate-500">Explore the technologies behind my engineering and software work. Select any skill to see where it is applied in my projects.</p></div>
+    <div><h2 className="max-w-2xl text-4xl font-black tracking-tight text-[#142033] md:text-5xl">Tools I use to<br/>turn ideas into reality.</h2><p className="mt-5 max-w-3xl text-base leading-7 text-slate-500">Explore the technologies behind my engineering and software work. Select any skill to see where it is applied in my projects.</p></div>
     <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4"><span className="text-3xl font-black tracking-tight text-blue-700">05</span><span className="text-xs font-bold uppercase leading-5 tracking-[.14em] text-slate-500">Technology<br/>groups</span></div>
    </div>
    <div className="mt-9 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
