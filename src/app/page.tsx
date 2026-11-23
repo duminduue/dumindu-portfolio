@@ -132,7 +132,7 @@ export default function Home() {
             </h1>
             <h2 className="mt-7 text-xl font-semibold leading-snug text-slate-200 md:text-2xl">Graduate Mechatronics &amp; Robotics Engineer</h2>
             <p className="mt-6 max-w-[650px] text-base leading-8 text-slate-300 md:text-lg">
-              I am a Mechatronics and Robotics Engineering graduate passionate about designing and developing practical engineering solutions through robotics, intelligent systems, industrial automation and software technology.
+              I am a Mechatronics and Robotics Engineering graduate interested in robotics, industrial automation and software development.
             </p>
             <div className="mt-10 flex flex-col items-start gap-4">
               <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-4 text-sm font-bold text-white shadow-lg shadow-blue-950/30 transition hover:-translate-y-0.5 hover:bg-blue-500">Explore my work <ArrowUpRight size={17} /></a>
@@ -202,7 +202,7 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 340px"
                   className="object-cover object-[center_24%]"
                 />
-                <span className="about-photo-label">THE JOURNEY CONTINUES</span>
+                <span className="about-photo-label">ABOUT ME</span>
               </div>
               <div className="about-credentials">
                 <div className="about-credential-row">
@@ -232,16 +232,13 @@ export default function Home() {
                 with <strong className="text-[#142033]">First Class Honours</strong>.
               </p>
               <p className="mt-6 text-base leading-8 text-slate-600">
-                My journey combines an academic foundation in mechanical engineering with practical
-                exposure to industrial maintenance, production systems, robotics, embedded systems
-                and software development. I enjoy understanding how things work, solving practical
-                problems and turning ideas into working systems.
+                I studied mechanical engineering before completing my degree in Mechatronics and Robotics Engineering. I have experience with industrial maintenance, production systems, robotics, embedded systems and software development.
               </p>
 
               <div className="mt-9">
-                <p className="text-xs font-black tracking-[.2em] text-slate-400">CORE IDENTITY</p>
+                <p className="text-xs font-black tracking-[.2em] text-slate-400">ABOUT ME</p>
                 <div className="mt-4 flex flex-wrap gap-2.5">
-                  {["Mechatronics Engineer", "Robotics", "Practical Problem Solver", "Technology Enthusiast"].map((item) => (
+                  {["Mechatronics Engineer", "Robotics", "Problem Solving", "Technology"].map((item) => (
                     <span key={item} className="rounded-full border border-slate-300 bg-white/90 px-4 py-2.5 text-xs font-bold text-slate-700 shadow-sm">{item}</span>
                   ))}
                 </div>
@@ -252,20 +249,20 @@ export default function Home() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
                     <GraduationCap size={22} />
                   </div>
-                  <p className="mt-4 text-xs font-black tracking-[.16em] text-blue-700">ACADEMIC FOUNDATION</p>
-                  <h3 className="mt-2 text-lg font-black text-[#142033]">Built on engineering</h3>
+                  <p className="mt-4 text-xs font-black tracking-[.16em] text-blue-700">EDUCATION</p>
+                  <h3 className="mt-2 text-lg font-black text-[#142033]">My education</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-500">
-                    Mechanical engineering foundations developed further through mechatronics and robotics.
+                    Mechanical engineering, followed by mechatronics and robotics.
                   </p>
                 </article>
                 <article className="about-info-card">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
                     <Workflow size={22} />
                   </div>
-                  <p className="mt-4 text-xs font-black tracking-[.16em] text-blue-700">ENGINEERING PHILOSOPHY</p>
-                  <h3 className="mt-2 text-lg font-black text-[#142033]">Make ideas work</h3>
+                  <p className="mt-4 text-xs font-black tracking-[.16em] text-blue-700">HOW I WORK</p>
+                  <h3 className="mt-2 text-lg font-black text-[#142033]">Learn by doing</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-500">
-                    Learn by designing, building, testing and improving practical solutions.
+                    I enjoy designing, building, testing and improving practical projects.
                   </p>
                 </article>
               </div>
@@ -275,20 +272,18 @@ export default function Home() {
             <div className="about-vision">
               <div className="about-vision-mark"><Cpu size={38} /></div>
               <div className="about-vision-copy">
-                <p className="text-xs font-black tracking-[.18em] text-blue-300">MY CAREER VISION</p>
+                <p className="text-xs font-black tracking-[.18em] text-blue-300">MY INTERESTS</p>
                 <p className="mt-3 text-xl font-bold leading-8 md:text-2xl">
-                  To contribute to intelligent engineering systems at the intersection of robotics,
-                  artificial intelligence and industrial automation.
+                  I am interested in robotics, artificial intelligence and industrial automation.
                 </p>
                 <p className="mt-3 text-sm leading-7 text-slate-300">
-                  I aim to keep growing as a multidisciplinary engineer through hands-on development,
-                  continuous learning and research-led problem solving.
+                  I want to gain more practical experience and continue learning in these areas.
                 </p>
               </div>
             </div>
           </div>
           <a href="#experience" className="mt-8 inline-flex items-center gap-2 font-bold text-blue-700 transition hover:gap-3 hover:text-blue-500">
-            Explore my background <ArrowRight size={16} />
+            More about me <ArrowRight size={16} />
           </a>
         </div>
       </section>
@@ -300,7 +295,7 @@ export default function Home() {
         <p className="eyebrow">04 / Selected work</p>
         <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <h2 className="text-4xl font-black tracking-tight md:text-5xl">Projects &amp; practice.</h2>
-          <p className="max-w-md text-sm leading-7 text-slate-500">A selection of engineering and software projects demonstrating practical development across connected disciplines.</p>
+          <p className="max-w-md text-sm leading-7 text-slate-500">Some engineering and software projects I have worked on.</p>
         </div>
         <div className="mt-9 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => {
@@ -466,7 +461,7 @@ export default function Home() {
             <div>
               <p className="eyebrow">07 / Research &amp; Future Direction</p>
               <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Exploring what comes next.</h2>
-              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">My interests are focused on bringing intelligent technologies into practical engineering environments. I aim to deepen these areas through project development, independent exploration and future postgraduate research.</p>
+              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">I am interested in applying robotics, AI and automation to practical engineering problems.</p>
             </div>
             <div className="mb-1 flex items-center gap-5 rounded-2xl border border-blue-100 bg-white/80 px-6 py-5 shadow-sm">
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-2xl font-black text-blue-700">3</div>
@@ -482,9 +477,9 @@ export default function Home() {
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-700 bg-[#29384d] px-6 py-4">
               <div className="flex items-center gap-3">
                 <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 text-blue-700"><Workflow size={17} /></span>
-                <div><p className="text-[10px] font-black tracking-[.2em] text-blue-300">RESEARCH ECOSYSTEM</p><p className="mt-0.5 text-sm font-bold text-white">Connected engineering domains</p></div>
+                <div><p className="text-[10px] font-black tracking-[.2em] text-blue-300">RESEARCH INTERESTS</p><p className="mt-0.5 text-sm font-bold text-white">Areas I am interested in</p></div>
               </div>
-              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-400/10 px-3 py-1.5 text-[10px] font-bold tracking-[.12em] text-emerald-300"><span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> AREAS OF INTEREST</span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-400/10 px-3 py-1.5 text-[10px] font-bold tracking-[.12em] text-emerald-300"><span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> INTERESTS</span>
             </div>
             <div className="relative px-5 py-8 md:px-9 md:py-10">
               <div className="mx-auto flex max-w-[430px] items-center gap-4 rounded-2xl border border-slate-600 bg-[#46566d] p-4 shadow-sm">
@@ -525,7 +520,7 @@ export default function Home() {
                   <p className="mt-2 text-xs leading-6 text-slate-200">Connected equipment, monitoring and process improvement.</p>
                 </article>
               </div>
-              <p className="mt-6 text-center text-[10px] font-bold tracking-[.16em] text-slate-200">RESEARCH INTERESTS · LEARNING PATHWAYS · FUTURE DEVELOPMENT</p>
+              <p className="mt-6 text-center text-[10px] font-bold tracking-[.16em] text-slate-200">ROBOTICS · AI · INDUSTRIAL AUTOMATION</p>
             </div>
           </div>
 
@@ -577,9 +572,9 @@ export default function Home() {
             <div className="mb-1 flex items-center gap-5 rounded-2xl border border-blue-100 bg-white/80 px-6 py-5 shadow-sm">
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-2xl font-black text-blue-700">2</div>
               <div>
-                <p className="text-[10px] font-black tracking-[.2em] text-blue-700">GROWTH PATHWAYS</p>
-                <p className="mt-1 text-lg font-black text-[#142033]">Academic &amp; professional</p>
-                <p className="mt-1 text-xs font-semibold tracking-wide text-slate-500">Achievements · Training · Learning</p>
+                <p className="text-[10px] font-black tracking-[.2em] text-blue-700">ACHIEVEMENTS & TRAINING</p>
+                <p className="mt-1 text-lg font-black text-[#142033]">Education &amp; training</p>
+                <p className="mt-1 text-xs font-semibold tracking-wide text-slate-500">Academic results · Courses</p>
               </div>
             </div>
           </div>
