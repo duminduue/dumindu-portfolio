@@ -1156,3 +1156,17 @@ html[data-theme="dark"] main > section .achievement-panel [class*="text-cyan-"],
 html[data-theme="dark"] main > section .achievement-panel [class*="text-amber-"] {
   color: #d9bd8b !important;
 }
+
+
+/* Match the Professional Learning heading area to the bronze academic panel */
+html[data-theme="dark"] .professional-learning-panel > div:nth-child(2) > div:first-child {
+  background: #393229 !important;
+  color: #dfc18d !important;
+}
+html[data-theme="dark"] .professional-learning-panel > div:nth-child(2) > span {
+  background: #393229 !important;
+  color: #dfc18d !important;
+}
+html[data-theme="dark"] .professional-learning-panel > p {
+  color: #dfc18d !important;
+}
