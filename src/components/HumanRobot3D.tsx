@@ -24,53 +24,72 @@ function RealHumanoidRobot() {
     return clone;
   }, [scene]);
 
-  const joints = useMemo(() => {
-    const find = (pattern: RegExp) => {
-      const matches: THREE.Object3D[] = [];
-      robot.traverse((node) => {
-        if (pattern.test(node.name)) matches.push(node);
-      });
-      return matches;
-    };
+  // These are the actual node names in the supplied GLB model.
+  const parts = useMemo(() => {
+    const find = (name: string) => robot.getObjectByName(name);
     return {
-      head: find(/^Head$/i),
-      upperArms: find(/^Upper_Arm/i),
-      forearms: find(/^Forearm/i),
-      hands: find(/^Hand/i),
+      head: find("Head shell"),
+      leftShoulder: find("Shoulder and elbow actuators left"),
+      rightShoulder: find("Shoulder and elbow actuators right"),
+      leftHand: find("Hand left"),
+      rightHand: find("Hand right"),
     };
   }, [robot]);
 
-  const baseRotations = useMemo(() => ({
-    upperArms: joints.upperArms.map((node) => node.rotation.clone()),
-    forearms: joints.forearms.map((node) => node.rotation.clone()),
-    hands: joints.hands.map((node) => node.rotation.clone()),
-    head: joints.head.map((node) => node.rotation.clone()),
-  }), [joints]);
+  const rest = useMemo(() => ({
+    head: parts.head?.rotation.clone(),
+    leftShoulder: parts.leftShoulder?.rotation.clone(),
+    rightShoulder: parts.rightShoulder?.rotation.clone(),
+    leftHand: parts.leftHand?.rotation.clone(),
+    rightHand: parts.rightHand?.rotation.clone(),
+  }), [parts]);
 
   useFrame(({ clock }) => {
     const t = clock.elapsedTime;
     if (group.current) {
-      // Make the idle motion clearly visible: a slow look-around, gentle body sway and breathing-like bob.
-      group.current.rotation.y = Math.sin(t * 0.55) * 0.34;
-      group.current.rotation.z = Math.sin(t * 0.8) * 0.025;
-      group.current.position.y = Math.sin(t * 1.7) * 0.04;
+      // A continuous idle performance, similar in feel to the animated robotic arm.
+      group.current.rotation.y = Math.sin(t * 0.48) * 0.24;
+      group.current.rotation.z = Math.sin(t * 0.7) * 0.018;
+      group.current.position.y = Math.sin(t * 1.5) * 0.025;
     }
-    joints.head.forEach((node, i) => {
-      const base = baseRotations.head[i];
-      node.rotation.set(base.x + Math.sin(t * 0.7) * 0.025, base.y + Math.sin(t * 0.45) * 0.12, base.z);
-    });
-    joints.upperArms.forEach((node, i) => {
-      const base = baseRotations.upperArms[i];
-      node.rotation.set(base.x + Math.sin(t * 0.9 + i) * 0.025, base.y, base.z + Math.sin(t * 0.8 + i * Math.PI) * 0.035);
-    });
-    joints.forearms.forEach((node, i) => {
-      const base = baseRotations.forearms[i];
-      node.rotation.set(base.x + Math.sin(t * 0.8 + i) * 0.018, base.y, base.z);
-    });
-    joints.hands.forEach((node, i) => {
-      const base = baseRotations.hands[i];
-      node.rotation.set(base.x, base.y + Math.sin(t * 0.65 + i) * 0.035, base.z);
-    });
+
+    if (parts.head && rest.head) {
+      parts.head.rotation.set(
+        rest.head.x + Math.sin(t * 0.8) * 0.035,
+        rest.head.y + Math.sin(t * 0.55) * 0.2,
+        rest.head.z
+      );
+    }
+
+    if (parts.leftShoulder && rest.leftShoulder) {
+      parts.leftShoulder.rotation.set(
+        rest.leftShoulder.x + Math.sin(t * 1.1) * 0.06,
+        rest.leftShoulder.y,
+        rest.leftShoulder.z + Math.sin(t * 0.9) * 0.045
+      );
+    }
+    if (parts.rightShoulder && rest.rightShoulder) {
+      parts.rightShoulder.rotation.set(
+        rest.rightShoulder.x + Math.sin(t * 1.1 + Math.PI) * 0.06,
+        rest.rightShoulder.y,
+        rest.rightShoulder.z + Math.sin(t * 0.9 + Math.PI) * 0.045
+      );
+    }
+
+    if (parts.leftHand && rest.leftHand) {
+      parts.leftHand.rotation.set(
+        rest.leftHand.x,
+        rest.leftHand.y + Math.sin(t * 1.25) * 0.08,
+        rest.leftHand.z + Math.sin(t * 1.1) * 0.035
+      );
+    }
+    if (parts.rightHand && rest.rightHand) {
+      parts.rightHand.rotation.set(
+        rest.rightHand.x,
+        rest.rightHand.y + Math.sin(t * 1.25 + Math.PI) * 0.08,
+        rest.rightHand.z + Math.sin(t * 1.1 + Math.PI) * 0.035
+      );
+    }
   });
 
   return (
