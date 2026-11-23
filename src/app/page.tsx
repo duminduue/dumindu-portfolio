@@ -312,7 +312,6 @@ export default function Home() {
                     </div>
                   </div>
                   <span className="absolute bottom-5 right-6 text-xs font-black tracking-[.25em] text-white/60">{project.number}</span>
-                  <span className="absolute left-6 top-5 rounded-full border border-white/25 bg-white/15 px-3 py-1.5 text-[10px] font-black tracking-[.16em] text-white">PROJECT SHOWCASE</span>
                 </div>
                 <div className="flex min-h-[150px] flex-col justify-center p-5 md:min-h-[164px] md:p-6">
                   <div className="mb-3 flex items-center justify-between gap-3">
