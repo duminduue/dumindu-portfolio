@@ -554,14 +554,7 @@ export default function Home() {
                   <div><h4 className="font-bold text-[#142033]">Merit Pass</h4><p className="mt-1 text-sm leading-6 text-slate-600">Pearson BTEC Higher National Diploma (HND) in Mechanical Engineering — CINEC Campus, Sri Lanka.</p></div>
                 </div>
               </div>
-              <div className="mt-8 rounded-2xl bg-[#142033] p-5 text-white">
-                <p className="text-[10px] font-black tracking-[.16em] text-blue-300">PROJECT VALIDATION</p>
-                <div className="mt-4 grid grid-cols-2 gap-4">
-                  <div><p className="text-3xl font-black">104</p><p className="mt-1 text-xs leading-5 text-slate-300">Passing automated tests · Industrial Engineering Calculator</p></div>
-                  <div><p className="text-3xl font-black">55</p><p className="mt-1 text-xs leading-5 text-slate-300">Passing backend tests · PlantorAI</p></div>
-                </div>
-                <p className="mt-4 text-[10px] leading-5 text-slate-400">Project verification results recorded in the CV; these are not presented as awards or certifications.</p>
-              </div>
+
             </div>
 
             <div className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm md:p-8">
