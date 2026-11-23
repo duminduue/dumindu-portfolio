@@ -189,10 +189,79 @@ function AMRReportPage() {
   );
 }
 
+
+function GestureReportPage() {
+  const sections = [
+    ["abstract","ABSTRACT","This project presents a hand gesture-controlled robotic car developed using two ESP32 microcontrollers and an MPU6050 motion sensor. The MPU6050 detects the tilt of the user's hand, and the transmitter ESP32 sends control information to the receiver using ESP-NOW wireless communication. The receiving controller operates the car's motors according to the detected gesture. Forward, backward, left and right movements are controlled by hand tilt, while the amount of tilt determines the speed. Returning the hand to a level position commands the car to stop."],
+    ["introduction","01 · Introduction","Conventional robotic cars are commonly operated using buttons, joysticks or wired control interfaces. A gesture-based interface provides an alternative in which physical hand movement is used as the control input. This project explores that approach by combining inertial motion sensing, wireless communication and embedded motor control."],
+    ["objectives","02 · Project objectives","The main objectives were to interface an MPU6050 with an ESP32, detect hand-tilt movement, transmit gesture information wirelessly using ESP-NOW, and control the direction and speed of a robotic car using a second ESP32. The project also aimed to integrate the hardware and software subsystems into a functional prototype."],
+    ["design","03 · Hardware and software design","The prototype uses two ESP32 microcontrollers, an MPU6050 accelerometer and gyroscope, a robotic car chassis, DC drive motors, a motor driver and a power supply. The MPU6050 is connected to the transmitter-side ESP32. The second ESP32 is installed on the car and interfaces with the motor-control circuit. Arduino IDE and embedded C/C++ are used for sensor interfacing, wireless communication and motor-control programming."],
+    ["architecture","04 · System architecture","The design separates gesture sensing and motor actuation across two ESP32 boards. The transmitter reads the hand movement and sends control information wirelessly. The receiver interprets the received information and controls the motors."],
+    ["implementation","05 · System implementation","The MPU6050 measures hand tilt using its accelerometer and gyroscope. The transmitter ESP32 processes the sensor information and sends the corresponding control data through ESP-NOW. The receiver ESP32 uses the received command to control motor direction. The degree of hand tilt is mapped to motor speed, allowing larger hand movements to produce faster car movement. A level hand position is mapped to a stop command."],
+    ["testing","06 · Functional behaviour","The implemented control mapping includes forward, backward, left and right movement. Speed variation is linked to the degree of hand tilt, and a level hand position commands the car to stop. The project information confirms integration of the MPU6050, two ESP32 boards, ESP-NOW communication and motor direction/speed control. Quantitative measurements such as response time, wireless range, speed values and command accuracy were not available in the project information reviewed and are therefore not reported here."],
+    ["contribution","07 · Individual contribution","The documented individual work included hardware assembly and circuit integration, MPU6050 programming, ESP-NOW wireless communication, motor direction and speed-control programming, subsystem integration and testing."],
+    ["challenges","08 · Engineering considerations","The main engineering tasks involved translating motion-sensor readings into useful directional commands, transferring those commands between the two ESP32 boards, and ensuring the motor driver responded with the intended direction and speed. Gesture thresholds and sensor filtering are important considerations for reducing unintended movement, although specific calibration values were not available in the supplied project details."],
+    ["future","09 · Future development","Potential improvements include calibrating gesture thresholds, filtering sensor noise, adding adjustable speed sensitivity, evaluating wireless response and operating distance, and improving the enclosure and ergonomics of the hand-held transmitter."]
+  ];
+  const architecture = [
+    ["Hand movement and MPU6050","The motion sensor measures the user's hand tilt and provides motion data to the transmitter ESP32."],
+    ["ESP32 transmitter and ESP-NOW","The transmitter interprets the gesture and sends the control information wirelessly to the car."],
+    ["ESP32 receiver and motor control","The receiving ESP32 converts the wireless command into motor direction and speed outputs."]
+  ];
+  return (
+    <main className="min-h-screen bg-[#eef2f7] pb-16 text-[#25344b]">
+      <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
+        <div className="section-shell flex h-[68px] items-center justify-between">
+          <Link href="/#home" className="text-lg font-black tracking-tight text-[#142033]">DUMINDU<span className="text-blue-600">.</span></Link>
+          <Link href="/projects/hand-gesture-robotic-car" className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-blue-700"><ArrowLeft size={16}/> Back to project</Link>
+        </div>
+      </header>
+      <div className="section-shell pt-8 md:pt-12">
+        <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_18px_60px_rgba(15,35,70,.09)]">
+          <div className="relative overflow-hidden bg-gradient-to-br from-[#142033] via-[#1d3d69] to-[#245ce5] px-7 py-12 text-white md:px-14 md:py-16">
+            <div className="absolute -right-16 -top-24 h-80 w-80 rounded-full border border-white/10"/>
+            <div className="absolute -right-4 -top-12 h-56 w-56 rounded-full border border-white/10"/>
+            <div className="relative max-w-3xl">
+              <div className="flex items-center gap-2 text-xs font-black tracking-[.2em] text-blue-200"><FileText size={15}/> ENGINEERING PROJECT REPORT</div>
+              <p className="mt-10 text-xs font-bold tracking-[.2em] text-blue-200">ROBOTICS · WIRELESS CONTROL</p>
+              <h1 className="mt-4 text-3xl font-black leading-tight tracking-tight md:text-5xl">Hand Gesture-Based Robotic Car Using ESP32 and MPU6050</h1>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-blue-50">A wireless gesture-control prototype using inertial sensing, ESP-NOW communication and variable-speed motor control.</p>
+              <div className="mt-10 flex flex-wrap gap-3 text-xs font-bold"><span className="rounded-full border border-white/25 bg-white/10 px-4 py-2">PROJECT 04</span><span className="rounded-full border border-white/25 bg-white/10 px-4 py-2">PROTOTYPE</span><span className="rounded-full border border-white/25 bg-white/10 px-4 py-2">ONLINE REPORT</span></div>
+            </div>
+          </div>
+          <div className="grid gap-10 p-6 md:grid-cols-[210px_minmax(0,1fr)] md:p-12">
+            <aside className="h-fit md:sticky md:top-24">
+              <p className="text-xs font-black tracking-[.18em] text-blue-700">REPORT CONTENTS</p>
+              <nav className="mt-4 grid gap-2 text-sm">{sections.map(([id,title])=><a key={id} href={`#${id}`} className="rounded-lg px-3 py-2 text-slate-600 transition hover:bg-blue-50 hover:text-blue-700">{title}</a>)}</nav>
+            </aside>
+            <article className="min-w-0">
+              {sections.map(([id,title,body],i)=><Section key={id} id={id} number={i===0?"ABSTRACT":String(i).padStart(2,"0")} title={title}>
+                <p className="text-sm leading-8 text-slate-600">{body}</p>
+                {id==="architecture" && <div className="mt-5 space-y-3">{architecture.map(([heading,description])=><div key={heading} className="rounded-xl border border-slate-200 bg-[#f7f9fc] p-5"><h3 className="font-bold text-[#142033]">{heading}</h3><p className="mt-2 text-sm leading-7 text-slate-600">{description}</p></div>)}</div>}
+                {id==="implementation" && <div className="mt-5 grid gap-2 sm:grid-cols-2"><p className="rounded-lg bg-[#f7f9fc] p-3 text-sm text-slate-700">Forward tilt → Forward movement</p><p className="rounded-lg bg-[#f7f9fc] p-3 text-sm text-slate-700">Backward tilt → Backward movement</p><p className="rounded-lg bg-[#f7f9fc] p-3 text-sm text-slate-700">Left/right tilt → Turning movement</p><p className="rounded-lg bg-[#f7f9fc] p-3 text-sm text-slate-700">Level hand → Stop</p></div>}
+              </Section>)}
+              <div className="mt-8 rounded-xl border border-amber-200 bg-amber-50 p-5">
+                <p className="text-xs font-black tracking-[.16em] text-amber-800">REPORTING NOTE</p>
+                <p className="mt-2 text-sm leading-7 text-amber-900">This report is based on the project details currently available. No quantitative test results, measured wireless range, response-time data, source-code link or demonstration media were supplied, so these have not been invented or presented as verified evidence.</p>
+              </div>
+            </article>
+          </div>
+          <footer className="border-t border-slate-200 bg-[#f8fafc] px-6 py-7 text-center md:px-12">
+            <p className="text-xs font-bold tracking-[.18em] text-slate-400">END OF PROJECT REPORT</p>
+            <p className="mt-2 text-sm text-slate-500">Hand Gesture-Based Robotic Car · Project 04</p>
+            <Link href="/projects/hand-gesture-robotic-car" className="mt-5 inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-700">Return to project page <ArrowUpRight size={15}/></Link>
+          </footer>
+        </div>
+      </div>
+    </main>
+  );
+}
+
 export default async function ProjectReportPage({ params }: { params: Promise<{ slug:string }> }) {
   const { slug } = await params;
   if (slug === "iot-health-monitoring") return <HealthReportPage />;
   if (slug === "indoor-air-quality-robot") return <AMRReportPage />;
+  if (slug === "hand-gesture-robotic-car") return <GestureReportPage />;
   return (
     <main className="min-h-screen bg-[#eef2f7] pb-16 text-[#25344b]">
       <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
