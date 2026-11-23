@@ -304,17 +304,8 @@ export default function Home() {
                   <span className="absolute bottom-5 right-6 text-xs font-black tracking-[.25em] text-white/60">{project.number}</span>
                   <span className="absolute left-6 top-5 rounded-full border border-white/25 bg-white/15 px-3 py-1.5 text-[10px] font-black tracking-[.16em] text-white">PROJECT SHOWCASE</span>
                 </div>
-                <div className="p-5 md:p-6">
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="text-[10px] font-black tracking-[.15em] text-blue-700">{project.category}</span>
-                    <span className="text-xs font-bold text-slate-300">{project.number} / 06</span>
-                  </div>
-                  <h3 className="mt-4 max-w-lg text-xl font-black leading-snug tracking-tight text-[#142033] md:text-2xl">{project.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-500">{project.summary}</p>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {project.stack.map((tech) => <span key={tech} className="rounded-full bg-slate-100 px-3 py-1.5 text-[11px] font-semibold text-slate-600">{tech}</span>)}
-                  </div>
-                  <div className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-blue-700 transition group-hover:gap-3">Explore project <ArrowUpRight size={16}/></div>
+                <div className="flex min-h-[112px] items-center p-5 md:min-h-[124px] md:p-6">
+                  <h3 className="text-xl font-black leading-snug tracking-tight text-[#142033] md:text-2xl">{project.title}</h3>
                 </div>
               </Link>
             );
