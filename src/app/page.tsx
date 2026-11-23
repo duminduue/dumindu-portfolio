@@ -2,6 +2,7 @@ import Image from "next/image";
 import HeroEngineering3D from "@/components/HeroEngineering3D";
 import ConveyorBox3D from "@/components/ConveyorBox3D";
 import DomainExplorer from "@/components/DomainExplorer";
+import TechnicalSkills from "@/components/TechnicalSkills";
 import {
   ArrowDown,
   ArrowRight,
@@ -279,9 +280,10 @@ export default function Home() {
       </section>
 
       <DomainExplorer />
+      <TechnicalSkills />
 
       <section id="projects" className="section-shell py-24 md:py-32">
-        <p className="eyebrow">03 / Selected work</p>
+        <p className="eyebrow">04 / Selected work</p>
         <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <h2 className="text-4xl font-black tracking-tight md:text-5xl">Projects &amp; practice.</h2>
           <p className="max-w-md text-sm leading-7 text-slate-500">A selection of engineering and software projects demonstrating practical development across connected disciplines.</p>
