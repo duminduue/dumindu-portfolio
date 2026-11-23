@@ -499,11 +499,20 @@ a {
 }
 
 .about-info-card {
+  position: relative;
+  overflow: hidden;
   border: 1px solid #e1e8f2;
-  border-radius: 1.25rem;
-  background: rgba(255,255,255,.9);
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
   padding: 1.5rem;
-  box-shadow: 0 12px 28px rgba(20, 32, 51, .06);
+  box-shadow: 0 8px 22px rgba(20, 32, 51, .055);
+}
+.about-info-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 5px;
+  background: linear-gradient(90deg, #1d4ed8, #3b82f6, #60a5fa);
 }
 
 .about-conveyor {
