@@ -334,7 +334,7 @@ export default function Home() {
         <p className="mt-7 text-xs leading-6 text-slate-400">Project visuals are illustrative placeholders. Original project photographs, repository links and demonstrations can be added when the evidence is ready.</p>
       </section>
 
-      <section id="experience" className="bg-[#f6f8fb] pt-6 pb-20 md:pt-8 md:pb-24">
+      <section id="experience" className="bg-[#f6f8fb] pt-6 pb-8 md:pt-8 md:pb-10">
         <div className="section-shell">
           <p className="eyebrow">06 / Professional Experience</p>
           <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Practical engineering experience.</h2>
@@ -379,7 +379,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="education" className="bg-white pt-10 pb-20 md:pt-14 md:pb-24">
+      <section id="education" className="bg-white pt-6 pb-20 md:pt-8 md:pb-24">
         <div className="section-shell">
           <p className="eyebrow">07 / Education &amp; Qualifications</p>
           <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Academic foundation.</h2>
