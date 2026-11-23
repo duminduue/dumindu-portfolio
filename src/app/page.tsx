@@ -75,6 +75,7 @@ const projects = [
     summary: "Developed an engineering calculation platform with formula calculations, unit conversion, a formula library and calculation history. The CV records 104 passing automated tests.",
     stack: ["React", "TypeScript", "Python", "FastAPI", "SQLite"],
     image: "/images/projects/project-05.png",
+    image: "/images/projects/project-05.png",
   },
   {
     number: "06",
