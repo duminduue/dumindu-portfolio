@@ -65,6 +65,7 @@ const projects = [
     category: "ROBOTICS · WIRELESS CONTROL",
     summary: "Built a wireless gesture-controlled robotic car using dual ESP32 microcontrollers and MPU6050-based tilt sensing with variable-speed motor control.",
     stack: ["Dual ESP32", "MPU6050", "ESP-NOW"],
+    image: "/images/projects/project-04.png",
   },
   {
     number: "05",
