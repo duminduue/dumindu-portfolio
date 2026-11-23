@@ -1196,3 +1196,12 @@ html[data-theme="dark"] .professional-learning-panel .professional-learning-topl
     display: none !important;
   }
 }
+
+
+/* Hide the decorative hero robotic arm on tablet and mobile layouts.
+   It remains visible on desktop screens only. */
+@media (max-width: 1023px) {
+  .hero-arm-overlay {
+    display: none !important;
+  }
+}
