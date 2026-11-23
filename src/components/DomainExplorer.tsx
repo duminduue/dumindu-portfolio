@@ -54,15 +54,15 @@ export default function DomainExplorer() {
             </div>
           </div>
 
-          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          <div className="mt-9 grid gap-4 lg:grid-cols-3">
             {pillars.map((pillar) => (
-              <article key={pillar.number} className="overflow-hidden rounded-[1.6rem] border border-slate-200 bg-white shadow-[0_12px_36px_rgba(15,23,42,0.045)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(15,23,42,0.09)]">
-                <div className={`bg-gradient-to-r ${pillar.tone} px-6 py-6 text-white`}>
+              <article key={pillar.number} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(15,23,42,0.09)]">
+                <div className={`bg-gradient-to-r ${pillar.tone} px-5 py-5 text-white`}>
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-black tracking-[.2em] text-white/70">PILLAR {pillar.number}</span>
                     <span className="text-3xl font-light text-white/35">0{pillar.number.slice(-1)}</span>
                   </div>
-                  <h3 className="mt-4 text-2xl font-black tracking-tight">{pillar.title}</h3>
+                  <h3 className="mt-4 text-xl font-black tracking-tight">{pillar.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-white/75">{pillar.subtitle}</p>
                 </div>
                 <div className="divide-y divide-slate-100 px-4">
@@ -70,8 +70,8 @@ export default function DomainExplorer() {
                     const DomainIcon = domain.icon;
                     const index = domains.findIndex((item) => item.number === domain.number);
                     return (
-                      <button key={domain.number} type="button" onClick={() => setSelected(index)} aria-label={`Explore ${domain.title}`} className="group flex w-full items-center gap-4 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500">
-                        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 transition duration-300 group-hover:scale-105 group-hover:bg-blue-100"><DomainIcon size={23} strokeWidth={1.7} /></span>
+                      <button key={domain.number} type="button" onClick={() => setSelected(index)} aria-label={`Explore ${domain.title}`} className="group flex w-full items-center gap-4 py-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500">
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 transition duration-300 group-hover:scale-105 group-hover:bg-blue-100"><DomainIcon size={20} strokeWidth={1.7} /></span>
                         <span className="min-w-0 flex-1">
                           <span className="block text-[10px] font-black tracking-[.18em] text-blue-600">{domain.number} / DOMAIN</span>
                           <span className="mt-1 block text-sm font-extrabold leading-5 text-[#142033]">{domain.title}</span>
