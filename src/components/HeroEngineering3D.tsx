@@ -45,7 +45,9 @@ function RealIndustrialArm() {
   const mixer = useMemo(() => new THREE.AnimationMixer(model), [model]);
   useEffect(() => {
     animations.forEach((clip) => mixer.clipAction(clip).reset().play());
-    return () => mixer.stopAllAction();
+    return () => {
+      mixer.stopAllAction();
+    };
   }, [animations, mixer]);
 
   useFrame(({ clock }, delta) => {
