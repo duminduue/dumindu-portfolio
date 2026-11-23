@@ -399,11 +399,23 @@ export default function Home() {
 
       <section id="education" className="bg-[#f6f8fb] pt-6 pb-8 md:pt-8 md:pb-10">
         <div className="section-shell">
-          <p className="eyebrow">07 / Education &amp; Qualifications</p>
-          <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Academic foundation.</h2>
-          <p className="mt-5 max-w-4xl text-base leading-8 text-slate-600">An academic journey across engineering, from foundation studies to an honours degree in mechatronics and robotics.</p>
+          <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
+            <div>
+              <p className="eyebrow">07 / Education &amp; Qualifications</p>
+              <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Academic foundation.</h2>
+              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">An academic journey across engineering, from foundation studies to an honours degree in mechatronics and robotics.</p>
+            </div>
+            <div className="mb-1 flex items-center gap-5 rounded-2xl border border-blue-100 bg-white/80 px-6 py-5 shadow-sm">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-2xl font-black text-blue-700">3</div>
+              <div>
+                <p className="text-[10px] font-black tracking-[.2em] text-blue-700">EDUCATION STAGES</p>
+                <p className="mt-1 text-lg font-black text-[#142033]">Engineering pathway</p>
+                <p className="mt-1 text-xs font-semibold tracking-wide text-slate-500">2022 — 2026</p>
+              </div>
+            </div>
+          </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 lg:grid-cols-3">
             <article className="about-info-card group flex min-h-[340px] flex-col p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
               <div className="flex items-start justify-between gap-3">
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 shadow-sm"><GraduationCap size={27} strokeWidth={1.8} /></div>
