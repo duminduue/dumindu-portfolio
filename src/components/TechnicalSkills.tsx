@@ -30,11 +30,11 @@ export default function TechnicalSkills() {
     <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4"><span className="text-3xl font-black tracking-tight text-blue-700">05</span><span className="text-xs font-bold uppercase leading-5 tracking-[.14em] text-slate-500">Technology<br/>groups</span></div>
    </div>
    <div className="mt-9 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-    {groups.map(group=>{const Icon=group.icon;return <article key={group.number} className="group rounded-2xl border border-slate-200 bg-[#fbfcfe] p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.07)] md:p-6">
-     <div className="flex items-start justify-between gap-4"><span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white"><Icon size={23}/></span><span className="text-xs font-black tracking-[.2em] text-slate-300">{group.number}</span></div>
-     <h3 className="mt-5 text-lg font-black tracking-tight text-[#142033]">{group.title}</h3><p className="mt-2 min-h-[3rem] text-sm leading-6 text-slate-500">{group.description}</p>
+    {groups.map(group=>{const Icon=group.icon;return <article key={group.number} className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.09)]">
+     <div className="bg-gradient-to-r from-blue-700 to-blue-500 px-5 py-5 text-white"><div className="flex items-center justify-between gap-3"><span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 text-white"><Icon size={22}/></span><span className="text-xs font-black tracking-[.2em] text-white/65">{group.number}</span></div><h3 className="mt-4 text-lg font-black tracking-tight">{group.title}</h3></div>
+     <div className="p-5 md:p-6"><p className="min-h-[3rem] text-sm leading-6 text-slate-500">{group.description}</p>
      <div className="mt-5 flex flex-wrap gap-2">{group.skills.map(skill=><button key={skill} type="button" onClick={()=>setSelected(skill)} className="rounded-full border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-600 transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-800">{skill} ↗</button>)}</div>
-    </article>})}
+     </div></article>})}
    </div>
    <p className="mt-8 text-center text-xs leading-6 text-slate-400">This list represents technologies and tools used in projects or explored through learning. It does not indicate professional certification or equal proficiency in every tool.</p>
   </div>
