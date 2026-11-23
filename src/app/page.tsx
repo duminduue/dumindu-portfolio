@@ -38,6 +38,7 @@ const projects = [
     category: "ROBOTICS · EMBEDDED SYSTEMS",
     summary: "Designed and developed an ESP32-based self-balancing robot using MPU6050 IMU sensing and PID control, with encoder feedback and wireless web-based control.",
     stack: ["ESP32", "MPU6050", "PID", "SOLIDWORKS"],
+    image: null as string | null, // Add the supplied project image path here when ready
   },
   {
     number: "02",
@@ -295,12 +296,18 @@ export default function Home() {
             return (
               <Link id={`project-${project.number}`} key={project.number} href={`/projects/${["self-balancing-mobile-robot","iot-health-monitoring","indoor-air-quality-robot","hand-gesture-robotic-car","industrial-engineering-calculator","plantorai"][Number(project.number)-1]}`} className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600">
                 <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500">
-                  <div aria-hidden="true" className="absolute -left-12 -top-24 h-64 w-64 rounded-full border border-white/15" />
-                  <div aria-hidden="true" className="absolute -bottom-36 -right-12 h-72 w-72 rounded-full border border-blue-200/70" />
-                  <div aria-hidden="true" className="absolute inset-x-12 top-1/2 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
-                  <div className="relative flex h-20 w-20 items-center justify-center rounded-3xl border border-white/25 bg-white text-blue-700 shadow-[0_14px_34px_rgba(15,23,42,0.16)] transition duration-300 group-hover:-translate-y-1 group-hover:scale-105">
-                    <ProjectIcon size={38} strokeWidth={1.55} />
-                  </div>
+                  {project.image ? (
+                    <Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" className="object-cover transition duration-500 group-hover:scale-[1.03]" />
+                  ) : (
+                    <>
+                      <div aria-hidden="true" className="absolute -left-12 -top-24 h-64 w-64 rounded-full border border-white/15" />
+                      <div aria-hidden="true" className="absolute -bottom-36 -right-12 h-72 w-72 rounded-full border border-blue-200/70" />
+                      <div aria-hidden="true" className="absolute inset-x-12 top-1/2 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
+                      <div className="relative flex h-20 w-20 items-center justify-center rounded-3xl border border-white/25 bg-white text-blue-700 shadow-[0_14px_34px_rgba(15,23,42,0.16)] transition duration-300 group-hover:-translate-y-1 group-hover:scale-105">
+                        <ProjectIcon size={38} strokeWidth={1.55} />
+                      </div>
+                    </>
+                  )}
                   <span className="absolute bottom-5 right-6 text-xs font-black tracking-[.25em] text-white/60">{project.number}</span>
                   <span className="absolute left-6 top-5 rounded-full border border-white/25 bg-white/15 px-3 py-1.5 text-[10px] font-black tracking-[.16em] text-white">PROJECT SHOWCASE</span>
                 </div>
