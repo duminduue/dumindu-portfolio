@@ -302,7 +302,7 @@ export default function Home() {
                   <div className="relative z-10 flex h-full w-full items-center justify-center rounded-[1.4rem] border border-white/75 bg-white p-2 shadow-[0_12px_30px_rgba(8,24,60,0.18)] transition duration-300 group-hover:-translate-y-1 md:rounded-[1.7rem] md:p-3">
                     <div className="relative h-full w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-50 md:rounded-2xl">
                       {project.image ? (
-                        <Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 65vw, (max-width: 1280px) 35vw, 25vw" className="object-contain p-2 transition duration-500 group-hover:scale-[1.03]" />
+                        <Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 65vw, (max-width: 1280px) 35vw, 25vw" className="object-cover transition duration-500 group-hover:scale-[1.03]" />
                       ) : (
                         <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-slate-300">
                           <ProjectIcon size={42} strokeWidth={1.4} />
