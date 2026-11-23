@@ -43,15 +43,15 @@ export default function DomainExplorer() {
     <>
       <section id="domains" className="bg-[#f6f8fb] pt-6 pb-8 md:pt-8 md:pb-10">
         <div className="section-shell">
-          <p className="eyebrow">02 / Professional direction</p>
+          <p className="eyebrow">02 / Areas I work in</p>
           <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-start">
             <div>
-              <h2 className="max-w-2xl text-4xl font-black tracking-tight text-[#142033] md:text-5xl">Engineering across<br />three connected pillars.</h2>
-              <p className="mt-5 max-w-3xl text-base leading-7 text-slate-500">My professional interests bring together core engineering, intelligent technologies and digital systems to develop practical solutions.</p>
+              <h2 className="max-w-2xl text-4xl font-black tracking-tight text-[#142033] md:text-5xl">Engineering areas.</h2>
+              <p className="mt-5 max-w-3xl text-base leading-7 text-slate-500">My studies and projects cover engineering, AI and software development.</p>
             </div>
             <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-sm">
               <span className="text-3xl font-black tracking-tight text-blue-700">09</span>
-              <span className="text-xs font-bold uppercase leading-5 tracking-[.14em] text-slate-500">Professional<br />domains</span>
+              <span className="text-xs font-bold uppercase leading-5 tracking-[.14em] text-slate-500">Engineering<br />areas</span>
             </div>
           </div>
 
@@ -86,7 +86,7 @@ export default function DomainExplorer() {
               </article>
             ))}
           </div>
-          <p className="mt-8 text-center text-sm font-medium text-slate-500">Select any domain to explore its related skills, technologies and featured projects.</p>
+          <p className="mt-8 text-center text-sm font-medium text-slate-500">Select an area to see related skills and projects.</p>
         </div>
       </section>
 
@@ -107,10 +107,10 @@ export default function DomainExplorer() {
             <div className="mt-7">
               <div className="flex items-center justify-between gap-3"><h3 className="text-xs font-black tracking-[.16em] text-[#142033]">RELATED PROJECTS</h3><span className="text-[10px] text-slate-400">{active.projects.length} linked</span></div>
               {active.projects.length ? <div className="mt-3 grid gap-3">{active.projects.map((projectIndex) => { const project = projects[projectIndex]; return <Link key={project.anchor} href={`/projects/${project.slug}`} onClick={() => setSelected(null)} className="group flex items-center justify-between gap-4 rounded-2xl border border-slate-200 p-4 transition hover:border-blue-300 hover:bg-blue-50/40"><span><span className="block text-sm font-bold text-[#142033]">{project.title}</span><span className="mt-1 block text-xs text-slate-500">{project.stack}</span></span><ExternalLink size={17} className="shrink-0 text-blue-600 transition group-hover:translate-x-0.5" /></Link>; })}</div> : <div className="mt-3 rounded-2xl border border-blue-100 bg-blue-50/70 p-4">
-                <div className="flex items-start gap-3"><span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-blue-700"><Info size={18}/></span><div><p className="text-sm font-bold text-[#142033]">More work is on the way</p><p className="mt-1 text-sm leading-6 text-slate-600">I’m continuing to develop my experience in this area. A related project will appear here when it is ready to showcase.</p><a href="#projects" onClick={() => setSelected(null)} className="mt-3 inline-flex items-center gap-2 text-xs font-bold text-blue-700 hover:text-blue-900">Explore all projects <ArrowRight size={14}/></a></div></div>
+                <div className="flex items-start gap-3"><span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-blue-700"><Info size={18}/></span><div><p className="text-sm font-bold text-[#142033]">No project listed yet</p><p className="mt-1 text-sm leading-6 text-slate-600">I have not added a project in this area yet.</p><a href="#projects" onClick={() => setSelected(null)} className="mt-3 inline-flex items-center gap-2 text-xs font-bold text-blue-700 hover:text-blue-900">Explore all projects <ArrowRight size={14}/></a></div></div>
               </div>}
             </div>
-            <p className="mt-6 text-[11px] leading-5 text-slate-400">Skills shown reflect the current portfolio profile and areas of development. Project links are limited to work currently featured in this portfolio.</p>
+            <p className="mt-6 text-[11px] leading-5 text-slate-400">These are the skills and projects currently listed in my portfolio.</p>
           </section>
         </div>
       )}
