@@ -875,3 +875,73 @@ html[data-theme="dark"] [class~="border-blue-200"] { border-color: #355b8b !impo
 html[data-theme="dark"] [class~="bg-slate-100"] { background-color: #24344b !important; }
 html[data-theme="dark"] [class~="text-slate-800"] { color: #e5edf8 !important; }
 html[data-theme="dark"] .about-photo-label { background: rgba(17,28,46,.88); color: #e5edf8; }
+
+
+/* Refined dark palette: consistent surfaces, readable text and restrained blue accents */
+html[data-theme="dark"] {
+  --background: #0b1220;
+  --foreground: #e6edf7;
+}
+html[data-theme="dark"] body,
+html[data-theme="dark"] main { background-color: #0b1220; color: #e6edf7; }
+html[data-theme="dark"] main > section:not(#home):not(#contact) {
+  background-color: #0f1a2b;
+}
+html[data-theme="dark"] main > section:nth-of-type(even):not(#home):not(#contact) {
+  background-color: #111f33;
+}
+html[data-theme="dark"] main > section :is(h1,h2,h3,h4,h5,strong) { color: #edf4ff; }
+html[data-theme="dark"] main > section :is(p,li) { color: #b7c5d8; }
+html[data-theme="dark"] main > section .eyebrow,
+html[data-theme="dark"] main > section [class*="text-blue-"] { color: #82b4ff; }
+html[data-theme="dark"] main > section [class*="bg-white"],
+html[data-theme="dark"] main > section [class*="from-white"],
+html[data-theme="dark"] main > section [class*="to-[#f7faff]"] {
+  background: linear-gradient(145deg, #1a2940 0%, #15243a 100%) !important;
+}
+html[data-theme="dark"] main > section [class*="bg-slate-50"],
+html[data-theme="dark"] main > section [class*="bg-slate-100"] {
+  background-color: #22334b !important;
+}
+html[data-theme="dark"] main > section [class*="border-slate-"] {
+  border-color: #30445f !important;
+}
+html[data-theme="dark"] main > section [class*="shadow-"] {
+  --tw-shadow-color: rgb(0 0 0 / .22);
+}
+html[data-theme="dark"] #about .about-info-card,
+html[data-theme="dark"] #certifications .about-info-card {
+  background: linear-gradient(145deg, #1a2940 0%, #142238 100%) !important;
+  border-color: #30445f !important;
+}
+html[data-theme="dark"] #projects a.group {
+  background: #17263c !important;
+  border-color: #30445f !important;
+}
+html[data-theme="dark"] #projects a.group > div:first-child {
+  background: linear-gradient(135deg, #1e4a91, #2563eb) !important;
+}
+html[data-theme="dark"] #experience article,
+html[data-theme="dark"] #education article {
+  background: linear-gradient(145deg, #1a2940, #142238) !important;
+  border-color: #30445f !important;
+}
+html[data-theme="dark"] #research .about-info-card,
+html[data-theme="dark"] #research [class*="bg-white"] {
+  background: #192a42 !important;
+  border-color: #344b68 !important;
+}
+html[data-theme="dark"] #certifications [class*="rounded-xl"][class*="border"] {
+  background: #1a2b43 !important;
+  border-color: #30445f !important;
+}
+html[data-theme="dark"] #contact { background: linear-gradient(120deg, #0d1b30, #102746) !important; }
+html[data-theme="dark"] footer { background: #080f1c !important; }
+html[data-theme="dark"] .about-vision { background: linear-gradient(115deg,#203753 0%,#172b45 65%,#101d31 100%) !important; }
+html[data-theme="dark"] .about-photo-label { border-color: #49617e; }
+html[data-theme="dark"] header { background: rgba(13, 25, 42, .92) !important; }
+html[data-theme="dark"] header nav > a:last-child { color: #fff !important; }
+html[data-theme="dark"] #home { background-color: #101c30; }
+html[data-theme="dark"] #research > div > div:first-child { color: #edf4ff; }
+html[data-theme="dark"] a:focus-visible,
+html[data-theme="dark"] button:focus-visible { outline-color: #60a5fa; }
