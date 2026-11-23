@@ -321,7 +321,7 @@ export default function Home() {
         <p className="mt-7 text-xs leading-6 text-slate-400">Project visuals are illustrative placeholders. Original project photographs, repository links and demonstrations can be added when the evidence is ready.</p>
       </section>
 
-      <section id="experience" className="bg-white py-24 md:py-32">
+      <section id="experience" className="bg-[#f6f8fb] py-24 md:py-32">
         <div className="section-shell">
           <p className="eyebrow">04 / Background</p><h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Education &amp; experience.</h2>
           <div className="mt-12 grid gap-14 md:grid-cols-2">
