@@ -84,6 +84,7 @@ const projects = [
     category: "AI APPLICATIONS · FULL-STACK",
     summary: "Built a full-stack plant-care platform with a searchable catalogue, Gemini AI-powered assistant and role-based customer, seller and admin experiences. The CV records 55 passing backend tests.",
     stack: ["React", "TypeScript", "Node.js", "MongoDB", "Gemini AI"],
+    image: "/images/projects/project-06.png",
   },
 ];
 
