@@ -21,24 +21,26 @@ const robot = {
   software:["Embedded C/C++","Arduino Framework","HTML5","CSS3","JavaScript","PID control","FreeRTOS","Wi-Fi","Serial communication","MPU6050 libraries"],
   working:"The platform behaves like an inverted pendulum. When its body tilts away from the upright position, the PID controller calculates a corrective motor output. The wheels move to bring the body back towards equilibrium. This sensing, calculation and correction cycle repeats continuously while the robot is stationary or moving.",
   architecture:[
-    ["Sensor acquisition","The MPU6050 measures tilt using its accelerometer and gyroscope. Motor encoders provide wheel speed and position feedback."],
-    ["Balance controller – ESP32 #1","The first ESP32 processes sensor readings and calculates the difference between the desired upright angle and measured tilt."],
-    ["PID and motor drive","The PID controller combines proportional, integral and derivative terms. PWM signals command motor speed and direction through the motor driver."],
-    ["Wireless interface – ESP32 #2","The second ESP32 manages Wi-Fi and the web interface. It sends forward, backward, left, right and stop commands over Serial2."],
-    ["Obstacle warning","The ultrasonic sensor measures nearby objects. Distance status is shown on the web interface and a buzzer warns when an object enters the configured range."]
+    ["Sensor acquisition","The MPU6050 measures tilt using its accelerometer and gyroscope. Encoders on the two DC gear motors provide wheel speed and position feedback."],
+    ["Balance controller – ESP32 #1","ESP32 #1 runs the time-critical balance loop, reads the MPU6050 and encoder feedback, and calculates the difference between the target angle and measured tilt. The report appendix shows a 5 ms task delay in the control task."],
+    ["PID and motor drive","The PID controller combines proportional, integral and derivative terms. Encoder-based speed damping and position holding supplement the angle controller; PWM signals command motor speed and direction through the motor driver."],
+    ["Wireless interface – ESP32 #2","ESP32 #2 hosts a Wi-Fi access point and web server, handles the browser interface and ultrasonic sensing, then forwards F/B/L/R/S commands to ESP32 #1 over Serial2."],
+    ["Obstacle warning","The ultrasonic distance readings are smoothed using a five-sample moving average and a stability check. The interface displays safe, caution and obstacle-near/close states; the buzzer activates below 15 cm in the appendix code."]
   ],
   results:[
     ["Settling time","Approximately 1.5 seconds"],
     ["Maximum overshoot","Approximately 5°"],
     ["Steady-state error","Within ±0.5°"],
     ["Disturbance recovery","Approximately 1–2 seconds"],
-    ["Maximum additional load tested","Approximately 250 g"]
+    ["Maximum additional load tested","250 g (PASS)"],
+    ["Smooth-surface movement","PARTIAL — wheel slippage"],
+    ["Rough-surface movement","PASS — good traction and control"]
   ],
   tests:[
     "Maintained upright position during continuous operation, with minimal oscillations after the initial settling period.",
     "Recovered to an upright position after manually applied external disturbances.",
-    "Maintained balance with an additional load of approximately 250 g.",
-    "Maintained balance on smooth tile and rough carpet; wheel slippage affected movement on smooth surfaces.",
+    "Load tests at 0, 50, 100, 150, 200 and 250 g were recorded as stable; the 250 g test was marked PASS.",
+    "The report marked rough-surface testing PASS (good traction and control) and smooth-surface movement PARTIAL because of wheel slippage.",
     "Maintained balance under tested inclination and supporting-surface movement conditions.",
     "Wi-Fi web controls for forward, backward, left, right and stop were tested with visual feedback.",
     "Ultrasonic sensing provided visual distance indicators and audible buzzer warnings."
@@ -49,11 +51,12 @@ const robot = {
     ["PID tuning","Initial tuning caused oscillation and slow response. Parameters were iteratively adjusted, with speed damping and position-holding techniques added."],
     ["Wheel traction","Wheel slippage on smooth surfaces affected mobility. Improved traction remains a future improvement."],
     ["Stopping behaviour","A short-duration braking method was introduced to reduce speed more quickly and improve stopping stability."],
-    ["Sensor noise and motor delay","Minor sensor noise and motor response delays remain areas for further optimisation."]
+    ["Sensor noise and motor delay","The report notes residual IMU noise/drift and minor motor response delays. These produced small behavioural variations and remain areas for further optimisation."],
+    ["Tested load range","The documented load test covered 0–250 g. Loads beyond the tested range were not validated in the report."]
   ],
   future:[
     "Explore adaptive control, state-space control and model predictive control to improve response under changing conditions.",
-    "Apply sensor-fusion techniques such as Kalman filtering to reduce noise and improve tilt-angle estimation.",
+    "Further improve sensor filtering and investigate sensor-fusion methods such as Kalman filtering to reduce residual IMU noise and drift.",
     "Improve wheel traction and braking for low-friction surfaces.",
     "Add infrared line-following and multiple ultrasonic sensors for autonomous navigation; investigate GPS for outdoor use.",
     "Optimise chassis weight distribution, centre of mass and structural materials.",
@@ -92,12 +95,12 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       <div className="section-shell">
         <section className="-mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
           <p className="text-xs font-black tracking-[.18em] text-blue-700">PROJECT RESOURCE HUB</p><h2 className="mt-2 text-2xl font-black text-[#142033]">Code, documentation & evidence</h2>
-          <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">{detailed ? "Project information below is based on the details supplied. Open the available evidence folders; the source repository and PDF report will be linked when supplied." : "This page is ready for verified project information, source code and supporting evidence. Content will be added as project details are provided."}</p>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">{detailed ? "Project information below has been checked against the supplied dissertation report and its appendices. Demo and evidence folders are available; a public PDF link and source repository link are still pending." : "This page is ready for verified project information, source code and supporting evidence. Content will be added as project details are provided."}</p>
           <div className="mt-5 flex flex-wrap gap-3">
             {detailed ? <a href="https://drive.google.com/drive/folders/1Q_SjpXY8f_gIwiQSwdlIv0e6uulrNMYT" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-800 hover:bg-blue-100"><PlayCircle size={17}/> Demo videos <ArrowUpRight size={14}/></a> : <span className="rounded-xl bg-slate-100 px-4 py-3 text-sm text-slate-500">Demo video · To be added</span>}
             {detailed ? <a href="https://drive.google.com/drive/folders/1jfRQOUJCHwyAG0kI4ZFwOYZzXUMnJUNs" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-800 hover:bg-blue-100"><Images size={17}/> Photos & evidence <ArrowUpRight size={14}/></a> : <span className="rounded-xl bg-slate-100 px-4 py-3 text-sm text-slate-500">Evidence · To be added</span>}
-            <span className="inline-flex items-center gap-2 rounded-xl bg-slate-100 px-4 py-3 text-sm font-semibold text-slate-500"><Github size={17}/> GitHub repository · Not supplied yet</span>
-            <span className="inline-flex items-center gap-2 rounded-xl bg-slate-100 px-4 py-3 text-sm font-semibold text-slate-500"><FileText size={17}/> PDF report · To be added</span>
+            <span className="inline-flex items-center gap-2 rounded-xl bg-slate-100 px-4 py-3 text-sm font-semibold text-slate-500"><Github size={17}/> GitHub source · Not supplied yet</span>
+            <span className="inline-flex items-center gap-2 rounded-xl bg-slate-100 px-4 py-3 text-sm font-semibold text-slate-500"><FileText size={17}/> PDF report reviewed · Public link pending</span>
           </div>
         </section>
         {detailed ? <>
