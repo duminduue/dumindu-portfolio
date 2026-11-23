@@ -5,6 +5,7 @@ import ConveyorBox3D from "@/components/ConveyorBox3D";
 import DomainExplorer from "@/components/DomainExplorer";
 import TechnicalSkills from "@/components/TechnicalSkills";
 import ThemeToggle from "@/components/ThemeToggle";
+import MobileNav from "@/components/MobileNav";
 import {
   ArrowDown,
   ArrowRight,
@@ -117,7 +118,8 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-3">
             <ThemeToggle />
-            <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-[#142033] px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-700">
+            <MobileNav />
+            <a href="#contact" className="hidden items-center gap-2 rounded-full bg-[#142033] px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-700 md:inline-flex">
               Let&apos;s connect <ArrowUpRight size={16} />
             </a>
           </div>
