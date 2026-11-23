@@ -29,11 +29,11 @@ export default function TechnicalSkills() {
     <div><h2 className="max-w-2xl text-4xl font-black tracking-tight text-[#142033] md:text-5xl">Tools I use to<br/>turn ideas into reality.</h2><p className="mt-5 max-w-xl text-base leading-7 text-slate-500">Explore the technologies behind my engineering and software work. Select any skill to see where it is applied in my projects.</p></div>
     <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4"><span className="text-3xl font-black tracking-tight text-blue-700">05</span><span className="text-xs font-bold uppercase leading-5 tracking-[.14em] text-slate-500">Technology<br/>groups</span></div>
    </div>
-   <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-    {groups.map(group=>{const Icon=group.icon;return <article key={group.number} className="group rounded-[1.5rem] border border-slate-200 bg-[#fbfcfe] p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.07)] md:p-7">
+   <div className="mt-9 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+    {groups.map(group=>{const Icon=group.icon;return <article key={group.number} className="group rounded-2xl border border-slate-200 bg-[#fbfcfe] p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.07)] md:p-6">
      <div className="flex items-start justify-between gap-4"><span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white"><Icon size={23}/></span><span className="text-xs font-black tracking-[.2em] text-slate-300">{group.number}</span></div>
-     <h3 className="mt-6 text-xl font-black tracking-tight text-[#142033]">{group.title}</h3><p className="mt-2 min-h-[3rem] text-sm leading-6 text-slate-500">{group.description}</p>
-     <div className="mt-6 flex flex-wrap gap-2">{group.skills.map(skill=><button key={skill} type="button" onClick={()=>setSelected(skill)} className="rounded-full border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-600 transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-800">{skill} ↗</button>)}</div>
+     <h3 className="mt-5 text-lg font-black tracking-tight text-[#142033]">{group.title}</h3><p className="mt-2 min-h-[3rem] text-sm leading-6 text-slate-500">{group.description}</p>
+     <div className="mt-5 flex flex-wrap gap-2">{group.skills.map(skill=><button key={skill} type="button" onClick={()=>setSelected(skill)} className="rounded-full border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-600 transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-800">{skill} ↗</button>)}</div>
     </article>})}
    </div>
    <p className="mt-8 text-center text-xs leading-6 text-slate-400">This list represents technologies and tools used in projects or explored through learning. It does not indicate professional certification or equal proficiency in every tool.</p>
