@@ -1089,3 +1089,41 @@ html[data-theme="dark"] header {
   background: rgba(11,11,11,.96) !important;
   border-color: #303030 !important;
 }
+
+
+/* Warm graphite and bronze accents for selected dark-mode feature cards */
+html[data-theme="dark"] .domain-pillar-heading {
+  background: linear-gradient(115deg, #393229 0%, #514432 100%) !important;
+}
+html[data-theme="dark"] .domain-pillar-heading h3,
+html[data-theme="dark"] .domain-pillar-heading p,
+html[data-theme="dark"] .domain-pillar-heading span {
+  color: #f0e8dc !important;
+}
+html[data-theme="dark"] .skill-group-heading {
+  background: linear-gradient(115deg, #34302a 0%, #494033 100%) !important;
+}
+html[data-theme="dark"] .skill-group-heading h3,
+html[data-theme="dark"] .skill-group-heading span {
+  color: #f0e8dc !important;
+}
+html[data-theme="dark"] .achievement-panel {
+  background: linear-gradient(145deg, #24211d 0%, #1c1a17 100%) !important;
+  border-color: #494034 !important;
+}
+html[data-theme="dark"] .achievement-panel > div:first-child {
+  background: linear-gradient(90deg, #8b7045, #b69a68, #78613e) !important;
+}
+html[data-theme="dark"] .achievement-panel [class*="bg-blue-50"] {
+  background: #393229 !important;
+  color: #d7bd8c !important;
+}
+html[data-theme="dark"] .achievement-panel [class*="text-blue-"] {
+  color: #d7bd8c !important;
+}
+html[data-theme="dark"] .achievement-panel [class*="border-slate-"] {
+  border-color: #403a31 !important;
+}
+html[data-theme="dark"] .achievement-panel [class*="bg-white"] {
+  background: #29251f !important;
+}
