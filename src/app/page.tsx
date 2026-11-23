@@ -344,7 +344,7 @@ export default function Home() {
         <div className="section-shell">
           <p className="eyebrow">06 / Professional Experience</p>
           <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Practical engineering experience.</h2>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">Hands-on exposure to industrial maintenance, production support and engineering improvement in a manufacturing environment.</p>
+          <p className="mt-5 max-w-4xl text-base leading-8 text-slate-600">Hands-on exposure to industrial maintenance, production support and engineering improvement in a manufacturing environment.</p>
           <div className="mt-12 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
             <article className="about-info-card group flex min-h-[300px] flex-col justify-between p-7 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
               <div>
@@ -440,7 +440,7 @@ export default function Home() {
         <div className="section-shell">
           <p className="eyebrow">08 / Research &amp; Future Direction</p>
           <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Exploring what comes next.</h2>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">My interests are focused on bringing intelligent technologies into practical engineering environments. I aim to deepen these areas through project development, independent exploration and future postgraduate research.</p>
+          <p className="mt-5 max-w-5xl text-base leading-8 text-slate-600">My interests are focused on bringing intelligent technologies into practical engineering environments. I aim to deepen these areas through project development, independent exploration and future postgraduate research.</p>
 
           <div className="mt-10 overflow-hidden rounded-[1.75rem] border border-slate-700 bg-[#34445b] text-white shadow-[0_18px_45px_rgba(30,64,110,.10)]">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-700 bg-[#29384d] px-6 py-4">
@@ -534,7 +534,7 @@ export default function Home() {
         <div className="section-shell">
           <p className="text-xs font-black tracking-[.25em] text-blue-600">09 / CERTIFICATIONS &amp; ACHIEVEMENTS</p>
           <h2 className="mt-5 max-w-4xl text-4xl font-black leading-tight tracking-tight text-[#142033] md:text-6xl">Learning, achievement &amp; professional growth.</h2>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">A record of academic achievement and focused learning across robotics, artificial intelligence, industrial automation and communication.</p>
+          <p className="mt-6 max-w-4xl text-base leading-8 text-slate-600 md:text-lg">A record of academic achievement and focused learning across robotics, artificial intelligence, industrial automation and communication.</p>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-[.95fr_1.05fr]">
             <article className="about-info-card group relative flex min-h-[390px] flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-gradient-to-br from-white to-[#f7faff] p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg md:p-8">
