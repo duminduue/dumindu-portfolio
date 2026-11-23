@@ -563,6 +563,12 @@ export default function Home() {
 
       <section id="certifications" className="bg-[#f5f7fb] pt-10 pb-20 md:pt-12 md:pb-24">
         <div className="section-shell">
+          <div className="mb-5 flex justify-end">
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-xs font-black tracking-[.12em] text-emerald-700 shadow-sm">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              FIRST CLASS HONOURS
+            </span>
+          </div>
           <p className="text-xs font-black tracking-[.25em] text-blue-600">08 / CERTIFICATIONS &amp; ACHIEVEMENTS</p>
           <h2 className="mt-5 text-4xl font-black leading-tight tracking-tight text-[#142033] md:text-5xl">Courses &amp; achievements.</h2>
           <p className="mt-4 max-w-5xl text-base leading-7 text-slate-600">My academic results and courses in robotics, artificial intelligence, industrial automation and communication.</p>
