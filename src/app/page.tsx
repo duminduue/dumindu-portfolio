@@ -435,7 +435,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="research" className="bg-[#f6f8fb] pt-6 pb-20 md:pt-8 md:pb-24">
+      <section id="research" className="bg-[#f6f8fb] pt-6 pb-8 md:pt-8 md:pb-10">
         <div className="section-shell">
           <p className="eyebrow">08 / Research &amp; Future Direction</p>
           <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Exploring what comes next.</h2>
@@ -529,7 +529,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="certifications" className="bg-[#f5f7fb] py-20 md:py-24">
+      <section id="certifications" className="bg-[#f5f7fb] pt-10 pb-20 md:pt-12 md:pb-24">
         <div className="section-shell">
           <p className="text-xs font-black tracking-[.25em] text-blue-600">09 / CERTIFICATIONS &amp; ACHIEVEMENTS</p>
           <h2 className="mt-5 max-w-4xl text-4xl font-black leading-tight tracking-tight text-[#142033] md:text-6xl">Learning, achievement &amp; professional growth.</h2>
