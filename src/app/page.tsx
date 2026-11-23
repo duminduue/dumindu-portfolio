@@ -437,54 +437,54 @@ export default function Home() {
           <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Exploring what comes next.</h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">My interests are focused on bringing intelligent technologies into practical engineering environments. I aim to deepen these areas through project development, independent exploration and future postgraduate research.</p>
 
-          <div className="mt-10 overflow-hidden rounded-[1.75rem] border border-slate-700/80 bg-[#111827] text-white shadow-[0_24px_60px_rgba(15,23,42,.18)]">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-white/[.03] px-6 py-4">
+          <div className="mt-10 overflow-hidden rounded-[1.75rem] border border-blue-100 bg-white text-[#142033] shadow-[0_18px_45px_rgba(30,64,110,.09)]">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-6 py-4">
               <div className="flex items-center gap-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500/15 text-blue-300"><Workflow size={17} /></span>
-                <div><p className="text-[10px] font-black tracking-[.2em] text-blue-300">RESEARCH ECOSYSTEM</p><p className="mt-0.5 text-sm font-bold text-slate-100">Connected engineering domains</p></div>
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-700"><Workflow size={17} /></span>
+                <div><p className="text-[10px] font-black tracking-[.2em] text-blue-700">RESEARCH ECOSYSTEM</p><p className="mt-0.5 text-sm font-bold text-[#142033]">Connected engineering domains</p></div>
               </div>
-              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1.5 text-[10px] font-bold tracking-[.12em] text-emerald-300"><span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> AREAS OF INTEREST</span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-500/10 px-3 py-1.5 text-[10px] font-bold tracking-[.12em] text-emerald-300"><span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> AREAS OF INTEREST</span>
             </div>
             <div className="relative px-5 py-8 md:px-9 md:py-10">
-              <div className="mx-auto flex max-w-[430px] items-center gap-4 rounded-2xl border border-slate-500/70 bg-slate-800/90 p-4 shadow-lg shadow-black/20">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-500/15 text-blue-300"><Workflow size={25} /></div>
-                <div className="min-w-0"><p className="text-[10px] font-black tracking-[.16em] text-blue-300">FOUNDATION</p><h3 className="mt-1 text-base font-black text-white md:text-lg">Engineering challenges</h3><p className="mt-1 text-xs text-slate-400">Observe · Design · Build · Improve</p></div>
+              <div className="mx-auto flex max-w-[430px] items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700"><Workflow size={25} /></div>
+                <div className="min-w-0"><p className="text-[10px] font-black tracking-[.16em] text-blue-700">FOUNDATION</p><h3 className="mt-1 text-base font-black text-[#142033] md:text-lg">Engineering challenges</h3><p className="mt-1 text-xs text-slate-400">Observe · Design · Build · Improve</p></div>
                 <span className="ml-auto hidden rounded-lg border border-slate-600 px-2 py-1 text-[10px] font-bold text-slate-400 sm:inline">INPUT</span>
               </div>
-              <div className="mx-auto h-9 w-px bg-gradient-to-b from-blue-400 to-cyan-300" />
-              <div className="mx-auto flex max-w-[500px] items-center gap-4 rounded-2xl border border-blue-400/60 bg-blue-500/15 p-5 shadow-[0_0_35px_rgba(59,130,246,.12)]">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-blue-500/20 text-blue-200"><BrainCircuit size={29} /></div>
-                <div className="min-w-0"><p className="text-[10px] font-black tracking-[.18em] text-blue-300">CENTRAL RESEARCH FOCUS</p><h3 className="mt-1 text-lg font-black text-white md:text-xl">Intelligent Engineering Systems</h3><p className="mt-1 text-xs leading-5 text-slate-300">Integrating physical systems, data and intelligent technologies</p></div>
-                <span className="ml-auto hidden rounded-lg border border-blue-300/30 px-2 py-1 text-[10px] font-bold text-blue-200 sm:inline">CORE</span>
+              <div className="mx-auto h-9 w-px bg-gradient-to-b from-blue-300 to-sky-200" />
+              <div className="mx-auto flex max-w-[500px] items-center gap-4 rounded-2xl border border-blue-200 bg-blue-50 p-5 shadow-sm">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700"><BrainCircuit size={29} /></div>
+                <div className="min-w-0"><p className="text-[10px] font-black tracking-[.18em] text-blue-700">CENTRAL RESEARCH FOCUS</p><h3 className="mt-1 text-lg font-black text-[#142033] md:text-xl">Intelligent Engineering Systems</h3><p className="mt-1 text-xs leading-5 text-slate-600">Integrating physical systems, data and intelligent technologies</p></div>
+                <span className="ml-auto hidden rounded-lg border border-blue-200 px-2 py-1 text-[10px] font-bold text-blue-700 sm:inline">CORE</span>
               </div>
               <div className="relative mx-auto h-12 max-w-[900px]">
-                <div className="absolute left-[16.66%] right-[16.66%] top-0 h-px bg-slate-500/80" />
-                <div className="absolute left-1/2 top-0 h-full w-px bg-slate-500/80" />
-                <div className="absolute left-[16.66%] top-0 h-full w-px bg-slate-500/80" />
-                <div className="absolute right-[16.66%] top-0 h-full w-px bg-slate-500/80" />
+                <div className="absolute left-[16.66%] right-[16.66%] top-0 h-px bg-slate-300" />
+                <div className="absolute left-1/2 top-0 h-full w-px bg-slate-300" />
+                <div className="absolute left-[16.66%] top-0 h-full w-px bg-slate-300" />
+                <div className="absolute right-[16.66%] top-0 h-full w-px bg-slate-300" />
                 <div className="absolute left-[16.66%] right-[16.66%] top-0 h-px bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400" />
-                <div className="absolute left-[16.66%] top-0 h-3 w-px bg-blue-400" />
-                <div className="absolute left-1/2 top-0 h-3 w-px bg-cyan-300" />
-                <div className="absolute right-[16.66%] top-0 h-3 w-px bg-blue-400" />
+                <div className="absolute left-[16.66%] top-0 h-3 w-px bg-blue-300" />
+                <div className="absolute left-1/2 top-0 h-3 w-px bg-sky-300" />
+                <div className="absolute right-[16.66%] top-0 h-3 w-px bg-blue-300" />
               </div>
               <div className="grid gap-4 md:grid-cols-3">
-                <article className="rounded-2xl border border-slate-600/80 bg-slate-800/80 p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-400/70 hover:bg-slate-800">
-                  <div className="flex items-center justify-between"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-300"><Bot size={22} /></span><span className="text-[10px] font-black tracking-[.14em] text-slate-500">DOMAIN 01</span></div>
-                  <h4 className="mt-4 text-base font-black text-white">Robotics &amp; Autonomous Systems</h4>
+                <article className="rounded-2xl border border-slate-200 bg-white p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:bg-blue-50">
+                  <div className="flex items-center justify-between"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700"><Bot size={22} /></span><span className="text-[10px] font-black tracking-[.14em] text-slate-400">DOMAIN 01</span></div>
+                  <h4 className="mt-4 text-base font-black text-[#142033]">Robotics &amp; Autonomous Systems</h4>
                   <p className="mt-2 text-xs leading-6 text-slate-400">Mobile robots, sensing, embedded control and autonomy.</p>
                 </article>
-                <article className="rounded-2xl border border-slate-600/80 bg-slate-800/80 p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-400/70 hover:bg-slate-800">
-                  <div className="flex items-center justify-between"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-400/10 text-violet-300"><BrainCircuit size={22} /></span><span className="text-[10px] font-black tracking-[.14em] text-slate-500">DOMAIN 02</span></div>
-                  <h4 className="mt-4 text-base font-black text-white">AI &amp; Machine Learning</h4>
+                <article className="rounded-2xl border border-slate-200 bg-white p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:bg-blue-50">
+                  <div className="flex items-center justify-between"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-50 text-violet-700"><BrainCircuit size={22} /></span><span className="text-[10px] font-black tracking-[.14em] text-slate-400">DOMAIN 02</span></div>
+                  <h4 className="mt-4 text-base font-black text-[#142033]">AI &amp; Machine Learning</h4>
                   <p className="mt-2 text-xs leading-6 text-slate-400">Data-driven analysis, prediction and intelligent decision support.</p>
                 </article>
-                <article className="rounded-2xl border border-slate-600/80 bg-slate-800/80 p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-400/70 hover:bg-slate-800">
-                  <div className="flex items-center justify-between"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-400/10 text-amber-300"><Factory size={22} /></span><span className="text-[10px] font-black tracking-[.14em] text-slate-500">DOMAIN 03</span></div>
-                  <h4 className="mt-4 text-base font-black text-white">Industrial Automation</h4>
+                <article className="rounded-2xl border border-slate-200 bg-white p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:bg-blue-50">
+                  <div className="flex items-center justify-between"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 text-amber-700"><Factory size={22} /></span><span className="text-[10px] font-black tracking-[.14em] text-slate-400">DOMAIN 03</span></div>
+                  <h4 className="mt-4 text-base font-black text-[#142033]">Industrial Automation</h4>
                   <p className="mt-2 text-xs leading-6 text-slate-400">Connected equipment, monitoring and process improvement.</p>
                 </article>
               </div>
-              <p className="mt-6 text-center text-[10px] font-bold tracking-[.16em] text-slate-500">RESEARCH INTERESTS · LEARNING PATHWAYS · FUTURE DEVELOPMENT</p>
+              <p className="mt-6 text-center text-[10px] font-bold tracking-[.16em] text-slate-400">RESEARCH INTERESTS · LEARNING PATHWAYS · FUTURE DEVELOPMENT</p>
             </div>
           </div>
 
