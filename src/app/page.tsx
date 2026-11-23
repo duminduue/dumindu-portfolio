@@ -344,7 +344,7 @@ export default function Home() {
         <div className="section-shell">
           <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
             <div>
-              <p className="eyebrow">06 / Professional Experience</p>
+              <p className="eyebrow">05 / Professional Experience</p>
               <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Practical engineering experience.</h2>
               <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">Hands-on exposure to industrial maintenance, production support and engineering improvement in a manufacturing environment.</p>
             </div>
@@ -401,7 +401,7 @@ export default function Home() {
         <div className="section-shell">
           <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
             <div>
-              <p className="eyebrow">07 / Education &amp; Qualifications</p>
+              <p className="eyebrow">06 / Education &amp; Qualifications</p>
               <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Academic foundation.</h2>
               <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">An academic journey across engineering, from foundation studies to an honours degree in mechatronics and robotics.</p>
             </div>
@@ -464,7 +464,7 @@ export default function Home() {
         <div className="section-shell">
           <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
             <div>
-              <p className="eyebrow">08 / Research &amp; Future Direction</p>
+              <p className="eyebrow">07 / Research &amp; Future Direction</p>
               <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Exploring what comes next.</h2>
               <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">My interests are focused on bringing intelligent technologies into practical engineering environments. I aim to deepen these areas through project development, independent exploration and future postgraduate research.</p>
             </div>
@@ -570,7 +570,7 @@ export default function Home() {
         <div className="section-shell">
           <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
             <div>
-              <p className="text-xs font-black tracking-[.25em] text-blue-600">09 / CERTIFICATIONS &amp; ACHIEVEMENTS</p>
+              <p className="text-xs font-black tracking-[.25em] text-blue-600">08 / CERTIFICATIONS &amp; ACHIEVEMENTS</p>
               <h2 className="mt-5 max-w-4xl text-4xl font-black leading-tight tracking-tight text-[#142033] md:text-6xl">Learning, achievement &amp; professional growth.</h2>
               <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600 md:text-lg">A record of academic achievement and focused learning across robotics, artificial intelligence, industrial automation and communication.</p>
             </div>
@@ -644,7 +644,7 @@ export default function Home() {
         <div className="pointer-events-none absolute -right-32 -top-40 -z-10 h-96 w-96 rounded-full bg-blue-500/20 blur-[100px]" />
         <div className="pointer-events-none absolute -bottom-40 -left-24 -z-10 h-80 w-80 rounded-full bg-cyan-400/10 blur-[100px]" />
         <div className="section-shell">
-          <p className="text-xs font-black tracking-[.25em] text-blue-300">10 / CONTACT</p>
+          <p className="text-xs font-black tracking-[.25em] text-blue-300">09 / CONTACT</p>
           <div className="mt-5 grid gap-10 lg:grid-cols-[1.05fr_.95fr] lg:items-end">
             <div>
               <h2 className="max-w-3xl text-4xl font-black leading-tight tracking-tight md:text-6xl">Let&apos;s build something meaningful together.</h2>
