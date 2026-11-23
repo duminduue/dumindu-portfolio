@@ -166,7 +166,7 @@ export default function Home() {
               <p className="mt-2 text-sm leading-6 text-slate-300">Mechatronics &amp; Robotics Engineering graduate</p>
               <div className="mt-7 grid grid-cols-2 gap-3">
                 <div className="rounded-xl bg-white/5 p-4"><p className="text-2xl font-black text-white">1st</p><p className="mt-1 text-xs text-slate-400">First Class Honours</p></div>
-                <div className="rounded-xl bg-white/5 p-4"><p className="text-2xl font-black text-white">09</p><p className="mt-1 text-xs text-slate-400">Professional domains</p></div>
+                <div className="rounded-xl bg-white/5 p-4"><p className="text-2xl font-black text-white">09</p><p className="mt-1 text-xs text-slate-400">Engineering areas</p></div>
               </div>
               <div className="mt-6 flex gap-3 text-slate-300"><span className="rounded-full border border-white/10 px-3 py-1 text-xs">Robotics</span><span className="rounded-full border border-white/10 px-3 py-1 text-xs">AI</span><span className="rounded-full border border-white/10 px-3 py-1 text-xs">Automation</span></div>
             </div>
@@ -398,13 +398,13 @@ export default function Home() {
             <div>
               <p className="eyebrow">06 / Education &amp; Qualifications</p>
               <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Academic foundation.</h2>
-              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">An academic journey across engineering, from foundation studies to an honours degree in mechatronics and robotics.</p>
+              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">My education in engineering, from foundation studies to my BEng (Hons) degree.</p>
             </div>
             <div className="mb-1 flex items-center gap-5 rounded-2xl border border-blue-100 bg-white/80 px-6 py-5 shadow-sm">
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-2xl font-black text-blue-700">3</div>
               <div>
                 <p className="text-[10px] font-black tracking-[.2em] text-blue-700">EDUCATION STAGES</p>
-                <p className="mt-1 text-lg font-black text-[#142033]">Engineering pathway</p>
+                <p className="mt-1 text-lg font-black text-[#142033]">Education timeline</p>
                 <p className="mt-1 text-xs font-semibold tracking-wide text-slate-500">2022 — 2026</p>
               </div>
             </div>
@@ -459,7 +459,7 @@ export default function Home() {
         <div className="section-shell">
           <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
             <div>
-              <p className="eyebrow">07 / Research &amp; Future Direction</p>
+              <p className="eyebrow">07 / Research Interests</p>
               <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Exploring what comes next.</h2>
               <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">I am interested in applying robotics, AI and automation to practical engineering problems.</p>
             </div>
@@ -467,7 +467,7 @@ export default function Home() {
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-2xl font-black text-blue-700">3</div>
               <div>
                 <p className="text-[10px] font-black tracking-[.2em] text-blue-700">RESEARCH INTERESTS</p>
-                <p className="mt-1 text-lg font-black text-[#142033]">Connected technology domains</p>
+                <p className="mt-1 text-lg font-black text-[#142033]">Robotics, AI &amp; automation</p>
                 <p className="mt-1 text-xs font-semibold tracking-wide text-slate-500">Robotics · AI · Automation</p>
               </div>
             </div>
@@ -547,15 +547,15 @@ export default function Home() {
             </article>
             <article className="relative isolate overflow-hidden rounded-2xl bg-[#142033] p-7 text-white shadow-lg">
               <div className="pointer-events-none absolute -right-16 -top-16 -z-10 h-56 w-56 rounded-full bg-blue-500/20 blur-3xl" />
-              <p className="text-xs font-black tracking-[.18em] text-blue-300">FUTURE DIRECTION</p>
+              <p className="text-xs font-black tracking-[.18em] text-blue-300">POSTGRADUATE PLANS</p>
               <h3 className="mt-4 text-2xl font-black leading-tight">Postgraduate study &amp; research</h3>
-              <p className="mt-4 text-sm leading-7 text-slate-300">I aspire to pursue a fully funded MSc or PhD opportunity, with a focus on robotics, artificial intelligence and industrial automation.</p>
+              <p className="mt-4 text-sm leading-7 text-slate-300">I plan to apply for a fully funded MSc or PhD, focusing on robotics, artificial intelligence and industrial automation.</p>
               <div className="mt-6 flex flex-wrap gap-2">
                 <span className="rounded-full border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold">MSc</span>
                 <span className="rounded-full border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold">PhD</span>
                 <span className="rounded-full border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold">Fully funded</span>
               </div>
-              <a href="#contact" className="mt-7 inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-500">Discuss research opportunities <ArrowUpRight size={16} /></a>
+              <a href="#contact" className="mt-7 inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-500">Get in touch <ArrowUpRight size={16} /></a>
             </article>
           </div>
         </div>
@@ -566,8 +566,8 @@ export default function Home() {
           <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
             <div>
               <p className="text-xs font-black tracking-[.25em] text-blue-600">08 / CERTIFICATIONS &amp; ACHIEVEMENTS</p>
-              <h2 className="mt-5 max-w-4xl text-4xl font-black leading-tight tracking-tight text-[#142033] md:text-6xl">Learning, achievement &amp; professional growth.</h2>
-              <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600 md:text-lg">A record of academic achievement and focused learning across robotics, artificial intelligence, industrial automation and communication.</p>
+              <h2 className="mt-5 max-w-4xl text-4xl font-black leading-tight tracking-tight text-[#142033] md:text-6xl">Courses &amp; achievements.</h2>
+              <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600 md:text-lg">My academic results and courses in robotics, artificial intelligence, industrial automation and communication.</p>
             </div>
             <div className="mb-1 flex items-center gap-5 rounded-2xl border border-blue-100 bg-white/80 px-6 py-5 shadow-sm">
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-2xl font-black text-blue-700">2</div>
