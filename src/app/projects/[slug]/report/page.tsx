@@ -257,11 +257,83 @@ function GestureReportPage() {
   );
 }
 
+
+function CalculatorReportPage() {
+  const sections = [
+    ["abstract","ABSTRACT","The Industrial Engineering Calculator is a full-stack application designed to bring common engineering calculations and supporting tools into one platform. It combines a React and TypeScript frontend with a Python FastAPI backend and SQLite storage. Its documented features include formula-based calculations, unit conversion, a formula library and calculation history. The project also uses Pytest for automated testing."],
+    ["introduction","01 · Introduction","Engineering calculations are used across multiple technical disciplines. Repeatedly calculating values, converting units and looking up formulas can interrupt an engineering workflow. This application aims to provide a single interface for selected calculations and related tools, while retaining a history of previous calculations."],
+    ["objectives","02 · Project objectives","The project objectives are to provide a usable engineering calculator, implement selected formula-based calculations, support unit conversion, provide a formula library, store calculation history, separate the frontend and backend responsibilities, and validate calculation logic with automated tests."],
+    ["technology","03 · Technologies used","The frontend is developed with React and TypeScript, with Vite as the development/build tool. The backend uses Python and FastAPI to expose application functionality through an API. SQLite provides persistent storage for calculation history. Pytest is used for automated testing."],
+    ["features","04 · Main application features","The application brings together four core capabilities: engineering formula calculations, unit conversion, a formula library and calculation history. The earlier documented calculator scope includes examples such as speed, force, pressure, torque, voltage, electrical power and kinetic energy. These examples describe the calculation topics recorded in the project history; the precise final formula catalogue and supported unit list were not available for independent verification."],
+    ["architecture","05 · System architecture","The application follows a frontend/backend architecture. The React and TypeScript interface handles user interaction. The Python FastAPI backend provides the calculation/API layer. SQLite is used to persist calculation history. Pytest supports verification of calculation functions and application behaviour."],
+    ["testing","06 · Testing and quality assurance","The project history records automated testing with Pytest. A previous project update reported 104 automated tests passed. This figure is included as a previously reported result; the tests were not rerun as part of this portfolio-page update. No independent performance benchmark or deployment verification is claimed here."],
+    ["limitations","07 · Scope and verification notes","The project announcement link was supplied for this portfolio entry, but its shortened LinkedIn URL could not be opened during this update. Therefore, detailed interface screenshots, the full formula catalogue, exact conversion coverage, deployment status and repository source link are not asserted here. The 104-test result is retained as a reported project result rather than a newly verified run."],
+    ["future","08 · Future development","Possible next steps include expanding the formula library, providing clearer formula explanations and worked examples, strengthening unit and input validation, adding exportable calculation reports, improving history filtering, and publishing deployment and API documentation."],
+    ["conclusion","09 · Conclusion","The Industrial Engineering Calculator brings engineering calculations, unit conversion, formula reference information and calculation history into a full-stack software application. Its React/TypeScript frontend, Python/FastAPI backend, SQLite storage and Pytest testing approach provide a foundation for further development as an engineering productivity tool."]
+  ];
+  const architecture = [
+    ["Frontend · React and TypeScript","Presents the calculator interface and supporting application features to the user."],
+    ["Backend · Python and FastAPI","Provides the application API and calculation processing layer."],
+    ["Persistence · SQLite","Stores calculation history for later access."],
+    ["Testing · Pytest","Supports automated checks of calculation and application logic."]
+  ];
+  return (
+    <main className="min-h-screen bg-[#eef2f7] pb-16 text-[#25344b]">
+      <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
+        <div className="section-shell flex h-[68px] items-center justify-between">
+          <Link href="/#home" className="text-lg font-black tracking-tight text-[#142033]">DUMINDU<span className="text-blue-600">.</span></Link>
+          <Link href="/projects/industrial-engineering-calculator" className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-blue-700"><ArrowLeft size={16}/> Back to project</Link>
+        </div>
+      </header>
+      <div className="section-shell pt-8 md:pt-12">
+        <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_18px_60px_rgba(15,35,70,.09)]">
+          <div className="relative overflow-hidden bg-gradient-to-br from-[#142033] via-[#1d3d69] to-[#245ce5] px-7 py-12 text-white md:px-14 md:py-16">
+            <div className="absolute -right-16 -top-24 h-80 w-80 rounded-full border border-white/10"/>
+            <div className="absolute -right-4 -top-12 h-56 w-56 rounded-full border border-white/10"/>
+            <div className="relative max-w-3xl">
+              <div className="flex items-center gap-2 text-xs font-black tracking-[.2em] text-blue-200"><FileText size={15}/> SOFTWARE ENGINEERING PROJECT REPORT</div>
+              <p className="mt-10 text-xs font-bold tracking-[.2em] text-blue-200">ENGINEERING SOFTWARE · FULL-STACK APPLICATION</p>
+              <h1 className="mt-4 text-3xl font-black leading-tight tracking-tight md:text-5xl">Industrial Engineering Calculator</h1>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-blue-50">A full-stack engineering calculation platform with unit conversion, a formula library and calculation history.</p>
+              <div className="mt-10 flex flex-wrap gap-3 text-xs font-bold"><span className="rounded-full border border-white/25 bg-white/10 px-4 py-2">PROJECT 05</span><span className="rounded-full border border-white/25 bg-white/10 px-4 py-2">FULL-STACK APPLICATION</span><span className="rounded-full border border-white/25 bg-white/10 px-4 py-2">ONLINE REPORT</span></div>
+            </div>
+          </div>
+          <div className="grid gap-10 p-6 md:grid-cols-[210px_minmax(0,1fr)] md:p-12">
+            <aside className="h-fit md:sticky md:top-24">
+              <p className="text-xs font-black tracking-[.18em] text-blue-700">REPORT CONTENTS</p>
+              <nav className="mt-4 grid gap-2 text-sm">{sections.map(([id,title])=><a key={id} href={`#${id}`} className="rounded-lg px-3 py-2 text-slate-600 transition hover:bg-blue-50 hover:text-blue-700">{title}</a>)}</nav>
+            </aside>
+            <article className="min-w-0">
+              {sections.map(([id,title,body],i)=><Section key={id} id={id} number={i===0?"ABSTRACT":String(i).padStart(2,"0")} title={title}>
+                <p className="text-sm leading-8 text-slate-600">{body}</p>
+                {id==="architecture" && <div className="mt-5 space-y-3">{architecture.map(([heading,description])=><div key={heading} className="rounded-xl border border-slate-200 bg-[#f7f9fc] p-5"><h3 className="font-bold text-[#142033]">{heading}</h3><p className="mt-2 text-sm leading-7 text-slate-600">{description}</p></div>)}</div>}
+                {id==="features" && <div className="mt-5 grid gap-3 sm:grid-cols-2">{["Formula-based engineering calculations","Unit conversion","Engineering formula library","Calculation history"].map((x,i)=><div key={x} className="rounded-xl bg-[#f7f9fc] p-4"><p className="text-xs font-black text-blue-700">FEATURE 0{i+1}</p><p className="mt-2 text-sm font-semibold text-[#142033]">{x}</p></div>)}</div>}
+                {id==="technology" && <div className="mt-5 flex flex-wrap gap-2">{["React","TypeScript","Python","FastAPI","SQLite","Vite","Pytest"].map(x=><span key={x} className="rounded-full bg-blue-50 px-3 py-2 text-xs font-semibold text-blue-800">{x}</span>)}</div>}
+              </Section>)}
+              <div className="mt-8 rounded-xl border border-amber-200 bg-amber-50 p-5">
+                <p className="text-xs font-black tracking-[.16em] text-amber-800">REPORTING NOTE</p>
+                <p className="mt-2 text-sm leading-7 text-amber-900">The project post is linked as the supplied reference. The shortened post URL could not be inspected during this update. The reported 104 automated tests are not presented as a fresh test run, and no unprovided screenshots, deployment links or repository links have been added.</p>
+                <a href="https://lnkd.in/p/gsiJbVTW" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-blue-700">View project post <ArrowUpRight size={14}/></a>
+              </div>
+            </article>
+          </div>
+          <footer className="border-t border-slate-200 bg-[#f8fafc] px-6 py-7 text-center md:px-12">
+            <p className="text-xs font-bold tracking-[.18em] text-slate-400">END OF PROJECT REPORT</p>
+            <p className="mt-2 text-sm text-slate-500">Industrial Engineering Calculator · Project 05</p>
+            <Link href="/projects/industrial-engineering-calculator" className="mt-5 inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-700">Return to project page <ArrowUpRight size={15}/></Link>
+          </footer>
+        </div>
+      </div>
+    </main>
+  );
+}
+
 export default async function ProjectReportPage({ params }: { params: Promise<{ slug:string }> }) {
   const { slug } = await params;
   if (slug === "iot-health-monitoring") return <HealthReportPage />;
   if (slug === "indoor-air-quality-robot") return <AMRReportPage />;
   if (slug === "hand-gesture-robotic-car") return <GestureReportPage />;
+  if (slug === "industrial-engineering-calculator") return <CalculatorReportPage />;
   return (
     <main className="min-h-screen bg-[#eef2f7] pb-16 text-[#25344b]">
       <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
