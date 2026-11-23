@@ -462,11 +462,23 @@ export default function Home() {
 
       <section id="research" className="bg-[#f6f8fb] pt-6 pb-8 md:pt-8 md:pb-10">
         <div className="section-shell">
-          <p className="eyebrow">08 / Research &amp; Future Direction</p>
-          <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Exploring what comes next.</h2>
-          <p className="mt-5 max-w-5xl text-base leading-8 text-slate-600">My interests are focused on bringing intelligent technologies into practical engineering environments. I aim to deepen these areas through project development, independent exploration and future postgraduate research.</p>
+          <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
+            <div>
+              <p className="eyebrow">08 / Research &amp; Future Direction</p>
+              <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Exploring what comes next.</h2>
+              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">My interests are focused on bringing intelligent technologies into practical engineering environments. I aim to deepen these areas through project development, independent exploration and future postgraduate research.</p>
+            </div>
+            <div className="mb-1 flex items-center gap-5 rounded-2xl border border-blue-100 bg-white/80 px-6 py-5 shadow-sm">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-2xl font-black text-blue-700">3</div>
+              <div>
+                <p className="text-[10px] font-black tracking-[.2em] text-blue-700">RESEARCH INTERESTS</p>
+                <p className="mt-1 text-lg font-black text-[#142033]">Connected technology domains</p>
+                <p className="mt-1 text-xs font-semibold tracking-wide text-slate-500">Robotics · AI · Automation</p>
+              </div>
+            </div>
+          </div>
 
-          <div className="mt-10 overflow-hidden rounded-[1.75rem] border border-slate-700 bg-[#34445b] text-white shadow-[0_18px_45px_rgba(30,64,110,.10)]">
+          <div className="mt-8 overflow-hidden rounded-[1.75rem] border border-slate-700 bg-[#34445b] text-white shadow-[0_18px_45px_rgba(30,64,110,.10)]">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-700 bg-[#29384d] px-6 py-4">
               <div className="flex items-center gap-3">
                 <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 text-blue-700"><Workflow size={17} /></span>
