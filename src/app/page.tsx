@@ -289,7 +289,7 @@ export default function Home() {
           <h2 className="text-4xl font-black tracking-tight md:text-5xl">Projects &amp; practice.</h2>
           <p className="max-w-md text-sm leading-7 text-slate-500">A selection of engineering and software projects demonstrating practical development across connected disciplines.</p>
         </div>
-        <div className="mt-9 grid gap-5 md:grid-cols-2">
+        <div className="mt-9 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => {
             const ProjectIcon = project.visual;
             return (
