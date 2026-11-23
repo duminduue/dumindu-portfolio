@@ -379,7 +379,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="education" className="bg-white pt-6 pb-20 md:pt-8 md:pb-24">
+      <section id="education" className="bg-[#f6f8fb] pt-6 pb-20 md:pt-8 md:pb-24">
         <div className="section-shell">
           <p className="eyebrow">07 / Education &amp; Qualifications</p>
           <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Academic foundation.</h2>
