@@ -103,7 +103,7 @@ const pillars = [
 export default function Home() {
   return (
     <main className="overflow-hidden">
-      <header className="relative z-[200] border-b border-slate-200/80 bg-white/90 backdrop-blur-xl lg:sticky lg:top-0">
+      <header className="relative z-[200] border-b border-slate-200/80 bg-white/90 backdrop-blur-xl xl:sticky xl:top-0">
         <nav className="section-shell flex h-[76px] items-center justify-between" aria-label="Main navigation">
           <a href="#home" className="text-xl font-black tracking-tight text-[#142033]">DUMINDU<span className="text-blue-600">.</span></a>
           <div className="hidden items-center gap-8 text-sm font-semibold text-slate-600 md:flex">
