@@ -30,14 +30,14 @@ export default function MobileNav() {
       </button>
 
       {open && (
-        <div className="fixed inset-0 z-[100] md:hidden">
+        <div className="fixed inset-0 z-[9999] md:hidden" style={{ isolation: "isolate" }}>
           <button
             type="button"
             aria-label="Close navigation menu"
             className="absolute inset-0 bg-slate-950/55"
             onClick={() => setOpen(false)}
           />
-          <aside className="absolute right-0 top-0 flex h-full w-[min(82vw,340px)] flex-col bg-white p-6 shadow-2xl">
+          <aside className="absolute right-0 top-0 flex h-full w-[min(82vw,340px)] flex-col p-6 shadow-2xl" style={{ backgroundColor: "#ffffff", opacity: 1, zIndex: 10000, color: "#142033" }}>
             <div className="mb-8 flex items-center justify-between">
               <span className="text-lg font-black tracking-tight text-[#142033]">MENU<span className="text-blue-600">.</span></span>
               <button
@@ -49,13 +49,13 @@ export default function MobileNav() {
                 <X size={20} />
               </button>
             </div>
-            <nav aria-label="Mobile navigation" className="flex flex-col">
+            <nav aria-label="Mobile navigation" className="flex flex-col" style={{ backgroundColor: "#ffffff" }}>
               {links.map(([label, href]) => (
                 <a
                   key={href}
                   href={href}
                   onClick={() => setOpen(false)}
-                  className="border-b border-slate-100 py-4 text-base font-semibold text-slate-700 transition hover:text-blue-700"
+                  className="border-b border-slate-200 py-4 text-base font-semibold transition hover:text-blue-700" style={{ color: "#334155", backgroundColor: "#ffffff", opacity: 1 }}
                 >
                   {label}
                 </a>
