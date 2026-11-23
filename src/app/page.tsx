@@ -608,7 +608,7 @@ export default function Home() {
               </div>
             </article>
 
-            <article className="about-info-card group relative flex min-h-[390px] flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-gradient-to-br from-white to-[#f7faff] p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg md:p-8">
+            <article className="professional-learning-panel about-info-card group relative flex min-h-[390px] flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-gradient-to-br from-white to-[#f7faff] p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg md:p-8">
               <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-blue-700 via-blue-500 to-sky-400" />
               <div className="flex items-start justify-between gap-3">
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 shadow-sm"><BadgeCheck size={27} /></div>
