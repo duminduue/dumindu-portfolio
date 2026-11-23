@@ -137,6 +137,48 @@ const gesture = {
 };
 
 
+const plantorai = {
+  number:"06",
+  title:"PlantorAI – AI-Powered Plant Marketplace",
+  category:"AI APPLICATIONS · FULL-STACK WEB DEVELOPMENT",
+  summary:"A full-stack plant marketplace with searchable plant listings, customer/seller/admin workflows, demo checkout and an MVP Gemini-powered AI plant-care assistant.",
+  stack:["React","TypeScript","Vite","Node.js","Express.js","MongoDB Atlas","Mongoose","JWT","Gemini API","Vitest","Supertest"],
+  problem:"Plant buyers need a convenient way to discover plants and understand their care requirements, while marketplace operators need tools to manage listings, inventory and orders. PlantorAI brings these workflows into one web application and adds an AI assistant for common plant-care questions.",
+  objectives:["Build a searchable plant catalogue with category and price filters.","Provide customer registration, login and JWT-based authentication.","Implement role-based customer, seller and administrator workflows.","Support shopping cart operations, stock validation and demo order creation.","Provide seller tools for managing owned listings, inventory and relevant orders.","Provide admin tools for user management, catalogue inventory and listing moderation.","Integrate an MVP AI plant-care assistant using the Gemini API through the backend."],
+  features:[
+    ["Plant marketplace","Browse active and approved plant listings, search by keyword and filter by category and price."],
+    ["Plant details and recommendations","Open plant detail pages and view basic recommendations."],
+    ["Customer authentication","Register and sign in using password hashing and JWT-based authentication."],
+    ["Shopping cart and demo checkout","Calculate cart quantities and subtotals, validate stock and create orders. No real payment gateway is connected."],
+    ["Seller dashboard","Manage owned plant listings, stock and orders relevant to the seller."],
+    ["Admin dashboard","Manage users and roles, inventory, orders and moderation of submitted plant listings."],
+    ["AI plant-care assistant","Ask plant-care questions about watering, sunlight, soil, humidity, yellow leaves and common plant problems using Gemini API."],
+    ["Backend validation and access control","Validate authentication, role permissions, seller ownership, stock availability and order data access."]
+  ],
+  architecture:[
+    ["React + TypeScript frontend","Provides the marketplace interface, plant catalogue, user dashboards, cart and AI assistant page."],
+    ["Node.js + Express backend","Exposes API endpoints and handles authentication, catalogue, orders, seller/admin workflows and plant-care chat requests."],
+    ["MongoDB Atlas + Mongoose","Stores application data such as users, plant listings and orders."],
+    ["JWT authentication and role-based middleware","Supports authenticated access and role/ownership checks for protected operations."],
+    ["Gemini API integration","The backend sends plant-care chat requests to Gemini using a server-side GEMINI_API_KEY."],
+    ["Vitest + Supertest","Backend automated tests cover API behaviour, authentication, permissions, marketplace operations and AI endpoint validation."]
+  ],
+  tests:[
+    "The project master documentation records 55 backend tests passed during local development checks around 28 October 2026. This is a recorded result, not a fresh test run for this portfolio update.",
+    "The same documentation records a successful production build and lint with 0 errors and 2 remaining warnings.",
+    "Seven manual regression workflows were recorded as passing: authentication, marketplace search/filter, cart and stock validation, checkout, seller dashboard, admin dashboard, and AI assistant error handling.",
+    "These records describe local development verification and do not constitute an independent security audit or live production verification."
+  ],
+  limitations:[
+    ["Demo checkout","Orders are created and inventory is updated, but no real payment gateway is integrated."],
+    ["AI response reliability","Plant-care advice may be incomplete or inaccurate and should be checked against reliable horticultural sources for important decisions."],
+    ["AI request limiting","The documented in-memory rate limiter resets when the server restarts and is not shared across multiple server instances."],
+    ["Deployment status","Production deployment and live-site smoke testing are documented as planned, not verified."],
+    ["Lint warnings","The local verification record notes two remaining React set-state-in-effect warnings in dashboard data-loading effects."]
+  ],
+  future:["Complete frontend and backend production deployment with secure environment configuration.","Add persistent, multi-instance rate limiting and stronger production monitoring.","Expand automated tests for additional role-boundary, failure and concurrency cases.","Improve AI response evaluation and user guidance for uncertain plant-care advice.","Consider persistent conversation history and additional plant-care features after the production foundation is stable."]
+};
+
 const calculator = {
   number:"05",
   title:"Industrial Engineering Calculator",
@@ -174,7 +216,7 @@ const projects = {
   "indoor-air-quality-robot": { ...amr, detailed:true },
   "hand-gesture-robotic-car": { ...gesture, detailed:true, kind:"gesture" },
   "industrial-engineering-calculator": { ...calculator, detailed:true, kind:"calculator" },
-  "plantorai": { number:"06", title:"PlantorAI – AI-Powered Plant Care Platform", category:"AI APPLICATIONS · FULL-STACK", summary:"A full-stack plant-care platform with a searchable catalogue, Gemini AI-powered assistant and role-based customer, seller and admin experiences.", stack:["React","TypeScript","Node.js","MongoDB","Gemini AI"], detailed:false }
+  "plantorai": { ...plantorai, detailed:true, kind:"plantorai" }
 };
 type ProjectSlug = keyof typeof projects;
 export function generateStaticParams() { return Object.keys(projects).map((slug) => ({ slug })); }
@@ -188,6 +230,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   const isAmr = slug === "indoor-air-quality-robot";
   const isGesture = slug === "hand-gesture-robotic-car";
   const isCalculator = slug === "industrial-engineering-calculator";
+  const isPlantorAI = slug === "plantorai";
   return (
     <main className="min-h-screen bg-[#f6f8fb] pb-20">
       <header className="border-b border-slate-200 bg-white/90 backdrop-blur-xl"><div className="section-shell flex h-[72px] items-center justify-between">
@@ -203,18 +246,27 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       <div className="section-shell">
         <section className="-mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
           <p className="text-xs font-black tracking-[.18em] text-blue-700">PROJECT RESOURCE HUB</p><h2 className="mt-2 text-2xl font-black text-[#142033]">Code, documentation & evidence</h2>
-          <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">{detailed ? (isHealth ? "An individual project. The description and reported results have been prepared from the supplied project report and ESP32 code. The source-code document and working demonstration are linked below." : isAmr ? "A group project for MOD011135. The project report has been reviewed and the documented achievements, test results and limitations are presented below. Individual contributions are described separately." : isCalculator ? "The project overview is based on the public GitHub repository, its README, application structure and test files. The project demonstration and source repository are linked below." : "Project information below has been checked against the supplied project report and its appendices.") : "This page is ready for verified project information, source code and supporting evidence. Content will be added as project details are provided."}</p>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">{detailed ? (isHealth ? "An individual project. The description and reported results have been prepared from the supplied project report and ESP32 code. The source-code document and working demonstration are linked below." : isAmr ? "A group project for MOD011135. The project report has been reviewed and the documented achievements, test results and limitations are presented below. Individual contributions are described separately." : isCalculator ? "The project overview is based on the public GitHub repository, its README, application structure and test files. The project demonstration and source repository are linked below." : isPlantorAI ? "The project overview is based on the public PlantorAI repository README and master project documentation. The repository and supplied LinkedIn demonstration are linked below." : "Project information below has been checked against the supplied project report and its appendices.") : "This page is ready for verified project information, source code and supporting evidence. Content will be added as project details are provided."}</p>
           <div className="mt-5 flex flex-wrap gap-3">
-            {detailed && isHealth ? <a href="https://drive.google.com/file/d/1SFngec9nSyvwI4O306smmKzn9PbCUcEe/view" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-800 hover:bg-blue-100"><PlayCircle size={17}/> Watch demo video <ArrowUpRight size={14}/></a> : isCalculator ? <a href="https://lnkd.in/p/giMm9J6w" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-800 hover:bg-blue-100"><PlayCircle size={17}/> Watch project demo <ArrowUpRight size={14}/></a> : <span className="rounded-xl bg-slate-100 px-4 py-3 text-sm text-slate-500">Demo video · To be added</span>}
+            {detailed && isHealth ? <a href="https://drive.google.com/file/d/1SFngec9nSyvwI4O306smmKzn9PbCUcEe/view" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-800 hover:bg-blue-100"><PlayCircle size={17}/> Watch demo video <ArrowUpRight size={14}/></a> : isCalculator || isPlantorAI ? <a href={isCalculator ? "https://lnkd.in/p/giMm9J6w" : "https://lnkd.in/p/gv4ZG8VU"} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-800 hover:bg-blue-100"><PlayCircle size={17}/> Watch project demo <ArrowUpRight size={14}/></a> : <span className="rounded-xl bg-slate-100 px-4 py-3 text-sm text-slate-500">Demo video · To be added</span>}
             {detailed && isHealth ? <a href="https://docs.google.com/document/d/1uiBVSp9aEGZgSThKd2E4ZsPu9XX4HkU3Y7k-_ADCMWg/edit?usp=sharing" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-800 hover:bg-blue-100"><Code2 size={17}/> View source code <ArrowUpRight size={14}/></a> : <span className="rounded-xl bg-slate-100 px-4 py-3 text-sm text-slate-500">Photos & evidence · To be added</span>}
-            {isCalculator ? <a href="https://github.com/duminduue/industrial-engineering-calculator" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-800 hover:bg-blue-100"><Github size={17}/> View GitHub repository <ArrowUpRight size={14}/></a> : <span className="inline-flex items-center gap-2 rounded-xl bg-slate-100 px-4 py-3 text-sm font-semibold text-slate-500"><Github size={17}/> {isHealth ? "GitHub repository · Not published" : isAmr ? "GitHub repository · Not supplied" : "GitHub source · Not supplied yet"}</span>}
+            {isCalculator || isPlantorAI ? <a href={isCalculator ? "https://github.com/duminduue/industrial-engineering-calculator" : "https://github.com/duminduue/plantorai"} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-800 hover:bg-blue-100"><Github size={17}/> View GitHub repository <ArrowUpRight size={14}/></a> : <span className="inline-flex items-center gap-2 rounded-xl bg-slate-100 px-4 py-3 text-sm font-semibold text-slate-500"><Github size={17}/> {isHealth ? "GitHub repository · Not published" : isAmr ? "GitHub repository · Not supplied" : "GitHub source · Not supplied yet"}</span>}
             <Link href={`/projects/${slug}/report`} className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"><FileText size={17}/> View project report <ArrowUpRight size={14}/></Link>
           </div>
         </section>
         
         
         
-        {isCalculator ? <>
+        {isPlantorAI ? <>
+          <section className="mt-10 grid gap-5 lg:grid-cols-[1.15fr_.85fr]">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><BookOpen size={20}/><p className="text-xs font-black tracking-[.18em]">01 / PROJECT OVERVIEW</p></div><h2 className="mt-4 text-2xl font-black text-[#142033]">AI-assisted plant discovery and marketplace workflows</h2><p className="mt-3 text-sm leading-7 text-slate-600">{plantorai.problem}</p><h3 className="mt-7 text-lg font-black text-[#142033]">Project objectives</h3><ol className="mt-3 space-y-3">{plantorai.objectives.map((x,i)=><li key={x} className="flex gap-3 text-sm leading-6 text-slate-600"><b className="text-blue-700">0{i+1}</b><span>{x}</span></li>)}</ol></article>
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><Cpu size={20}/><p className="text-xs font-black tracking-[.18em]">02 / TECHNOLOGY STACK</p></div><div className="mt-5 flex flex-wrap gap-2">{plantorai.stack.map(x=><span key={x} className="rounded-full bg-blue-50 px-3 py-2 text-xs font-semibold text-blue-800">{x}</span>)}</div><div className="mt-7 rounded-xl bg-blue-50 p-5"><p className="text-xs font-black tracking-wider text-blue-800">APPLICATION SCOPE</p><p className="mt-2 text-sm leading-7 text-slate-700">Marketplace catalogue · Customer authentication · Seller and admin dashboards · Cart and demo checkout · AI plant-care assistant</p></div></article>
+          </section>
+          <section className="mt-5 rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><Workflow size={20}/><p className="text-xs font-black tracking-[.18em]">03 / KEY FEATURES</p></div><div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">{plantorai.features.map((x,i)=><article key={x[0]} className="rounded-xl border border-slate-200 bg-[#f8fafc] p-5"><p className="text-xs font-black tracking-[.16em] text-blue-700">FEATURE 0{i+1}</p><h3 className="mt-2 font-black text-[#142033]">{x[0]}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{x[1]}</p></article>)}</div></section>
+          <section className="mt-5 rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><Workflow size={20}/><p className="text-xs font-black tracking-[.18em]">04 / SYSTEM ARCHITECTURE</p></div><div className="mt-6 grid gap-4 md:grid-cols-2">{plantorai.architecture.map((x,i)=><article key={x[0]} className="rounded-xl border border-slate-200 p-5"><p className="text-xs font-black text-blue-700">LAYER 0{i+1}</p><h3 className="mt-2 font-black text-[#142033]">{x[0]}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{x[1]}</p></article>)}</div></section>
+          <section className="mt-5 grid gap-5 lg:grid-cols-2"><article className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><CheckCircle2 size={20}/><p className="text-xs font-black tracking-[.18em]">05 / TESTING & VERIFICATION</p></div><ul className="mt-5 space-y-3">{plantorai.tests.map(x=><li key={x} className="flex gap-3 text-sm leading-6 text-slate-600"><CheckCircle2 size={17} className="mt-0.5 shrink-0 text-blue-600"/><span>{x}</span></li>)}</ul></article><article className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><ShieldAlert size={20}/><p className="text-xs font-black tracking-[.18em]">06 / LIMITATIONS</p></div><div className="mt-5 space-y-3">{plantorai.limitations.map(x=><div key={x[0]} className="rounded-xl bg-[#f6f8fb] p-4"><p className="font-bold text-[#142033]">{x[0]}</p><p className="mt-1 text-sm leading-6 text-slate-600">{x[1]}</p></div>)}</div></article></section>
+          <section className="mt-5 rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><Lightbulb size={20}/><p className="text-xs font-black tracking-[.18em]">07 / FUTURE DEVELOPMENT</p></div><div className="mt-5 grid gap-3 md:grid-cols-2">{plantorai.future.map((x,i)=><div key={x} className="flex gap-3 rounded-xl bg-[#f6f8fb] p-4"><b className="text-blue-700">0{i+1}</b><p className="text-sm leading-6 text-slate-600">{x}</p></div>)}</div></section>
+        </> : isCalculator ? <>
           <section className="mt-10 grid gap-5 lg:grid-cols-[1.15fr_.85fr]">
             <article className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><BookOpen size={20}/><p className="text-xs font-black tracking-[.18em]">01 / PROJECT OVERVIEW</p></div><h2 className="mt-4 text-2xl font-black text-[#142033]">Engineering calculations in one platform</h2><p className="mt-3 text-sm leading-7 text-slate-600">{calculator.problem}</p><h3 className="mt-7 text-lg font-black text-[#142033]">Project objectives</h3><ol className="mt-3 space-y-3">{calculator.objectives.map((x,i)=><li key={x} className="flex gap-3 text-sm leading-6 text-slate-600"><b className="text-blue-700">0{i+1}</b><span>{x}</span></li>)}</ol></article>
             <article className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><Cpu size={20}/><p className="text-xs font-black tracking-[.18em]">02 / TECHNOLOGY STACK</p></div><div className="mt-5 flex flex-wrap gap-2">{calculator.stack.map(x=><span key={x} className="rounded-full bg-blue-50 px-3 py-2 text-xs font-semibold text-blue-800">{x}</span>)}</div><h3 className="mt-7 text-lg font-black text-[#142033]">Engineering domains</h3><div className="mt-3 flex flex-wrap gap-2">{calculator.domains.map(x=><span key={x} className="rounded-full bg-slate-100 px-3 py-2 text-xs font-semibold text-slate-700">{x}</span>)}</div></article>
