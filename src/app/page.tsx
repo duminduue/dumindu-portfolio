@@ -139,6 +139,7 @@ export default function Home() {
             <div className="mt-10 flex flex-col items-start gap-4">
               <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-4 text-sm font-bold text-white shadow-lg shadow-blue-950/30 transition hover:-translate-y-0.5 hover:bg-blue-500">Explore my work <ArrowUpRight size={17} /></a>
               <a href="#about" className="inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-4 text-sm font-bold text-white transition hover:bg-white/10">Discover my story <ArrowDown size={16} /></a>
+              <a href="/Dumindu-Ekanayaka-CV.pdf" download="Dumindu-Ekanayaka-CV.pdf" className="inline-flex items-center gap-2 rounded-full border border-blue-300/40 bg-blue-400/10 px-7 py-4 text-sm font-bold text-blue-100 transition hover:bg-blue-400/20">Download CV <ArrowDown size={16} /></a>
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-400">
               <span className="inline-flex items-center gap-2"><MapPin size={15} /> Sri Lanka</span>
