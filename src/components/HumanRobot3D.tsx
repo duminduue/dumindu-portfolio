@@ -50,8 +50,10 @@ function RealHumanoidRobot() {
   useFrame(({ clock }) => {
     const t = clock.elapsedTime;
     if (group.current) {
-      group.current.rotation.y = Math.sin(t * 0.22) * 0.18;
-      group.current.position.y = Math.sin(t * 1.1) * 0.018;
+      // Make the idle motion clearly visible: a slow look-around, gentle body sway and breathing-like bob.
+      group.current.rotation.y = Math.sin(t * 0.55) * 0.34;
+      group.current.rotation.z = Math.sin(t * 0.8) * 0.025;
+      group.current.position.y = Math.sin(t * 1.7) * 0.04;
     }
     joints.head.forEach((node, i) => {
       const base = baseRotations.head[i];
