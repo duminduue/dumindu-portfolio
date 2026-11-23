@@ -661,6 +661,7 @@ export default function Home() {
           <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
             <p className="text-slate-500">© 2026 Dumindu Udakara Ekanayaka. All rights reserved.</p>
             <p className="font-medium tracking-wide text-slate-400">Robotics <span className="px-1 text-blue-400">·</span> AI <span className="px-1 text-blue-400">·</span> Industrial Automation</p>
+            <a href="https://vinish.dev/free-3d-models/robots" target="_blank" rel="noreferrer" className="text-[10px] text-slate-500 hover:text-slate-300">Humanoid 3D model by vinish.dev · CC BY 4.0</a>
             <a href="#home" className="inline-flex items-center gap-2 font-bold text-slate-300 transition hover:text-blue-300">Back to top <ArrowUpRight size={14} /></a>
           </div>
         </div>
