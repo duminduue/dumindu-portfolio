@@ -289,7 +289,7 @@ export default function Home() {
       <DomainExplorer />
       <TechnicalSkills />
 
-      <section id="projects" className="section-shell pt-8 pb-24 md:pt-10 md:pb-32">
+      <section id="projects" className="section-shell pt-8 pb-10 md:pt-10 md:pb-14">
         <p className="eyebrow">04 / Selected work</p>
         <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <h2 className="text-4xl font-black tracking-tight md:text-5xl">Projects &amp; practice.</h2>
@@ -333,7 +333,7 @@ export default function Home() {
         <p className="mt-7 text-xs leading-6 text-slate-400">Project visuals are illustrative placeholders. Original project photographs, repository links and demonstrations can be added when the evidence is ready.</p>
       </section>
 
-      <section id="experience" className="bg-[#f6f8fb] py-24 md:py-32">
+      <section id="experience" className="bg-[#f6f8fb] pt-10 pb-20 md:pt-14 md:pb-24">
         <div className="section-shell">
           <p className="eyebrow">06 / Professional Experience</p>
           <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Practical engineering experience.</h2>
