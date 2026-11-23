@@ -1019,3 +1019,73 @@ html[data-theme="dark"] .about-vision {
   border-color: #414141;
 }
 html[data-theme="dark"] #home { background-color: #101010; }
+
+
+/* Final dark-mode consistency pass: every section uses the same neutral palette */
+html[data-theme="dark"] body,
+html[data-theme="dark"] main,
+html[data-theme="dark"] main > section,
+html[data-theme="dark"] #home,
+html[data-theme="dark"] #about,
+html[data-theme="dark"] #domains,
+html[data-theme="dark"] #skills,
+html[data-theme="dark"] #projects,
+html[data-theme="dark"] #experience,
+html[data-theme="dark"] #education,
+html[data-theme="dark"] #research,
+html[data-theme="dark"] #certifications,
+html[data-theme="dark"] #contact {
+  background-color: #0b0b0b !important;
+}
+
+html[data-theme="dark"] main > section:nth-of-type(even),
+html[data-theme="dark"] main > section:nth-of-type(odd) {
+  background-color: #0b0b0b !important;
+}
+
+/* Neutral charcoal cards across all sections */
+html[data-theme="dark"] main > section [class*="bg-white"],
+html[data-theme="dark"] main > section [class*="bg-slate-"],
+html[data-theme="dark"] main > section [class*="bg-gray-"],
+html[data-theme="dark"] main > section [class*="from-white"],
+html[data-theme="dark"] main > section [class*="to-white"],
+html[data-theme="dark"] main > section [class*="from-blue-"],
+html[data-theme="dark"] main > section [class*="to-blue-"],
+html[data-theme="dark"] main > section [class*="via-blue-"] {
+  background-color: #202020 !important;
+  background-image: none !important;
+}
+
+html[data-theme="dark"] main > section [class*="border-blue-"],
+html[data-theme="dark"] main > section [class*="border-slate-"],
+html[data-theme="dark"] main > section [class*="border-gray-"] {
+  border-color: #3a3a3a !important;
+}
+
+html[data-theme="dark"] main > section [class*="text-slate-"],
+html[data-theme="dark"] main > section [class*="text-gray-"] {
+  color: #c8c8c8 !important;
+}
+
+/* Keep blue for small interactive accents, not large page surfaces */
+html[data-theme="dark"] main > section [class*="bg-blue-"] {
+  background-color: #292929 !important;
+  background-image: none !important;
+}
+html[data-theme="dark"] main > section [class*="text-blue-"],
+html[data-theme="dark"] main > section .eyebrow {
+  color: #9bbcff !important;
+}
+html[data-theme="dark"] #projects a.group > div:first-child {
+  background: #292929 !important;
+}
+html[data-theme="dark"] #contact {
+  background: #0b0b0b !important;
+}
+html[data-theme="dark"] footer {
+  background: #050505 !important;
+}
+html[data-theme="dark"] header {
+  background: rgba(11,11,11,.96) !important;
+  border-color: #303030 !important;
+}
