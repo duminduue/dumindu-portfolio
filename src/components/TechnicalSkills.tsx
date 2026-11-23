@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { Code2, Braces, Database, Cpu, Wrench, X, ArrowUpRight, Info } from "lucide-react";
 
@@ -11,12 +12,12 @@ const groups = [
  { number:"05", title:"Databases & Development Tools", description:"Data storage, version control and practical development workflows.", icon:Database, skills:["MongoDB","MySQL","SQLite","Git","GitHub","Arduino IDE","Visual Studio Code"] },
 ];
 const projects = [
- { title:"Self-Balancing Mobile Robot Using PID Control", anchor:"project-01", skills:["ESP32","MPU6050 / IMU","PID Control","SOLIDWORKS","Arduino"] },
- { title:"IoT-Based Health Monitoring System", anchor:"project-02", skills:["ESP32","MAX30102","DS18B20","Blynk IoT"] },
- { title:"Autonomous Mobile Robot for Indoor Air Quality Monitoring", anchor:"project-03", skills:["ESP32","MQ Sensors","DHT22","Arduino"] },
- { title:"Hand Gesture-Based Robotic Car", anchor:"project-04", skills:["ESP32","MPU6050 / IMU","Arduino"] },
- { title:"Industrial Engineering Calculator", anchor:"project-05", skills:["React","TypeScript","Python","FastAPI","SQLite"] },
- { title:"PlantorAI – AI-Powered Plant Care Platform", anchor:"project-06", skills:["React","TypeScript","Node.js","MongoDB"] },
+ { title:"Self-Balancing Mobile Robot Using PID Control", anchor:"project-01", slug:"self-balancing-mobile-robot", skills:["ESP32","MPU6050 / IMU","PID Control","SOLIDWORKS","Arduino"] },
+ { title:"IoT-Based Health Monitoring System", anchor:"project-02", slug:"iot-health-monitoring", skills:["ESP32","MAX30102","DS18B20","Blynk IoT"] },
+ { title:"Autonomous Mobile Robot for Indoor Air Quality Monitoring", anchor:"project-03", slug:"indoor-air-quality-robot", skills:["ESP32","MQ Sensors","DHT22","Arduino"] },
+ { title:"Hand Gesture-Based Robotic Car", anchor:"project-04", slug:"hand-gesture-robotic-car", skills:["ESP32","MPU6050 / IMU","Arduino"] },
+ { title:"Industrial Engineering Calculator", anchor:"project-05", slug:"industrial-engineering-calculator", skills:["React","TypeScript","Python","FastAPI","SQLite"] },
+ { title:"PlantorAI – AI-Powered Plant Care Platform", anchor:"project-06", slug:"plantorai", skills:["React","TypeScript","Node.js","MongoDB"] },
 ];
 export default function TechnicalSkills() {
  const [selected,setSelected]=useState<string|null>(null);
@@ -43,7 +44,7 @@ export default function TechnicalSkills() {
   <section role="dialog" aria-modal="true" aria-labelledby="skill-dialog-title" className="my-auto w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-6 shadow-2xl md:p-8">
    <div className="flex items-start justify-between gap-4"><div><p className="text-[10px] font-black tracking-[.18em] text-blue-600">TECHNOLOGY / PROJECT CONNECTIONS</p><h2 id="skill-dialog-title" className="mt-2 text-2xl font-black text-[#142033]">{selected}</h2><p className="mt-2 text-sm text-slate-500">Projects in this portfolio that list this technology.</p></div><button type="button" onClick={()=>setSelected(null)} aria-label="Close technology details" className="rounded-full p-2 text-slate-500 hover:bg-slate-100"><X size={21}/></button></div>
    <div className="mt-6"><h3 className="text-xs font-black tracking-[.16em] text-[#142033]">RELATED PROJECTS ({related.length})</h3>
-    {related.length? <div className="mt-3 grid gap-3">{related.map(project=><a key={project.anchor} href={`#${project.anchor}`} onClick={()=>setSelected(null)} className="group flex items-center justify-between gap-3 rounded-2xl border border-slate-200 p-4 transition hover:border-blue-300 hover:bg-blue-50/40"><span className="text-sm font-bold text-[#142033]">{project.title}</span><ArrowUpRight size={18} className="shrink-0 text-blue-600"/></a>)}</div>:<div className="mt-3 rounded-2xl border border-blue-100 bg-blue-50/70 p-4"><div className="flex items-start gap-3"><span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-blue-700"><Info size={18}/></span><div><p className="text-sm font-bold text-[#142033]">No featured project yet</p><p className="mt-1 text-sm leading-6 text-slate-600">This technology is part of my toolkit and learning journey. A matching project will be listed here when there is work ready to showcase.</p><a href="#projects" onClick={()=>setSelected(null)} className="mt-3 inline-flex items-center gap-2 text-xs font-bold text-blue-700 hover:text-blue-900">Browse all projects <ArrowUpRight size={14}/></a></div></div></div>}
+    {related.length? <div className="mt-3 grid gap-3">{related.map(project=><Link key={project.anchor} href={`/projects/${project.slug}`} onClick={()=>setSelected(null)} className="group flex items-center justify-between gap-3 rounded-2xl border border-slate-200 p-4 transition hover:border-blue-300 hover:bg-blue-50/40"><span className="text-sm font-bold text-[#142033]">{project.title}</span><ArrowUpRight size={18} className="shrink-0 text-blue-600"/></Link>)}</div>:<div className="mt-3 rounded-2xl border border-blue-100 bg-blue-50/70 p-4"><div className="flex items-start gap-3"><span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-blue-700"><Info size={18}/></span><div><p className="text-sm font-bold text-[#142033]">No featured project yet</p><p className="mt-1 text-sm leading-6 text-slate-600">This technology is part of my toolkit and learning journey. A matching project will be listed here when there is work ready to showcase.</p><a href="#projects" onClick={()=>setSelected(null)} className="mt-3 inline-flex items-center gap-2 text-xs font-bold text-blue-700 hover:text-blue-900">Browse all projects <ArrowUpRight size={14}/></a></div></div></div>}
    </div>
    <p className="mt-6 text-[11px] leading-5 text-slate-400">Only projects currently featured in this portfolio are shown.</p>
   </section>
