@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Code2, Braces, Database, Cpu, Wrench, X, ArrowUpRight, FolderGit2 } from "lucide-react";
+import { Code2, Braces, Database, Cpu, Wrench, X, ArrowUpRight, Info } from "lucide-react";
 
 const groups = [
  { number:"01", title:"Programming & Data", description:"Languages and tools for building logic, working with data and developing solutions.", icon:Braces, skills:["Python","JavaScript","TypeScript","SQL","Pandas","Scikit-learn","Power BI","Microsoft Excel"] },
@@ -43,7 +43,7 @@ export default function TechnicalSkills() {
   <section role="dialog" aria-modal="true" aria-labelledby="skill-dialog-title" className="my-auto w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-6 shadow-2xl md:p-8">
    <div className="flex items-start justify-between gap-4"><div><p className="text-[10px] font-black tracking-[.18em] text-blue-600">TECHNOLOGY / PROJECT CONNECTIONS</p><h2 id="skill-dialog-title" className="mt-2 text-2xl font-black text-[#142033]">{selected}</h2><p className="mt-2 text-sm text-slate-500">Projects in this portfolio that list this technology.</p></div><button type="button" onClick={()=>setSelected(null)} aria-label="Close technology details" className="rounded-full p-2 text-slate-500 hover:bg-slate-100"><X size={21}/></button></div>
    <div className="mt-6"><h3 className="text-xs font-black tracking-[.16em] text-[#142033]">RELATED PROJECTS ({related.length})</h3>
-    {related.length? <div className="mt-3 grid gap-3">{related.map(project=><a key={project.anchor} href={`#${project.anchor}`} onClick={()=>setSelected(null)} className="group flex items-center justify-between gap-3 rounded-2xl border border-slate-200 p-4 transition hover:border-blue-300 hover:bg-blue-50/40"><span className="text-sm font-bold text-[#142033]">{project.title}</span><ArrowUpRight size={18} className="shrink-0 text-blue-600"/></a>)}</div>:<p className="mt-3 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4 text-sm leading-6 text-slate-500">No featured project is currently linked to this technology.</p>}
+    {related.length? <div className="mt-3 grid gap-3">{related.map(project=><a key={project.anchor} href={`#${project.anchor}`} onClick={()=>setSelected(null)} className="group flex items-center justify-between gap-3 rounded-2xl border border-slate-200 p-4 transition hover:border-blue-300 hover:bg-blue-50/40"><span className="text-sm font-bold text-[#142033]">{project.title}</span><ArrowUpRight size={18} className="shrink-0 text-blue-600"/></a>)}</div>:<div className="mt-3 rounded-2xl border border-blue-100 bg-blue-50/70 p-4"><div className="flex items-start gap-3"><span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-blue-700"><Info size={18}/></span><div><p className="text-sm font-bold text-[#142033]">No featured project yet</p><p className="mt-1 text-sm leading-6 text-slate-600">This technology is part of my toolkit and learning journey. A matching project will be listed here when there is work ready to showcase.</p><a href="#projects" onClick={()=>setSelected(null)} className="mt-3 inline-flex items-center gap-2 text-xs font-bold text-blue-700 hover:text-blue-900">Browse all projects <ArrowUpRight size={14}/></a></div></div></div>}
    </div>
    <p className="mt-6 text-[11px] leading-5 text-slate-400">Only projects currently featured in this portfolio are shown.</p>
   </section>
