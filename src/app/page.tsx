@@ -105,6 +105,7 @@ export default function Home() {
             <a className="transition hover:text-blue-600" href="#domains">Domains</a>
             <a className="transition hover:text-blue-600" href="#projects">Projects</a>
             <a className="transition hover:text-blue-600" href="#experience">Experience</a>
+            <a className="transition hover:text-blue-600" href="#research">Research</a>
           </div>
           <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-[#142033] px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-700">
             Let&apos;s connect <ArrowUpRight size={16} />
@@ -425,6 +426,70 @@ export default function Home() {
               <div className="mt-auto pt-6">
                 <a href="https://www.wlv.ac.uk/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2.5 text-xs font-bold text-blue-700 transition hover:bg-blue-100">University of Wolverhampton <ArrowUpRight size={14} /></a>
               </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="research" className="bg-[#f6f8fb] py-20 md:py-24">
+        <div className="section-shell">
+          <p className="eyebrow">08 / Research &amp; Future Direction</p>
+          <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Exploring what comes next.</h2>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">My interests are focused on bringing intelligent technologies into practical engineering environments. I aim to deepen these areas through project development, independent exploration and future postgraduate research.</p>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <article className="about-info-card group min-h-[230px] p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 shadow-sm"><Bot size={27} strokeWidth={1.8} /></div>
+              <p className="mt-6 text-xs font-black tracking-[.16em] text-blue-700">RESEARCH INTEREST</p>
+              <h3 className="mt-2 text-xl font-black text-[#142033]">Robotics &amp; Autonomous Systems</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">Mobile robotics, sensing, embedded control and intelligent interaction with the physical environment.</p>
+            </article>
+            <article className="about-info-card group min-h-[230px] p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 shadow-sm"><BrainCircuit size={27} strokeWidth={1.8} /></div>
+              <p className="mt-6 text-xs font-black tracking-[.16em] text-blue-700">RESEARCH INTEREST</p>
+              <h3 className="mt-2 text-xl font-black text-[#142033]">Artificial Intelligence &amp; Machine Learning</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">Applying data-driven methods to engineering problems, monitoring systems and intelligent decision support.</p>
+            </article>
+            <article className="about-info-card group min-h-[230px] p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 shadow-sm"><Factory size={27} strokeWidth={1.8} /></div>
+              <p className="mt-6 text-xs font-black tracking-[.16em] text-blue-700">RESEARCH INTEREST</p>
+              <h3 className="mt-2 text-xl font-black text-[#142033]">Industrial Automation</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">Connected industrial systems, equipment monitoring, process improvement and data-informed operations.</p>
+            </article>
+          </div>
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-[1.15fr_.85fr]">
+            <article className="about-info-card p-7">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700"><Database size={23} /></div>
+                <div>
+                  <p className="text-xs font-black tracking-[.16em] text-blue-700">CURRENT EXPLORATION</p>
+                  <h3 className="mt-1 text-xl font-black text-[#142033]">Engineering data &amp; intelligent monitoring</h3>
+                </div>
+              </div>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-xl border border-slate-200 bg-white p-5">
+                  <h4 className="font-black text-[#142033]">BatteryMind AI</h4>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">Exploring battery health and degradation analysis using battery datasets and AI-based approaches.</p>
+                  <a href="https://github.com/duminduue/BatteryMind-AI" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-blue-700 transition hover:gap-3">View GitHub repository <ArrowUpRight size={15} /></a>
+                </div>
+                <div className="rounded-xl border border-slate-200 bg-white p-5">
+                  <h4 className="font-black text-[#142033]">Industrial Data Acquisition</h4>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">Exploring data acquisition and monitoring concepts for industrial and engineering systems.</p>
+                </div>
+              </div>
+            </article>
+            <article className="relative isolate overflow-hidden rounded-2xl bg-[#142033] p-7 text-white shadow-lg">
+              <div className="pointer-events-none absolute -right-16 -top-16 -z-10 h-56 w-56 rounded-full bg-blue-500/20 blur-3xl" />
+              <p className="text-xs font-black tracking-[.18em] text-blue-300">FUTURE DIRECTION</p>
+              <h3 className="mt-4 text-2xl font-black leading-tight">Postgraduate study &amp; research</h3>
+              <p className="mt-4 text-sm leading-7 text-slate-300">I aspire to pursue a fully funded MSc or PhD opportunity, with a focus on robotics, artificial intelligence and industrial automation.</p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                <span className="rounded-full border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold">MSc</span>
+                <span className="rounded-full border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold">PhD</span>
+                <span className="rounded-full border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold">Fully funded</span>
+              </div>
+              <a href="#contact" className="mt-7 inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-500">Discuss research opportunities <ArrowUpRight size={16} /></a>
             </article>
           </div>
         </div>
