@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import {
   ArrowUpRight, Bot, BrainCircuit, Cloud, Code2, Cpu, Database,
@@ -25,12 +26,12 @@ const pillars = [
 ];
 
 const projects = [
-  { title: "Self-Balancing Mobile Robot Using PID Control", stack: "ESP32 · MPU6050 · PID · SolidWorks", anchor: "project-01" },
-  { title: "IoT-Based Health Monitoring System", stack: "ESP32 · MAX30102 · DS18B20 · Blynk", anchor: "project-02" },
-  { title: "Autonomous Mobile Robot for Indoor Air Quality Monitoring", stack: "ESP32 · MQ-2 · MQ-135 · DHT22", anchor: "project-03" },
-  { title: "Hand Gesture-Based Robotic Car", stack: "Dual ESP32 · MPU6050 · ESP-NOW", anchor: "project-04" },
-  { title: "Industrial Engineering Calculator", stack: "React · TypeScript · Python · FastAPI · SQLite", anchor: "project-05" },
-  { title: "PlantorAI – AI-Powered Plant Care Platform", stack: "React · TypeScript · Node.js · MongoDB · Gemini AI", anchor: "project-06" },
+  { title: "Self-Balancing Mobile Robot Using PID Control", stack: "ESP32 · MPU6050 · PID · SolidWorks", anchor: "project-01", slug: "self-balancing-mobile-robot" },
+  { title: "IoT-Based Health Monitoring System", stack: "ESP32 · MAX30102 · DS18B20 · Blynk", anchor: "project-02", slug: "iot-health-monitoring" },
+  { title: "Autonomous Mobile Robot for Indoor Air Quality Monitoring", stack: "ESP32 · MQ-2 · MQ-135 · DHT22", anchor: "project-03", slug: "indoor-air-quality-robot" },
+  { title: "Hand Gesture-Based Robotic Car", stack: "Dual ESP32 · MPU6050 · ESP-NOW", anchor: "project-04", slug: "hand-gesture-robotic-car" },
+  { title: "Industrial Engineering Calculator", stack: "React · TypeScript · Python · FastAPI · SQLite", anchor: "project-05", slug: "industrial-engineering-calculator" },
+  { title: "PlantorAI – AI-Powered Plant Care Platform", stack: "React · TypeScript · Node.js · MongoDB · Gemini AI", anchor: "project-06", slug: "plantorai" },
 ];
 
 export default function DomainExplorer() {
@@ -105,7 +106,7 @@ export default function DomainExplorer() {
             </div>
             <div className="mt-7">
               <div className="flex items-center justify-between gap-3"><h3 className="text-xs font-black tracking-[.16em] text-[#142033]">RELATED PROJECTS</h3><span className="text-[10px] text-slate-400">{active.projects.length} linked</span></div>
-              {active.projects.length ? <div className="mt-3 grid gap-3">{active.projects.map((projectIndex) => { const project = projects[projectIndex]; return <a key={project.anchor} href={`#${project.anchor}`} onClick={() => setSelected(null)} className="group flex items-center justify-between gap-4 rounded-2xl border border-slate-200 p-4 transition hover:border-blue-300 hover:bg-blue-50/40"><span><span className="block text-sm font-bold text-[#142033]">{project.title}</span><span className="mt-1 block text-xs text-slate-500">{project.stack}</span></span><ExternalLink size={17} className="shrink-0 text-blue-600 transition group-hover:translate-x-0.5" /></a>; })}</div> : <div className="mt-3 rounded-2xl border border-blue-100 bg-blue-50/70 p-4">
+              {active.projects.length ? <div className="mt-3 grid gap-3">{active.projects.map((projectIndex) => { const project = projects[projectIndex]; return <Link key={project.anchor} href={`/projects/${project.slug}`} onClick={() => setSelected(null)} className="group flex items-center justify-between gap-4 rounded-2xl border border-slate-200 p-4 transition hover:border-blue-300 hover:bg-blue-50/40"><span><span className="block text-sm font-bold text-[#142033]">{project.title}</span><span className="mt-1 block text-xs text-slate-500">{project.stack}</span></span><ExternalLink size={17} className="shrink-0 text-blue-600 transition group-hover:translate-x-0.5" /></a>; })}</div> : <div className="mt-3 rounded-2xl border border-blue-100 bg-blue-50/70 p-4">
                 <div className="flex items-start gap-3"><span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-blue-700"><Info size={18}/></span><div><p className="text-sm font-bold text-[#142033]">More work is on the way</p><p className="mt-1 text-sm leading-6 text-slate-600">I’m continuing to develop my experience in this area. A related project will appear here when it is ready to showcase.</p><a href="#projects" onClick={() => setSelected(null)} className="mt-3 inline-flex items-center gap-2 text-xs font-bold text-blue-700 hover:text-blue-900">Explore all projects <ArrowRight size={14}/></a></div></div>
               </div>}
             </div>
