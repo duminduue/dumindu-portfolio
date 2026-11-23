@@ -141,28 +141,31 @@ const calculator = {
   number:"05",
   title:"Industrial Engineering Calculator",
   category:"ENGINEERING SOFTWARE · FULL-STACK APPLICATION",
-  summary:"A full-stack engineering calculation platform combining formula-based calculations, unit conversion, a formula library and calculation history.",
-  stack:["React","TypeScript","Python","FastAPI","SQLite","Vite","Pytest"],
+  summary:"A full-stack engineering calculation platform for formula-based calculations, unit conversion, formula search and calculation history.",
+  stack:["React","TypeScript","Python","FastAPI","SQLite","Streamlit","Vite","Pytest"],
   problem:"Engineering students and practitioners frequently need to perform repeated calculations, work with different units and refer to formulas. This project brings common engineering calculations and supporting tools together in one application, with a record of previous calculations.",
-  objectives:["Provide a clear interface for engineering calculations.","Implement calculation functions for selected engineering domains.","Support unit conversion and access to a formula library.","Maintain calculation history using a persistent database.","Separate the frontend interface from the Python calculation API.","Validate calculation behaviour with automated tests."],
+  objectives:["Provide a clear interface for engineering calculations.","Implement calculation functions for selected engineering domains.","Support unit conversion and access to a searchable formula library.","Maintain calculation history using persistent SQLite storage.","Provide CSV export for calculation records.","Validate inputs and calculation behaviour with automated tests."],
   features:[
     ["Engineering calculator","Perform formula-based calculations across selected engineering topics."],
-    ["Unit conversion","Convert measurement values between supported units."],
-    ["Formula library","Access engineering formulas and their associated information."],
-    ["Calculation history","Save and revisit previous calculations using SQLite storage."],
-    ["Frontend and API separation","Use a React and TypeScript frontend with a Python FastAPI backend."],
+    ["Unit conversion","Convert supported engineering measurement units."],
+    ["Formula library and search","Browse and search registered formulas by name, category, description and keywords."],
+    ["Calculation history","Save and review previous calculations using SQLite storage."],
+    ["CSV export","Export calculation history for further review and analysis."],
+    ["Input validation","Handle invalid inputs and provide meaningful validation errors."],
+    ["Frontend and API","Use a React and TypeScript frontend with a Python FastAPI backend; a Streamlit interface is also included in the repository."],
     ["Automated testing","Use Pytest to check calculation and application logic."]
   ],
   domains:["Motion calculations","Mechanics","Electrical calculations","Energy calculations"],
   examples:["Speed","Force","Pressure","Torque","Voltage","Electrical power","Kinetic energy"],
   architecture:[
-    ["React + TypeScript frontend","Provides the user interface for selecting calculations, entering values, viewing results and accessing supporting tools."],
+    ["React + TypeScript frontend","Provides the web interface for selecting calculations, entering values, viewing results and accessing supporting tools."],
     ["Python + FastAPI backend","Provides the API layer and calculation logic used by the frontend."],
     ["SQLite data storage","Stores calculation history so previous work can be accessed again."],
+    ["Streamlit interface","An additional Python-based application interface is included in the repository."],
     ["Pytest validation","Automated tests are used to check calculation functions and application behaviour."]
   ],
-  tests:["The project history records automated testing with Pytest.","A previous project update reported 104 automated tests passed. This is presented as a reported test result, not an independently rerun test in this portfolio update."],
-  future:["Expand the formula library with additional engineering disciplines.","Add clearer formula explanations, symbols and worked examples.","Improve input validation and error messages for engineering units and ranges.","Introduce exportable calculation reports and richer history filtering.","Deploy the application and document its API and setup process."]
+  tests:["The repository includes Pytest test modules covering calculations, edge cases, educational information, history and the formula registry.","The project README reports a development test result of 104 tests passed. This is retained as a reported result and was not rerun during this portfolio update."],
+  future:["Expand the formula library with additional engineering disciplines.","Add clearer formula explanations, symbols and worked examples.","Continue improving input validation and engineering unit coverage.","Enhance calculation history filtering and exportable reports.","Publish a live deployment and maintain clear API and setup documentation."]
 };
 
 const projects = {
@@ -200,11 +203,11 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       <div className="section-shell">
         <section className="-mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
           <p className="text-xs font-black tracking-[.18em] text-blue-700">PROJECT RESOURCE HUB</p><h2 className="mt-2 text-2xl font-black text-[#142033]">Code, documentation & evidence</h2>
-          <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">{detailed ? (isHealth ? "An individual project. The description and reported results have been prepared from the supplied project report and ESP32 code. The source-code document and working demonstration are linked below." : isAmr ? "A group project for MOD011135. The project report has been reviewed and the documented achievements, test results and limitations are presented below. Individual contributions are described separately." : "Project information below has been checked against the supplied dissertation report and its appendices. Demo and evidence folders are available; a public PDF link and source repository link are still pending.") : "This page is ready for verified project information, source code and supporting evidence. Content will be added as project details are provided."}</p>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">{detailed ? (isHealth ? "An individual project. The description and reported results have been prepared from the supplied project report and ESP32 code. The source-code document and working demonstration are linked below." : isAmr ? "A group project for MOD011135. The project report has been reviewed and the documented achievements, test results and limitations are presented below. Individual contributions are described separately." : isCalculator ? "The project overview is based on the public GitHub repository, its README, application structure and test files. The project demonstration and source repository are linked below." : "Project information below has been checked against the supplied project report and its appendices.") : "This page is ready for verified project information, source code and supporting evidence. Content will be added as project details are provided."}</p>
           <div className="mt-5 flex flex-wrap gap-3">
-            {detailed && isHealth ? <a href="https://drive.google.com/file/d/1SFngec9nSyvwI4O306smmKzn9PbCUcEe/view" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-800 hover:bg-blue-100"><PlayCircle size={17}/> Watch demo video <ArrowUpRight size={14}/></a> : <span className="rounded-xl bg-slate-100 px-4 py-3 text-sm text-slate-500">Demo video · To be added</span>}
+            {detailed && isHealth ? <a href="https://drive.google.com/file/d/1SFngec9nSyvwI4O306smmKzn9PbCUcEe/view" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-800 hover:bg-blue-100"><PlayCircle size={17}/> Watch demo video <ArrowUpRight size={14}/></a> : isCalculator ? <a href="https://lnkd.in/p/giMm9J6w" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-800 hover:bg-blue-100"><PlayCircle size={17}/> Watch project demo <ArrowUpRight size={14}/></a> : <span className="rounded-xl bg-slate-100 px-4 py-3 text-sm text-slate-500">Demo video · To be added</span>}
             {detailed && isHealth ? <a href="https://docs.google.com/document/d/1uiBVSp9aEGZgSThKd2E4ZsPu9XX4HkU3Y7k-_ADCMWg/edit?usp=sharing" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-800 hover:bg-blue-100"><Code2 size={17}/> View source code <ArrowUpRight size={14}/></a> : <span className="rounded-xl bg-slate-100 px-4 py-3 text-sm text-slate-500">Photos & evidence · To be added</span>}
-            <span className="inline-flex items-center gap-2 rounded-xl bg-slate-100 px-4 py-3 text-sm font-semibold text-slate-500"><Github size={17}/> {isHealth ? "GitHub repository · Not published" : isAmr ? "GitHub repository · Not supplied" : "GitHub source · Not supplied yet"}</span>
+            {isCalculator ? <a href="https://github.com/duminduue/industrial-engineering-calculator" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-800 hover:bg-blue-100"><Github size={17}/> View GitHub repository <ArrowUpRight size={14}/></a> : <span className="inline-flex items-center gap-2 rounded-xl bg-slate-100 px-4 py-3 text-sm font-semibold text-slate-500"><Github size={17}/> {isHealth ? "GitHub repository · Not published" : isAmr ? "GitHub repository · Not supplied" : "GitHub source · Not supplied yet"}</span>}
             <Link href={`/projects/${slug}/report`} className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"><FileText size={17}/> View project report <ArrowUpRight size={14}/></Link>
           </div>
         </section>
