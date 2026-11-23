@@ -1187,3 +1187,12 @@ html[data-theme="dark"] .professional-learning-panel .professional-learning-eyeb
 html[data-theme="dark"] .professional-learning-panel .professional-learning-topline {
   background: linear-gradient(90deg, #9a7b4c, #c0a16b, #80643c) !important;
 }
+
+
+/* On phones, hide the decorative 3D arm so it cannot cover the profile card,
+   achievement stats or skill tags. Keep the desktop composition unchanged. */
+@media (max-width: 767px) {
+  .hero-arm-overlay {
+    display: none !important;
+  }
+}
