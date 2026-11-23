@@ -11,6 +11,7 @@ import {
   Cpu,
   GraduationCap,
   Mail,
+  Phone,
   MapPin,
   Workflow,
   Github,
@@ -616,10 +617,16 @@ export default function Home() {
                   <ArrowUpRight size={16} className="ml-auto shrink-0 text-slate-400 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-blue-300" />
                 </a>
               </div>
-              <div className="mt-4 flex items-start gap-3 rounded-xl border border-dashed border-white/15 bg-slate-950/20 p-4">
+              <a href="mailto:duminduudakara21@gmail.com" className="mt-4 flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.05] p-4 transition hover:border-blue-400/50 hover:bg-white/10">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-200"><Mail size={19} /></span>
-                <div><p className="text-sm font-bold">Email contact</p><p className="mt-1 text-xs leading-5 text-slate-400">Professional email address will be added here.</p></div>
-              </div>
+                <div className="min-w-0"><p className="text-sm font-bold">Email</p><p className="mt-1 break-all text-xs leading-5 text-slate-300">duminduudakara21@gmail.com</p></div>
+                <ArrowUpRight size={16} className="ml-auto shrink-0 text-slate-400" />
+              </a>
+              <a href="tel:+94764124201" className="mt-3 flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.05] p-4 transition hover:border-blue-400/50 hover:bg-white/10">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-400/10 text-emerald-200"><Phone size={19} /></span>
+                <div><p className="text-sm font-bold">Phone</p><p className="mt-1 text-xs leading-5 text-slate-300">+94 76 412 4201</p></div>
+                <ArrowUpRight size={16} className="ml-auto shrink-0 text-slate-400" />
+              </a>
             </div>
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-3 border-t border-white/10 pt-7">
