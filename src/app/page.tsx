@@ -591,11 +591,43 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="relative isolate overflow-hidden bg-[#101c30] py-24 text-white md:py-32">
+      <section id="contact" className="relative isolate overflow-hidden bg-[#101c30] py-20 text-white md:py-24">
         <div className="pointer-events-none absolute -right-32 -top-40 -z-10 h-96 w-96 rounded-full bg-blue-500/20 blur-[100px]" />
+        <div className="pointer-events-none absolute -bottom-40 -left-24 -z-10 h-80 w-80 rounded-full bg-cyan-400/10 blur-[100px]" />
         <div className="section-shell">
-          <p className="text-xs font-black tracking-[.25em] text-blue-300">05 / GET IN TOUCH</p><h2 className="mt-6 max-w-3xl text-4xl font-black leading-tight tracking-tight md:text-6xl">Let&apos;s connect engineering with possibility.</h2><p className="mt-6 max-w-xl leading-8 text-slate-300">Open to relevant engineering opportunities, research conversations and professional connections.</p>
-          <div className="mt-10 flex flex-wrap gap-4"><a href="mailto:" className="inline-flex items-center gap-3 rounded-full bg-blue-600 px-7 py-4 text-sm font-bold transition hover:bg-blue-500"><Mail size={17} /> Email me</a><a href="https://github.com/duminduue" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 rounded-full border border-white/20 px-7 py-4 text-sm font-bold transition hover:bg-white/10"><Github size={17} /> GitHub <ArrowUpRight size={15} /></a><a href="https://www.linkedin.com/in/dumindu-ekanayaka/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 rounded-full border border-white/20 px-7 py-4 text-sm font-bold transition hover:bg-white/10"><Linkedin size={17} /> LinkedIn <ArrowUpRight size={15} /></a></div>
+          <p className="text-xs font-black tracking-[.25em] text-blue-300">10 / CONTACT</p>
+          <div className="mt-5 grid gap-10 lg:grid-cols-[1.05fr_.95fr] lg:items-end">
+            <div>
+              <h2 className="max-w-3xl text-4xl font-black leading-tight tracking-tight md:text-6xl">Let&apos;s build something meaningful together.</h2>
+              <p className="mt-6 max-w-xl text-base leading-8 text-slate-300 md:text-lg">I&apos;m open to relevant engineering opportunities, collaborative projects, research discussions and professional connections across robotics, AI and industrial automation.</p>
+            </div>
+            <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-6 shadow-xl shadow-slate-950/10 backdrop-blur-sm md:p-7">
+              <p className="text-xs font-black tracking-[.18em] text-blue-300">LET&apos;S CONNECT</p>
+              <h3 className="mt-2 text-2xl font-black">Find me online</h3>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                <a href="https://www.linkedin.com/in/dumindu-ekanayaka/" target="_blank" rel="noreferrer" className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.05] p-4 transition hover:border-blue-400/60 hover:bg-white/10">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/15 text-blue-300"><Linkedin size={21} /></span>
+                  <span className="min-w-0"><span className="block text-sm font-bold">LinkedIn</span><span className="mt-1 block text-xs text-slate-400">Professional profile</span></span>
+                  <ArrowUpRight size={16} className="ml-auto shrink-0 text-slate-400 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-blue-300" />
+                </a>
+                <a href="https://github.com/duminduue" target="_blank" rel="noreferrer" className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.05] p-4 transition hover:border-blue-400/60 hover:bg-white/10">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-400/15 text-slate-200"><Github size={21} /></span>
+                  <span className="min-w-0"><span className="block text-sm font-bold">GitHub</span><span className="mt-1 block text-xs text-slate-400">Projects &amp; repositories</span></span>
+                  <ArrowUpRight size={16} className="ml-auto shrink-0 text-slate-400 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-blue-300" />
+                </a>
+              </div>
+              <div className="mt-4 flex items-start gap-3 rounded-xl border border-dashed border-white/15 bg-slate-950/20 p-4">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-200"><Mail size={19} /></span>
+                <div><p className="text-sm font-bold">Email contact</p><p className="mt-1 text-xs leading-5 text-slate-400">Professional email address will be added here.</p></div>
+              </div>
+            </div>
+          </div>
+          <div className="mt-10 flex flex-wrap items-center gap-3 border-t border-white/10 pt-7">
+            <span className="text-[10px] font-black tracking-[.18em] text-slate-400">OPEN TO</span>
+            <span className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-200">Engineering opportunities</span>
+            <span className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-200">Research collaboration</span>
+            <span className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-200">Professional networking</span>
+          </div>
         </div>
       </section>
 
