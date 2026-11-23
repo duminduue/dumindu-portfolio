@@ -563,17 +563,21 @@ export default function Home() {
 
       <section id="certifications" className="bg-[#f5f7fb] pt-10 pb-20 md:pt-12 md:pb-24">
         <div className="section-shell">
-          <div className="mb-5 flex justify-end">
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-xs font-black tracking-[.12em] text-emerald-700 shadow-sm">
-              <span className="h-2 w-2 rounded-full bg-emerald-500" />
-              FIRST CLASS HONOURS
-            </span>
+          <div className="grid gap-5 lg:grid-cols-[1.35fr_0.65fr] lg:items-center">
+            <div>
+              <p className="text-xs font-black tracking-[.25em] text-blue-600">08 / CERTIFICATIONS &amp; ACHIEVEMENTS</p>
+              <h2 className="mt-5 text-4xl font-black leading-tight tracking-tight text-[#142033] md:text-5xl">Courses &amp; achievements.</h2>
+              <p className="mt-4 max-w-5xl text-base leading-7 text-slate-600">My academic results and courses in robotics, artificial intelligence, industrial automation and communication.</p>
+            </div>
+            <div className="flex justify-start lg:justify-center">
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-xs font-black tracking-[.12em] text-emerald-700 shadow-sm">
+                <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                FIRST CLASS HONOURS
+              </span>
+            </div>
           </div>
-          <p className="text-xs font-black tracking-[.25em] text-blue-600">08 / CERTIFICATIONS &amp; ACHIEVEMENTS</p>
-          <h2 className="mt-5 text-4xl font-black leading-tight tracking-tight text-[#142033] md:text-5xl">Courses &amp; achievements.</h2>
-          <p className="mt-4 max-w-5xl text-base leading-7 text-slate-600">My academic results and courses in robotics, artificial intelligence, industrial automation and communication.</p>
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-[.95fr_1.05fr]">
+          <div className="mt-8 grid gap-6 lg:grid-cols-[.95fr_1.05fr]">          <div className="mt-8 grid gap-6 lg:grid-cols-[.95fr_1.05fr]">
             <article className="about-info-card group relative flex min-h-[390px] flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-gradient-to-br from-white to-[#f7faff] p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg md:p-8">
               <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-blue-700 via-blue-500 to-sky-400" />
               <div className="flex items-start justify-between gap-3">
