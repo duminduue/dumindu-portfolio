@@ -645,7 +645,7 @@ export default function Home() {
             <div>
               <a href="#home" className="inline-flex items-center gap-3 transition hover:opacity-80">
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-sm font-black tracking-tight text-white">DE</span>
-                <span><span className="block text-base font-black tracking-wide text-white">DUMINDU EKANAYAKA</span><span className="mt-1 block text-[10px] font-bold tracking-[.2em] text-blue-300">ENGINEERING · TECHNOLOGY</span></span>
+                <span><span className="block text-base font-black tracking-wide text-white">DUMINDU UDAKARA EKANAYAKA</span><span className="mt-1 block text-[10px] font-bold tracking-[.2em] text-blue-300">ENGINEERING · TECHNOLOGY</span></span>
               </a>
               <p className="mt-5 max-w-md text-sm leading-7 text-slate-400">Building practical solutions through engineering, intelligent systems and continuous learning.</p>
             </div>
