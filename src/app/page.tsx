@@ -295,7 +295,7 @@ export default function Home() {
             const ProjectIcon = project.visual;
             return (
               <Link id={`project-${project.number}`} key={project.number} href={`/projects/${["self-balancing-mobile-robot","iot-health-monitoring","indoor-air-quality-robot","hand-gesture-robotic-car","industrial-engineering-calculator","plantorai"][Number(project.number)-1]}`} className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600">
-                <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 p-6 md:p-8">
+                <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 p-6 md:p-8">
                   <div aria-hidden="true" className="absolute -left-12 -top-24 h-64 w-64 rounded-full border border-white/15" />
                   <div aria-hidden="true" className="absolute -bottom-36 -right-12 h-72 w-72 rounded-full border border-blue-200/70" />
                   <div aria-hidden="true" className="absolute inset-x-12 top-1/2 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
