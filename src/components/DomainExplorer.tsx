@@ -58,7 +58,7 @@ export default function DomainExplorer() {
           <div className="mt-9 grid gap-4 lg:grid-cols-3">
             {pillars.map((pillar) => (
               <article key={pillar.number} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(15,23,42,0.09)]">
-                <div className={`bg-gradient-to-r ${pillar.tone} px-5 py-5 text-white`}>
+                <div className={`domain-pillar-heading bg-gradient-to-r ${pillar.tone} px-5 py-5 text-white`}>
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-black tracking-[.2em] text-white/70">PILLAR {pillar.number}</span>
                     <span className="text-3xl font-light text-white/35">0{pillar.number.slice(-1)}</span>
