@@ -347,7 +347,7 @@ export default function Home() {
                   </div>
                   <span className="rounded-full border border-blue-100 bg-blue-50 px-3 py-2 text-[10px] font-black tracking-[.14em] text-blue-700">ON-SITE</span>
                 </div>
-                <p className="mt-7 text-xs font-black tracking-[.18em] text-blue-700">MAR 2025 – SEP 2025</p>
+                <div className="mt-7 flex flex-wrap items-center gap-2"><p className="text-xs font-black tracking-[.18em] text-blue-700">MAR 2025 – SEP 2025</p><span className="rounded-full bg-emerald-50 px-3 py-1.5 text-[10px] font-black tracking-[.12em] text-emerald-700">7 MONTHS</span></div>
                 <h3 className="mt-3 text-3xl font-black tracking-tight text-[#142033]">Engineer Intern</h3>
                 <p className="mt-2 text-lg font-bold text-slate-700">Rocell</p>
                 <p className="mt-1 inline-flex items-center gap-2 text-sm text-slate-500"><MapPin size={14} /> Eheliyagoda, Sri Lanka</p>
