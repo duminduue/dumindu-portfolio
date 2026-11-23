@@ -4,8 +4,7 @@ import HeroEngineering3D from "@/components/HeroEngineering3D";
 import ConveyorBox3D from "@/components/ConveyorBox3D";
 import DomainExplorer from "@/components/DomainExplorer";
 import TechnicalSkills from "@/components/TechnicalSkills";
-import ThemeToggle from "@/components/ThemeToggle";
-import MobileNav from "@/components/MobileNav";
+import SiteHeader from "@/components/SiteHeader";
 import {
   ArrowDown,
   ArrowRight,
@@ -103,28 +102,7 @@ const pillars = [
 export default function Home() {
   return (
     <main className="overflow-x-clip">
-      <header className="sticky top-0 z-[200] w-full border-b border-slate-200/80 bg-white/95 shadow-sm backdrop-blur-xl">
-        <nav className="section-shell flex h-[76px] items-center justify-between" aria-label="Main navigation">
-          <a href="#home" className="text-xl font-black tracking-tight text-[#142033]">DUMINDU<span className="text-blue-600">.</span></a>
-          <div className="hidden items-center gap-8 text-sm font-semibold text-slate-600 md:flex">
-            <a className="transition hover:text-blue-600" href="#about">About</a>
-            <a className="transition hover:text-blue-600" href="#domains">Domains</a>
-            <a className="transition hover:text-blue-600" href="#skills">Skills</a>
-            <a className="transition hover:text-blue-600" href="#projects">Projects</a>
-            <a className="transition hover:text-blue-600" href="#experience">Experience</a>
-            <a className="transition hover:text-blue-600" href="#education">Education</a>
-            <a className="transition hover:text-blue-600" href="#research">Research</a>
-            <a className="transition hover:text-blue-600" href="#certifications">Achievements</a>
-          </div>
-          <div className="flex items-center gap-3">
-            <ThemeToggle />
-            <MobileNav />
-            <a href="#contact" className="hidden items-center gap-2 rounded-full bg-[#142033] px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-700 md:inline-flex">
-              Let&apos;s connect <ArrowUpRight size={16} />
-            </a>
-          </div>
-        </nav>
-      </header>
+      <SiteHeader />
 
       <section id="home" className="hero-grid relative isolate bg-[#101c30] text-white">
         <div className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[520px] w-[520px] rounded-full bg-blue-500/20 blur-[110px]" />
