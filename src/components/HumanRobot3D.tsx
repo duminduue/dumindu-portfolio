@@ -133,15 +133,7 @@ function HumanoidRobot() {
 
 export default function HumanRobot3D() {
   return (
-    <div className="relative h-full min-h-[420px] overflow-hidden rounded-2xl border border-blue-100 bg-[radial-gradient(ellipse_at_50%_35%,#e8f2ff_0%,#f8fbff_55%,#edf4ff_100%)]">
-      <div className="pointer-events-none absolute inset-0 opacity-40" style={{ backgroundImage: "linear-gradient(rgba(37,99,235,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,.08) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
-      <div className="absolute left-5 top-5 z-10">
-        <p className="text-[10px] font-black tracking-[.2em] text-blue-700">HUMAN–ROBOTICS</p>
-        <p className="mt-1 text-sm font-bold text-slate-700">Interactive 3D concept</p>
-      </div>
-      <div className="absolute right-5 top-5 z-10 flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-3 py-1.5 text-[9px] font-bold tracking-[.12em] text-emerald-700">
-        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" /> LIVE ANIMATION
-      </div>
+    <div className="relative h-full min-h-[420px] overflow-hidden bg-transparent">
       <Canvas camera={{ position: [3.6, 2.3, 5.4], fov: 36 }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }}>
         <Suspense fallback={null}>
           <ambientLight intensity={1.35} />
@@ -151,9 +143,6 @@ export default function HumanRobot3D() {
           <HumanoidRobot />
         </Suspense>
       </Canvas>
-      <div className="pointer-events-none absolute bottom-5 left-0 right-0 text-center">
-        <p className="text-[10px] font-black tracking-[.18em] text-slate-500">ROBOTICS · AI · HUMAN INTERACTION</p>
-      </div>
     </div>
   );
 }
