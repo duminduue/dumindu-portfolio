@@ -5,7 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Center, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
-const MODEL_URL = "https://models.vinish.dev/robots/humanoid-robot.glb";
+const MODEL_URL = "/models/humanoid-robot-standing.glb";
 
 function RealHumanoidRobot() {
   const { scene } = useGLTF(MODEL_URL);
