@@ -107,8 +107,10 @@ export default function Home() {
           <div className="hidden items-center gap-8 text-sm font-semibold text-slate-600 md:flex">
             <a className="transition hover:text-blue-600" href="#about">About</a>
             <a className="transition hover:text-blue-600" href="#domains">Domains</a>
+            <a className="transition hover:text-blue-600" href="#skills">Skills</a>
             <a className="transition hover:text-blue-600" href="#projects">Projects</a>
             <a className="transition hover:text-blue-600" href="#experience">Experience</a>
+            <a className="transition hover:text-blue-600" href="#education">Education</a>
             <a className="transition hover:text-blue-600" href="#research">Research</a>
             <a className="transition hover:text-blue-600" href="#certifications">Achievements</a>
           </div>
