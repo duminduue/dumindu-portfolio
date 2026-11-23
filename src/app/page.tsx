@@ -677,6 +677,7 @@ export default function Home() {
             <span className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-200">Engineering opportunities</span>
             <span className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-200">Research collaboration</span>
             <span className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-200">Professional networking</span>
+            <a href="/Dumindu-Ekanayaka-CV.pdf" download="Dumindu-Ekanayaka-CV.pdf" className="inline-flex items-center gap-2 rounded-full border border-blue-300/30 bg-blue-500/15 px-4 py-2 text-xs font-bold text-blue-200 transition hover:border-blue-300/60 hover:bg-blue-500/25">Download CV <ArrowDown size={14} /></a>
           </div>
         </div>
       </section>
