@@ -335,14 +335,38 @@ export default function Home() {
 
       <section id="experience" className="bg-[#f6f8fb] py-24 md:py-32">
         <div className="section-shell">
-          <p className="eyebrow">04 / Background</p><h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Education &amp; experience.</h2>
-          <div className="mt-12 grid gap-14 md:grid-cols-2">
-            <div><h3 className="mb-7 text-xl font-black">Education</h3><div className="space-y-8 border-l-2 border-blue-100 pl-6">
-              <div className="relative"><span className="absolute -left-[33px] top-1 h-4 w-4 rounded-full border-4 border-blue-600 bg-white" /><p className="text-xs font-bold tracking-wider text-blue-700">SEP 2025 – SEP 2026</p><h4 className="mt-2 font-bold">BEng (Hons) Mechatronics and Robotics Engineering (Top-Up)</h4><p className="mt-2 text-sm text-slate-500">Anglia Ruskin University, UK · Delivered at CINEC Campus, Sri Lanka</p><p className="mt-2 text-sm font-bold text-slate-800">First Class Honours</p></div>
-              <div className="relative"><span className="absolute -left-[33px] top-1 h-4 w-4 rounded-full border-4 border-blue-600 bg-white" /><p className="text-xs font-bold tracking-wider text-blue-700">SEP 2023 – SEP 2025</p><h4 className="mt-2 font-bold">Pearson BTEC Higher National Diploma in Mechanical Engineering</h4><p className="mt-2 text-sm text-slate-500">CINEC Campus, Sri Lanka</p><p className="mt-2 text-sm font-bold text-slate-800">Merit Pass</p></div>
-              <div className="relative"><span className="absolute -left-[33px] top-1 h-4 w-4 rounded-full border-4 border-blue-600 bg-white" /><p className="text-xs font-bold tracking-wider text-blue-700">SEP 2022 – SEP 2023</p><h4 className="mt-2 font-bold">Engineering Foundation Year</h4><p className="mt-2 text-sm text-slate-500">University of Wolverhampton, UK</p></div>
-            </div></div>
-            <div><h3 className="mb-7 text-xl font-black">Industrial experience</h3><div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"><div className="bg-gradient-to-r from-blue-700 to-blue-500 px-6 py-5 text-white"><p className="text-xs font-bold tracking-wider text-white/75">MAR 2025 – SEP 2025 · ON-SITE</p><h4 className="mt-2 text-2xl font-black">Engineer Intern</h4><p className="mt-1 font-semibold text-white/80">Rocell · Eheliyagoda, Sri Lanka</p></div><ul className="space-y-4 p-6 text-sm leading-7 text-slate-600"><li>Supported mechanical maintenance for conveyors, electric motors, hydraulic systems, pumps and gearboxes.</li><li>Assisted with production-stoppage analysis, preventive and corrective maintenance, and process improvement.</li><li>Prepared 3D machine models and engineering drawings using SOLIDWORKS.</li><li>Contributed to a pallet-loading efficiency improvement initiative while following industrial safety practices.</li></ul></div></div>
+          <p className="eyebrow">06 / Professional Experience</p>
+          <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Practical engineering experience.</h2>
+          <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">Hands-on exposure to industrial maintenance, production support and engineering improvement in a manufacturing environment.</p>
+          <div className="mt-12 grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+            <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+              <p className="text-xs font-bold tracking-[.2em] text-blue-700">MAR 2025 – SEP 2025 · ON-SITE</p>
+              <h3 className="mt-4 text-3xl font-black text-[#142033]">Engineer Intern</h3>
+              <p className="mt-2 text-lg font-semibold text-slate-700">Rocell</p>
+              <p className="mt-1 text-sm text-slate-500">Eheliyagoda, Sri Lanka</p>
+              <div className="mt-6 inline-flex rounded-full bg-blue-50 px-4 py-2 text-xs font-bold text-blue-700">Industrial Manufacturing</div>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+              <h3 className="text-xl font-black text-[#142033]">Key responsibilities &amp; contributions</h3>
+              <ul className="mt-6 space-y-4 text-sm leading-7 text-slate-600">
+                <li className="flex gap-3"><span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-600" />Supported mechanical maintenance for conveyors, electric motors, hydraulic systems, pumps and gearboxes.</li>
+                <li className="flex gap-3"><span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-600" />Assisted with production-stoppage analysis, preventive and corrective maintenance, and process improvement.</li>
+                <li className="flex gap-3"><span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-600" />Prepared 3D machine models and engineering drawings using SOLIDWORKS.</li>
+                <li className="flex gap-3"><span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-600" />Contributed to a pallet-loading efficiency improvement initiative while following industrial safety practices.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" className="bg-white py-24 md:py-32">
+        <div className="section-shell">
+          <p className="eyebrow">07 / Education &amp; Qualifications</p>
+          <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Academic foundation.</h2>
+          <div className="mt-12 max-w-3xl space-y-8 border-l-2 border-blue-100 pl-7">
+            <div className="relative"><span className="absolute -left-[36px] top-1 h-4 w-4 rounded-full border-4 border-blue-600 bg-white" /><p className="text-xs font-bold tracking-wider text-blue-700">SEP 2025 – SEP 2026</p><h3 className="mt-2 text-lg font-bold">BEng (Hons) Mechatronics and Robotics Engineering (Top-Up)</h3><p className="mt-2 text-sm text-slate-500">Anglia Ruskin University, UK · Delivered at CINEC Campus, Sri Lanka</p><p className="mt-2 text-sm font-bold text-slate-800">First Class Honours</p></div>
+            <div className="relative"><span className="absolute -left-[36px] top-1 h-4 w-4 rounded-full border-4 border-blue-600 bg-white" /><p className="text-xs font-bold tracking-wider text-blue-700">SEP 2023 – SEP 2025</p><h3 className="mt-2 text-lg font-bold">Pearson BTEC Higher National Diploma in Mechanical Engineering</h3><p className="mt-2 text-sm text-slate-500">CINEC Campus, Sri Lanka</p><p className="mt-2 text-sm font-bold text-slate-800">Merit Pass</p></div>
+            <div className="relative"><span className="absolute -left-[36px] top-1 h-4 w-4 rounded-full border-4 border-blue-600 bg-white" /><p className="text-xs font-bold tracking-wider text-blue-700">SEP 2022 – SEP 2023</p><h3 className="mt-2 text-lg font-bold">Engineering Foundation Year</h3><p className="mt-2 text-sm text-slate-500">University of Wolverhampton, UK</p></div>
           </div>
         </div>
       </section>
