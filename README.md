@@ -2,6 +2,10 @@
 
 A responsive personal portfolio for Dumindu Udakara Ekanayaka, Graduate Mechatronics & Robotics Engineer.
 
+## Live Portfolio
+
+🌐 **Visit the live website:** https://dumindu-portfolio-eta.vercel.app
+
 ## Technology
 
 - Next.js App Router
