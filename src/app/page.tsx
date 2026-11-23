@@ -389,7 +389,7 @@ export default function Home() {
         <div className="section-shell">
           <p className="eyebrow">07 / Education &amp; Qualifications</p>
           <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Academic foundation.</h2>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">An academic journey across engineering, from foundation studies to an honours degree in mechatronics and robotics.</p>
+          <p className="mt-5 max-w-4xl text-base leading-8 text-slate-600">An academic journey across engineering, from foundation studies to an honours degree in mechatronics and robotics.</p>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             <article className="about-info-card group flex min-h-[340px] flex-col p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
