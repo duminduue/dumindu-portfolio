@@ -185,7 +185,7 @@ export default function Home() {
                   fill
                   quality={100}
                   sizes="(max-width: 768px) 100vw, 340px"
-                  className="object-cover object-[center_24%] grayscale"
+                  className="object-cover object-[center_24%]"
                 />
                 <span className="about-photo-label">THE JOURNEY CONTINUES</span>
               </div>
