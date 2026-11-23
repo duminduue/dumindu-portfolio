@@ -568,11 +568,23 @@ export default function Home() {
 
       <section id="certifications" className="bg-[#f5f7fb] pt-10 pb-20 md:pt-12 md:pb-24">
         <div className="section-shell">
-          <p className="text-xs font-black tracking-[.25em] text-blue-600">09 / CERTIFICATIONS &amp; ACHIEVEMENTS</p>
-          <h2 className="mt-5 max-w-4xl text-4xl font-black leading-tight tracking-tight text-[#142033] md:text-6xl">Learning, achievement &amp; professional growth.</h2>
-          <p className="mt-6 max-w-4xl text-base leading-8 text-slate-600 md:text-lg">A record of academic achievement and focused learning across robotics, artificial intelligence, industrial automation and communication.</p>
+          <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
+            <div>
+              <p className="text-xs font-black tracking-[.25em] text-blue-600">09 / CERTIFICATIONS &amp; ACHIEVEMENTS</p>
+              <h2 className="mt-5 max-w-4xl text-4xl font-black leading-tight tracking-tight text-[#142033] md:text-6xl">Learning, achievement &amp; professional growth.</h2>
+              <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600 md:text-lg">A record of academic achievement and focused learning across robotics, artificial intelligence, industrial automation and communication.</p>
+            </div>
+            <div className="mb-1 flex items-center gap-5 rounded-2xl border border-blue-100 bg-white/80 px-6 py-5 shadow-sm">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-2xl font-black text-blue-700">2</div>
+              <div>
+                <p className="text-[10px] font-black tracking-[.2em] text-blue-700">GROWTH PATHWAYS</p>
+                <p className="mt-1 text-lg font-black text-[#142033]">Academic &amp; professional</p>
+                <p className="mt-1 text-xs font-semibold tracking-wide text-slate-500">Achievements · Training · Learning</p>
+              </div>
+            </div>
+          </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-[.95fr_1.05fr]">
+          <div className="mt-8 grid gap-6 lg:grid-cols-[.95fr_1.05fr]">
             <article className="about-info-card group relative flex min-h-[390px] flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-gradient-to-br from-white to-[#f7faff] p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg md:p-8">
               <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-blue-700 via-blue-500 to-sky-400" />
               <div className="flex items-start justify-between gap-3">
