@@ -56,6 +56,7 @@ const projects = [
     category: "AUTONOMOUS ROBOTICS · IOT",
     summary: "Developed an ESP32-based mobile robot combining line-following navigation, checkpoint recognition, obstacle avoidance and environmental sensing.",
     stack: ["ESP32", "MQ-2", "MQ-135", "DHT22"],
+    image: "/images/projects/project-03.png",
   },
   {
     number: "04",
