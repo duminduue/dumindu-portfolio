@@ -611,10 +611,10 @@ export default function Home() {
             <article className="professional-learning-panel about-info-card group relative flex min-h-[390px] flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-gradient-to-br from-white to-[#f7faff] p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg md:p-8">
               <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-blue-700 via-blue-500 to-sky-400" />
               <div className="flex items-start justify-between gap-3">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 shadow-sm"><BadgeCheck size={27} /></div>
-                <span className="rounded-full bg-blue-50 px-4 py-2 text-[10px] font-black tracking-[.15em] text-blue-700">PROFESSIONAL LEARNING</span>
+                <div className="professional-learning-icon flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 shadow-sm"><BadgeCheck size={27} /></div>
+                <span className="professional-learning-badge rounded-full bg-blue-50 px-4 py-2 text-[10px] font-black tracking-[.15em] text-blue-700">PROFESSIONAL LEARNING</span>
               </div>
-              <p className="mt-8 text-xs font-black tracking-[.18em] text-blue-700">CERTIFICATIONS &amp; TRAINING</p>
+              <p className="professional-learning-eyebrow mt-8 text-xs font-black tracking-[.18em] text-blue-700">CERTIFICATIONS &amp; TRAINING</p>
               <h3 className="mt-2 text-2xl font-black text-[#142033]">Professional development</h3>
               <div className="mt-7 grid gap-4 sm:grid-cols-2">
                 <div className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white/80 p-4">
