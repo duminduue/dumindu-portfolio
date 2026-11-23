@@ -136,12 +136,41 @@ const gesture = {
   future:["Introduce calibrated gesture thresholds to improve control consistency.","Evaluate filtering to reduce unwanted movement caused by sensor noise or hand tremor.","Add adjustable speed sensitivity for different users and operating conditions.","Evaluate communication response and control reliability under different operating distances.","Improve the enclosure and ergonomic design of the hand-held transmitter."]
 };
 
+
+const calculator = {
+  number:"05",
+  title:"Industrial Engineering Calculator",
+  category:"ENGINEERING SOFTWARE · FULL-STACK APPLICATION",
+  summary:"A full-stack engineering calculation platform combining formula-based calculations, unit conversion, a formula library and calculation history.",
+  stack:["React","TypeScript","Python","FastAPI","SQLite","Vite","Pytest"],
+  problem:"Engineering students and practitioners frequently need to perform repeated calculations, work with different units and refer to formulas. This project brings common engineering calculations and supporting tools together in one application, with a record of previous calculations.",
+  objectives:["Provide a clear interface for engineering calculations.","Implement calculation functions for selected engineering domains.","Support unit conversion and access to a formula library.","Maintain calculation history using a persistent database.","Separate the frontend interface from the Python calculation API.","Validate calculation behaviour with automated tests."],
+  features:[
+    ["Engineering calculator","Perform formula-based calculations across selected engineering topics."],
+    ["Unit conversion","Convert measurement values between supported units."],
+    ["Formula library","Access engineering formulas and their associated information."],
+    ["Calculation history","Save and revisit previous calculations using SQLite storage."],
+    ["Frontend and API separation","Use a React and TypeScript frontend with a Python FastAPI backend."],
+    ["Automated testing","Use Pytest to check calculation and application logic."]
+  ],
+  domains:["Motion calculations","Mechanics","Electrical calculations","Energy calculations"],
+  examples:["Speed","Force","Pressure","Torque","Voltage","Electrical power","Kinetic energy"],
+  architecture:[
+    ["React + TypeScript frontend","Provides the user interface for selecting calculations, entering values, viewing results and accessing supporting tools."],
+    ["Python + FastAPI backend","Provides the API layer and calculation logic used by the frontend."],
+    ["SQLite data storage","Stores calculation history so previous work can be accessed again."],
+    ["Pytest validation","Automated tests are used to check calculation functions and application behaviour."]
+  ],
+  tests:["The project history records automated testing with Pytest.","A previous project update reported 104 automated tests passed. This is presented as a reported test result, not an independently rerun test in this portfolio update."],
+  future:["Expand the formula library with additional engineering disciplines.","Add clearer formula explanations, symbols and worked examples.","Improve input validation and error messages for engineering units and ranges.","Introduce exportable calculation reports and richer history filtering.","Deploy the application and document its API and setup process."]
+};
+
 const projects = {
   "self-balancing-mobile-robot": { ...robot, detailed:true },
   "iot-health-monitoring": { ...health, detailed:true, kind:"health" },
   "indoor-air-quality-robot": { ...amr, detailed:true },
   "hand-gesture-robotic-car": { ...gesture, detailed:true, kind:"gesture" },
-  "industrial-engineering-calculator": { number:"05", title:"Industrial Engineering Calculator", category:"SOFTWARE ENGINEERING", summary:"An engineering calculation platform with formula calculations, unit conversion, a formula library and calculation history.", stack:["React","TypeScript","Python","FastAPI","SQLite"], detailed:false },
+  "industrial-engineering-calculator": { ...calculator, detailed:true, kind:"calculator" },
   "plantorai": { number:"06", title:"PlantorAI – AI-Powered Plant Care Platform", category:"AI APPLICATIONS · FULL-STACK", summary:"A full-stack plant-care platform with a searchable catalogue, Gemini AI-powered assistant and role-based customer, seller and admin experiences.", stack:["React","TypeScript","Node.js","MongoDB","Gemini AI"], detailed:false }
 };
 type ProjectSlug = keyof typeof projects;
@@ -155,6 +184,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   const isHealth = slug === "iot-health-monitoring";
   const isAmr = slug === "indoor-air-quality-robot";
   const isGesture = slug === "hand-gesture-robotic-car";
+  const isCalculator = slug === "industrial-engineering-calculator";
   return (
     <main className="min-h-screen bg-[#f6f8fb] pb-20">
       <header className="border-b border-slate-200 bg-white/90 backdrop-blur-xl"><div className="section-shell flex h-[72px] items-center justify-between">
@@ -180,7 +210,17 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         </section>
         
         
-        {isGesture ? <>
+        
+        {isCalculator ? <>
+          <section className="mt-10 grid gap-5 lg:grid-cols-[1.15fr_.85fr]">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><BookOpen size={20}/><p className="text-xs font-black tracking-[.18em]">01 / PROJECT OVERVIEW</p></div><h2 className="mt-4 text-2xl font-black text-[#142033]">Engineering calculations in one platform</h2><p className="mt-3 text-sm leading-7 text-slate-600">{calculator.problem}</p><h3 className="mt-7 text-lg font-black text-[#142033]">Project objectives</h3><ol className="mt-3 space-y-3">{calculator.objectives.map((x,i)=><li key={x} className="flex gap-3 text-sm leading-6 text-slate-600"><b className="text-blue-700">0{i+1}</b><span>{x}</span></li>)}</ol></article>
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><Cpu size={20}/><p className="text-xs font-black tracking-[.18em]">02 / TECHNOLOGY STACK</p></div><div className="mt-5 flex flex-wrap gap-2">{calculator.stack.map(x=><span key={x} className="rounded-full bg-blue-50 px-3 py-2 text-xs font-semibold text-blue-800">{x}</span>)}</div><h3 className="mt-7 text-lg font-black text-[#142033]">Engineering domains</h3><div className="mt-3 flex flex-wrap gap-2">{calculator.domains.map(x=><span key={x} className="rounded-full bg-slate-100 px-3 py-2 text-xs font-semibold text-slate-700">{x}</span>)}</div></article>
+          </section>
+          <section className="mt-5 rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><Workflow size={20}/><p className="text-xs font-black tracking-[.18em]">03 / KEY FEATURES</p></div><div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">{calculator.features.map((x,i)=><article key={x[0]} className="rounded-xl border border-slate-200 bg-[#f8fafc] p-5"><p className="text-xs font-black tracking-[.16em] text-blue-700">FEATURE 0{i+1}</p><h3 className="mt-2 font-black text-[#142033]">{x[0]}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{x[1]}</p></article>)}</div><div className="mt-6 rounded-xl bg-[#f6f8fb] p-5"><h3 className="font-black text-[#142033]">Example calculation topics</h3><div className="mt-3 flex flex-wrap gap-2">{calculator.examples.map(x=><span key={x} className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-slate-700">{x}</span>)}</div></div></section>
+          <section className="mt-5 rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><Workflow size={20}/><p className="text-xs font-black tracking-[.18em]">04 / SYSTEM ARCHITECTURE</p></div><div className="mt-6 grid gap-4 md:grid-cols-2">{calculator.architecture.map((x,i)=><article key={x[0]} className="rounded-xl border border-slate-200 p-5"><p className="text-xs font-black text-blue-700">LAYER 0{i+1}</p><h3 className="mt-2 font-black text-[#142033]">{x[0]}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{x[1]}</p></article>)}</div></section>
+          <section className="mt-5 grid gap-5 lg:grid-cols-2"><article className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><CheckCircle2 size={20}/><p className="text-xs font-black tracking-[.18em]">05 / TESTING</p></div><ul className="mt-5 space-y-3">{calculator.tests.map(x=><li key={x} className="flex gap-3 text-sm leading-6 text-slate-600"><CheckCircle2 size={17} className="mt-0.5 shrink-0 text-blue-600"/><span>{x}</span></li>)}</ul></article><article className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><Lightbulb size={20}/><p className="text-xs font-black tracking-[.18em]">06 / FUTURE DEVELOPMENT</p></div><ul className="mt-5 space-y-3">{calculator.future.map(x=><li key={x} className="flex gap-3 text-sm leading-6 text-slate-600"><span className="font-black text-blue-700">→</span><span>{x}</span></li>)}</ul></article></section>
+          <section className="mt-5 rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><Code2 size={20}/><p className="text-xs font-black tracking-[.18em]">07 / PROJECT LINK</p></div><p className="mt-3 text-sm leading-7 text-slate-600">Project overview and announcement:</p><a href="https://lnkd.in/p/gsiJbVTW" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-xl bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-800 hover:bg-blue-100">View project post <ArrowUpRight size={14}/></a></section>
+        </> : isGesture ? <>
           <section className="mt-10 grid gap-5 lg:grid-cols-[1.15fr_.85fr]">
             <article className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><BookOpen size={20}/><p className="text-xs font-black tracking-[.18em]">01 / PROJECT OVERVIEW</p></div><h2 className="mt-4 text-2xl font-black text-[#142033]">Gesture-based robotic control</h2><p className="mt-3 text-sm leading-7 text-slate-600">{gesture.problem}</p><h3 className="mt-7 text-lg font-black text-[#142033]">Project objectives</h3><ol className="mt-3 space-y-3">{gesture.objectives.map((x,i)=><li key={x} className="flex gap-3 text-sm leading-6 text-slate-600"><b className="text-blue-700">0{i+1}</b><span>{x}</span></li>)}</ol><div className="mt-7 rounded-xl bg-blue-50 p-5"><p className="text-xs font-black tracking-wider text-blue-800">MY CONTRIBUTION</p><p className="mt-2 text-sm leading-7 text-slate-700">My work included hardware assembly and circuit integration, MPU6050 programming, ESP-NOW wireless communication, motor direction and speed-control programming, subsystem integration and testing.</p></div></article>
             <article className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"><div className="flex items-center gap-3 text-blue-700"><Cpu size={20}/><p className="text-xs font-black tracking-[.18em]">02 / TECHNOLOGY STACK</p></div><h3 className="mt-5 text-lg font-black text-[#142033]">Hardware</h3><div className="mt-3 flex flex-wrap gap-2">{gesture.hardware.map(x=><span key={x} className="rounded-full bg-slate-100 px-3 py-2 text-xs font-semibold text-slate-700">{x}</span>)}</div><h3 className="mt-7 text-lg font-black text-[#142033]">Software & tools</h3><div className="mt-3 flex flex-wrap gap-2">{gesture.software.map(x=><span key={x} className="rounded-full bg-blue-50 px-3 py-2 text-xs font-semibold text-blue-800">{x}</span>)}</div></article>
