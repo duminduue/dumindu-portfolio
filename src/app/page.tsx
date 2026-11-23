@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import HeroEngineering3D from "@/components/HeroEngineering3D";
 import ConveyorBox3D from "@/components/ConveyorBox3D";
 import DomainExplorer from "@/components/DomainExplorer";
@@ -292,7 +293,7 @@ export default function Home() {
           {projects.map((project) => {
             const ProjectIcon = project.visual;
             return (
-              <article id={`project-${project.number}`} key={project.number} className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
+              <Link id={`project-${project.number}`} key={project.number} href={`/projects/${["self-balancing-mobile-robot","iot-health-monitoring","indoor-air-quality-robot","hand-gesture-robotic-car","industrial-engineering-calculator","plantorai"][Number(project.number)-1]}`} className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600">
                 <div className="relative flex aspect-[16/6] items-center justify-center overflow-hidden bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500">
                   <div aria-hidden="true" className="absolute -left-12 -top-24 h-64 w-64 rounded-full border border-white/15" />
                   <div aria-hidden="true" className="absolute -bottom-36 -right-12 h-72 w-72 rounded-full border border-blue-200/70" />
@@ -311,10 +312,11 @@ export default function Home() {
                   <h3 className="mt-4 max-w-lg text-xl font-black leading-snug tracking-tight text-[#142033] md:text-2xl">{project.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-slate-500">{project.summary}</p>
                   <div className="mt-6 flex flex-wrap gap-2">
-                    {project.stack.map((tech) => <a key={tech} href="#skills" title={`Explore ${tech} in Technical Skills`} className="rounded-full bg-slate-100 px-3 py-1.5 text-[11px] font-semibold text-slate-600 transition hover:bg-blue-50 hover:text-blue-700">{tech} ↗</a>)}
+                    {project.stack.map((tech) => <a key={tech} href="#skills" title={`Explore ${tech} in Technical Skills`} className="rounded-full bg-slate-100 px-3 py-1.5 text-[11px] font-semibold text-slate-600">{tech}</span>)}
                   </div>
+                  <div className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-blue-700 transition group-hover:gap-3">Explore project <ArrowUpRight size={16}/></div>
                 </div>
-              </article>
+              </Link>
             );
           })}
         </div>
