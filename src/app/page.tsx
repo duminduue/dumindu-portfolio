@@ -38,7 +38,7 @@ const projects = [
     category: "ROBOTICS · EMBEDDED SYSTEMS",
     summary: "Designed and developed an ESP32-based self-balancing robot using MPU6050 IMU sensing and PID control, with encoder feedback and wireless web-based control.",
     stack: ["ESP32", "MPU6050", "PID", "SOLIDWORKS"],
-    image: "/images/projects/project-01-self-balancing-robot.jpg",
+    image: null as string | null, // Add your saved Project 01 image here
   },
   {
     number: "02",
