@@ -114,9 +114,14 @@ export default function Home() {
             <a className="transition hover:text-blue-600" href="#research">Research</a>
             <a className="transition hover:text-blue-600" href="#certifications">Achievements</a>
           </div>
-          <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-[#142033] px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-700">
-            Let&apos;s connect <ArrowUpRight size={16} />
-          </a>
+          <div className="flex items-center gap-3">
+            <a href="/Dumindu-Ekanayaka-CV.pdf" download="Dumindu-Ekanayaka-CV.pdf" className="hidden items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-5 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-100 sm:inline-flex">
+              Download CV <ArrowDown size={16} />
+            </a>
+            <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-[#142033] px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-700">
+              Let&apos;s connect <ArrowUpRight size={16} />
+            </a>
+          </div>
         </nav>
       </header>
 
