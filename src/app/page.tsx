@@ -295,19 +295,22 @@ export default function Home() {
             const ProjectIcon = project.visual;
             return (
               <Link id={`project-${project.number}`} key={project.number} href={`/projects/${["self-balancing-mobile-robot","iot-health-monitoring","indoor-air-quality-robot","hand-gesture-robotic-car","industrial-engineering-calculator","plantorai"][Number(project.number)-1]}`} className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600">
-                <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500">
-                  {project.image ? (
-                    <Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" className="object-cover transition duration-500 group-hover:scale-[1.03]" />
-                  ) : (
-                    <>
-                      <div aria-hidden="true" className="absolute -left-12 -top-24 h-64 w-64 rounded-full border border-white/15" />
-                      <div aria-hidden="true" className="absolute -bottom-36 -right-12 h-72 w-72 rounded-full border border-blue-200/70" />
-                      <div aria-hidden="true" className="absolute inset-x-12 top-1/2 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
-                      <div className="relative flex h-20 w-20 items-center justify-center rounded-3xl border border-white/25 bg-white text-blue-700 shadow-[0_14px_34px_rgba(15,23,42,0.16)] transition duration-300 group-hover:-translate-y-1 group-hover:scale-105">
-                        <ProjectIcon size={38} strokeWidth={1.55} />
-                      </div>
-                    </>
-                  )}
+                <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 p-6 md:p-8">
+                  <div aria-hidden="true" className="absolute -left-12 -top-24 h-64 w-64 rounded-full border border-white/15" />
+                  <div aria-hidden="true" className="absolute -bottom-36 -right-12 h-72 w-72 rounded-full border border-blue-200/70" />
+                  <div aria-hidden="true" className="absolute inset-x-12 top-1/2 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
+                  <div className="relative z-10 flex h-[78%] w-[78%] items-center justify-center rounded-[1.6rem] border-2 border-white/75 bg-white p-3 shadow-[0_18px_45px_rgba(8,24,60,0.22)] transition duration-300 group-hover:-translate-y-1 md:rounded-[2rem] md:p-4">
+                    <div className="relative h-full w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-50 md:rounded-2xl">
+                      {project.image ? (
+                        <Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 65vw, (max-width: 1280px) 35vw, 25vw" className="object-contain p-2 transition duration-500 group-hover:scale-[1.03]" />
+                      ) : (
+                        <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-slate-300">
+                          <ProjectIcon size={42} strokeWidth={1.4} />
+                          <span className="text-[9px] font-bold tracking-[.18em] text-slate-400">IMAGE AREA</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                   <span className="absolute bottom-5 right-6 text-xs font-black tracking-[.25em] text-white/60">{project.number}</span>
                   <span className="absolute left-6 top-5 rounded-full border border-white/25 bg-white/15 px-3 py-1.5 text-[10px] font-black tracking-[.16em] text-white">PROJECT SHOWCASE</span>
                 </div>
