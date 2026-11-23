@@ -3,7 +3,7 @@
 import { useState } from "react";
 import {
   ArrowUpRight, Bot, BrainCircuit, Cloud, Code2, Cpu, Database,
-  Factory, ShieldCheck, Wrench, X, ExternalLink
+  Factory, ShieldCheck, Wrench, X, ExternalLink, Info, ArrowRight
 } from "lucide-react";
 
 const domains = [
@@ -105,7 +105,9 @@ export default function DomainExplorer() {
             </div>
             <div className="mt-7">
               <div className="flex items-center justify-between gap-3"><h3 className="text-xs font-black tracking-[.16em] text-[#142033]">RELATED PROJECTS</h3><span className="text-[10px] text-slate-400">{active.projects.length} linked</span></div>
-              {active.projects.length ? <div className="mt-3 grid gap-3">{active.projects.map((projectIndex) => { const project = projects[projectIndex]; return <a key={project.anchor} href={`#${project.anchor}`} onClick={() => setSelected(null)} className="group flex items-center justify-between gap-4 rounded-2xl border border-slate-200 p-4 transition hover:border-blue-300 hover:bg-blue-50/40"><span><span className="block text-sm font-bold text-[#142033]">{project.title}</span><span className="mt-1 block text-xs text-slate-500">{project.stack}</span></span><ExternalLink size={17} className="shrink-0 text-blue-600 transition group-hover:translate-x-0.5" /></a>; })}</div> : <p className="mt-3 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4 text-sm leading-6 text-slate-500">No featured project is currently linked to this domain. Related work can be added as it is completed and documented.</p>}
+              {active.projects.length ? <div className="mt-3 grid gap-3">{active.projects.map((projectIndex) => { const project = projects[projectIndex]; return <a key={project.anchor} href={`#${project.anchor}`} onClick={() => setSelected(null)} className="group flex items-center justify-between gap-4 rounded-2xl border border-slate-200 p-4 transition hover:border-blue-300 hover:bg-blue-50/40"><span><span className="block text-sm font-bold text-[#142033]">{project.title}</span><span className="mt-1 block text-xs text-slate-500">{project.stack}</span></span><ExternalLink size={17} className="shrink-0 text-blue-600 transition group-hover:translate-x-0.5" /></a>; })}</div> : <div className="mt-3 rounded-2xl border border-blue-100 bg-blue-50/70 p-4">
+                <div className="flex items-start gap-3"><span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-blue-700"><Info size={18}/></span><div><p className="text-sm font-bold text-[#142033]">More work is on the way</p><p className="mt-1 text-sm leading-6 text-slate-600">I’m continuing to develop my experience in this area. A related project will appear here when it is ready to showcase.</p><a href="#projects" onClick={() => setSelected(null)} className="mt-3 inline-flex items-center gap-2 text-xs font-bold text-blue-700 hover:text-blue-900">Explore all projects <ArrowRight size={14}/></a></div></div>
+              </div>}
             </div>
             <p className="mt-6 text-[11px] leading-5 text-slate-400">Skills shown reflect the current portfolio profile and areas of development. Project links are limited to work currently featured in this portfolio.</p>
           </section>
