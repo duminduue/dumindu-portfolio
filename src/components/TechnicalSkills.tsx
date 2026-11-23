@@ -23,7 +23,7 @@ export default function TechnicalSkills() {
  const [selected,setSelected]=useState<string|null>(null);
  const related=selected?projects.filter(p=>p.skills.some(s=>s.toLowerCase()===selected.toLowerCase())):[];
  return <>
- <section id="skills" className="bg-[#f6f8fb] pt-0 pb-24 md:pt-0 md:pb-32">
+ <section id="skills" className="bg-[#f6f8fb] pt-0 pb-8 md:pb-10">
   <div className="section-shell">
    <p className="eyebrow">03 / Technical capabilities</p>
    <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end">
