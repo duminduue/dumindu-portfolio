@@ -110,9 +110,89 @@ function Section({ id, number, title, children }: { id:string; number:string; ti
   return <section id={id} className="scroll-mt-8 border-b border-slate-200 py-9 last:border-0"><div className="mb-4 flex items-center gap-3"><span className="text-xs font-black tracking-[.18em] text-blue-700">{number}</span><h2 className="text-xl font-black tracking-tight text-[#142033] md:text-2xl">{title}</h2></div>{children}</section>;
 }
 
+
+function AMRReportPage() {
+  const sections = [
+    ["abstract","ABSTRACT","This project developed an autonomous mobile robot prototype for indoor air-quality monitoring. The robot used a designed and assembled mobile chassis, line-following navigation, environmental sensors and ultrasonic obstacle detection. Two ESP32 controllers were used to separate the main functions: one handled line following and the DHT11/MQ gas sensors, while the other handled ultrasonic obstacle detection and Blynk IoT communication. The robot successfully demonstrated line following and obstacle detection. However, reliable checkpoint/location identification and the association of separate sensor readings with each designated position remained unresolved."],
+    ["introduction","01 · Introduction","Industrial environments may contain changing air-quality conditions across different areas. Fixed sensors only measure their installation points, while manual inspection can require people to enter potentially hazardous areas. A mobile monitoring platform can travel along a predefined route and collect environmental readings at different points. This prototype explored that approach using a low-cost ESP32-based mobile robot."],
+    ["objectives","02 · Project objectives","The project aimed to design a mobile chassis, implement autonomous line following, integrate gas and temperature/humidity sensors, detect obstacles using an ultrasonic sensor, and provide remote monitoring through Blynk IoT. A further intended function was to identify route positions and associate measurements with those positions."],
+    ["design","03 · Mechanical and electronic design","The robot was built around a small mobile car chassis with two driven wheels and a support wheel. The chassis provided the mounting platform for the controller boards, motor driver, battery, line sensors, environmental sensors and ultrasonic sensor. The design focused on arranging the components so that the robot could follow its route while carrying the sensing and communication hardware. The electronics included two ESP32 boards, an L298N motor driver, a five-channel infrared line sensor array, an HC-SR04 ultrasonic sensor, MQ-2 and MQ-135 gas sensors, and a DHT11 temperature and humidity sensor. A regulated supply was used for the low-voltage electronics."],
+    ["architecture","04 · Dual-ESP32 system architecture","The system used two ESP32 controllers to divide the workload. This separation allowed the navigation and environmental-sensing functions to operate on one controller while the second controller handled obstacle detection and Blynk communication."],
+    ["implementation","05 · Navigation and monitoring implementation","The line-following controller read the five-channel infrared sensor array and adjusted the motor outputs to keep the robot on the predefined track. The DHT11 measured temperature and humidity, while the MQ-2 and MQ-135 provided analogue responses associated with gas and smoke sensing. The second ESP32 read the HC-SR04 ultrasonic sensor to detect obstacles and managed the Wi-Fi connection and Blynk IoT data communication. The intended monitoring workflow was to collect readings at designated route positions and make the information available through the Blynk interface."],
+    ["testing","06 · Functional testing and results","The project demonstrated the core movement and sensing functions. Line following operated on the predefined route, and the ultrasonic system detected obstacles. The two-controller arrangement was implemented to separate navigation/environmental sensing from obstacle detection and Blynk communication. The environmental sensors were integrated into the system. The main incomplete function was reliable location identification: the robot did not consistently identify each designated position, so recording and separating the sensor readings for every individual position could not be completed reliably."],
+    ["limitations","07 · Challenges and limitations","The most significant limitation was checkpoint/location identification. Although the robot could follow the route, it did not consistently recognise each position well enough to tag the corresponding sensor measurements. This affected the intended location-by-location air-quality monitoring workflow. The prototype also followed a predefined route rather than performing general-purpose mapping or dynamic path planning. The gas sensors provided prototype analogue responses and were not a certified industrial gas-measurement instrument."],
+    ["future","08 · Future development","Future work should prioritise reliable checkpoint detection and position tagging. A more robust marker-reading method, sensor filtering, and a clear state-based checkpoint sequence could be evaluated. The data workflow should be tested to confirm that each sensor reading is stored with the correct location identifier before expanding the dashboard. Further improvements could include better mechanical protection, improved power management, local data buffering during Wi-Fi interruptions, and more advanced navigation."],
+    ["conclusion","09 · Conclusion","The project demonstrated an ESP32-based mobile robot that could follow a predefined line and detect obstacles. It combined a designed mobile chassis, two ESP32 controllers, DHT11 and MQ gas sensors, ultrasonic sensing and Blynk IoT communication. The work also identified an important limitation: checkpoint/location identification was not sufficiently reliable to support consistent position-specific measurement logging. This provides a clear direction for the next development stage."]
+  ];
+  const architecture = [
+    ["ESP32 #1 · Line following and environmental sensing","Reads the five-channel IR array, controls the drive motors for line following, and acquires DHT11, MQ-2 and MQ-135 sensor readings."],
+    ["ESP32 #2 · Obstacle detection and Blynk","Reads the HC-SR04 ultrasonic sensor for obstacle detection and manages Wi-Fi/Blynk IoT communication."],
+    ["Mobile chassis and drive","Carries the two controllers, motor driver, battery and sensors along the predefined indoor route."]
+  ];
+  const results = [
+    ["Line following","Demonstrated on the predefined route"],
+    ["Ultrasonic obstacle detection","Implemented and demonstrated"],
+    ["Chassis design","Designed and assembled as the robot platform"],
+    ["Environmental sensors","DHT11, MQ-2 and MQ-135 integrated"],
+    ["Blynk IoT","Integrated using the second ESP32"],
+    ["Checkpoint/location identification","Not consistently reliable"],
+    ["Separate readings per location","Not completed reliably because location identification was problematic"]
+  ];
+  return (
+    <main className="min-h-screen bg-[#eef2f7] pb-16 text-[#25344b]">
+      <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
+        <div className="section-shell flex h-[68px] items-center justify-between">
+          <Link href="/#home" className="text-lg font-black tracking-tight text-[#142033]">DUMINDU<span className="text-blue-600">.</span></Link>
+          <Link href="/projects/indoor-air-quality-robot" className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-blue-700"><ArrowLeft size={16}/> Back to project</Link>
+        </div>
+      </header>
+      <div className="section-shell pt-8 md:pt-12">
+        <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_18px_60px_rgba(15,35,70,.09)]">
+          <div className="relative overflow-hidden bg-gradient-to-br from-[#142033] via-[#1d3d69] to-[#245ce5] px-7 py-12 text-white md:px-14 md:py-16">
+            <div className="absolute -right-16 -top-24 h-80 w-80 rounded-full border border-white/10"/>
+            <div className="absolute -right-4 -top-12 h-56 w-56 rounded-full border border-white/10"/>
+            <div className="relative max-w-3xl">
+              <div className="flex items-center gap-2 text-xs font-black tracking-[.2em] text-blue-200"><FileText size={15}/> ENGINEERING PROJECT REPORT</div>
+              <p className="mt-10 text-xs font-bold tracking-[.2em] text-blue-200">AUTONOMOUS ROBOTICS · INDUSTRIAL IOT</p>
+              <h1 className="mt-4 text-3xl font-black leading-tight tracking-tight md:text-5xl">Autonomous Mobile Robot for Indoor Air Quality Monitoring</h1>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-blue-50">Design and implementation of a line-following mobile platform with dual ESP32 control, environmental sensing, ultrasonic obstacle detection and Blynk IoT monitoring.</p>
+              <div className="mt-10 flex flex-wrap gap-3 text-xs font-bold"><span className="rounded-full border border-white/25 bg-white/10 px-4 py-2">PROJECT 03</span><span className="rounded-full border border-white/25 bg-white/10 px-4 py-2">PROTOTYPE</span><span className="rounded-full border border-white/25 bg-white/10 px-4 py-2">ONLINE REPORT</span></div>
+            </div>
+          </div>
+          <div className="grid gap-10 p-6 md:grid-cols-[210px_minmax(0,1fr)] md:p-12">
+            <aside className="h-fit md:sticky md:top-24">
+              <p className="text-xs font-black tracking-[.18em] text-blue-700">REPORT CONTENTS</p>
+              <nav className="mt-4 grid gap-2 text-sm">
+                {sections.map(([id,title])=><a key={id} href={`#${id}`} className="rounded-lg px-3 py-2 text-slate-600 transition hover:bg-blue-50 hover:text-blue-700">{title}</a>)}
+              </nav>
+            </aside>
+            <article className="min-w-0">
+              {sections.map(([id,title,body],i)=><Section key={id} id={id} number={i===0?"ABSTRACT":String(i).padStart(2,"0")} title={title}>
+                <p className="text-sm leading-8 text-slate-600">{body}</p>
+                {id==="architecture" && <div className="mt-5 space-y-3">{architecture.map(([heading,description])=><div key={heading} className="rounded-xl border border-slate-200 bg-[#f7f9fc] p-5"><h3 className="font-bold text-[#142033]">{heading}</h3><p className="mt-2 text-sm leading-7 text-slate-600">{description}</p></div>)}</div>}
+                {id==="testing" && <div className="mt-6 overflow-hidden rounded-xl border border-slate-200"><div className="grid grid-cols-[1fr_1.1fr] bg-[#142033] px-4 py-3 text-xs font-bold tracking-wide text-white"><span>FUNCTION</span><span>OUTCOME</span></div>{results.map(([name,outcome],j)=><div key={name} className={`grid grid-cols-[1fr_1.1fr] gap-3 px-4 py-4 text-sm ${j%2===0?"bg-white":"bg-[#f7f9fc]"}`}><span className="text-slate-600">{name}</span><strong className="text-[#142033]">{outcome}</strong></div>)}</div>}
+              </Section>)}
+              <div className="mt-8 rounded-xl border border-amber-200 bg-amber-50 p-5">
+                <p className="text-xs font-black tracking-[.16em] text-amber-800">REPORTING NOTE</p>
+                <p className="mt-2 text-sm leading-7 text-amber-900">This page describes the prototype and its demonstrated outcomes. Checkpoint/location identification and reliable position-specific data logging are explicitly recorded as limitations rather than presented as completed features. MQ-series sensors are treated as prototype analogue gas/smoke sensors, not certified industrial measurement instruments.</p>
+              </div>
+            </article>
+          </div>
+          <footer className="border-t border-slate-200 bg-[#f8fafc] px-6 py-7 text-center md:px-12">
+            <p className="text-xs font-bold tracking-[.18em] text-slate-400">END OF PROJECT REPORT</p>
+            <p className="mt-2 text-sm text-slate-500">Autonomous Mobile Robot for Indoor Air Quality Monitoring · Project 03</p>
+            <Link href="/projects/indoor-air-quality-robot" className="mt-5 inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-700">Return to project page <ArrowUpRight size={15}/></Link>
+          </footer>
+        </div>
+      </div>
+    </main>
+  );
+}
+
 export default async function ProjectReportPage({ params }: { params: Promise<{ slug:string }> }) {
   const { slug } = await params;
   if (slug === "iot-health-monitoring") return <HealthReportPage />;
+  if (slug === "indoor-air-quality-robot") return <AMRReportPage />;
   return (
     <main className="min-h-screen bg-[#eef2f7] pb-16 text-[#25344b]">
       <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
