@@ -29,6 +29,9 @@ import {
   Calculator,
   Sprout,
   BookOpen,
+  Award,
+  BadgeCheck,
+  Medal,
 } from "lucide-react";
 
 const projects = [
@@ -106,6 +109,7 @@ export default function Home() {
             <a className="transition hover:text-blue-600" href="#projects">Projects</a>
             <a className="transition hover:text-blue-600" href="#experience">Experience</a>
             <a className="transition hover:text-blue-600" href="#research">Research</a>
+            <a className="transition hover:text-blue-600" href="#certifications">Achievements</a>
           </div>
           <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-[#142033] px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-700">
             Let&apos;s connect <ArrowUpRight size={16} />
@@ -521,6 +525,76 @@ export default function Home() {
               </div>
               <a href="#contact" className="mt-7 inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-500">Discuss research opportunities <ArrowUpRight size={16} /></a>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="certifications" className="bg-[#f5f7fb] py-20 md:py-24">
+        <div className="section-shell">
+          <p className="text-xs font-black tracking-[.25em] text-blue-600">09 / CERTIFICATIONS &amp; ACHIEVEMENTS</p>
+          <h2 className="mt-5 max-w-4xl text-4xl font-black leading-tight tracking-tight text-[#142033] md:text-6xl">Learning, achievement &amp; professional growth.</h2>
+          <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">A record of academic achievement and focused learning across robotics, artificial intelligence, industrial automation and communication.</p>
+
+          <div className="mt-12 grid gap-7 lg:grid-cols-[.9fr_1.1fr]">
+            <div className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm md:p-8">
+              <div className="flex items-center gap-3">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700"><GraduationCap size={25} /></span>
+                <div>
+                  <p className="text-[10px] font-black tracking-[.18em] text-blue-700">ACADEMIC HIGHLIGHTS</p>
+                  <h3 className="mt-1 text-xl font-black text-[#142033]">Academic achievements</h3>
+                </div>
+              </div>
+              <div className="mt-8 space-y-6">
+                <div className="flex gap-4">
+                  <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-700"><Award size={17} /></span>
+                  <div><h4 className="font-bold text-[#142033]">First Class Honours</h4><p className="mt-1 text-sm leading-6 text-slate-600">BEng (Hons) Mechatronics and Robotics Engineering (Top-Up) — Anglia Ruskin University, UK.</p></div>
+                </div>
+                <div className="flex gap-4">
+                  <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-700"><Medal size={17} /></span>
+                  <div><h4 className="font-bold text-[#142033]">Merit Pass</h4><p className="mt-1 text-sm leading-6 text-slate-600">Pearson BTEC Higher National Diploma (HND) in Mechanical Engineering — CINEC Campus, Sri Lanka.</p></div>
+                </div>
+              </div>
+              <div className="mt-8 rounded-2xl bg-[#142033] p-5 text-white">
+                <p className="text-[10px] font-black tracking-[.16em] text-blue-300">PROJECT VALIDATION</p>
+                <div className="mt-4 grid grid-cols-2 gap-4">
+                  <div><p className="text-3xl font-black">104</p><p className="mt-1 text-xs leading-5 text-slate-300">Passing automated tests · Industrial Engineering Calculator</p></div>
+                  <div><p className="text-3xl font-black">55</p><p className="mt-1 text-xs leading-5 text-slate-300">Passing backend tests · PlantorAI</p></div>
+                </div>
+                <p className="mt-4 text-[10px] leading-5 text-slate-400">Project verification results recorded in the CV; these are not presented as awards or certifications.</p>
+              </div>
+            </div>
+
+            <div className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm md:p-8">
+              <div className="flex items-center gap-3">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700"><BadgeCheck size={25} /></span>
+                <div>
+                  <p className="text-[10px] font-black tracking-[.18em] text-blue-700">PROFESSIONAL LEARNING</p>
+                  <h3 className="mt-1 text-xl font-black text-[#142033]">Certifications &amp; training</h3>
+                </div>
+              </div>
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700"><Bot size={21} /></span>
+                  <h4 className="mt-4 font-black text-[#142033]">Robotics</h4>
+                  <p className="mt-2 text-sm text-slate-600">Southern IRAA Pvt Ltd</p>
+                </article>
+                <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-50 text-violet-700"><BrainCircuit size={21} /></span>
+                  <h4 className="mt-4 font-black text-[#142033]">Artificial Intelligence</h4>
+                  <p className="mt-2 text-sm text-slate-600">Southern IRAA Pvt Ltd</p>
+                </article>
+                <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 text-amber-700"><Factory size={21} /></span>
+                  <h4 className="mt-4 font-black text-[#142033]">Industrial Automation Engineering</h4>
+                  <p className="mt-2 text-sm text-slate-600">PLC &amp; HMI Programming · EPIC Campus</p>
+                </article>
+                <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-700"><BookOpen size={21} /></span>
+                  <h4 className="mt-4 font-black text-[#142033]">Diploma in English</h4>
+                  <p className="mt-2 text-sm text-slate-600">English language qualification</p>
+                </article>
+              </div>
+            </div>
           </div>
         </div>
       </section>
