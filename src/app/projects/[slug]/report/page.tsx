@@ -312,8 +312,8 @@ function CalculatorReportPage() {
               </Section>)}
               <div className="mt-8 rounded-xl border border-amber-200 bg-amber-50 p-5">
                 <p className="text-xs font-black tracking-[.16em] text-amber-800">REPORTING NOTE</p>
-                <p className="mt-2 text-sm leading-7 text-amber-900">The project post is linked as the supplied reference. The shortened post URL could not be inspected during this update. The reported 104 automated tests are not presented as a fresh test run, and no unprovided screenshots, deployment links or repository links have been added.</p>
-                <a href="https://lnkd.in/p/gsiJbVTW" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-blue-700">View project post <ArrowUpRight size={14}/></a>
+                <p className="mt-2 text-sm leading-7 text-amber-900">The project repository and demonstration video are linked below. The reported 104 automated tests are not presented as a fresh test run.</p>
+                <div className="mt-4 flex flex-wrap gap-3"><a href="https://github.com/duminduue/industrial-engineering-calculator" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-blue-700">View GitHub repository <ArrowUpRight size={14}/></a><a href="https://lnkd.in/p/giMm9J6w" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-blue-700">Watch demo video <ArrowUpRight size={14}/></a><a href="https://lnkd.in/p/gsiJbVTW" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-blue-700">Project post <ArrowUpRight size={14}/></a></div>
               </div>
             </article>
           </div>
