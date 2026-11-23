@@ -535,59 +535,58 @@ export default function Home() {
           <h2 className="mt-5 max-w-4xl text-4xl font-black leading-tight tracking-tight text-[#142033] md:text-6xl">Learning, achievement &amp; professional growth.</h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">A record of academic achievement and focused learning across robotics, artificial intelligence, industrial automation and communication.</p>
 
-          <div className="mt-12 grid gap-7 lg:grid-cols-[.9fr_1.1fr]">
-            <div className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm md:p-8">
-              <div className="flex items-center gap-3">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700"><GraduationCap size={25} /></span>
-                <div>
-                  <p className="text-[10px] font-black tracking-[.18em] text-blue-700">ACADEMIC HIGHLIGHTS</p>
-                  <h3 className="mt-1 text-xl font-black text-[#142033]">Academic achievements</h3>
-                </div>
+          <div className="mt-10 grid gap-6 lg:grid-cols-[.95fr_1.05fr]">
+            <article className="about-info-card group relative flex min-h-[390px] flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-gradient-to-br from-white to-[#f7faff] p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg md:p-8">
+              <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-blue-700 via-blue-500 to-sky-400" />
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 shadow-sm"><GraduationCap size={27} /></div>
+                <span className="rounded-full bg-blue-50 px-4 py-2 text-[10px] font-black tracking-[.15em] text-blue-700">ACADEMIC</span>
               </div>
-              <div className="mt-8 space-y-6">
+              <p className="mt-8 text-xs font-black tracking-[.18em] text-blue-700">ACADEMIC HIGHLIGHTS</p>
+              <h3 className="mt-2 text-2xl font-black text-[#142033]">Academic achievements</h3>
+              <div className="mt-7 space-y-6">
                 <div className="flex gap-4">
-                  <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-700"><Award size={17} /></span>
+                  <span className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-700"><Award size={18} /></span>
                   <div><h4 className="font-bold text-[#142033]">First Class Honours</h4><p className="mt-1 text-sm leading-6 text-slate-600">BEng (Hons) Mechatronics and Robotics Engineering (Top-Up) — Anglia Ruskin University, UK.</p></div>
                 </div>
                 <div className="flex gap-4">
-                  <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-700"><Medal size={17} /></span>
+                  <span className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-700"><Medal size={18} /></span>
                   <div><h4 className="font-bold text-[#142033]">Merit Pass</h4><p className="mt-1 text-sm leading-6 text-slate-600">Pearson BTEC Higher National Diploma (HND) in Mechanical Engineering — CINEC Campus, Sri Lanka.</p></div>
                 </div>
               </div>
+              <div className="mt-auto pt-8 flex flex-wrap gap-2">
+                <span className="rounded-full bg-emerald-50 px-4 py-2 text-xs font-bold text-emerald-700">First Class Honours</span>
+                <span className="rounded-full bg-slate-100 px-4 py-2 text-xs font-bold text-slate-600">Merit Pass</span>
+              </div>
+            </article>
 
-            </div>
-
-            <div className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm md:p-8">
-              <div className="flex items-center gap-3">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700"><BadgeCheck size={25} /></span>
-                <div>
-                  <p className="text-[10px] font-black tracking-[.18em] text-blue-700">PROFESSIONAL LEARNING</p>
-                  <h3 className="mt-1 text-xl font-black text-[#142033]">Certifications &amp; training</h3>
+            <article className="about-info-card group relative flex min-h-[390px] flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-gradient-to-br from-white to-[#f7faff] p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg md:p-8">
+              <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-blue-700 via-blue-500 to-sky-400" />
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 shadow-sm"><BadgeCheck size={27} /></div>
+                <span className="rounded-full bg-blue-50 px-4 py-2 text-[10px] font-black tracking-[.15em] text-blue-700">PROFESSIONAL LEARNING</span>
+              </div>
+              <p className="mt-8 text-xs font-black tracking-[.18em] text-blue-700">CERTIFICATIONS &amp; TRAINING</p>
+              <h3 className="mt-2 text-2xl font-black text-[#142033]">Professional development</h3>
+              <div className="mt-7 grid gap-4 sm:grid-cols-2">
+                <div className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white/80 p-4">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700"><Bot size={21} /></span>
+                  <div><h4 className="font-bold text-[#142033]">Robotics</h4><p className="mt-1 text-xs leading-5 text-slate-600">Southern IRAA Pvt Ltd</p></div>
+                </div>
+                <div className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white/80 p-4">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-50 text-violet-700"><BrainCircuit size={21} /></span>
+                  <div><h4 className="font-bold text-[#142033]">Artificial Intelligence</h4><p className="mt-1 text-xs leading-5 text-slate-600">Southern IRAA Pvt Ltd</p></div>
+                </div>
+                <div className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white/80 p-4">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-700"><Factory size={21} /></span>
+                  <div><h4 className="font-bold text-[#142033]">Industrial Automation Engineering</h4><p className="mt-1 text-xs leading-5 text-slate-600">PLC &amp; HMI Programming · EPIC Campus</p></div>
+                </div>
+                <div className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white/80 p-4">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700"><BookOpen size={21} /></span>
+                  <div><h4 className="font-bold text-[#142033]">Diploma in English</h4><p className="mt-1 text-xs leading-5 text-slate-600">English language qualification</p></div>
                 </div>
               </div>
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700"><Bot size={21} /></span>
-                  <h4 className="mt-4 font-black text-[#142033]">Robotics</h4>
-                  <p className="mt-2 text-sm text-slate-600">Southern IRAA Pvt Ltd</p>
-                </article>
-                <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-50 text-violet-700"><BrainCircuit size={21} /></span>
-                  <h4 className="mt-4 font-black text-[#142033]">Artificial Intelligence</h4>
-                  <p className="mt-2 text-sm text-slate-600">Southern IRAA Pvt Ltd</p>
-                </article>
-                <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 text-amber-700"><Factory size={21} /></span>
-                  <h4 className="mt-4 font-black text-[#142033]">Industrial Automation Engineering</h4>
-                  <p className="mt-2 text-sm text-slate-600">PLC &amp; HMI Programming · EPIC Campus</p>
-                </article>
-                <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-700"><BookOpen size={21} /></span>
-                  <h4 className="mt-4 font-black text-[#142033]">Diploma in English</h4>
-                  <p className="mt-2 text-sm text-slate-600">English language qualification</p>
-                </article>
-              </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
