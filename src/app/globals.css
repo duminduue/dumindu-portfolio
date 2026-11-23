@@ -1127,3 +1127,32 @@ html[data-theme="dark"] .achievement-panel [class*="border-slate-"] {
 html[data-theme="dark"] .achievement-panel [class*="bg-white"] {
   background: #29251f !important;
 }
+
+
+/* Override utility-class gradients consistently on every highlighted card header */
+html[data-theme="dark"] main > section .domain-pillar-heading,
+html[data-theme="dark"] main > section .skill-group-heading {
+  background: linear-gradient(115deg, #40372b 0%, #554832 55%, #463b2d 100%) !important;
+  background-image: linear-gradient(115deg, #40372b 0%, #554832 55%, #463b2d 100%) !important;
+}
+html[data-theme="dark"] main > section .domain-pillar-heading :is(h3,p,span),
+html[data-theme="dark"] main > section .skill-group-heading :is(h3,p,span) {
+  color: #f1e7d6 !important;
+}
+html[data-theme="dark"] main > section .skill-group-heading > div > span:first-child {
+  background: rgba(224, 195, 145, .14) !important;
+  color: #e2c18c !important;
+}
+html[data-theme="dark"] main > section .achievement-panel > div:first-child {
+  background: linear-gradient(90deg, #9a7b4c, #c0a16b, #80643c) !important;
+}
+html[data-theme="dark"] main > section .achievement-panel [class*="bg-violet-"],
+html[data-theme="dark"] main > section .achievement-panel [class*="bg-cyan-"] {
+  background: #39332b !important;
+  color: #d9bd8b !important;
+}
+html[data-theme="dark"] main > section .achievement-panel [class*="text-violet-"],
+html[data-theme="dark"] main > section .achievement-panel [class*="text-cyan-"],
+html[data-theme="dark"] main > section .achievement-panel [class*="text-amber-"] {
+  color: #d9bd8b !important;
+}
