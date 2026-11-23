@@ -283,7 +283,7 @@ export default function Home() {
       <DomainExplorer />
       <TechnicalSkills />
 
-      <section id="projects" className="section-shell py-24 md:py-32">
+      <section id="projects" className="section-shell pt-8 pb-24 md:pt-10 md:pb-32">
         <p className="eyebrow">04 / Selected work</p>
         <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <h2 className="text-4xl font-black tracking-tight md:text-5xl">Projects &amp; practice.</h2>
