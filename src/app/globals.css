@@ -1170,3 +1170,15 @@ html[data-theme="dark"] .professional-learning-panel > div:nth-child(2) > span {
 html[data-theme="dark"] .professional-learning-panel > p {
   color: #dfc18d !important;
 }
+
+
+/* Direct, explicit styling for the Professional Learning card accents */
+html[data-theme="dark"] .professional-learning-panel .professional-learning-icon,
+html[data-theme="dark"] .professional-learning-panel .professional-learning-badge {
+  background: #393229 !important;
+  background-color: #393229 !important;
+  color: #dfc18d !important;
+}
+html[data-theme="dark"] .professional-learning-panel .professional-learning-eyebrow {
+  color: #dfc18d !important;
+}
