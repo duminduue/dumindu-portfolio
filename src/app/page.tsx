@@ -295,21 +295,23 @@ export default function Home() {
             const ProjectIcon = project.visual;
             return (
               <Link id={`project-${project.number}`} key={project.number} href={`/projects/${["self-balancing-mobile-robot","iot-health-monitoring","indoor-air-quality-robot","hand-gesture-robotic-car","industrial-engineering-calculator","plantorai"][Number(project.number)-1]}`} className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600">
-                <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
-                  {project.image ? (
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      sizes="(max-width: 768px) 65vw, (max-width: 1280px) 35vw, 25vw"
-                      className="object-cover transition duration-500 group-hover:scale-105"
-                    />
-                  ) : (
-                    <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-slate-300">
-                      <ProjectIcon size={42} strokeWidth={1.4} />
-                      <span className="text-[9px] font-bold tracking-[.18em] text-slate-400">IMAGE AREA</span>
+                <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 p-6 md:p-8">
+                  <div aria-hidden="true" className="absolute -left-12 -top-24 h-64 w-64 rounded-full border border-white/15" />
+                  <div aria-hidden="true" className="absolute -bottom-36 -right-12 h-72 w-72 rounded-full border border-blue-200/70" />
+                  <div aria-hidden="true" className="absolute inset-x-12 top-1/2 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
+                  <div className="relative z-10 flex h-full w-full items-center justify-center rounded-[1.4rem] border border-white/75 bg-white p-2 shadow-[0_12px_30px_rgba(8,24,60,0.18)] transition duration-300 group-hover:-translate-y-1 md:rounded-[1.7rem] md:p-3">
+                    <div className="relative h-full w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-50 md:rounded-2xl">
+                      {project.image ? (
+                        <Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 65vw, (max-width: 1280px) 35vw, 25vw" className="object-contain p-2 transition duration-500 group-hover:scale-[1.03]" />
+                      ) : (
+                        <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-slate-300">
+                          <ProjectIcon size={42} strokeWidth={1.4} />
+                          <span className="text-[9px] font-bold tracking-[.18em] text-slate-400">IMAGE AREA</span>
+                        </div>
+                      )}
                     </div>
-                  )}
+                  </div>
+                  <span className="absolute bottom-5 right-6 text-xs font-black tracking-[.25em] text-white/60">{project.number}</span>
                 </div>
                 <div className="flex min-h-[150px] flex-col justify-center p-5 md:min-h-[164px] md:p-6">
                   <div className="mb-3 flex items-center justify-between gap-3">
