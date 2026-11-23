@@ -101,7 +101,7 @@ export default function DomainExplorer() {
             </div>
             <div className="mt-7">
               <h3 className="text-xs font-black tracking-[.16em] text-[#142033]">SKILLS &amp; TECHNOLOGIES</h3>
-              <div className="mt-3 flex flex-wrap gap-2">{active.skills.map((skill) => <span key={skill} className="rounded-full border border-blue-100 bg-blue-50/70 px-3 py-2 text-xs font-semibold text-blue-800">{skill}</span>)}</div>
+              <div className="mt-3 flex flex-wrap gap-2">{active.skills.map((skill) => <a key={skill} href="#skills" onClick={() => setSelected(null)} title={`Explore ${skill} in Technical Skills`} className="rounded-full border border-blue-100 bg-blue-50/70 px-3 py-2 text-xs font-semibold text-blue-800 transition hover:border-blue-400 hover:bg-blue-100">{skill} ↗</a>)}</div>
             </div>
             <div className="mt-7">
               <div className="flex items-center justify-between gap-3"><h3 className="text-xs font-black tracking-[.16em] text-[#142033]">RELATED PROJECTS</h3><span className="text-[10px] text-slate-400">{active.projects.length} linked</span></div>
