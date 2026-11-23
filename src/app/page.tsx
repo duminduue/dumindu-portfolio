@@ -342,10 +342,22 @@ export default function Home() {
 
       <section id="experience" className="bg-[#f6f8fb] pt-6 pb-8 md:pt-8 md:pb-10">
         <div className="section-shell">
-          <p className="eyebrow">06 / Professional Experience</p>
-          <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Practical engineering experience.</h2>
-          <p className="mt-5 max-w-4xl text-base leading-8 text-slate-600">Hands-on exposure to industrial maintenance, production support and engineering improvement in a manufacturing environment.</p>
-          <div className="mt-12 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
+            <div>
+              <p className="eyebrow">06 / Professional Experience</p>
+              <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Practical engineering experience.</h2>
+              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">Hands-on exposure to industrial maintenance, production support and engineering improvement in a manufacturing environment.</p>
+            </div>
+            <div className="mb-1 flex items-center gap-5 rounded-2xl border border-blue-100 bg-white/80 px-6 py-5 shadow-sm">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-2xl font-black text-blue-700">6</div>
+              <div>
+                <p className="text-[10px] font-black tracking-[.2em] text-blue-700">MONTHS OF EXPERIENCE</p>
+                <p className="mt-1 text-lg font-black text-[#142033]">Rocell · Engineer Intern</p>
+                <p className="mt-1 text-xs font-semibold tracking-wide text-slate-500">MAR 2025 — SEP 2025</p>
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
             <article className="about-info-card group flex min-h-[300px] flex-col justify-between p-7 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
               <div>
                 <div className="flex items-start justify-between gap-4">
