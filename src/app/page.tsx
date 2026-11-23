@@ -332,7 +332,6 @@ export default function Home() {
             );
           })}
         </div>
-        <p className="mt-7 text-xs leading-6 text-slate-400">Project visuals are illustrative placeholders. Original project photographs, repository links and demonstrations can be added when the evidence is ready.</p>
       </section>
 
       <section id="experience" className="bg-[#f6f8fb] pt-6 pb-8 md:pt-8 md:pb-10">
