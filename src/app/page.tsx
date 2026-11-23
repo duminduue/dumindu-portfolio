@@ -311,7 +311,7 @@ export default function Home() {
                   <h3 className="mt-4 max-w-lg text-xl font-black leading-snug tracking-tight text-[#142033] md:text-2xl">{project.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-slate-500">{project.summary}</p>
                   <div className="mt-6 flex flex-wrap gap-2">
-                    {project.stack.map((tech) => <span key={tech} className="rounded-full bg-slate-100 px-3 py-1.5 text-[11px] font-semibold text-slate-600">{tech}</span>)}
+                    {project.stack.map((tech) => <a key={tech} href="#skills" title={`Explore ${tech} in Technical Skills`} className="rounded-full bg-slate-100 px-3 py-1.5 text-[11px] font-semibold text-slate-600 transition hover:bg-blue-50 hover:text-blue-700">{tech} ↗</a>)}
                   </div>
                 </div>
               </article>
