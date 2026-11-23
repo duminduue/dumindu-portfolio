@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, BookOpen, Cpu, Gauge, Workflow, CheckCircle2, Lightbulb, FileText } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, BookOpen, Cpu, Gauge, Workflow, CheckCircle2, Lightbulb, FileText, Code2, PlayCircle } from "lucide-react";
 
 const objectives = [
   "Design and construct a stable two-wheeled mobile platform with an optimized centre of gravity.",
