@@ -1182,3 +1182,8 @@ html[data-theme="dark"] .professional-learning-panel .professional-learning-badg
 html[data-theme="dark"] .professional-learning-panel .professional-learning-eyebrow {
   color: #dfc18d !important;
 }
+
+
+html[data-theme="dark"] .professional-learning-panel .professional-learning-topline {
+  background: linear-gradient(90deg, #9a7b4c, #c0a16b, #80643c) !important;
+}
