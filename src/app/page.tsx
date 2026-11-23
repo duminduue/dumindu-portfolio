@@ -163,7 +163,7 @@ export default function Home() {
 
       <section className="border-b border-slate-200 bg-white">
         <div className="section-shell grid grid-cols-2 gap-8 py-9 md:grid-cols-4">
-          {[["72.75%", "Overall Mark"], ["2026", "BEng graduate"], ["6", "Featured projects"], ["3", "Education stages"]].map(([value, label]) => (
+          {[["1st", "First Class Honours"], ["2026", "BEng graduate"], ["6", "Featured projects"], ["3", "Education stages"]].map(([value, label]) => (
             <div key={label}><p className="text-3xl font-black tracking-tight text-blue-700">{value}</p><p className="mt-2 max-w-[170px] text-sm leading-5 text-slate-500">{label}</p></div>
           ))}
         </div>
@@ -324,7 +324,7 @@ export default function Home() {
           <p className="eyebrow">04 / Background</p><h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Education &amp; experience.</h2>
           <div className="mt-12 grid gap-14 md:grid-cols-2">
             <div><h3 className="mb-7 text-xl font-black">Education</h3><div className="space-y-8 border-l-2 border-blue-100 pl-6">
-              <div className="relative"><span className="absolute -left-[33px] top-1 h-4 w-4 rounded-full border-4 border-blue-600 bg-white" /><p className="text-xs font-bold tracking-wider text-blue-700">SEP 2025 – SEP 2026</p><h4 className="mt-2 font-bold">BEng (Hons) Mechatronics and Robotics Engineering (Top-Up)</h4><p className="mt-2 text-sm text-slate-500">Anglia Ruskin University, UK · Delivered at CINEC Campus, Sri Lanka</p><p className="mt-2 text-sm font-bold text-slate-800">Upper Second Class Honours (2:1)</p></div>
+              <div className="relative"><span className="absolute -left-[33px] top-1 h-4 w-4 rounded-full border-4 border-blue-600 bg-white" /><p className="text-xs font-bold tracking-wider text-blue-700">SEP 2025 – SEP 2026</p><h4 className="mt-2 font-bold">BEng (Hons) Mechatronics and Robotics Engineering (Top-Up)</h4><p className="mt-2 text-sm text-slate-500">Anglia Ruskin University, UK · Delivered at CINEC Campus, Sri Lanka</p><p className="mt-2 text-sm font-bold text-slate-800">First Class Honours</p></div>
               <div className="relative"><span className="absolute -left-[33px] top-1 h-4 w-4 rounded-full border-4 border-blue-600 bg-white" /><p className="text-xs font-bold tracking-wider text-blue-700">SEP 2023 – SEP 2025</p><h4 className="mt-2 font-bold">Pearson BTEC Higher National Diploma in Mechanical Engineering</h4><p className="mt-2 text-sm text-slate-500">CINEC Campus, Sri Lanka</p><p className="mt-2 text-sm font-bold text-slate-800">Merit Pass</p></div>
               <div className="relative"><span className="absolute -left-[33px] top-1 h-4 w-4 rounded-full border-4 border-blue-600 bg-white" /><p className="text-xs font-bold tracking-wider text-blue-700">SEP 2022 – SEP 2023</p><h4 className="mt-2 font-bold">Engineering Foundation Year</h4><p className="mt-2 text-sm text-slate-500">University of Wolverhampton, UK</p></div>
             </div></div>
