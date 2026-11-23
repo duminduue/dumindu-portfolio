@@ -378,14 +378,53 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="education" className="bg-white py-24 md:py-32">
+      <section id="education" className="bg-white pt-10 pb-20 md:pt-14 md:pb-24">
         <div className="section-shell">
           <p className="eyebrow">07 / Education &amp; Qualifications</p>
           <h2 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">Academic foundation.</h2>
-          <div className="mt-12 max-w-3xl space-y-8 border-l-2 border-blue-100 pl-7">
-            <div className="relative"><span className="absolute -left-[36px] top-1 h-4 w-4 rounded-full border-4 border-blue-600 bg-white" /><p className="text-xs font-bold tracking-wider text-blue-700">SEP 2025 – SEP 2026</p><h3 className="mt-2 text-lg font-bold">BEng (Hons) Mechatronics and Robotics Engineering (Top-Up)</h3><p className="mt-2 text-sm text-slate-500">Anglia Ruskin University, UK · Delivered at CINEC Campus, Sri Lanka</p><p className="mt-2 text-sm font-bold text-slate-800">First Class Honours</p></div>
-            <div className="relative"><span className="absolute -left-[36px] top-1 h-4 w-4 rounded-full border-4 border-blue-600 bg-white" /><p className="text-xs font-bold tracking-wider text-blue-700">SEP 2023 – SEP 2025</p><h3 className="mt-2 text-lg font-bold">Pearson BTEC Higher National Diploma in Mechanical Engineering</h3><p className="mt-2 text-sm text-slate-500">CINEC Campus, Sri Lanka</p><p className="mt-2 text-sm font-bold text-slate-800">Merit Pass</p></div>
-            <div className="relative"><span className="absolute -left-[36px] top-1 h-4 w-4 rounded-full border-4 border-blue-600 bg-white" /><p className="text-xs font-bold tracking-wider text-blue-700">SEP 2022 – SEP 2023</p><h3 className="mt-2 text-lg font-bold">Engineering Foundation Year</h3><p className="mt-2 text-sm text-slate-500">University of Wolverhampton, UK</p></div>
+          <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">An academic journey across engineering, from foundation studies to an honours degree in mechatronics and robotics.</p>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            <article className="about-info-card group flex min-h-[340px] flex-col p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 shadow-sm"><GraduationCap size={27} strokeWidth={1.8} /></div>
+                <span className="rounded-full bg-emerald-50 px-3 py-2 text-[10px] font-black tracking-[.12em] text-emerald-700">FIRST CLASS</span>
+              </div>
+              <p className="mt-7 text-xs font-black tracking-[.16em] text-blue-700">SEP 2025 – SEP 2026</p>
+              <h3 className="mt-3 text-xl font-black leading-snug text-[#142033]">BEng (Hons) Mechatronics and Robotics Engineering (Top-Up)</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-500">Anglia Ruskin University, UK</p>
+              <p className="mt-1 text-sm leading-6 text-slate-500">Delivered at CINEC Campus, Sri Lanka</p>
+              <div className="mt-auto pt-6 flex flex-wrap gap-2">
+                <a href="https://www.aru.ac.uk/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2.5 text-xs font-bold text-blue-700 transition hover:bg-blue-100">Anglia Ruskin University <ArrowUpRight size={14} /></a>
+                <a href="https://www.cinec.edu/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-2.5 text-xs font-bold text-slate-700 transition hover:bg-slate-200">CINEC Campus <ArrowUpRight size={14} /></a>
+              </div>
+            </article>
+
+            <article className="about-info-card group flex min-h-[340px] flex-col p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 shadow-sm"><Wrench size={27} strokeWidth={1.8} /></div>
+                <span className="rounded-full bg-blue-50 px-3 py-2 text-[10px] font-black tracking-[.12em] text-blue-700">MERIT PASS</span>
+              </div>
+              <p className="mt-7 text-xs font-black tracking-[.16em] text-blue-700">SEP 2023 – SEP 2025</p>
+              <h3 className="mt-3 text-xl font-black leading-snug text-[#142033]">Pearson BTEC Higher National Diploma in Mechanical Engineering</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-500">CINEC Campus, Sri Lanka</p>
+              <div className="mt-auto pt-6">
+                <a href="https://www.cinec.edu/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2.5 text-xs font-bold text-blue-700 transition hover:bg-blue-100">CINEC Campus <ArrowUpRight size={14} /></a>
+              </div>
+            </article>
+
+            <article className="about-info-card group flex min-h-[340px] flex-col p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 shadow-sm"><BookOpen size={27} strokeWidth={1.8} /></div>
+                <span className="rounded-full bg-slate-100 px-3 py-2 text-[10px] font-black tracking-[.12em] text-slate-600">FOUNDATION</span>
+              </div>
+              <p className="mt-7 text-xs font-black tracking-[.16em] text-blue-700">SEP 2022 – SEP 2023</p>
+              <h3 className="mt-3 text-xl font-black leading-snug text-[#142033]">Engineering Foundation Year</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-500">University of Wolverhampton, UK</p>
+              <div className="mt-auto pt-6">
+                <a href="https://www.wlv.ac.uk/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2.5 text-xs font-bold text-blue-700 transition hover:bg-blue-100">University of Wolverhampton <ArrowUpRight size={14} /></a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
