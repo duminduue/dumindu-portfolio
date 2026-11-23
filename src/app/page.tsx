@@ -125,7 +125,7 @@ export default function Home() {
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-400">
               <span className="inline-flex items-center gap-2"><MapPin size={15} /> Sri Lanka</span>
-              <span className="inline-flex items-center gap-2"><GraduationCap size={16} /> BEng (Hons), 2:1</span>
+              <span className="inline-flex items-center gap-2"><GraduationCap size={16} /> BEng (Hons), First Class</span>
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-[390px] isolate">
@@ -150,7 +150,7 @@ export default function Home() {
               <p className="text-xl font-bold">Dumindu Udakara Ekanayaka</p>
               <p className="mt-2 text-sm leading-6 text-slate-300">Mechatronics &amp; Robotics Engineering graduate</p>
               <div className="mt-7 grid grid-cols-2 gap-3">
-                <div className="rounded-xl bg-white/5 p-4"><p className="text-2xl font-black text-white">2:1</p><p className="mt-1 text-xs text-slate-400">Honours degree</p></div>
+                <div className="rounded-xl bg-white/5 p-4"><p className="text-2xl font-black text-white">1st</p><p className="mt-1 text-xs text-slate-400">First Class Honours</p></div>
                 <div className="rounded-xl bg-white/5 p-4"><p className="text-2xl font-black text-white">09</p><p className="mt-1 text-xs text-slate-400">Professional domains</p></div>
               </div>
               <div className="mt-6 flex gap-3 text-slate-300"><span className="rounded-full border border-white/10 px-3 py-1 text-xs">Robotics</span><span className="rounded-full border border-white/10 px-3 py-1 text-xs">AI</span><span className="rounded-full border border-white/10 px-3 py-1 text-xs">Automation</span></div>
@@ -163,7 +163,7 @@ export default function Home() {
 
       <section className="border-b border-slate-200 bg-white">
         <div className="section-shell grid grid-cols-2 gap-8 py-9 md:grid-cols-4">
-          {[["2:1", "Upper Second Class Honours"], ["2026", "BEng graduate"], ["6", "Featured projects"], ["3", "Education stages"]].map(([value, label]) => (
+          {[["72.75%", "Overall Mark"], ["2026", "BEng graduate"], ["6", "Featured projects"], ["3", "Education stages"]].map(([value, label]) => (
             <div key={label}><p className="text-3xl font-black tracking-tight text-blue-700">{value}</p><p className="mt-2 max-w-[170px] text-sm leading-5 text-slate-500">{label}</p></div>
           ))}
         </div>
@@ -204,7 +204,7 @@ export default function Home() {
                 </div>
                 <div className="about-credential-row">
                   <span className="about-credential-icon"><GraduationCap size={19} /></span>
-                  <span>Upper Second Class Honours (2:1)</span>
+                  <span>First Class Honours</span>
                 </div>
               </div>
             </div>
@@ -214,7 +214,7 @@ export default function Home() {
                 I am a Mechatronics and Robotics Engineering graduate of
                 <strong className="text-[#142033]"> Anglia Ruskin University, United Kingdom</strong>,
                 with the programme delivered at CINEC Campus, Sri Lanka. I completed my BEng (Hons)
-                with <strong className="text-[#142033]">Upper Second Class Honours (2:1)</strong>.
+                with <strong className="text-[#142033]">First Class Honours</strong>.
               </p>
               <p className="mt-6 text-base leading-8 text-slate-600">
                 My journey combines an academic foundation in mechanical engineering with practical
