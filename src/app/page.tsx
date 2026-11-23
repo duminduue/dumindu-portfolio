@@ -47,6 +47,7 @@ const projects = [
     category: "IOT · EMBEDDED SYSTEMS",
     summary: "Developed a sensor-based monitoring system for heart rate, SpO₂, body temperature and ambient conditions, with wireless monitoring through Blynk IoT.",
     stack: ["ESP32", "MAX30102", "DS18B20", "Blynk"],
+    image: "/images/projects/project-02.jpg",
   },
   {
     number: "03",
