@@ -468,17 +468,17 @@ export default function Home() {
                 <div className="absolute right-[16.66%] top-0 h-3 w-px bg-blue-300" />
               </div>
               <div className="grid gap-4 md:grid-cols-3">
-                <article className="rounded-2xl border border-slate-600 bg-[#46566d] p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-[#52657f]">
+                <article className="rounded-2xl border border-slate-600 bg-[#3d4d63] p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-[#485c76]">
                   <div className="flex items-center justify-between"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-400/15 text-cyan-200"><Bot size={22} /></span><span className="text-[10px] font-black tracking-[.14em] text-slate-300">DOMAIN 01</span></div>
                   <h4 className="mt-4 text-base font-black text-white">Robotics &amp; Autonomous Systems</h4>
                   <p className="mt-2 text-xs leading-6 text-slate-200">Mobile robots, sensing, embedded control and autonomy.</p>
                 </article>
-                <article className="rounded-2xl border border-slate-600 bg-[#46566d] p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-[#52657f]">
+                <article className="rounded-2xl border border-slate-600 bg-[#3d4d63] p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-[#485c76]">
                   <div className="flex items-center justify-between"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-400/15 text-violet-200"><BrainCircuit size={22} /></span><span className="text-[10px] font-black tracking-[.14em] text-slate-300">DOMAIN 02</span></div>
                   <h4 className="mt-4 text-base font-black text-white">AI &amp; Machine Learning</h4>
                   <p className="mt-2 text-xs leading-6 text-slate-200">Data-driven analysis, prediction and intelligent decision support.</p>
                 </article>
-                <article className="rounded-2xl border border-slate-600 bg-[#46566d] p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-[#52657f]">
+                <article className="rounded-2xl border border-slate-600 bg-[#3d4d63] p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-[#485c76]">
                   <div className="flex items-center justify-between"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-400/15 text-amber-200"><Factory size={22} /></span><span className="text-[10px] font-black tracking-[.14em] text-slate-300">DOMAIN 03</span></div>
                   <h4 className="mt-4 text-base font-black text-white">Industrial Automation</h4>
                   <p className="mt-2 text-xs leading-6 text-slate-200">Connected equipment, monitoring and process improvement.</p>
