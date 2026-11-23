@@ -293,15 +293,15 @@ export default function Home() {
             const ProjectIcon = project.visual;
             return (
               <article id={`project-${project.number}`} key={project.number} className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
-                <div className="relative flex aspect-[16/6] items-center justify-center overflow-hidden bg-gradient-to-br from-[#eaf3ff] via-[#f7fbff] to-[#dceaff]">
-                  <div aria-hidden="true" className="absolute -left-12 -top-24 h-64 w-64 rounded-full border border-blue-200/70" />
+                <div className="relative flex aspect-[16/6] items-center justify-center overflow-hidden bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500">
+                  <div aria-hidden="true" className="absolute -left-12 -top-24 h-64 w-64 rounded-full border border-white/15" />
                   <div aria-hidden="true" className="absolute -bottom-36 -right-12 h-72 w-72 rounded-full border border-blue-200/70" />
                   <div aria-hidden="true" className="absolute inset-x-12 top-1/2 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
-                  <div className="relative flex h-20 w-20 items-center justify-center rounded-3xl border border-blue-200/80 bg-white/90 text-blue-600 shadow-[0_14px_34px_rgba(37,99,235,0.14)] transition duration-300 group-hover:-translate-y-1 group-hover:scale-105">
+                  <div className="relative flex h-20 w-20 items-center justify-center rounded-3xl border border-white/25 bg-white text-blue-700 shadow-[0_14px_34px_rgba(15,23,42,0.16)] transition duration-300 group-hover:-translate-y-1 group-hover:scale-105">
                     <ProjectIcon size={38} strokeWidth={1.55} />
                   </div>
-                  <span className="absolute bottom-5 right-6 text-xs font-black tracking-[.25em] text-blue-400">{project.number}</span>
-                  <span className="absolute left-6 top-5 rounded-full border border-blue-200/80 bg-white/75 px-3 py-1.5 text-[10px] font-black tracking-[.16em] text-blue-700">PROJECT SHOWCASE</span>
+                  <span className="absolute bottom-5 right-6 text-xs font-black tracking-[.25em] text-white/60">{project.number}</span>
+                  <span className="absolute left-6 top-5 rounded-full border border-white/25 bg-white/15 px-3 py-1.5 text-[10px] font-black tracking-[.16em] text-white">PROJECT SHOWCASE</span>
                 </div>
                 <div className="p-5 md:p-6">
                   <div className="flex items-center justify-between gap-3">
@@ -330,7 +330,7 @@ export default function Home() {
               <div className="relative"><span className="absolute -left-[33px] top-1 h-4 w-4 rounded-full border-4 border-blue-600 bg-white" /><p className="text-xs font-bold tracking-wider text-blue-700">SEP 2023 – SEP 2025</p><h4 className="mt-2 font-bold">Pearson BTEC Higher National Diploma in Mechanical Engineering</h4><p className="mt-2 text-sm text-slate-500">CINEC Campus, Sri Lanka</p><p className="mt-2 text-sm font-bold text-slate-800">Merit Pass</p></div>
               <div className="relative"><span className="absolute -left-[33px] top-1 h-4 w-4 rounded-full border-4 border-blue-600 bg-white" /><p className="text-xs font-bold tracking-wider text-blue-700">SEP 2022 – SEP 2023</p><h4 className="mt-2 font-bold">Engineering Foundation Year</h4><p className="mt-2 text-sm text-slate-500">University of Wolverhampton, UK</p></div>
             </div></div>
-            <div><h3 className="mb-7 text-xl font-black">Industrial experience</h3><div className="rounded-2xl border border-slate-200 bg-[#fbfcfe] p-6"><p className="text-xs font-bold tracking-wider text-blue-700">MAR 2025 – SEP 2025 · ON-SITE</p><h4 className="mt-3 text-2xl font-black">Engineer Intern</h4><p className="mt-1 font-semibold text-slate-600">Rocell · Eheliyagoda, Sri Lanka</p><ul className="mt-6 space-y-4 text-sm leading-7 text-slate-600"><li>Supported mechanical maintenance for conveyors, electric motors, hydraulic systems, pumps and gearboxes.</li><li>Assisted with production-stoppage analysis, preventive and corrective maintenance, and process improvement.</li><li>Prepared 3D machine models and engineering drawings using SOLIDWORKS.</li><li>Contributed to a pallet-loading efficiency improvement initiative while following industrial safety practices.</li></ul></div></div>
+            <div><h3 className="mb-7 text-xl font-black">Industrial experience</h3><div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"><div className="bg-gradient-to-r from-blue-700 to-blue-500 px-6 py-5 text-white"><p className="text-xs font-bold tracking-wider text-white/75">MAR 2025 – SEP 2025 · ON-SITE</p><h4 className="mt-2 text-2xl font-black">Engineer Intern</h4><p className="mt-1 font-semibold text-white/80">Rocell · Eheliyagoda, Sri Lanka</p></div><ul className="space-y-4 p-6 text-sm leading-7 text-slate-600"><li>Supported mechanical maintenance for conveyors, electric motors, hydraulic systems, pumps and gearboxes.</li><li>Assisted with production-stoppage analysis, preventive and corrective maintenance, and process improvement.</li><li>Prepared 3D machine models and engineering drawings using SOLIDWORKS.</li><li>Contributed to a pallet-loading efficiency improvement initiative while following industrial safety practices.</li></ul></div></div>
           </div>
         </div>
       </section>
