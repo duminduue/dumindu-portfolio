@@ -44,7 +44,7 @@ export default function DomainExplorer() {
       <section id="domains" className="bg-[#f6f8fb] pt-6 pb-8 md:pt-8 md:pb-10">
         <div className="section-shell">
           <p className="eyebrow">02 / Professional direction</p>
-          <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-start">
             <div>
               <h2 className="max-w-2xl text-4xl font-black tracking-tight text-[#142033] md:text-5xl">Engineering across<br />three connected pillars.</h2>
               <p className="mt-5 max-w-3xl text-base leading-7 text-slate-500">My professional interests bring together core engineering, intelligent technologies and digital systems to develop practical solutions.</p>
