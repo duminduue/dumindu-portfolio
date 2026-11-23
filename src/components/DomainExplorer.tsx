@@ -40,7 +40,7 @@ export default function DomainExplorer() {
 
   return (
     <>
-      <section id="domains" className="bg-[#f6f8fb] pt-6 pb-4 md:pt-8 md:pb-6">
+      <section id="domains" className="bg-[#f6f8fb] pt-6 pb-8 md:pt-8 md:pb-10">
         <div className="section-shell">
           <p className="eyebrow">02 / Professional direction</p>
           <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end">
