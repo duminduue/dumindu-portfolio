@@ -638,7 +638,33 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-[#0a1423] py-7 text-slate-400"><div className="section-shell flex flex-col justify-between gap-3 text-xs sm:flex-row"><p>© 2026 Dumindu Udakara Ekanayaka. All rights reserved.</p><p>Engineering · Intelligence · Digital Technology</p></div></footer>
+      <footer className="relative overflow-hidden border-t border-white/10 bg-[#0a1423] text-slate-300">
+        <div className="pointer-events-none absolute -right-24 -top-28 h-72 w-72 rounded-full bg-blue-500/10 blur-[90px]" />
+        <div className="section-shell relative py-12 md:py-14">
+          <div className="grid gap-10 md:grid-cols-[1.2fr_.8fr] md:items-start">
+            <div>
+              <a href="#home" className="inline-flex items-center gap-3 transition hover:opacity-80">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-sm font-black tracking-tight text-white">DE</span>
+                <span><span className="block text-base font-black tracking-wide text-white">DUMINDU EKANAYAKA</span><span className="mt-1 block text-[10px] font-bold tracking-[.2em] text-blue-300">ENGINEERING · TECHNOLOGY</span></span>
+              </a>
+              <p className="mt-5 max-w-md text-sm leading-7 text-slate-400">Building practical solutions through engineering, intelligent systems and continuous learning.</p>
+            </div>
+            <div className="md:justify-self-end">
+              <p className="text-[10px] font-black tracking-[.2em] text-slate-500">CONNECT</p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <a href="https://www.linkedin.com/in/dumindu-ekanayaka/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-slate-300 transition hover:border-blue-400/50 hover:bg-blue-500/10 hover:text-blue-300"><Linkedin size={18} /></a>
+                <a href="https://github.com/duminduue" target="_blank" rel="noreferrer" aria-label="GitHub" className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-slate-300 transition hover:border-blue-400/50 hover:bg-blue-500/10 hover:text-blue-300"><Github size={18} /></a>
+                <a href="mailto:duminduudakara21@gmail.com" aria-label="Email" className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-slate-300 transition hover:border-blue-400/50 hover:bg-blue-500/10 hover:text-blue-300"><Mail size={18} /></a>
+              </div>
+            </div>
+          </div>
+          <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-slate-500">© 2026 Dumindu Udakara Ekanayaka. All rights reserved.</p>
+            <p className="font-medium tracking-wide text-slate-400">Robotics <span className="px-1 text-blue-400">·</span> AI <span className="px-1 text-blue-400">·</span> Industrial Automation</p>
+            <a href="#home" className="inline-flex items-center gap-2 font-bold text-slate-300 transition hover:text-blue-300">Back to top <ArrowUpRight size={14} /></a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
